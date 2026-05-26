@@ -44,12 +44,16 @@ export function ThemedProductImage({
   
   // Brutally honest fix: In light mode, any opacity less than 100% causes the bright light-theme 
   // container background to bleed through the dark matte industrial images, creating a washed-out 
-  // "sis perdesi" (fog curtain) effect. We dynamically override opacity classes to 100% in light mode.
+  // "sis perdesi" (fog curtain) effect. We dynamically override opacity, grayscale, and mix-blend 
+  // classes to enforce a crisp, high-fidelity look.
   let baseClass = className || "object-cover";
   if (resolvedTheme === "light") {
     baseClass = baseClass
       .replace(/\bopacity-\d+\b/g, "opacity-100")
-      .replace(/\bgroup-hover:opacity-\d+\b/g, "group-hover:opacity-100");
+      .replace(/\bgroup-hover:opacity-\d+\b/g, "group-hover:opacity-100")
+      .replace(/\bgrayscale\b/g, "grayscale-0")
+      .replace(/\bgroup-hover:grayscale-0\b/g, "")
+      .replace(/\bmix-blend-\w+\b/g, "mix-blend-normal");
   }
 
   return (

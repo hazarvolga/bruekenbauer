@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { ThemedProductImage } from "@/components/product/ThemedProductImage";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
@@ -35,15 +35,14 @@ export default async function PowerManagementDetailPage({ params }: Props) {
     <PageShell className="min-h-screen pt-20 md:ml-20">
       <section className="grid border-b border-graphite-muted lg:grid-cols-[0.9fr_1.1fr]">
         <div className="relative min-h-[360px] overflow-hidden border-b border-graphite-muted bg-surface-container-lowest lg:min-h-[560px] lg:border-b-0 lg:border-r">
-          <Image
+          <ThemedProductImage
             src={family.image}
+            darkSrc={family.image}
             alt=""
-            fill
             priority
             sizes="(min-width: 1024px) 48vw, 100vw"
-            className="object-cover opacity-80 mix-blend-normal grayscale dark:mix-blend-lighten"
+            className="object-cover transition-transform duration-700 hover:scale-102"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent" />
           <div className="absolute bottom-8 left-8 right-8 grid gap-3 border border-graphite-muted bg-surface/70 p-5 backdrop-blur-md">
             <div className="font-mono text-label-xs uppercase tracking-[0.16em] text-warning-red">
               Module variants

@@ -3,6 +3,7 @@ import Link from "next/link";
 import { TechnicalButton } from "@/components/layout/TechnicalButton";
 import { PageShell } from "@/components/motion/MotionProvider";
 import { CurtainReveal } from "@/components/motion/Reveals";
+import { ThemedProductImage } from "@/components/product/ThemedProductImage";
 import {
   powerManagementFamilies,
   powerManagementMetrics,
@@ -19,7 +20,7 @@ export default function IntroPage() {
         fill
         priority
         sizes="100vw"
-        className="object-cover opacity-55 mix-blend-normal grayscale dark:mix-blend-luminosity"
+        className="object-cover opacity-20 dark:opacity-55 mix-blend-multiply dark:mix-blend-luminosity grayscale transition-opacity duration-700"
       />
       <div className="absolute inset-0 bg-gradient-to-t from-background via-background/45 to-background/10" />
       <section className="relative z-10 grid min-h-[calc(100vh-80px)] content-center gap-12 px-margin-mobile py-16 md:px-margin-desktop">
@@ -68,12 +69,12 @@ export default function IntroPage() {
                 aria-label={`Open ${family.name} detail dossier`}
               />
               <div className="relative aspect-[16/10] overflow-hidden border border-graphite-muted bg-surface-container-lowest md:aspect-auto md:min-h-[320px]">
-                <Image
+                <ThemedProductImage
                   src={family.image}
+                  darkSrc={family.image}
                   alt=""
-                  fill
                   sizes="(min-width: 768px) 40vw, 100vw"
-                  className="object-cover opacity-75 mix-blend-normal grayscale transition-[filter,opacity] duration-700 group-hover:opacity-90 group-hover:grayscale-0 dark:mix-blend-lighten"
+                  className="object-cover transition-transform duration-700 group-hover:scale-102"
                 />
               </div>
               <div className="grid content-center py-6 md:py-0">

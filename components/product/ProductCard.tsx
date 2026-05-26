@@ -16,7 +16,7 @@ export function ProductCard({ product }: { product: Product }) {
           darkSrc={product.imageDark}
           alt=""
           sizes="(min-width: 768px) 33vw, 100vw"
-          className="object-cover opacity-80 transition-opacity duration-700 group-hover:opacity-95"
+          className="object-cover transition-transform duration-700 group-hover:scale-102"
         />
       </div>
       <div className="font-mono text-label-xs uppercase tracking-[0.16em] text-warning-red">
