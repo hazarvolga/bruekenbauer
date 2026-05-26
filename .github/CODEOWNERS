@@ -1,0 +1,14 @@
+# Global owner — reviews required on all PRs
+* @hazarekiz
+
+# Design system & tokens
+/tailwind.config.ts @hazarekiz
+/styles/ @hazarekiz
+
+# CI/CD
+/.github/ @hazarekiz
+
+# Docs
+/docs/ @hazarekiz
+/AGENTS.md @hazarekiz
+/README.md @hazarekiz

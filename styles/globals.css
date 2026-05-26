@@ -1,0 +1,281 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-background: 20 19 19;
+  --color-on-background: 229 226 225;
+  --color-surface: 20 19 19;
+  --color-surface-dim: 20 19 19;
+  --color-surface-bright: 58 57 57;
+  --color-surface-container-lowest: 14 14 14;
+  --color-surface-container-low: 28 27 27;
+  --color-surface-container: 32 31 31;
+  --color-surface-container-high: 43 42 42;
+  --color-surface-container-highest: 53 52 52;
+  --color-on-surface: 229 226 225;
+  --color-on-surface-variant: 196 199 199;
+  --color-graphite-surface: 18 18 18;
+  --color-graphite-muted: 26 26 26;
+  --color-industrial-silver: 209 209 209;
+  --color-data-orange: 204 85 0;
+  --color-warning-red: 255 0 0;
+  --color-outline: 142 145 146;
+  --color-outline-variant: 68 71 72;
+  --color-primary: 201 198 197;
+  --color-primary-container: 13 13 13;
+  --color-on-primary: 49 48 48;
+  --color-secondary-container: 255 85 64;
+  --color-grid: 255 255 255;
+  --grid-opacity: 0.02;
+  --technical-grid-opacity: 0.04;
+  color-scheme: dark;
+}
+
+.dark {
+  --color-background: 20 19 19;
+  --color-on-background: 229 226 225;
+  --color-surface: 20 19 19;
+  --color-surface-dim: 20 19 19;
+  --color-surface-bright: 58 57 57;
+  --color-surface-container-lowest: 14 14 14;
+  --color-surface-container-low: 28 27 27;
+  --color-surface-container: 32 31 31;
+  --color-surface-container-high: 43 42 42;
+  --color-surface-container-highest: 53 52 52;
+  --color-on-surface: 229 226 225;
+  --color-on-surface-variant: 196 199 199;
+  --color-graphite-surface: 18 18 18;
+  --color-graphite-muted: 26 26 26;
+  --color-industrial-silver: 209 209 209;
+  --color-data-orange: 204 85 0;
+  --color-warning-red: 255 0 0;
+  --color-outline: 142 145 146;
+  --color-outline-variant: 68 71 72;
+  --color-primary: 201 198 197;
+  --color-primary-container: 13 13 13;
+  --color-on-primary: 49 48 48;
+  --color-secondary-container: 255 85 64;
+  --color-grid: 255 255 255;
+  --grid-opacity: 0.02;
+  --technical-grid-opacity: 0.04;
+  color-scheme: dark;
+}
+
+.light {
+  --color-background: 244 242 238;
+  --color-on-background: 23 22 21;
+  --color-surface: 235 232 226;
+  --color-surface-dim: 226 222 214;
+  --color-surface-bright: 255 255 255;
+  --color-surface-container-lowest: 255 255 255;
+  --color-surface-container-low: 237 234 228;
+  --color-surface-container: 228 224 216;
+  --color-surface-container-high: 216 211 202;
+  --color-surface-container-highest: 203 197 186;
+  --color-on-surface: 23 22 21;
+  --color-on-surface-variant: 75 74 72;
+  --color-graphite-surface: 246 244 240;
+  --color-graphite-muted: 210 205 196;
+  --color-industrial-silver: 47 49 51;
+  --color-data-orange: 151 69 9;
+  --color-warning-red: 214 0 0;
+  --color-outline: 114 112 109;
+  --color-outline-variant: 184 178 168;
+  --color-primary: 42 40 38;
+  --color-primary-container: 255 247 244;
+  --color-on-primary: 255 247 244;
+  --color-secondary-container: 255 95 76;
+  --color-grid: 20 19 19;
+  --grid-opacity: 0.045;
+  --technical-grid-opacity: 0.08;
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: rgb(var(--color-background));
+  scroll-behavior: smooth;
+  overflow-x: clip;
+}
+
+body {
+  overflow-x: clip;
+  min-height: 100vh;
+  background:
+    linear-gradient(rgb(var(--color-grid) / var(--grid-opacity)) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(var(--color-grid) / var(--grid-opacity)) 1px, transparent 1px),
+    rgb(var(--color-background));
+  background-size: 40px 40px;
+  color: rgb(var(--color-on-surface));
+  overscroll-behavior-x: none;
+  overscroll-behavior-y: auto;
+}
+
+a,
+button,
+input,
+textarea,
+select {
+  outline-offset: 4px;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 1px solid rgb(var(--color-warning-red));
+}
+
+::selection {
+  background: rgb(var(--color-warning-red));
+  color: rgb(var(--color-primary-container));
+}
+
+.technical-grid {
+  background-image:
+    linear-gradient(
+      rgb(var(--color-industrial-silver) / var(--technical-grid-opacity)) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgb(var(--color-industrial-silver) / var(--technical-grid-opacity)) 1px,
+      transparent 1px
+    );
+  background-size: 48px 48px;
+}
+
+.masked-image {
+  clip-path: inset(0 0 0 0);
+}
+
+.theme-toggle-action-dark {
+  display: none;
+}
+
+.dark .theme-toggle-action-light {
+  display: inline;
+}
+
+.dark .theme-toggle-action-dark {
+  display: none;
+}
+
+.light .theme-toggle-action-light {
+  display: none;
+}
+
+.light .theme-toggle-action-dark {
+  display: inline;
+}
+
+.reticle-corners::before,
+.reticle-corners::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  width: 10px;
+  height: 10px;
+  border-color: rgb(var(--color-warning-red));
+  opacity: 0;
+  transition:
+    opacity 420ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 420ms cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+.reticle-corners::before {
+  top: 0;
+  left: 0;
+  border-top-width: 1px;
+  border-left-width: 1px;
+  transform: translate(-2px, -2px) scale(0.82);
+  transform-origin: top left;
+}
+
+.reticle-corners::after {
+  right: 0;
+  bottom: 0;
+  border-right-width: 1px;
+  border-bottom-width: 1px;
+  transform: translate(2px, 2px) scale(0.82);
+  transform-origin: bottom right;
+}
+
+.reticle-corners:hover::before,
+.reticle-corners:hover::after,
+.reticle-corners:focus-within::before,
+.reticle-corners:focus-within::after {
+  opacity: 1;
+  transform: translate(0, 0) scale(1);
+}
+
+.product-card-title {
+  overflow-wrap: normal;
+  word-break: normal;
+  hyphens: none;
+  font-size: 21px;
+  line-height: 1.18;
+}
+
+@media (min-width: 640px) {
+  .product-card-title {
+    font-size: 22px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .product-card-title {
+    font-size: 23px;
+  }
+}
+
+.industry-card-active {
+  animation: dossier-fade-in 560ms cubic-bezier(0.22, 1, 0.36, 1);
+  opacity: 1;
+  will-change: opacity, transform;
+}
+
+.scrollbar-none {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+
+@keyframes dossier-fade-in {
+  0% {
+    opacity: 0.24;
+    transform: translate3d(0, 18px, 0);
+  }
+  55% {
+    opacity: 0.88;
+    transform: translate3d(0, 4px, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.001ms !important;
+  }
+}

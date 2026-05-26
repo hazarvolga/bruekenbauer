@@ -1,0 +1,49 @@
+# ── Dependencies ────────────────────────────────────────────────
+node_modules/
+.pnpm-store/
+
+# ── Next.js ─────────────────────────────────────────────────────
+.next/
+out/
+build/
+
+# ── Environment ─────────────────────────────────────────────────
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+apikey.md
+
+# ── Tooling cache ───────────────────────────────────────────────
+.eslintcache
+.prettiercache
+tsconfig.tsbuildinfo
+*.tsbuildinfo
+
+# ── OS / editor ─────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+.vscode/settings.json
+.idea/
+
+# ── Playwright ──────────────────────────────────────────────────
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+
+# ── Misc ────────────────────────────────────────────────────────
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ── Local prototype exports (not part of the Next.js app) ───────
+brueckenbauer_*_motion_ready/
+cinematic_macro/
+tmp/
+urunler/
+.vercel
+public/images

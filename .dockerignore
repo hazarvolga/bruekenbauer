@@ -1,0 +1,39 @@
+# Git
+.git/
+.gitignore
+
+# Node
+node_modules/
+npm-debug.log*
+pnpm-debug.log*
+
+# Next.js
+.next/
+out/
+
+# Dev tooling
+.husky/
+playwright-report/
+test-results/
+coverage/
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Editor / OS
+.DS_Store
+.vscode/
+.idea/
+*.log
+
+# Prototype exports (not part of the app)
+brueckenbauer_*_motion_ready/
+cinematic_macro/
+tmp/
+urunler/
+
+# Docs (not needed in container)
+docs/
+*.md

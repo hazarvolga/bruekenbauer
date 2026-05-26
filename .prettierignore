@@ -1,0 +1,7 @@
+.next/
+node_modules/
+pnpm-lock.yaml
+brueckenbauer_*_motion_ready/
+cinematic_macro/
+tmp/
+urunler/
