@@ -1,8 +1,8 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import Image from "next/image";
 import { TechnicalButton } from "@/components/layout/TechnicalButton";
 import { PageShell } from "@/components/motion/MotionProvider";
-import { ThemedProductImage } from "@/components/product/ThemedProductImage";
 import {
   getLocalizedProduct,
   localizePath,
@@ -31,10 +31,10 @@ export default async function ProductDetailPage({
     <PageShell className="min-h-screen pt-20 md:ml-20">
       <section className="grid min-h-[calc(100vh-80px)] lg:grid-cols-[1.1fr_0.9fr]">
         <div className="relative min-h-[460px] overflow-hidden border-b border-graphite-muted bg-surface-container-lowest lg:border-b-0 lg:border-r">
-          <ThemedProductImage
-            src={product.image}
-            darkSrc={product.imageDark}
+          <Image
+            src={product.imageDark ?? product.image}
             alt=""
+            fill
             priority
             sizes="(min-width: 1024px) 55vw, 100vw"
             className="object-cover opacity-90"

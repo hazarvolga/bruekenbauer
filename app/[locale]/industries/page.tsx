@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ThemedProductImage } from "@/components/product/ThemedProductImage";
+import Image from "next/image";
 import type { Metadata } from "next";
 import { PageShell } from "@/components/motion/MotionProvider";
 import { applications } from "@/data/applications";
@@ -59,9 +59,10 @@ export default async function IndustriesPage({ params }: { params: Promise<{ loc
               <p className="mt-5 font-mono text-data-sm uppercase text-outline">{app.summary}</p>
             </div>
             <div className="absolute bottom-0 left-0 right-0 h-28 overflow-hidden transition-all duration-700 ease-out group-hover:h-36">
-              <ThemedProductImage
+              <Image
                 src={app.heroImage}
                 alt=""
+                fill
                 sizes="(min-width: 1280px) 34vw, (min-width: 768px) 50vw, 100vw"
                 className="group-hover:scale-102 object-cover object-center transition-transform duration-700 ease-out"
               />

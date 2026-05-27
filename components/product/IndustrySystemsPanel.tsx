@@ -1,9 +1,9 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useRef, useState } from "react";
 import type { Product } from "@/data/products";
-import { ThemedProductImage } from "./ThemedProductImage";
 import { cn } from "@/lib/utils";
 
 export function IndustrySystemsPanel({
@@ -176,10 +176,10 @@ export function IndustrySystemsPanel({
                 )}
               >
                 <div className="relative aspect-[4/3] overflow-hidden border border-graphite-muted bg-surface-container-lowest">
-                  <ThemedProductImage
-                    src={product.image}
-                    darkSrc={product.imageDark}
+                  <Image
+                    src={product.imageDark ?? product.image}
                     alt=""
+                    fill
                     sizes="220px"
                     className="object-cover"
                   />

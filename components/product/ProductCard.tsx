@@ -1,7 +1,7 @@
 import Link from "next/link";
+import Image from "next/image";
 import { localizePath } from "@/data/localizedContent";
 import type { Product } from "@/data/products";
-import { ThemedProductImage } from "./ThemedProductImage";
 
 export function ProductCard({ product, locale = "en" }: { product: Product; locale?: string }) {
   return (
@@ -12,10 +12,10 @@ export function ProductCard({ product, locale = "en" }: { product: Product; loca
         aria-label={`Open ${product.name}`}
       />
       <div className="relative mb-6 aspect-[4/3] overflow-hidden border border-graphite-muted bg-surface-container-lowest">
-        <ThemedProductImage
-          src={product.image}
-          darkSrc={product.imageDark}
+        <Image
+          src={product.imageDark ?? product.image}
           alt=""
+          fill
           sizes="(min-width: 768px) 33vw, 100vw"
           className="group-hover:scale-102 object-cover transition-transform duration-700"
         />

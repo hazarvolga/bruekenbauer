@@ -1,5 +1,5 @@
-import { ThemedProductImage } from "@/components/product/ThemedProductImage";
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { TechnicalButton } from "@/components/layout/TechnicalButton";
@@ -40,10 +40,10 @@ export default async function PowerManagementDetailPage({ params }: Props) {
     <PageShell className="min-h-screen pt-20 md:ml-20">
       <section className="grid border-b border-graphite-muted lg:grid-cols-[0.9fr_1.1fr]">
         <div className="relative min-h-[360px] overflow-hidden border-b border-graphite-muted bg-surface-container-lowest lg:min-h-[560px] lg:border-b-0 lg:border-r">
-          <ThemedProductImage
+          <Image
             src={family.image}
-            darkSrc={family.image}
             alt=""
+            fill
             priority
             sizes="(min-width: 1024px) 48vw, 100vw"
             className="hover:scale-102 object-cover transition-transform duration-700"

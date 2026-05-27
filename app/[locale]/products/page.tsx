@@ -1,6 +1,6 @@
 import Link from "next/link";
+import Image from "next/image";
 import { PageShell } from "@/components/motion/MotionProvider";
-import { ThemedProductImage } from "@/components/product/ThemedProductImage";
 import { getProductGroupCopy, localizePath } from "@/data/localizedContent";
 import { productTaxonomy } from "@/data/productTaxonomy";
 import { products } from "@/data/products";
@@ -37,10 +37,10 @@ export default async function ProductsPage({ params }: { params: Promise<{ local
               className="reticle-corners group relative overflow-hidden border border-graphite-muted bg-surface-container-low/50 p-5 backdrop-blur-xl transition-colors hover:border-industrial-silver focus-visible:border-warning-red focus-visible:outline-none"
             >
               <div className="relative mb-6 aspect-[4/3] overflow-hidden border border-graphite-muted bg-surface-container-lowest">
-                <ThemedProductImage
+                <Image
                   src={category.image}
-                  darkSrc={(category as Record<string, string>).imageDark}
                   alt=""
+                  fill
                   sizes="(min-width: 1280px) 25vw, (min-width: 768px) 50vw, 100vw"
                   className="group-hover:scale-102 object-cover transition-transform duration-700"
                 />

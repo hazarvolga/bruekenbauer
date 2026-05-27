@@ -3,7 +3,6 @@ import Link from "next/link";
 import { TechnicalButton } from "@/components/layout/TechnicalButton";
 import { PageShell } from "@/components/motion/MotionProvider";
 import { CurtainReveal } from "@/components/motion/Reveals";
-import { ThemedProductImage } from "@/components/product/ThemedProductImage";
 import { getPowerFamilyCopy, localizePath, normalizeLocale } from "@/data/localizedContent";
 import {
   powerManagementFamilies,
@@ -104,10 +103,10 @@ export default async function IntroPage({ params }: { params: Promise<{ locale: 
                 aria-label={`Open ${family.name} detail dossier`}
               />
               <div className="relative aspect-[16/10] overflow-hidden border border-graphite-muted bg-surface-container-lowest md:aspect-auto md:min-h-[320px]">
-                <ThemedProductImage
+                <Image
                   src={family.image}
-                  darkSrc={family.image}
                   alt=""
+                  fill
                   sizes="(min-width: 768px) 40vw, 100vw"
                   className="group-hover:scale-102 object-cover transition-transform duration-700"
                 />
