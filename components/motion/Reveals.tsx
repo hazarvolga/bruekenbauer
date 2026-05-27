@@ -1,13 +1,13 @@
 "use client";
 
 import type { ReactNode } from "react";
+import { motion, useReducedMotion } from "framer-motion";
 import {
   curtainReveal,
   maskedImageReveal,
   staggerText,
   staggerTextItem,
 } from "@/lib/motion.config";
-import { motion, useReducedMotion } from "./MotionProvider";
 import { cn } from "@/lib/utils";
 
 export function CurtainReveal({
