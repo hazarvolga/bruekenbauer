@@ -3,6 +3,7 @@ import { JetBrains_Mono } from "next/font/google";
 import "@/styles/globals.css";
 import { Providers } from "./providers";
 import { SiteChrome } from "@/components/layout/SiteChrome";
+import { routing } from "@/i18n/routing";
 
 const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
@@ -14,20 +15,27 @@ const jetbrainsMono = JetBrains_Mono({
 
 import { getTranslations } from "next-intl/server";
 
+const getBaseUrl = () =>
+  (process.env.NEXT_PUBLIC_SITE_URL || "https://bruekenbauer.vercel.app").replace(/\/$/, "");
+
+const getLocalizedUrl = (baseUrl: string, locale: string) =>
+  locale === routing.defaultLocale ? baseUrl : `${baseUrl}/${locale}`;
+
 export async function generateMetadata({
-  params
+  params,
 }: {
-  params: Promise<{ locale: string }>
+  params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "MetaData" });
 
   const title = t("title");
   const description = t("description");
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://brueckenbauer.de";
-  const url = `${baseUrl}/${locale}`;
+  const baseUrl = getBaseUrl();
+  const url = getLocalizedUrl(baseUrl, locale);
 
   return {
+    metadataBase: new URL(baseUrl),
     title,
     description,
     openGraph: {
@@ -42,8 +50,8 @@ export async function generateMetadata({
           width: 1200,
           height: 630,
           alt: title,
-        }
-      ]
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",
@@ -54,7 +62,7 @@ export async function generateMetadata({
     alternates: {
       canonical: url,
       languages: {
-        en: `${baseUrl}/en`,
+        en: baseUrl,
         de: `${baseUrl}/de`,
         fr: `${baseUrl}/fr`,
       },
@@ -72,25 +80,24 @@ export async function generateMetadata({
  * - Added <Providers> wrapper containing ThemeProvider
  * - suppressHydrationWarning remains — required by next-themes
  */
-import {NextIntlClientProvider} from 'next-intl';
-import {getMessages} from 'next-intl/server';
-import {notFound} from 'next/navigation';
-import {routing} from '@/i18n/routing';
+import { NextIntlClientProvider } from "next-intl";
+import { getMessages } from "next-intl/server";
+import { notFound } from "next/navigation";
 
 export function generateStaticParams() {
-  return routing.locales.map((locale) => ({locale}));
+  return routing.locales.map((locale) => ({ locale }));
 }
 
 export default async function RootLayout({
   children,
-  params
+  params,
 }: {
   children: React.ReactNode;
-  params: Promise<{locale: string}>;
+  params: Promise<{ locale: string }>;
 }) {
-  const {locale} = await params;
+  const { locale } = await params;
 
-  if (!routing.locales.includes(locale as typeof routing.locales[number])) {
+  if (!routing.locales.includes(locale as (typeof routing.locales)[number])) {
     notFound();
   }
 

@@ -1,34 +1,56 @@
-import { test, expect } from "@playwright/test";
+import { expect, test } from "@playwright/test";
+
+const titlePattern = /brüeckenbauer/i;
 
 const routes = [
-  { path: "/", title: "BRUECKENBAUER GMBH" },
-  { path: "/intro", title: "BRUECKENBAUER" },
-  { path: "/products", title: "BRUECKENBAUER" },
-  { path: "/power-management/igbt", title: "BRUECKENBAUER" },
-  { path: "/power-management/sic", title: "BRUECKENBAUER" },
-  { path: "/power-management/mosfet", title: "BRUECKENBAUER" },
-  { path: "/power-management/converters", title: "BRUECKENBAUER" },
-  { path: "/search", title: "BRUECKENBAUER" },
-  { path: "/rfq", title: "BRUECKENBAUER" },
-  { path: "/industries", title: "BRUECKENBAUER" },
-  { path: "/industries/hvac", title: "BRUECKENBAUER" },
-  { path: "/oem-supply", title: "BRUECKENBAUER" },
-  { path: "/logistics", title: "BRUECKENBAUER" },
-  { path: "/compliance", title: "BRUECKENBAUER" },
-  { path: "/documents", title: "BRUECKENBAUER" },
-  { path: "/contact", title: "BRUECKENBAUER" },
-  { path: "/about", title: "BRUECKENBAUER" },
+  "/",
+  "/de",
+  "/fr",
+  "/intro",
+  "/de/intro",
+  "/fr/intro",
+  "/products",
+  "/de/products",
+  "/fr/products",
+  "/products/power-management",
+  "/de/products/power-management",
+  "/fr/products/power-management",
+  "/product/chip-ntc-thermistors",
+  "/de/product/chip-ntc-thermistors",
+  "/fr/product/chip-ntc-thermistors",
+  "/power-management/igbt",
+  "/de/power-management/igbt",
+  "/fr/power-management/igbt",
+  "/industries",
+  "/de/industries",
+  "/fr/industries",
+  "/industries/aerospace-and-defense",
+  "/de/industries/aerospace-and-defense",
+  "/fr/industries/aerospace-and-defense",
+  "/search",
+  "/de/search",
+  "/fr/search",
+  "/rfq",
+  "/de/rfq",
+  "/fr/rfq",
+  "/oem-supply",
+  "/logistics",
+  "/compliance",
+  "/documents",
+  "/contact",
+  "/about",
 ];
 
-test.describe("Smoke — all routes return 200 and have correct title", () => {
-  for (const { path, title } of routes) {
-    test(`${path}`, async ({ page }) => {
-      const response = await page.goto(path);
-      expect(response?.status()).toBe(200);
-      await expect(page).toHaveTitle(new RegExp(title, "i"));
-      // No JS errors in console
+test.describe("Smoke — localized routes return 200 and brand title", () => {
+  for (const path of routes) {
+    test(path, async ({ page }) => {
       const errors: string[] = [];
       page.on("pageerror", (err) => errors.push(err.message));
+
+      const response = await page.goto(path);
+
+      expect(response?.status()).toBe(200);
+      await expect(page).toHaveTitle(titlePattern);
       await page.waitForLoadState("networkidle");
       expect(errors).toHaveLength(0);
     });
