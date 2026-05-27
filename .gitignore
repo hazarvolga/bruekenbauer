@@ -46,4 +46,6 @@ cinematic_macro/
 tmp/
 urunler/
 .vercel
-public/images
+
+# ── Görsel arşivi (kullanılmayan yüksek çözünürlüklü varyantlar) ──
+gorsel-arsivi/
