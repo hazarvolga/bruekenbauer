@@ -114,5 +114,9 @@
     "acoustics": "Akustik",
     "pressure-and-flow-sensors": "Druck- & Durchflusssensoren",
     "current-and-position-sensors": "Strom- & Positionssensoren"
+  },
+  "MetaData": {
+    "title": "brüeckenbauer GmbH: Wir beraten nicht nur",
+    "description": "Wir verbinden, gestalten und befähigen."
   }
 }

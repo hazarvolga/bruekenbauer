@@ -12,24 +12,55 @@ const jetbrainsMono = JetBrains_Mono({
   preload: true,
 });
 
-const siteTitle = "brüeckenbauer GmbH: We don't just advise";
-const siteDescription = "We connect, design and empower.";
+import { getTranslations } from "next-intl/server";
 
-export const metadata: Metadata = {
-  title: siteTitle,
-  description: siteDescription,
-  openGraph: {
-    title: siteTitle,
-    description: siteDescription,
-    siteName: "brüeckenbauer GmbH",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: siteTitle,
-    description: siteDescription,
-  },
-};
+export async function generateMetadata({
+  params
+}: {
+  params: Promise<{ locale: string }>
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "MetaData" });
+
+  const title = t("title");
+  const description = t("description");
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://brueckenbauer.de";
+  const url = `${baseUrl}/${locale}`;
+
+  return {
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      siteName: "brüeckenbauer GmbH",
+      url,
+      type: "website",
+      images: [
+        {
+          url: "/images/product-groups/power-management.png",
+          width: 1200,
+          height: 630,
+          alt: title,
+        }
+      ]
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: ["/images/product-groups/power-management.png"],
+    },
+    alternates: {
+      canonical: url,
+      languages: {
+        en: `${baseUrl}/en`,
+        de: `${baseUrl}/de`,
+        fr: `${baseUrl}/fr`,
+      },
+    },
+  };
+}
 
 /**
  * RootLayout — v02
