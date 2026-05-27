@@ -43,7 +43,7 @@ export const powerManagementFamilies: PowerManagementFamily[] = [
     slug: "igbt",
     name: "IGBT",
     label: "Insulated Gate Bipolar Transistor",
-    image: "/images/products-premium/dark/igbt.png",
+    image: "/images/products-premium/dark/igbt.webp",
     summary:
       "High-density switching modules for industrial drives, automotive systems, renewable energy, and appliance platforms.",
     variants: ["Half Bridge", "3 Phase Bridge", "SiC Module"],
@@ -92,7 +92,7 @@ export const powerManagementFamilies: PowerManagementFamily[] = [
     slug: "sic",
     name: "SiC MOSFET",
     label: "Silicon carbide switching architecture",
-    image: "/images/products-premium/dark/sic.png",
+    image: "/images/products-premium/dark/sic.webp",
     summary:
       "Thermally resilient silicon-carbide devices for compact, efficient, high-frequency power conversion.",
     variants: ["Half Bridge", "Power Diodes", "3 Phase"],
@@ -140,7 +140,7 @@ export const powerManagementFamilies: PowerManagementFamily[] = [
     slug: "mosfet",
     name: "MOSFET",
     label: "Metal-oxide-semiconductor field-effect transistor",
-    image: "/images/products-premium/dark/mosfet.png",
+    image: "/images/products-premium/dark/mosfet.webp",
     summary:
       "Discrete and bare-die MOSFET options for scalable low and medium power switching designs.",
     variants: ["Rectifiers", "MOSFET Modules", "Power Diodes"],
@@ -186,7 +186,7 @@ export const powerManagementFamilies: PowerManagementFamily[] = [
     slug: "converters",
     name: "Converters",
     label: "Regulated power interfaces",
-    image: "/images/products-premium/dark/converters.png",
+    image: "/images/products-premium/dark/converters.webp",
     summary: "AC/DC, DC/DC, power supply, and plug converter options for protected power delivery.",
     variants: ["AC/DC", "DC/DC", "Power Supply", "Plug Converters"],
     performance: [
