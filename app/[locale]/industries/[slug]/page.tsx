@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { PageShell } from "@/components/motion/MotionProvider";
 import { IndustrySystemsPanel } from "@/components/product/IndustrySystemsPanel";
@@ -61,11 +62,17 @@ export default async function IndustryDetailPage({
 
   return (
     <PageShell className="relative min-h-screen overflow-x-hidden pt-20 md:ml-20">
-      <div
-        className="absolute inset-0 bg-cover bg-center opacity-[0.28] dark:opacity-45"
-        style={{ backgroundImage: `url(${application.heroImage})` }}
-      />
-      <div className="absolute inset-0 bg-background/80 dark:bg-background/75" />
+      <div className="absolute inset-0 z-0">
+        <Image
+          src={application.heroImage}
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover opacity-20 dark:opacity-45 mix-blend-multiply dark:mix-blend-luminosity grayscale transition-opacity duration-700"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/45 to-background/10" />
+      </div>
       <section className="relative z-10 flex min-h-[calc(100vh-80px)] items-center px-margin-mobile py-16 md:pl-margin-desktop md:pr-20 lg:pr-24">
         <div className="w-full">
           <div className="mb-4 flex items-center gap-2 font-mono text-label-xs uppercase tracking-[0.18em] text-warning-red">

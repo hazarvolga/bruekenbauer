@@ -1,0 +1,39 @@
+{
+  "Navigation": {
+    "home": "Startseite",
+    "about": "Über uns",
+    "products": "Produkte",
+    "industries": "Branchen",
+    "contact": "Kontakt",
+    "finder": "Finder",
+    "rfq": "Anfrage (RFQ)",
+    "language": "Sprache"
+  },
+  "Common": {
+    "open_detail_dossier": "Detaildossier öffnen",
+    "read_more": "Mehr erfahren"
+  },
+  "HomePage": {
+    "operational_layer": "Operational layer / level 02",
+    "title": "Strategische Partnerschaften für Elektroniksysteme",
+    "subtitle": "Strategische Partnerschaften und Technologieberatung für die Halbleiter- und Hochleistungselektronik.",
+    "metrics": {
+      "supply_continuity": "Supply continuity",
+      "active_classes": "Active component classes",
+      "latency": "Procurement latency",
+      "compliance": "Compliance state"
+    },
+    "cta": {
+      "open_dossier": "Dossier öffnen",
+      "initiate_rfq": "RFQ starten"
+    },
+    "features": {
+      "search_title": "Suche",
+      "search_desc": "Technische Suche mit prädiktiven Bauteil-Übereinstimmungen.",
+      "compliance_title": "Compliance",
+      "compliance_desc": "Rückverfolgbarkeit, Qualifizierung und Protokollprüfung.",
+      "oem_title": "OEM Supply",
+      "oem_desc": "Massenbeschaffung und Logistikarchitektur."
+    }
+  }
+}

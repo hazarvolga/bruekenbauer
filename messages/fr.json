@@ -1,0 +1,39 @@
+{
+  "Navigation": {
+    "home": "Accueil",
+    "about": "À propos",
+    "products": "Produits",
+    "industries": "Industries",
+    "contact": "Contact",
+    "finder": "Recherche",
+    "rfq": "Demande de devis",
+    "language": "Langue"
+  },
+  "Common": {
+    "open_detail_dossier": "Ouvrir le dossier détaillé",
+    "read_more": "En savoir plus"
+  },
+  "HomePage": {
+    "operational_layer": "Operational layer / level 02",
+    "title": "Partenariats Stratégiques en Électronique",
+    "subtitle": "Partenariats stratégiques et conseil technologique pour l'industrie de l'électronique avancée et des semi-conducteurs.",
+    "metrics": {
+      "supply_continuity": "Supply continuity",
+      "active_classes": "Active component classes",
+      "latency": "Procurement latency",
+      "compliance": "Compliance state"
+    },
+    "cta": {
+      "open_dossier": "Ouvrir le Dossier",
+      "initiate_rfq": "Initier RFQ"
+    },
+    "features": {
+      "search_title": "Recherche",
+      "search_desc": "Recherche technique avec correspondances de pièces prédictives.",
+      "compliance_title": "Conformité",
+      "compliance_desc": "Traçabilité, qualification et revue de protocole.",
+      "oem_title": "Approvisionnement OEM",
+      "oem_desc": "Achats en gros et architecture logistique."
+    }
+  }
+}

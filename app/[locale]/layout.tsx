@@ -41,13 +41,34 @@ export const metadata: Metadata = {
  * - Added <Providers> wrapper containing ThemeProvider
  * - suppressHydrationWarning remains — required by next-themes
  */
-export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+import {NextIntlClientProvider} from 'next-intl';
+import {getMessages} from 'next-intl/server';
+import {notFound} from 'next/navigation';
+import {routing} from '@/i18n/routing';
+
+export default async function RootLayout({
+  children,
+  params
+}: {
+  children: React.ReactNode;
+  params: Promise<{locale: string}>;
+}) {
+  const {locale} = await params;
+
+  if (!routing.locales.includes(locale as typeof routing.locales[number])) {
+    notFound();
+  }
+
+  const messages = await getMessages();
+
   return (
-    <html lang="en" className={jetbrainsMono.variable} suppressHydrationWarning>
+    <html lang={locale} className={jetbrainsMono.variable} suppressHydrationWarning>
       <body className="font-mono antialiased">
-        <Providers>
-          <SiteChrome>{children}</SiteChrome>
-        </Providers>
+        <NextIntlClientProvider messages={messages}>
+          <Providers>
+            <SiteChrome>{children}</SiteChrome>
+          </Providers>
+        </NextIntlClientProvider>
       </body>
     </html>
   );

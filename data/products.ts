@@ -587,6 +587,7 @@ export const products: Product[] = [
     stock: "Series supply",
     leadTime: "12 days",
     image: "/images/products/buzzers-ai.png",
+    imageDark: "/images/products-premium/dark/buzzers.webp",
     dossier: "Piezo, self-drive, and transducer buzzer platforms for acoustic signaling.",
     specs: {
       types: "Piezo / self drive / transducer",
@@ -604,6 +605,7 @@ export const products: Product[] = [
     stock: "Series supply",
     leadTime: "14 days",
     image: "/images/products/magnetic-types-ai.png",
+    imageDark: "/images/products-premium/dark/magnetic-types.webp",
     dossier: "Magnetic transducer, buzzer, and SMD acoustic components.",
     specs: {
       types: "Transducer / buzzer / SMD",
@@ -621,6 +623,7 @@ export const products: Product[] = [
     stock: "Qualified stock",
     leadTime: "16 days",
     image: "/images/products/microphones-ai.png",
+    imageDark: "/images/products-premium/dark/microphones.webp",
     dossier: "Omni-directional, uni-directional, and noise-canceling microphone options.",
     specs: {
       patterns: "Omni / uni directional",
@@ -638,6 +641,7 @@ export const products: Product[] = [
     stock: "Project build",
     leadTime: "24 days",
     image: "/images/products/piezos-ai.png",
+    imageDark: "/images/products-premium/dark/piezos.webp",
     dossier: "Piezo acoustic elements with feedback and non-feedback configurations.",
     specs: {
       modes: "Feedback / non feedback",
@@ -655,6 +659,7 @@ export const products: Product[] = [
     stock: "Series supply",
     leadTime: "15 days",
     image: "/images/products/receivers-ai.png",
+    imageDark: "/images/products-premium/dark/receivers.webp",
     dossier: "Dynamic and piezo receiver options for compact acoustic output assemblies.",
     specs: { types: "Dynamic / piezo", function: "Receiver output", format: "Compact module" },
   },
@@ -668,6 +673,7 @@ export const products: Product[] = [
     stock: "Series supply",
     leadTime: "13 days",
     image: "/images/products/speakers-ai.png",
+    imageDark: "/images/products-premium/dark/speakers.webp",
     dossier: "Mylar, loud, and SMD speaker options for compact electronic products.",
     specs: {
       types: "Mylar / loud / SMD",

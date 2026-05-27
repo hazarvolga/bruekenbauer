@@ -177,7 +177,7 @@ export function IndustrySystemsPanel({
                     darkSrc={product.imageDark}
                     alt=""
                     sizes="220px"
-                    className="object-cover opacity-85"
+                    className="object-cover"
                   />
                 </div>
                 <div className="flex flex-col justify-center">

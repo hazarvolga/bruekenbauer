@@ -1,27 +1,24 @@
 "use client";
 
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { Link, usePathname } from "@/i18n/routing";
 import { useEffect, useState } from "react";
 import { ThemeToggle } from "@/components/theme/ThemeToggle";
+import { LanguageSwitcher } from "@/components/navigation/LanguageSwitcher";
+import { useTranslations } from "next-intl";
 import { cn } from "@/lib/utils";
 
+// Links are mapped using translation keys instead of hardcoded labels
 const primaryLinks = [
-  { href: "/", label: "Home" },
-  { href: "/about", label: "About" },
-  { href: "/products", label: "Products" },
-  { href: "/industries", label: "Industries" },
-  { href: "/contact", label: "Contact" },
-];
-
-const socialLinks = [
-  { label: "LinkedIn", icon: "in" },
-  { label: "X", icon: "x" },
-  { label: "YouTube", icon: "yt" },
+  { href: "/", key: "home" },
+  { href: "/about", key: "about" },
+  { href: "/products", key: "products" },
+  { href: "/industries", key: "industries" },
+  { href: "/contact", key: "contact" },
 ];
 
 export function TopNav() {
   const pathname = usePathname();
+  const t = useTranslations("Navigation");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
@@ -31,31 +28,22 @@ export function TopNav() {
   return (
     <header className="fixed left-0 top-0 z-50 w-full border-b border-graphite-muted bg-surface/90 backdrop-blur-md">
       <div className="flex h-10 items-center justify-between border-b border-graphite-muted px-6 py-1.5 md:px-10">
-        <div className="flex items-center gap-3" aria-label="Social channels">
-          {socialLinks.map((item) => (
-            <button
-              key={item.label}
-              type="button"
-              aria-label={item.label}
-              className="inline-flex h-6 min-w-6 items-center justify-center border border-transparent px-1 font-mono text-[9px] font-bold uppercase leading-none tracking-[0.08em] text-outline transition-colors hover:border-warning-red hover:text-warning-red"
-            >
-              {item.icon}
-            </button>
-          ))}
+        <div className="flex items-center gap-3" aria-label="Language selection">
+          <LanguageSwitcher />
         </div>
         <div className="flex items-center gap-3 font-mono text-[9px] uppercase tracking-[0.14em] text-industrial-silver">
           <Link
             href="/search"
             className="hidden transition-colors hover:text-warning-red sm:inline"
           >
-            Finder
+            {t("finder")}
           </Link>
           <ThemeToggle className="h-7 min-w-12 px-2 text-[9px] tracking-[0.12em]" />
           <Link
             href="/rfq"
             className="inline-flex h-7 items-center border border-warning-red px-4 text-warning-red transition-colors hover:bg-warning-red hover:text-primary-container"
           >
-            RFQ
+            {t("rfq")}
           </Link>
         </div>
       </div>
@@ -73,7 +61,7 @@ export function TopNav() {
               href={link.href}
               className="border-b border-transparent pb-1 font-mono text-data-sm uppercase tracking-[0.18em] text-on-surface-variant transition-colors hover:border-warning-red hover:text-warning-red"
             >
-              {link.label}
+              {t(link.key)}
             </Link>
           ))}
         </nav>
@@ -119,15 +107,15 @@ export function TopNav() {
           <div className="grid gap-2 px-margin-mobile py-4">
             {[
               ...primaryLinks,
-              { href: "/search", label: "Finder" },
-              { href: "/rfq", label: "RFQ" },
+              { href: "/search", key: "finder" },
+              { href: "/rfq", key: "rfq" },
             ].map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 className="border border-graphite-muted bg-surface/55 px-4 py-3 font-mono text-data-sm uppercase tracking-[0.18em] text-on-surface-variant transition-colors hover:border-warning-red hover:text-warning-red"
               >
-                {link.label}
+                {t(link.key)}
               </Link>
             ))}
           </div>

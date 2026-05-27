@@ -61,9 +61,8 @@ We connect, design and empower.`}
             alt=""
             fill
             sizes="(min-width: 1024px) 55vw, 100vw"
-            className="object-cover opacity-80"
+            className="object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-background/65 via-transparent to-transparent" />
         </div>
       </section>
 

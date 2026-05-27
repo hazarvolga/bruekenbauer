@@ -1,4 +1,5 @@
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
+import { useTranslations } from "next-intl";
 import { HudMetric } from "@/components/layout/HudMetric";
 import { TechnicalButton } from "@/components/layout/TechnicalButton";
 import { PageShell } from "@/components/motion/MotionProvider";
@@ -6,6 +7,7 @@ import { MaskedImageFrame, StaggerText } from "@/components/motion/Reveals";
 import { images } from "@/lib/assets";
 
 export default function HomePage() {
+  const t = useTranslations("HomePage");
   return (
     <PageShell className="min-h-screen pt-20 md:pl-20">
       <section className="flex min-h-[calc(100vh-80px)] flex-col md:flex-row">
@@ -25,34 +27,33 @@ export default function HomePage() {
         <div className="flex flex-1 flex-col justify-center px-margin-mobile py-16 md:px-margin-desktop">
           <div className="mb-8 flex items-center gap-3 font-mono text-label-xs uppercase tracking-[0.18em] text-warning-red">
             <span className="h-1 w-1 bg-warning-red" />
-            Operational layer / level 02
+            {t("operational_layer")}
           </div>
           <h1 className="font-mono text-headline-lg-mobile uppercase leading-tight text-industrial-silver md:text-[40px]">
-            <StaggerText text="Strategic Collaboration in Electronics" />
+            <StaggerText text={t("title")} />
           </h1>
           <p className="mt-6 max-w-xl font-mono text-technical-md text-on-surface-variant">
-            Strategic partnerships and technology consulting for advanced electronics and
-            semiconductor industries.
+            {t("subtitle")}
           </p>
           <div className="mt-10 grid gap-gutter md:grid-cols-2">
-            <HudMetric label="Supply continuity" value="99.8%" tone="red" />
-            <HudMetric label="Active component classes" value="06" />
-            <HudMetric label="Procurement latency" value="12ms" />
-            <HudMetric label="Compliance state" value="REACH / RoHS" tone="orange" />
+            <HudMetric label={t("metrics.supply_continuity")} value="99.8%" tone="red" />
+            <HudMetric label={t("metrics.active_classes")} value="06" />
+            <HudMetric label={t("metrics.latency")} value="12ms" />
+            <HudMetric label={t("metrics.compliance")} value="REACH / RoHS" tone="orange" />
           </div>
           <div className="mt-10 flex flex-wrap gap-4">
-            <TechnicalButton href="/products">Open Dossier</TechnicalButton>
+            <TechnicalButton href="/products">{t("cta.open_dossier")}</TechnicalButton>
             <TechnicalButton href="/rfq" variant="ghost">
-              Initiate RFQ
+              {t("cta.initiate_rfq")}
             </TechnicalButton>
           </div>
         </div>
       </section>
       <section className="grid gap-gutter border-y border-graphite-muted bg-surface-container-lowest px-margin-mobile py-16 md:grid-cols-3 md:px-margin-desktop">
         {[
-          ["Search", "/search", "Technical finder with predictive part matches."],
-          ["Compliance", "/compliance", "Traceability, qualification, and protocol review."],
-          ["OEM Supply", "/oem-supply", "Bulk procurement and logistics architecture."],
+          [t("features.search_title"), "/search", t("features.search_desc")],
+          [t("features.compliance_title"), "/compliance", t("features.compliance_desc")],
+          [t("features.oem_title"), "/oem-supply", t("features.oem_desc")],
         ].map(([label, href, copy]) => (
           <Link
             key={href}

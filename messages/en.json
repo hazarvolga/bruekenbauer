@@ -1,0 +1,39 @@
+{
+  "Navigation": {
+    "home": "Home",
+    "about": "About",
+    "products": "Products",
+    "industries": "Industries",
+    "contact": "Contact",
+    "finder": "Finder",
+    "rfq": "RFQ",
+    "language": "Language"
+  },
+  "Common": {
+    "open_detail_dossier": "Open detail dossier",
+    "read_more": "Read more"
+  },
+  "HomePage": {
+    "operational_layer": "Operational layer / level 02",
+    "title": "Strategic Collaboration in Electronics",
+    "subtitle": "Strategic partnerships and technology consulting for advanced electronics and semiconductor industries.",
+    "metrics": {
+      "supply_continuity": "Supply continuity",
+      "active_classes": "Active component classes",
+      "latency": "Procurement latency",
+      "compliance": "Compliance state"
+    },
+    "cta": {
+      "open_dossier": "Open Dossier",
+      "initiate_rfq": "Initiate RFQ"
+    },
+    "features": {
+      "search_title": "Search",
+      "search_desc": "Technical finder with predictive part matches.",
+      "compliance_title": "Compliance",
+      "compliance_desc": "Traceability, qualification, and protocol review.",
+      "oem_title": "OEM Supply",
+      "oem_desc": "Bulk procurement and logistics architecture."
+    }
+  }
+}
