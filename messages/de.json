@@ -35,5 +35,54 @@
       "oem_title": "OEM Supply",
       "oem_desc": "Massenbeschaffung und Logistikarchitektur."
     }
+  },
+  "AboutPage": {
+    "label": "Swiss engineering precision",
+    "title_1": "Wir beraten nicht",
+    "title_2": "nur",
+    "description": "Wir bei der brückenbauer GmbH bauen Brücken - zwischen Disziplinen, Sektoren und Grenzen.\nSeit 2022 in der Schweiz ansässig, vereinen wir umfangreiche Erfahrung an der Schnittstelle von Politik, Verwaltung, Wirtschaft und Innovation. Dank eines breiten Netzwerks verbinden wir lokale Expertise mit einer globalen Perspektive und unterstützen unsere Kunden dabei, komplexe Herausforderungen zu meistern und neues Potenzial freizusetzen.\nWir verbinden, gestalten und befähigen.",
+    "services": {
+      "label": "Dienstleistungen",
+      "title": "Strategische und operative Unterstützung",
+      "and_more": "Und mehr...",
+      "active": "Aktiv",
+      "srv_01_title": "Strategische und operative Unterstützung",
+      "srv_01_copy": "Wir unterstützen oder leiten zielgerichtete Projekte und beraten unsere Kunden fundiert.",
+      "srv_02_title": "Kooperation und Verhandlungen",
+      "srv_02_copy": "Wir erleichtern die Zusammenarbeit mit Behörden, Geschäftspartnern oder anderen relevanten Stellen und bringen komplexe Interessen effizient zusammen.",
+      "srv_03_title": "Business Development",
+      "srv_03_copy": "Wir identifizieren Wachstumschancen, entwickeln Geschäftsmodelle und unterstützen unsere Kunden dabei, ihr volles Potenzial auszuschöpfen.",
+      "srv_04_title": "Teamverstärkung",
+      "srv_04_copy": "Kurzfristig und für einen definierten Zeitraum ergänzen wir die Teams unserer Kunden mit unserem Know-how, um Ressourcenengpässe zu überbrücken oder Projekte erfolgreich abzuschließen."
+    },
+    "sequence": {
+      "label": "Ablauf",
+      "title": "Von der Bedarfsermittlung bis zur langfristigen Unterstützung",
+      "phase": "Phase",
+      "step_1_title": "Bedürfnisse verstehen",
+      "step_1_copy": "Wir unterstützen Sie bei der Definition Ihrer Bedürfnisse und helfen Ihnen dabei, Mittel und Wege zu finden, Ihre Strategie umzusetzen und Ihre Ziele zu erreichen.",
+      "step_2_title": "Aktionsplan",
+      "step_2_copy": "Wir erstellen eine detaillierte Roadmap, die alle Phasen des Projekts und die umzusetzenden Maßnahmen umfasst.",
+      "step_3_title": "Lieferung und Support",
+      "step_3_copy": "Wir bieten die notwendige Unterstützung und alle damit verbundenen Elemente. Wir beraten Sie auch bei Ihrer langfristigen Strategie."
+    }
+  },
+  "ContactPage": {
+    "label": "Lieferantenanfrage",
+    "title": "Engineering Kontakt"
+  },
+  "IndustriesPage": {
+    "label": "Anwendungsbereiche",
+    "title": "Anwendungsbereiche",
+    "section_label": "Unsere Anwendungsbereiche",
+    "section_title": "Maßgeschneiderte Anwendungen",
+    "description": "Elektronische Komponenten für jede Anwendung - zuverlässig, vielseitig und individuell entwickelt. Von der Idee bis zur Serienproduktion liefern wir die passenden Komponenten für jede Anwendung. Als zuverlässiger Distributor für hochwertige elektronische Bauteile bieten wir mehr als nur ein umfangreiches Portfolio. Wir verstehen die Anforderungen unterschiedlichster Branchen und unterstützen unsere Kunden mit passenden Lösungen – schnell, kompetent und mit maximaler Versorgungssicherheit.",
+    "in_use_label": "Unsere Lösungen kommen zum Einsatz in"
+  },
+  "ProductsPage": {
+    "label": "Komponentenportfolio 2025",
+    "title": "Produktgruppen",
+    "description": "Archiv der Hauptkategorien aus dem Komponentenportfolio. Wählen Sie eine Dossiergruppe, um Bauteile auf Produktebene, Bildmaterial und technische Metadaten zu prüfen.",
+    "items": "Artikel"
   }
 }

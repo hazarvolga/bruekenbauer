@@ -3,6 +3,8 @@ import { ThemedProductImage } from "@/components/product/ThemedProductImage";
 import type { Metadata } from "next";
 import { PageShell } from "@/components/motion/MotionProvider";
 import { applications } from "@/data/applications";
+import { useTranslations } from "next-intl";
+import { setRequestLocale } from "next-intl/server";
 
 export const metadata: Metadata = {
   title: "Application Sectors | brückenbauer GmbH",
@@ -10,35 +12,33 @@ export const metadata: Metadata = {
     "Customized electronic component application sectors for aerospace, automotive, e-mobility, industrial automation, medical, HVAC, renewable energy, and building systems.",
 };
 
-export default function IndustriesPage() {
+export default function IndustriesPage({ params }: { params: { locale: string } }) {
+  setRequestLocale(params.locale);
+  const t = useTranslations("IndustriesPage");
+
   return (
     <PageShell className="min-h-screen px-margin-mobile pb-24 pt-32 md:ml-20 md:px-margin-desktop">
       <span className="font-mono text-label-xs uppercase tracking-[0.18em] text-warning-red">
-        Application sectors
+        {t("label")}
       </span>
       <h1 className="mt-5 max-w-5xl font-mono text-headline-lg-mobile uppercase text-on-surface md:text-display-xl">
-        Application Sectors
+        {t("title")}
       </h1>
       <section className="mt-10 grid gap-gutter border-y border-graphite-muted py-6 lg:grid-cols-12">
         <div className="lg:col-span-4">
           <div className="font-mono text-label-xs uppercase tracking-[0.18em] text-warning-red">
-            Our application sectors
+            {t("section_label")}
           </div>
           <h2 className="mt-4 max-w-md font-mono text-headline-lg-mobile uppercase text-industrial-silver md:text-headline-lg">
-            Customized applications
+            {t("section_title")}
           </h2>
         </div>
         <div className="min-w-0 lg:col-span-7 lg:col-start-6">
           <p className="max-w-none font-mono text-technical-md uppercase leading-normal text-on-surface-variant">
-            Electronic components for every application - reliable, versatile, and individually
-            developed. From idea to series production, we deliver the right components for every
-            application. As a reliable distributor of high-quality electronic components, we offer
-            more than an extensive portfolio. We understand the requirements of diverse industries
-            and support our customers with suitable solutions - quickly, competently, and with
-            maximum supply reliability.
+            {t("description")}
           </p>
           <div className="mt-6 border-l border-warning-red pl-5 font-mono text-label-xs uppercase tracking-[0.18em] text-warning-red">
-            Our solutions are used in
+            {t("in_use_label")}
           </div>
         </div>
       </section>

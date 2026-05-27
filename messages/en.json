@@ -35,5 +35,54 @@
       "oem_title": "OEM Supply",
       "oem_desc": "Bulk procurement and logistics architecture."
     }
+  },
+  "AboutPage": {
+    "label": "Swiss engineering precision",
+    "title_1": "We don't just",
+    "title_2": "advise",
+    "description": "At brückenbauer GmbH, we build bridges - between disciplines, sectors and borders.\nBased in Switzerland since 2022, we combine extensive experience at the intersection of politics, administration, business, and innovation. Thanks to a broad network, we connect local expertise with a global perspective and support our clients in mastering complex challenges and unlocking new potential.\nWe connect, design and empower.",
+    "services": {
+      "label": "Services",
+      "title": "Strategic and operational support",
+      "and_more": "And more...",
+      "active": "Active",
+      "srv_01_title": "Strategic and operational support",
+      "srv_01_copy": "We support or manage projects that are geared towards achieving clear goals, and we provide our clients with sound advice.",
+      "srv_02_title": "Cooperation and negotiations",
+      "srv_02_copy": "We facilitate cooperation with authorities, business partners or other relevant bodies and efficiently bring together complex interests.",
+      "srv_03_title": "Business development",
+      "srv_03_copy": "We identify growth opportunities, develop business models and support our clients in fully realizing their potential.",
+      "srv_04_title": "Strengthening the team",
+      "srv_04_copy": "In the short term and for a defined period, we supplement our customers' teams with our know-how to bridge resource gaps or to successfully complete projects."
+    },
+    "sequence": {
+      "label": "Operating sequence",
+      "title": "From need definition to long-term support",
+      "phase": "Phase",
+      "step_1_title": "Understanding your needs",
+      "step_1_copy": "We support you in defining your needs and help you finding means and ways to implement your strategy and achieve your goals.",
+      "step_2_title": "Action plan",
+      "step_2_copy": "We will create a detailed roadmap that includes all phases of the project and the measures to be implemented.",
+      "step_3_title": "Delivery and support",
+      "step_3_copy": "We provide the necessary support and all related elements. We also advise you on your long-term strategy."
+    }
+  },
+  "ContactPage": {
+    "label": "Supplier Inquiry",
+    "title": "Engineering Contact"
+  },
+  "IndustriesPage": {
+    "label": "Application sectors",
+    "title": "Application Sectors",
+    "section_label": "Our application sectors",
+    "section_title": "Customized applications",
+    "description": "Electronic components for every application - reliable, versatile, and individually developed. From idea to series production, we deliver the right components for every application. As a reliable distributor of high-quality electronic components, we offer more than an extensive portfolio. We understand the requirements of diverse industries and support our customers with suitable solutions - quickly, competently, and with maximum supply reliability.",
+    "in_use_label": "Our solutions are used in"
+  },
+  "ProductsPage": {
+    "label": "Component Portfolio 2025",
+    "title": "Product Groups",
+    "description": "Upper-category archive from the component portfolio. Select a dossier group to inspect product-level parts, imagery, and technical metadata.",
+    "items": "items"
   }
 }

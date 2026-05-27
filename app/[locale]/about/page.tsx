@@ -1,58 +1,68 @@
 import Image from "next/image";
 import { PageShell } from "@/components/motion/MotionProvider";
 import { images } from "@/lib/assets";
+import { useTranslations } from "next-intl";
+import { setRequestLocale } from "next-intl/server";
 
-const services = [
-  {
-    title: "Strategic and operational support",
-    copy: "We support or manage projects that are geared towards achieving clear goals, and we provide our clients with sound advice.",
-  },
-  {
-    title: "Cooperation and negotiations",
-    copy: "We facilitate cooperation with authorities, business partners or other relevant bodies and efficiently bring together complex interests.",
-  },
-  {
-    title: "Business development",
-    copy: "We identify growth opportunities, develop business models and support our clients in fully realizing their potential.",
-  },
-  {
-    title: "Strengthening the team",
-    copy: "In the short term and for a defined period, we supplement our customers' teams with our know-how to bridge resource gaps or to successfully complete projects.",
-  },
-];
+export default function AboutPage({ params }: { params: { locale: string } }) {
+  setRequestLocale(params.locale);
+  const t = useTranslations("AboutPage");
 
-const processSteps = [
-  {
-    title: "Understanding your needs",
-    copy: "We support you in defining your needs and help you finding means and ways to implement your strategy and achieve your goals.",
-  },
-  {
-    title: "Action plan",
-    copy: "We will create a detailed roadmap that includes all phases of the project and the measures to be implemented.",
-  },
-  {
-    title: "Delivery and support",
-    copy: "We provide the necessary support and all related elements. We also advise you on your long-term strategy.",
-  },
-];
+  const services = [
+    {
+      id: "01",
+      title: t("services.srv_01_title"),
+      copy: t("services.srv_01_copy"),
+    },
+    {
+      id: "02",
+      title: t("services.srv_02_title"),
+      copy: t("services.srv_02_copy"),
+    },
+    {
+      id: "03",
+      title: t("services.srv_03_title"),
+      copy: t("services.srv_03_copy"),
+    },
+    {
+      id: "04",
+      title: t("services.srv_04_title"),
+      copy: t("services.srv_04_copy"),
+    },
+  ];
 
-export default function AboutPage() {
+  const processSteps = [
+    {
+      id: "01",
+      title: t("sequence.step_1_title"),
+      copy: t("sequence.step_1_copy"),
+    },
+    {
+      id: "02",
+      title: t("sequence.step_2_title"),
+      copy: t("sequence.step_2_copy"),
+    },
+    {
+      id: "03",
+      title: t("sequence.step_3_title"),
+      copy: t("sequence.step_3_copy"),
+    },
+  ];
+
   return (
     <PageShell className="min-h-screen pt-20 md:ml-20">
       <section className="grid min-h-[calc(100vh-80px)] lg:grid-cols-[1.15fr_0.85fr]">
         <div className="flex flex-col justify-center px-margin-mobile py-16 md:px-margin-desktop">
           <span className="font-mono text-label-xs uppercase tracking-[0.18em] text-warning-red">
-            Swiss engineering precision
+            {t("label")}
           </span>
           <h1 className="mt-6 font-mono text-headline-lg-mobile uppercase text-on-surface md:text-display-xl">
-            We don&apos;t just
+            {t("title_1")}
             <br />
-            advise
+            {t("title_2")}
           </h1>
           <p className="mt-8 max-w-2xl whitespace-pre-line font-mono text-technical-md text-on-surface-variant">
-            {`At brückenbauer GmbH, we build bridges - between disciplines, sectors and borders.
-Based in Switzerland since 2022, we combine extensive experience at the intersection of politics, administration, business, and innovation. Thanks to a broad network, we connect local expertise with a global perspective and support our clients in mastering complex challenges and unlocking new potential.
-We connect, design and empower.`}
+            {t("description")}
           </p>
         </div>
         <div className="relative min-h-[520px] overflow-hidden border-l border-graphite-muted">
@@ -70,21 +80,21 @@ We connect, design and empower.`}
         <div className="grid gap-gutter lg:grid-cols-[0.34fr_0.66fr]">
           <div>
             <span className="font-mono text-label-xs uppercase tracking-[0.18em] text-warning-red">
-              Services
+              {t("services.label")}
             </span>
             <h2 className="mt-5 max-w-xl font-mono text-headline-lg-mobile uppercase text-on-surface md:text-headline-lg">
-              Strategic and operational support
+              {t("services.title")}
             </h2>
           </div>
           <div className="grid gap-gutter md:grid-cols-2">
-            {services.map((service, index) => (
+            {services.map((service) => (
               <article
-                key={service.title}
+                key={service.id}
                 className="reticle-corners relative min-h-72 border border-graphite-muted bg-surface/55 p-6"
               >
                 <div className="flex items-center justify-between border-b border-graphite-muted pb-4 font-mono text-label-xs uppercase tracking-[0.16em]">
-                  <span className="text-warning-red">SRV-{String(index + 1).padStart(2, "0")}</span>
-                  <span className="text-outline">Active</span>
+                  <span className="text-warning-red">SRV-{service.id}</span>
+                  <span className="text-outline">{t("services.active")}</span>
                 </div>
                 <h3 className="mt-8 font-mono text-technical-md uppercase text-industrial-silver">
                   {service.title}
@@ -95,7 +105,7 @@ We connect, design and empower.`}
               </article>
             ))}
             <div className="border border-dashed border-graphite-muted bg-background/40 p-6 font-mono text-technical-md uppercase text-warning-red">
-              And more...
+              {t("services.and_more")}
             </div>
           </div>
         </div>
@@ -105,17 +115,17 @@ We connect, design and empower.`}
         <div className="grid gap-gutter lg:grid-cols-[0.34fr_0.66fr]">
           <div>
             <span className="font-mono text-label-xs uppercase tracking-[0.18em] text-warning-red">
-              Operating sequence
+              {t("sequence.label")}
             </span>
             <h2 className="mt-5 max-w-xl font-mono text-headline-lg-mobile uppercase text-on-surface md:text-headline-lg">
-              From need definition to long-term support
+              {t("sequence.title")}
             </h2>
           </div>
           <div className="divide-y divide-graphite-muted border border-graphite-muted bg-surface-container-low/40">
-            {processSteps.map((step, index) => (
-              <article key={step.title} className="grid gap-5 p-6 md:grid-cols-[120px_1fr]">
+            {processSteps.map((step) => (
+              <article key={step.id} className="grid gap-5 p-6 md:grid-cols-[120px_1fr]">
                 <div className="font-mono text-label-xs uppercase tracking-[0.16em] text-warning-red">
-                  Phase {String(index + 1).padStart(2, "0")}
+                  {t("sequence.phase")} {step.id}
                 </div>
                 <div>
                   <h3 className="font-mono text-technical-md uppercase text-industrial-silver">

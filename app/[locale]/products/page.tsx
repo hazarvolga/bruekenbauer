@@ -3,20 +3,24 @@ import { PageShell } from "@/components/motion/MotionProvider";
 import { ThemedProductImage } from "@/components/product/ThemedProductImage";
 import { productTaxonomy } from "@/data/productTaxonomy";
 import { products } from "@/data/products";
+import { useTranslations } from "next-intl";
+import { setRequestLocale } from "next-intl/server";
 
-export default function ProductsPage() {
+export default function ProductsPage({ params }: { params: { locale: string } }) {
+  setRequestLocale(params.locale);
+  const t = useTranslations("ProductsPage");
+
   return (
     <PageShell className="min-h-screen px-margin-mobile pb-24 pt-32 md:ml-20 md:px-margin-desktop">
       <div className="mb-12">
         <span className="font-mono text-label-xs uppercase tracking-[0.18em] text-warning-red">
-          Component Portfolio 2025
+          {t("label")}
         </span>
         <h1 className="mt-4 font-mono text-headline-lg-mobile uppercase text-industrial-silver sm:text-headline-lg md:text-display-xl">
-          Product Groups
+          {t("title")}
         </h1>
         <p className="mt-6 max-w-3xl font-mono text-technical-md text-on-surface-variant">
-          Upper-category archive from the component portfolio. Select a dossier group to inspect
-          product-level parts, imagery, and technical metadata.
+          {t("description")}
         </p>
       </div>
       <nav
@@ -45,7 +49,7 @@ export default function ProductsPage() {
                   .filter((product) => product.group === category.name)
                   .length.toString()
                   .padStart(2, "0")}{" "}
-                items
+                {t("items")}
               </span>
             </div>
             <h2 className="product-card-title mt-4 break-words font-mono uppercase text-on-surface">
