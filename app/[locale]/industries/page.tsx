@@ -62,7 +62,7 @@ export default async function IndustriesPage({ params }: { params: Promise<{ loc
               <ThemedProductImage
                 src={app.heroImage}
                 alt=""
-                sizes="(min-width: 1280px) 25vw, (min-width: 768px) 50vw, 100vw"
+                sizes="(min-width: 1280px) 34vw, (min-width: 768px) 50vw, 100vw"
                 className="group-hover:scale-102 object-cover object-center transition-transform duration-700 ease-out"
               />
             </div>
