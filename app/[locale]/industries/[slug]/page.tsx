@@ -22,7 +22,7 @@ export async function generateMetadata({
   if (!application) return {};
 
   return {
-    title: `${application.name} Electronics Components | brückenbauer GmbH`,
+    title: `${application.name} Electronics Components | brüeckenbauer GmbH`,
     description: application.detail.intro,
   };
 }

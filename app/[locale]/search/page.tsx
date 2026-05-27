@@ -4,9 +4,9 @@ import { products } from "@/data/products";
 import { images } from "@/lib/assets";
 
 export const metadata = {
-  title: "Technical Part Finder — brückenbauer GmbH",
+  title: "Technical Part Finder — brüeckenbauer GmbH",
   description:
-    "Search by part number, product name, component group, or application sector across the full brückenbauer GmbH portfolio.",
+    "Search by part number, product name, component group, or application sector across the full brüeckenbauer GmbH portfolio.",
 };
 
 export default function SearchPage() {

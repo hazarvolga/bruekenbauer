@@ -102,7 +102,7 @@ export const ContactEmailTemplate: React.FC<ContactEmailTemplateProps> = ({
   return (
     <div style={containerStyle}>
       <div style={headerStyle}>
-        <h1 style={titleStyle}>brückenbauer GmbH</h1>
+        <h1 style={titleStyle}>brüeckenbauer GmbH</h1>
         <p style={subTitleStyle}>INBOUND MESSAGE TRANSMISSION</p>
       </div>
 
@@ -150,7 +150,7 @@ export const ContactEmailTemplate: React.FC<ContactEmailTemplateProps> = ({
 
       <div style={footerStyle}>
         SYSTEMS REALISM / INBOUND RELAY LAYER<br />
-        © {new Date().getFullYear()} brückenbauer GmbH. All rights reserved.
+        © {new Date().getFullYear()} brüeckenbauer GmbH. All rights reserved.
       </div>
     </div>
   );

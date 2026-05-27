@@ -7,7 +7,7 @@ import { useTranslations } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
 
 export const metadata: Metadata = {
-  title: "Application Sectors | brückenbauer GmbH",
+  title: "Application Sectors | brüeckenbauer GmbH",
   description:
     "Customized electronic component application sectors for aerospace, automotive, e-mobility, industrial automation, medical, HVAC, renewable energy, and building systems.",
 };

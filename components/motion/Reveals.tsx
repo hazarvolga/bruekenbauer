@@ -37,8 +37,8 @@ export function MaskedImageFrame({
   image,
   label,
   className = "",
-  imageClassName = "mix-blend-normal dark:mix-blend-luminosity",
-  overlayClassName = "bg-gradient-to-t from-background via-background/35 to-transparent",
+  imageClassName = "",
+  overlayClassName = "",
   children,
 }: {
   image: string;

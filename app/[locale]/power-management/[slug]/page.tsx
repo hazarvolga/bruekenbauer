@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!family) return {};
 
   return {
-    title: `${family.name} Power Management | brückenbauer GmbH`,
+    title: `${family.name} Power Management | brüeckenbauer GmbH`,
     description: family.summary,
   };
 }

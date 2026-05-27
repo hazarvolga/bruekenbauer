@@ -12,7 +12,7 @@ const jetbrainsMono = JetBrains_Mono({
   preload: true,
 });
 
-const siteTitle = "brückenbauer GmbH: We don't just advise";
+const siteTitle = "brüeckenbauer GmbH: We don't just advise";
 const siteDescription = "We connect, design and empower.";
 
 export const metadata: Metadata = {
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: siteTitle,
     description: siteDescription,
-    siteName: "brückenbauer GmbH",
+    siteName: "brüeckenbauer GmbH",
     type: "website",
   },
   twitter: {

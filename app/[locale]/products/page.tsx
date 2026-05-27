@@ -9,6 +9,8 @@ import { setRequestLocale } from "next-intl/server";
 export default function ProductsPage({ params }: { params: { locale: string } }) {
   setRequestLocale(params.locale);
   const t = useTranslations("ProductsPage");
+  const tShortDesc = useTranslations("ProductShortDescriptions");
+  const tTitles = useTranslations("CategoryTitles");
 
   return (
     <PageShell className="min-h-screen px-margin-mobile pb-24 pt-32 md:ml-20 md:px-margin-desktop">
@@ -53,10 +55,10 @@ export default function ProductsPage({ params }: { params: { locale: string } })
               </span>
             </div>
             <h2 className="product-card-title mt-4 break-words font-mono uppercase text-on-surface">
-              {category.name}
+              {tTitles(category.slug)} 
             </h2>
-            <p className="mt-4 font-mono text-data-sm uppercase text-on-surface-variant">
-              {category.description}
+            <p className="mt-4 font-mono text-data-sm text-on-surface-variant">
+              {tShortDesc(category.slug)}
             </p>
           </Link>
         ))}

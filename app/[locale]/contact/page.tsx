@@ -5,7 +5,7 @@ import { useTranslations } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
 
 export const metadata: Metadata = {
-  title: "Engineering Contact — brückenbauer GmbH",
+  title: "Engineering Contact — brüeckenbauer GmbH",
   description: "Direct contact channel for procurement, technical, and partnership inquiries.",
 };
 

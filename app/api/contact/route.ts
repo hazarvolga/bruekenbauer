@@ -68,12 +68,13 @@ export async function POST(request: Request) {
     try {
       const resend = new Resend(apiKey);
       const fromEmail = process.env.RESEND_FROM_EMAIL || "onboarding@resend.dev";
-      const toEmail = process.env.RESEND_TO_EMAIL || "info@brueckenbauer.de";
+      const toEmailRaw = process.env.RESEND_TO_EMAIL || "info@brueckenbauer.de";
+      const toEmail = toEmailRaw.split(",").map((e) => e.trim());
 
       await resend.emails.send({
         from: fromEmail,
         to: toEmail,
-        subject: `[brückenbauer Contact] ${body.name} (${body.company || "N/A"}) — ${referenceId}`,
+        subject: `[brüeckenbauer Contact] ${body.name} (${body.company || "N/A"}) — ${referenceId}`,
         react: React.createElement(ContactEmailTemplate, { request: body, referenceId, timestamp }),
       });
     } catch (err) {

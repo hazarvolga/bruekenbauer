@@ -84,12 +84,13 @@ export async function POST(request: Request) {
     try {
       const resend = new Resend(apiKey);
       const fromEmail = process.env.RESEND_FROM_EMAIL || "onboarding@resend.dev";
-      const toEmail = process.env.RESEND_TO_EMAIL || "info@brueckenbauer.de";
+      const toEmailRaw = process.env.RESEND_TO_EMAIL || "info@brueckenbauer.de";
+      const toEmail = toEmailRaw.split(",").map((e) => e.trim());
 
       await resend.emails.send({
         from: fromEmail,
         to: toEmail,
-        subject: `[brückenbauer RFQ] ${body.company} — ${referenceId}`,
+        subject: `[brüeckenbauer RFQ] ${body.company} — ${referenceId}`,
         react: React.createElement(RfqEmailTemplate, { request: body, referenceId, timestamp }),
       });
     } catch (err) {

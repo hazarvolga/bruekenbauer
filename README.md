@@ -1,4 +1,4 @@
-# brückenbauer GmbH — Industrial Narrative Experience
+# brüeckenbauer GmbH — Industrial Narrative Experience
 
 Cinematic B2B web experience for strategic electronics and semiconductor procurement.
 Built on Next.js 15 App Router with a graphite/macro visual language.

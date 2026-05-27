@@ -14,16 +14,9 @@ export default function HomePage() {
         <MaskedImageFrame
           image={images.homepage}
           label="Macro transformer circuit board"
-          className="h-[520px] border-b border-graphite-muted md:sticky md:top-20 md:h-[calc(100vh-80px)] md:w-2/3 md:border-b-0 md:border-r"
-          imageClassName="bg-[center_52%]"
-          overlayClassName="bg-gradient-to-t from-background/25 via-background/5 to-transparent dark:from-background/70 dark:via-background/15"
-        >
-          <div className="absolute bottom-6 left-6 font-mono text-data-sm uppercase text-outline-variant">
-            LAT: 47.3769 N<br />
-            LNG: 8.5417 E<br />
-            Z-INDEX: AURAL_09
-          </div>
-        </MaskedImageFrame>
+          className="h-[520px] border-b border-graphite-muted md:sticky md:top-20 md:h-[calc(100vh-80px)] md:w-1/2 md:border-b-0 md:border-r"
+          imageClassName="bg-[85%_52%]"
+        />
         <div className="flex flex-1 flex-col justify-center px-margin-mobile py-16 md:px-margin-desktop">
           <div className="mb-8 flex items-center gap-3 font-mono text-label-xs uppercase tracking-[0.18em] text-warning-red">
             <span className="h-1 w-1 bg-warning-red" />

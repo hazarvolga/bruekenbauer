@@ -52,7 +52,7 @@ export function TopNav() {
           href="/"
           className="min-w-0 flex-1 truncate font-mono text-base font-bold leading-none text-on-surface sm:text-lg md:flex-none md:text-xl"
         >
-          brückenbauer GmbH
+          brüeckenbauer GmbH
         </Link>
         <nav className="hidden items-center gap-5 md:flex lg:gap-7" aria-label="Primary navigation">
           {primaryLinks.map((link) => (

@@ -40,7 +40,7 @@
     "label": "Swiss engineering precision",
     "title_1": "Nous ne faisons",
     "title_2": "pas que conseiller",
-    "description": "Chez brückenbauer GmbH, nous construisons des ponts - entre les disciplines, les secteurs et les frontières.\nBasés en Suisse depuis 2022, nous combinons une vaste expérience à l'intersection de la politique, de l'administration, des affaires et de l'innovation. Grâce à un vaste réseau, nous relions l'expertise locale à une perspective mondiale et aidons nos clients à maîtriser des défis complexes et à libérer de nouveaux potentiels.\nNous connectons, concevons et autonomisons.",
+    "description": "Chez brüeckenbauer GmbH, nous construisons des ponts - entre les disciplines, les secteurs et les frontières.\nBasés en Suisse depuis 2022, nous combinons une vaste expérience à l'intersection de la politique, de l'administration, des affaires et de l'innovation. Grâce à un vaste réseau, nous relions l'expertise locale à une perspective mondiale et aidons nos clients à maîtriser des défis complexes et à libérer de nouveaux potentiels.\nNous connectons, concevons et autonomisons.",
     "services": {
       "label": "Services",
       "title": "Soutien stratégique et opérationnel",
@@ -84,5 +84,35 @@
     "title": "Groupes de produits",
     "description": "Archives des catégories supérieures du portefeuille de composants. Sélectionnez un groupe de dossiers pour inspecter les pièces au niveau du produit, les images et les métadonnées techniques.",
     "items": "articles"
+  },
+  "ProductDescriptions": {
+    "temperature-sensors": "Conçus pour une précision extrême et des environnements difficiles, nos assemblages de capteurs de température garantissent une gestion thermique fiable. Le portefeuille comprend des NTC, des thermistances et des thermocouples haute performance conçus pour l'automatisation industrielle et les applications automobiles.",
+    "electromagnetic-compatibility-emc": "Protégez votre infrastructure électronique contre les interférences avec nos solutions CEM haut de gamme. Notre gamme complète de selfs, de filtres et d'inductances assure un comportement électromagnétique stable et une conformité stricte aux normes mondiales.",
+    "power-management": "Maximisez l'efficacité et la sécurité opérationnelle avec nos composants avancés de gestion de l'alimentation. Des modules IGBT et SiC robustes aux MOSFET et alimentations fiables, nous renforçons les systèmes industriels à forte charge et les applications d'énergie renouvelable.",
+    "passives": "Base de circuits stables, nos composants passifs offrent une fiabilité inégalée sous contrainte continue. Découvrez notre vaste sélection de résistances, de condensateurs MLCC et de composants de synchronisation à quartz de précision pour l'électronique haut de gamme.",
+    "electromechanics": "Associant le contrôle électrique à une exécution mécanique robuste, nos composants électromécaniques sont conçus pour durer. Nous fournissons des connecteurs durables, du matériel de ventilation et des solutions d'interface personnalisées qui assurent le bon fonctionnement des systèmes complexes.",
+    "acoustics": "Assurez une signalisation et un retour auditifs clairs avec nos composants acoustiques haute fidélité. Nos buzzers, microphones et transducteurs magnétiques spécialisés offrent des performances sonores supérieures pour les applications médicales, industrielles et grand public.",
+    "pressure-and-flow-sensors": "Offrant une précision sans compromis dans la mesure des fluides et des gaz, nos capteurs de pression et de débit assurent un contrôle optimal du système. Dotés de transmetteurs de pression avancés, de débitmètres à ultrasons et de solutions de télémétrie robustes pour les infrastructures critiques.",
+    "current-and-position-sensors": "Permettez un contrôle précis des mouvements et une surveillance de l'énergie avec nos plateformes de détection de qualité industrielle. Nous proposons des capteurs de courant à pince haute précision, des encodeurs rotatifs et des potentiomètres adaptés aux systèmes mécaniques exigeants."
+  },
+  "ProductShortDescriptions": {
+    "temperature-sensors": "NTC, thermistor, thermocouple, and custom high-temperature sensing assemblies.",
+    "electromagnetic-compatibility-emc": "Chokes, filters, inductors, and transformers for controlled electromagnetic behavior.",
+    "power-management": "IGBT, SiC, MOSFET, converter, and power supply components for engineered systems.",
+    "passives": "Resistors, capacitors, MLCC packages, and quartz timing components.",
+    "electromechanics": "Connectors, cables, ventilation, card readers, sockets, and wireless interface hardware.",
+    "acoustics": "Buzzers, microphones, receivers, speakers, piezos, and magnetic acoustic transducers.",
+    "pressure-and-flow-sensors": "Pressure transmitters, ultrasonic flow meters, gas sensors, gauges, and level telemetry.",
+    "current-and-position-sensors": "Clamp-on current sensing and rotary, encoder, and potentiometer position platforms."
+  },
+  "CategoryTitles": {
+    "temperature-sensors": "Capteurs de Température",
+    "electromagnetic-compatibility-emc": "Compatibilité Électromagnétique (CEM)",
+    "power-management": "Gestion de l'Énergie",
+    "passives": "Composants Passifs",
+    "electromechanics": "Électromécanique",
+    "acoustics": "Acoustique",
+    "pressure-and-flow-sensors": "Capteurs de Pression et Débit",
+    "current-and-position-sensors": "Capteurs de Courant et Position"
   }
 }

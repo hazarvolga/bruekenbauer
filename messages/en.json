@@ -40,7 +40,7 @@
     "label": "Swiss engineering precision",
     "title_1": "We don't just",
     "title_2": "advise",
-    "description": "At brückenbauer GmbH, we build bridges - between disciplines, sectors and borders.\nBased in Switzerland since 2022, we combine extensive experience at the intersection of politics, administration, business, and innovation. Thanks to a broad network, we connect local expertise with a global perspective and support our clients in mastering complex challenges and unlocking new potential.\nWe connect, design and empower.",
+    "description": "At brüeckenbauer GmbH, we build bridges - between disciplines, sectors and borders.\nBased in Switzerland since 2022, we combine extensive experience at the intersection of politics, administration, business, and innovation. Thanks to a broad network, we connect local expertise with a global perspective and support our clients in mastering complex challenges and unlocking new potential.\nWe connect, design and empower.",
     "services": {
       "label": "Services",
       "title": "Strategic and operational support",
@@ -84,5 +84,35 @@
     "title": "Product Groups",
     "description": "Upper-category archive from the component portfolio. Select a dossier group to inspect product-level parts, imagery, and technical metadata.",
     "items": "items"
+  },
+  "ProductDescriptions": {
+    "temperature-sensors": "Engineered for extreme precision and harsh environments, our temperature sensing assemblies guarantee reliable thermal management. The portfolio includes high-performance NTCs, thermistors, and thermocouples designed for industrial automation and automotive applications.",
+    "electromagnetic-compatibility-emc": "Safeguard your electronic infrastructure against interference with our premium EMC solutions. Our comprehensive range of chokes, filters, and inductors ensures stable electromagnetic behavior and strict compliance with global standards.",
+    "power-management": "Maximize efficiency and operational safety with our advanced power management components. From robust IGBT and SiC modules to reliable MOSFETs and power supplies, we empower high-load industrial systems and renewable energy applications.",
+    "passives": "The foundation of stable circuitry, our passive components offer unmatched reliability under continuous stress. Discover our extensive selection of resistors, MLCC capacitors, and precision quartz timing components for high-end electronics.",
+    "electromechanics": "Bridging electrical control with robust mechanical execution, our electromechanical components are built for longevity. We supply durable connectors, ventilation hardware, and custom interface solutions that keep complex systems running seamlessly.",
+    "acoustics": "Ensure clear auditory signaling and feedback with our high-fidelity acoustic components. Our specialized buzzers, microphones, and magnetic transducers deliver superior sound performance for medical, industrial, and consumer applications.",
+    "pressure-and-flow-sensors": "Delivering uncompromising accuracy in fluid and gas measurement, our pressure and flow sensors ensure optimal system control. Featuring advanced pressure transmitters, ultrasonic flow meters, and robust telemetry solutions for critical infrastructure.",
+    "current-and-position-sensors": "Enable precise motion control and energy monitoring with our industrial-grade sensing platforms. We offer high-accuracy clamp-on current sensors, rotary encoders, and potentiometers tailored for demanding mechanical systems."
+  },
+  "ProductShortDescriptions": {
+    "temperature-sensors": "NTC, thermistor, thermocouple, and custom high-temperature sensing assemblies.",
+    "electromagnetic-compatibility-emc": "Chokes, filters, inductors, and transformers for controlled electromagnetic behavior.",
+    "power-management": "IGBT, SiC, MOSFET, converter, and power supply components for engineered systems.",
+    "passives": "Resistors, capacitors, MLCC packages, and quartz timing components.",
+    "electromechanics": "Connectors, cables, ventilation, card readers, sockets, and wireless interface hardware.",
+    "acoustics": "Buzzers, microphones, receivers, speakers, piezos, and magnetic acoustic transducers.",
+    "pressure-and-flow-sensors": "Pressure transmitters, ultrasonic flow meters, gas sensors, gauges, and level telemetry.",
+    "current-and-position-sensors": "Clamp-on current sensing and rotary, encoder, and potentiometer position platforms."
+  },
+  "CategoryTitles": {
+    "temperature-sensors": "Temperature Sensors",
+    "electromagnetic-compatibility-emc": "Electromagnetic Compatibility (EMC)",
+    "power-management": "Power Management",
+    "passives": "Passives",
+    "electromechanics": "Electromechanics",
+    "acoustics": "Acoustics",
+    "pressure-and-flow-sensors": "Pressure & Flow Sensors",
+    "current-and-position-sensors": "Current & Position Sensors"
   }
 }

@@ -102,7 +102,7 @@ export const RfqEmailTemplate: React.FC<RfqEmailTemplateProps> = ({
   return (
     <div style={containerStyle}>
       <div style={headerStyle}>
-        <h1 style={titleStyle}>brückenbauer GmbH</h1>
+        <h1 style={titleStyle}>brüeckenbauer GmbH</h1>
         <p style={subTitleStyle}>REQUEST FOR QUOTATION / PROCURE_INQUIRY</p>
       </div>
 
@@ -204,7 +204,7 @@ export const RfqEmailTemplate: React.FC<RfqEmailTemplateProps> = ({
 
       <div style={footerStyle}>
         SYSTEMS REALISM / OEM PROCURE SERVICE LAYER<br />
-        © {new Date().getFullYear()} brückenbauer GmbH. All rights reserved.
+        © {new Date().getFullYear()} brüeckenbauer GmbH. All rights reserved.
       </div>
     </div>
   );
