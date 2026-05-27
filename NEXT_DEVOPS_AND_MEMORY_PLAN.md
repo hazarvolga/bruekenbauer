@@ -100,6 +100,12 @@ Status: **Phase 3 active.** GitHub + Vercel production deploy complete. Power Ma
 - Strategic Industries alignment ✅ — `HVAC` added to `data/applications.ts`; Automotive and E-Mobility remain separate internal industries
 - Vercel build warning fix ✅ — `@next/eslint-plugin-next` explicit devDependency
 
+### ✅ Shipped (Phase 4 — 2026-05-27)
+
+- Multilingual i18n Routing ✅ — Dynamic route prefixing (`/[locale]/`) via `next-intl` fully configured with English (`en`), German (`de`), and French (`fr`) dictionaries.
+- Custom LanguageSwitcher ✅ — Replaced top-navigation social media links with a high-fidelity Brutalist `EN | DE | FR` language switcher.
+- Hero Image Quality Restoration ✅ — Reverted `MaskedImageFrame` to raw CSS `background-image: url(...)` with `bg-cover` to bypass Next.js downscaling and ensure pixel-perfect resolution on high-density retina displays.
+
 ### ❌ Still missing
 
 **High priority (next session)**
@@ -116,7 +122,6 @@ Status: **Phase 3 active.** GitHub + Vercel production deploy complete. Power Ma
 
 **Low priority**
 
-- i18n — DE locale (German market primary)
 - Storybook — component isolation and visual regression
 - Graphify / codebase-memory-mcp — evaluate after repo is stable on GitHub
 
