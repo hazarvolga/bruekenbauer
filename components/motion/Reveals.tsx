@@ -40,6 +40,7 @@ export function MaskedImageFrame({
   className = "",
   imageClassName = "",
   overlayClassName = "",
+  priority = false,
   children,
 }: {
   image: string;
