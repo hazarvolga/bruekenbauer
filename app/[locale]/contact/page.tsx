@@ -21,7 +21,7 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
       <h1 className="mt-5 font-mono text-headline-lg-mobile uppercase text-on-surface md:text-headline-lg">
         {t("title")}
       </h1>
-      <ContactForm />
+      <ContactForm locale={locale} />
     </PageShell>
   );
 }

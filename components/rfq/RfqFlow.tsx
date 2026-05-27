@@ -3,6 +3,7 @@
 import { useMemo, useState } from "react";
 import { TechnicalButton } from "@/components/layout/TechnicalButton";
 import { applications } from "@/data/applications";
+import { getApplicationCopy, getProductGroupCopy, normalizeLocale } from "@/data/localizedContent";
 import { productTaxonomy } from "@/data/productTaxonomy";
 import { products } from "@/data/products";
 import type { RfqRequest } from "@/app/api/rfq/route";
@@ -42,7 +43,88 @@ type RfqInitialContext = Partial<
   >
 >;
 
-export function RfqFlow({ initialContext }: { initialContext?: RfqInitialContext }) {
+export function RfqFlow({
+  initialContext,
+  locale = "en",
+}: {
+  initialContext?: RfqInitialContext;
+  locale?: string;
+}) {
+  const normalizedLocale = normalizeLocale(locale);
+  const copy = {
+    en: {
+      confirmed: "RFQ confirmed",
+      received: "RFQ Received",
+      success: "Your inquiry has been logged. An engineer will respond within 2 business days.",
+      reference: "Reference",
+      newInquiry: "New Inquiry",
+      notSupplied: "Not supplied",
+      eyebrow: "Engineering inquiry",
+      title: "Supplier Inquiry",
+      intro:
+        "Share the product group, application sector, monthly volume, lead time, contact data, and project notes required for a precise quotation.",
+      productGroup: "Product group",
+      productFamily: "Product family",
+      applicationSector: "Application sector",
+      monthlyVolume: "Monthly volume",
+      leadTime: "Lead time",
+      contactName: "Contact name",
+      email: "Email",
+      company: "Company",
+      notes: "RFQ notes",
+      placeholder: "Technical requirements, compliance needs, packaging, forecast windows...",
+      submitting: "Submitting...",
+      submit: "Submit RFQ",
+    },
+    de: {
+      confirmed: "RFQ bestätigt",
+      received: "RFQ erhalten",
+      success: "Ihre Anfrage wurde erfasst. Ein Engineer meldet sich innerhalb von 2 Werktagen.",
+      reference: "Referenz",
+      newInquiry: "Neue Anfrage",
+      notSupplied: "Nicht angegeben",
+      eyebrow: "Technische Anfrage",
+      title: "Lieferantenanfrage",
+      intro:
+        "Teilen Sie Produktgruppe, Anwendungsbereich, Monatsvolumen, Lieferzeit, Kontaktdaten und Projektnotizen für ein präzises Angebot.",
+      productGroup: "Produktgruppe",
+      productFamily: "Produktfamilie",
+      applicationSector: "Anwendungsbereich",
+      monthlyVolume: "Monatsvolumen",
+      leadTime: "Lieferzeit",
+      contactName: "Kontaktname",
+      email: "E-Mail",
+      company: "Unternehmen",
+      notes: "RFQ-Notizen",
+      placeholder: "Technische Anforderungen, Compliance-Bedarf, Verpackung, Forecast-Fenster...",
+      submitting: "Wird gesendet...",
+      submit: "RFQ absenden",
+    },
+    fr: {
+      confirmed: "RFQ confirmé",
+      received: "RFQ reçu",
+      success: "Votre demande a été enregistrée. Un engineer répondra sous 2 jours ouvrables.",
+      reference: "Référence",
+      newInquiry: "Nouvelle demande",
+      notSupplied: "Non renseigné",
+      eyebrow: "Demande technique",
+      title: "Demande fournisseur",
+      intro:
+        "Partagez le groupe produit, le secteur d'application, le volume mensuel, le délai, les coordonnées et les notes projet nécessaires à un devis précis.",
+      productGroup: "Groupe produit",
+      productFamily: "Famille produit",
+      applicationSector: "Secteur d'application",
+      monthlyVolume: "Volume mensuel",
+      leadTime: "Délai",
+      contactName: "Nom du contact",
+      email: "E-mail",
+      company: "Entreprise",
+      notes: "Notes RFQ",
+      placeholder: "Exigences techniques, conformité, packaging, fenêtres de forecast...",
+      submitting: "Envoi...",
+      submit: "Soumettre RFQ",
+    },
+  }[normalizedLocale];
   const resolvedInitialState = useMemo(
     () => ({ ...initialState, ...initialContext }),
     [initialContext]
@@ -137,17 +219,17 @@ export function RfqFlow({ initialContext }: { initialContext?: RfqInitialContext
       <section className="grid gap-gutter lg:grid-cols-[0.9fr_1.1fr]">
         <div>
           <span className="font-mono text-label-xs uppercase tracking-[0.18em] text-warning-red">
-            RFQ confirmed
+            {copy.confirmed}
           </span>
           <h1 className="mt-5 font-mono text-headline-lg-mobile uppercase text-on-surface md:text-headline-lg">
-            RFQ Received
+            {copy.received}
           </h1>
           <p className="mt-6 max-w-xl font-mono text-technical-md text-on-surface-variant">
-            Your inquiry has been logged. An engineer will respond within 2 business days.
+            {copy.success}
           </p>
           {referenceId && (
             <p className="mt-4 font-mono text-label-xs uppercase tracking-[0.12em] text-outline">
-              Reference: <span className="text-warning-red">{referenceId}</span>
+              {copy.reference}: <span className="text-warning-red">{referenceId}</span>
             </p>
           )}
           <TechnicalButton
@@ -159,7 +241,7 @@ export function RfqFlow({ initialContext }: { initialContext?: RfqInitialContext
               setState(resolvedInitialState);
             }}
           >
-            New Inquiry
+            {copy.newInquiry}
           </TechnicalButton>
         </div>
         <dl className="border border-graphite-muted bg-surface-container-low/50 p-8 font-mono text-data-sm uppercase">
@@ -169,7 +251,7 @@ export function RfqFlow({ initialContext }: { initialContext?: RfqInitialContext
               className="grid grid-cols-[0.45fr_1fr] gap-4 border-b border-graphite-muted py-4 last:border-b-0"
             >
               <dt className="text-outline">{key.replace(/([A-Z])/g, " $1")}</dt>
-              <dd className="text-industrial-silver">{value || "Not supplied"}</dd>
+              <dd className="text-industrial-silver">{value || copy.notSupplied}</dd>
             </div>
           ))}
         </dl>
@@ -184,32 +266,33 @@ export function RfqFlow({ initialContext }: { initialContext?: RfqInitialContext
     >
       <div>
         <span className="font-mono text-label-xs uppercase tracking-[0.18em] text-warning-red">
-          Engineering inquiry
+          {copy.eyebrow}
         </span>
         <h1 className="mt-5 font-mono text-headline-lg-mobile uppercase text-on-surface md:text-headline-lg">
-          Supplier Inquiry
+          {copy.title}
         </h1>
         <p className="mt-6 max-w-xl font-mono text-technical-md text-on-surface-variant">
-          Share the product group, application sector, monthly volume, lead time, contact data, and
-          project notes required for a precise quotation.
+          {copy.intro}
         </p>
       </div>
       <div className="space-y-8 border border-graphite-muted bg-surface-container-low/45 p-6 backdrop-blur-xl md:p-8">
         <div className="grid gap-6 md:grid-cols-2">
           <label className="font-mono text-label-xs uppercase tracking-[0.18em] text-outline">
-            Product group
+            {copy.productGroup}
             <select
               value={state.productGroup}
               onChange={(event) => updateProductGroup(event.target.value)}
               className="mt-2 w-full border border-graphite-muted bg-surface p-3 font-mono text-technical-md text-on-surface focus:border-warning-red focus:ring-0"
             >
               {productTaxonomy.map((group) => (
-                <option key={group.slug}>{group.name}</option>
+                <option key={group.slug} value={group.name}>
+                  {getProductGroupCopy(normalizedLocale, group.name).title}
+                </option>
               ))}
             </select>
           </label>
           <label className="font-mono text-label-xs uppercase tracking-[0.18em] text-outline">
-            Product family
+            {copy.productFamily}
             <select
               value={selectedFamily?.slug ?? ""}
               onChange={(event) => updateProductFamily(event.target.value)}
@@ -223,40 +306,47 @@ export function RfqFlow({ initialContext }: { initialContext?: RfqInitialContext
             </select>
           </label>
           <label className="font-mono text-label-xs uppercase tracking-[0.18em] text-outline">
-            Application Sector
+            {copy.applicationSector}
             <select
               value={state.applicationSector}
               onChange={(event) => update("applicationSector", event.target.value)}
               className="mt-2 w-full border border-graphite-muted bg-surface p-3 font-mono text-technical-md text-on-surface focus:border-warning-red focus:ring-0"
             >
               {applicationOptions.map((application) => (
-                <option key={application}>{application}</option>
+                <option key={application} value={application}>
+                  {
+                    getApplicationCopy(
+                      normalizedLocale,
+                      applications.find((item) => item.name === application) ?? applications[0]
+                    ).name
+                  }
+                </option>
               ))}
             </select>
           </label>
           <Field
             id="monthlyVolume"
-            label="Monthly volume"
+            label={copy.monthlyVolume}
             value={state.monthlyVolume}
             type="number"
             onChange={(value) => update("monthlyVolume", value)}
           />
           <Field
             id="leadTime"
-            label="Lead time"
+            label={copy.leadTime}
             value={state.leadTime}
             onChange={(value) => update("leadTime", value)}
           />
           <Field
             id="name"
-            label="Contact name"
+            label={copy.contactName}
             value={state.name}
             required
             onChange={(value) => update("name", value)}
           />
           <Field
             id="email"
-            label="Email"
+            label={copy.email}
             type="email"
             value={state.email}
             required
@@ -264,7 +354,7 @@ export function RfqFlow({ initialContext }: { initialContext?: RfqInitialContext
           />
           <Field
             id="company"
-            label="Company"
+            label={copy.company}
             value={state.company}
             required
             onChange={(value) => update("company", value)}
@@ -274,14 +364,14 @@ export function RfqFlow({ initialContext }: { initialContext?: RfqInitialContext
           htmlFor="notes"
           className="block font-mono text-label-xs uppercase tracking-[0.18em] text-outline"
         >
-          RFQ notes
+          {copy.notes}
           <textarea
             id="notes"
             rows={5}
             value={state.notes}
             onChange={(event) => update("notes", event.target.value)}
             className="mt-2 w-full border border-graphite-muted bg-surface-dim/50 p-4 font-mono text-technical-md text-on-surface focus:border-warning-red focus:ring-0"
-            placeholder="Technical requirements, compliance needs, packaging, forecast windows..."
+            placeholder={copy.placeholder}
           />
         </label>
         {errorMsg && (
@@ -293,7 +383,7 @@ export function RfqFlow({ initialContext }: { initialContext?: RfqInitialContext
           type="submit"
           className={!complete || status === "loading" ? "opacity-60" : ""}
         >
-          {status === "loading" ? "Submitting..." : "Submit RFQ"}
+          {status === "loading" ? copy.submitting : copy.submit}
         </TechnicalButton>
       </div>
     </form>

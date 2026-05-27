@@ -10,10 +10,14 @@ export function IndustrySystemsPanel({
   products,
   heading = "Active systems",
   supportNote,
+  openDetailLabel = "Open detail dossier",
+  locale = "en",
 }: {
   products: Product[];
   heading?: string;
   supportNote?: string;
+  openDetailLabel?: string;
+  locale?: string;
 }) {
   const [activeSlug, setActiveSlug] = useState(products[0]?.slug ?? "");
   const [listProgress, setListProgress] = useState(0);
@@ -131,7 +135,7 @@ export function IndustrySystemsPanel({
                     "flex w-full justify-between border-b pb-2 text-left transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-warning-red",
                     activeSlug === product.slug
                       ? "border-warning-red text-on-surface"
-                      : "border-graphite-muted hover:border-industrial-silver hover:text-on-surface",
+                      : "border-graphite-muted hover:border-industrial-silver hover:text-on-surface"
                   )}
                 >
                   <span>{product.name}</span>
@@ -168,7 +172,7 @@ export function IndustrySystemsPanel({
                   "reticle-corners grid gap-5 border bg-surface-container-low/95 p-5 transition-[border-color,opacity,transform] duration-500 ease-out dark:bg-surface-container-low/60 md:grid-cols-[220px_1fr]",
                   activeSlug === product.slug
                     ? "industry-card-active border-warning-red"
-                    : "border-graphite-muted opacity-70",
+                    : "border-graphite-muted opacity-70"
                 )}
               >
                 <div className="relative aspect-[4/3] overflow-hidden border border-graphite-muted bg-surface-container-lowest">
@@ -201,10 +205,10 @@ export function IndustrySystemsPanel({
                       ))}
                   </dl>
                   <Link
-                    href={`/product/${product.slug}`}
+                    href={`${locale === "en" ? "" : `/${locale}`}/product/${product.slug}`}
                     className="mt-6 inline-flex w-fit border border-warning-red px-4 py-3 font-mono text-label-xs uppercase tracking-[0.14em] text-warning-red transition-colors hover:bg-warning-red hover:text-primary-container"
                   >
-                    Open detail dossier
+                    {openDetailLabel}
                   </Link>
                 </div>
               </article>

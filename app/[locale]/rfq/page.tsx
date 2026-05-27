@@ -4,6 +4,7 @@ import { images } from "@/lib/assets";
 import { resolveRfqContext } from "@/lib/rfqContext";
 
 type Props = {
+  params: Promise<{ locale: string }>;
   searchParams?: Promise<{
     product?: string;
     productSlug?: string;
@@ -12,13 +13,14 @@ type Props = {
   }>;
 };
 
-export default async function RfqPage({ searchParams }: Props) {
-  const params = await searchParams;
+export default async function RfqPage({ params, searchParams }: Props) {
+  const { locale } = await params;
+  const query = await searchParams;
   const initialContext = resolveRfqContext({
-    productSlug: params?.productSlug,
-    familySlug: params?.familySlug,
-    applicationSector: params?.applicationSector,
-    legacyProduct: params?.product,
+    productSlug: query?.productSlug,
+    familySlug: query?.familySlug,
+    applicationSector: query?.applicationSector,
+    legacyProduct: query?.product,
   });
 
   return (
@@ -29,7 +31,7 @@ export default async function RfqPage({ searchParams }: Props) {
       />
       <div className="absolute inset-0 bg-background/90 dark:bg-background/80" />
       <div className="relative z-10">
-        <RfqFlow initialContext={initialContext} />
+        <RfqFlow initialContext={initialContext} locale={locale} />
       </div>
     </PageShell>
   );

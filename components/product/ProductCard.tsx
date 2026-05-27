@@ -1,12 +1,13 @@
 import Link from "next/link";
+import { localizePath } from "@/data/localizedContent";
 import type { Product } from "@/data/products";
 import { ThemedProductImage } from "./ThemedProductImage";
 
-export function ProductCard({ product }: { product: Product }) {
+export function ProductCard({ product, locale = "en" }: { product: Product; locale?: string }) {
   return (
     <article className="reticle-corners group relative overflow-hidden border border-graphite-muted bg-surface-container-low/50 p-5 backdrop-blur-xl transition-colors hover:border-industrial-silver">
       <Link
-        href={`/product/${product.slug}`}
+        href={localizePath(locale, `/product/${product.slug}`)}
         className="absolute inset-0 z-20"
         aria-label={`Open ${product.name}`}
       />
@@ -16,7 +17,7 @@ export function ProductCard({ product }: { product: Product }) {
           darkSrc={product.imageDark}
           alt=""
           sizes="(min-width: 768px) 33vw, 100vw"
-          className="object-cover transition-transform duration-700 group-hover:scale-102"
+          className="group-hover:scale-102 object-cover transition-transform duration-700"
         />
       </div>
       <div className="font-mono text-label-xs uppercase tracking-[0.16em] text-warning-red">

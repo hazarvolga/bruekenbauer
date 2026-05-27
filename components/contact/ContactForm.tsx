@@ -3,10 +3,53 @@
 import { useState } from "react";
 import { TechnicalButton } from "@/components/layout/TechnicalButton";
 import type { ContactRequest } from "@/app/api/contact/route";
+import { normalizeLocale } from "@/data/localizedContent";
 
 type Status = "idle" | "loading" | "success" | "error";
 
-export function ContactForm() {
+export function ContactForm({ locale = "en" }: { locale?: string }) {
+  const normalizedLocale = normalizeLocale(locale);
+  const copy = {
+    en: {
+      confirmed: "Transmission confirmed",
+      received: "Message received. An engineer will respond within 2 business days.",
+      reference: "Reference",
+      newMessage: "New Message",
+      aria: "Contact form",
+      name: "Contact Name",
+      email: "Preferred Contact Method",
+      company: "Company / coordinates",
+      message: "Project Information",
+      submitting: "Submitting...",
+      submit: "Submit Inquiry",
+    },
+    de: {
+      confirmed: "Übermittlung bestätigt",
+      received: "Nachricht erhalten. Ein Engineer meldet sich innerhalb von 2 Werktagen.",
+      reference: "Referenz",
+      newMessage: "Neue Nachricht",
+      aria: "Kontaktformular",
+      name: "Kontaktname",
+      email: "Bevorzugte Kontaktmethode",
+      company: "Unternehmen / Koordinaten",
+      message: "Projektinformationen",
+      submitting: "Wird gesendet...",
+      submit: "Anfrage senden",
+    },
+    fr: {
+      confirmed: "Transmission confirmée",
+      received: "Message reçu. Un engineer répondra sous 2 jours ouvrables.",
+      reference: "Référence",
+      newMessage: "Nouveau message",
+      aria: "Formulaire de contact",
+      name: "Nom du contact",
+      email: "Méthode de contact préférée",
+      company: "Entreprise / coordonnées",
+      message: "Informations projet",
+      submitting: "Envoi...",
+      submit: "Soumettre la demande",
+    },
+  }[normalizedLocale];
   const [form, setForm] = useState<ContactRequest>({
     name: "",
     email: "",
@@ -51,14 +94,12 @@ export function ContactForm() {
     return (
       <div className="mt-12 max-w-2xl border border-graphite-muted bg-surface-container-low/50 p-8">
         <p className="font-mono text-label-xs uppercase tracking-[0.18em] text-warning-red">
-          Transmission confirmed
+          {copy.confirmed}
         </p>
-        <p className="mt-4 font-mono text-technical-md text-on-surface-variant">
-          Message received. An engineer will respond within 2 business days.
-        </p>
+        <p className="mt-4 font-mono text-technical-md text-on-surface-variant">{copy.received}</p>
         {referenceId && (
           <p className="mt-4 font-mono text-label-xs uppercase tracking-[0.12em] text-outline">
-            Reference: <span className="text-warning-red">{referenceId}</span>
+            {copy.reference}: <span className="text-warning-red">{referenceId}</span>
           </p>
         )}
         <TechnicalButton
@@ -70,7 +111,7 @@ export function ContactForm() {
             setForm({ name: "", email: "", company: "", message: "" });
           }}
         >
-          New Message
+          {copy.newMessage}
         </TechnicalButton>
       </div>
     );
@@ -79,14 +120,14 @@ export function ContactForm() {
   return (
     <form
       className="mt-12 grid max-w-4xl gap-8"
-      aria-label="Contact form"
+      aria-label={copy.aria}
       onSubmit={(e) => void handleSubmit(e)}
     >
       {(
         [
-          ["name", "Contact Name", "text"],
-          ["email", "Preferred Contact Method", "email"],
-          ["company", "Company / coordinates", "text"],
+          ["name", copy.name, "text"],
+          ["email", copy.email, "email"],
+          ["company", copy.company, "text"],
         ] as const
       ).map(([id, label, type]) => (
         <div key={id}>
@@ -111,7 +152,7 @@ export function ContactForm() {
           htmlFor="message"
           className="mb-2 block font-mono text-label-xs uppercase tracking-[0.18em] text-outline"
         >
-          Project Information
+          {copy.message}
         </label>
         <textarea
           id="message"
@@ -131,7 +172,7 @@ export function ContactForm() {
         type="submit"
         className={!complete || status === "loading" ? "opacity-60" : ""}
       >
-        {status === "loading" ? "Submitting..." : "Submit Inquiry"}
+        {status === "loading" ? copy.submitting : copy.submit}
       </TechnicalButton>
     </form>
   );

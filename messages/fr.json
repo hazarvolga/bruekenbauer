@@ -96,14 +96,14 @@
     "current-and-position-sensors": "Permettez un contrôle précis des mouvements et une surveillance de l'énergie avec nos plateformes de détection de qualité industrielle. Nous proposons des capteurs de courant à pince haute précision, des encodeurs rotatifs et des potentiomètres adaptés aux systèmes mécaniques exigeants."
   },
   "ProductShortDescriptions": {
-    "temperature-sensors": "NTC, thermistor, thermocouple, and custom high-temperature sensing assemblies.",
-    "electromagnetic-compatibility-emc": "Chokes, filters, inductors, and transformers for controlled electromagnetic behavior.",
-    "power-management": "IGBT, SiC, MOSFET, converter, and power supply components for engineered systems.",
-    "passives": "Resistors, capacitors, MLCC packages, and quartz timing components.",
-    "electromechanics": "Connectors, cables, ventilation, card readers, sockets, and wireless interface hardware.",
-    "acoustics": "Buzzers, microphones, receivers, speakers, piezos, and magnetic acoustic transducers.",
-    "pressure-and-flow-sensors": "Pressure transmitters, ultrasonic flow meters, gas sensors, gauges, and level telemetry.",
-    "current-and-position-sensors": "Clamp-on current sensing and rotary, encoder, and potentiometer position platforms."
+    "temperature-sensors": "Assemblages NTC, thermistances, thermocouples et capteurs haute température sur mesure.",
+    "electromagnetic-compatibility-emc": "Selfs, filtres, inductances et transformateurs pour un comportement électromagnétique contrôlé.",
+    "power-management": "Composants IGBT, SiC, MOSFET, converters et power supplies pour systèmes techniques.",
+    "passives": "Résistances, condensateurs, packages MLCC et composants quartz de timing.",
+    "electromechanics": "Connecteurs, câbles, ventilation, lecteurs de cartes, sockets et interfaces wireless.",
+    "acoustics": "Buzzers, microphones, receivers, haut-parleurs, piezos et transducteurs acoustiques magnétiques.",
+    "pressure-and-flow-sensors": "Transmetteurs de pression, débitmètres à ultrasons, capteurs de gaz, jauges et télémétrie de niveau.",
+    "current-and-position-sensors": "Capteurs de courant clamp-on et plateformes de position rotatives, encoder et potentiomètre."
   },
   "CategoryTitles": {
     "temperature-sensors": "Capteurs de Température",

@@ -96,14 +96,14 @@
     "current-and-position-sensors": "Ermöglichen Sie eine präzise Bewegungssteuerung und Energieüberwachung mit unseren industrietauglichen Sensorplattformen. Wir bieten hochgenaue aufsteckbare Stromsensoren, Drehgeber und Potentiometer, die auf anspruchsvolle mechanische Systeme zugeschnitten sind."
   },
   "ProductShortDescriptions": {
-    "temperature-sensors": "NTC, thermistor, thermocouple, and custom high-temperature sensing assemblies.",
-    "electromagnetic-compatibility-emc": "Chokes, filters, inductors, and transformers for controlled electromagnetic behavior.",
-    "power-management": "IGBT, SiC, MOSFET, converter, and power supply components for engineered systems.",
-    "passives": "Resistors, capacitors, MLCC packages, and quartz timing components.",
-    "electromechanics": "Connectors, cables, ventilation, card readers, sockets, and wireless interface hardware.",
-    "acoustics": "Buzzers, microphones, receivers, speakers, piezos, and magnetic acoustic transducers.",
-    "pressure-and-flow-sensors": "Pressure transmitters, ultrasonic flow meters, gas sensors, gauges, and level telemetry.",
-    "current-and-position-sensors": "Clamp-on current sensing and rotary, encoder, and potentiometer position platforms."
+    "temperature-sensors": "NTC, Thermistoren, Thermoelemente und kundenspezifische Hochtemperatur-Sensorbaugruppen.",
+    "electromagnetic-compatibility-emc": "Drosseln, Filter, Induktivitäten und Transformatoren für kontrolliertes EMV-Verhalten.",
+    "power-management": "IGBT, SiC, MOSFET, Converter und Power-Supply-Komponenten für technische Systeme.",
+    "passives": "Widerstände, Kondensatoren, MLCC-Pakete und Quarz-Timing-Komponenten.",
+    "electromechanics": "Steckverbinder, Kabel, Lüftung, Kartenleser, Sockets und drahtlose Schnittstellenhardware.",
+    "acoustics": "Buzzer, Mikrofone, Receiver, Lautsprecher, Piezos und magnetische Akustikwandler.",
+    "pressure-and-flow-sensors": "Drucktransmitter, Ultraschall-Durchflussmesser, Gassensoren, Messaufnehmer und Füllstands-Telemetrie.",
+    "current-and-position-sensors": "Clamp-on-Stromsensorik sowie rotative, Encoder- und Potentiometer-Positionsplattformen."
   },
   "CategoryTitles": {
     "temperature-sensors": "Temperatursensoren",

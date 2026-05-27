@@ -3,16 +3,29 @@ import { notFound } from "next/navigation";
 import { TechnicalButton } from "@/components/layout/TechnicalButton";
 import { PageShell } from "@/components/motion/MotionProvider";
 import { ThemedProductImage } from "@/components/product/ThemedProductImage";
+import {
+  getLocalizedProduct,
+  localizePath,
+  normalizeLocale,
+  uiCopy,
+} from "@/data/localizedContent";
 import { products } from "@/data/products";
 
 export function generateStaticParams() {
   return products.map((product) => ({ slug: product.slug }));
 }
 
-export default async function ProductDetailPage({ params }: { params: Promise<{ slug: string }> }) {
-  const { slug } = await params;
-  const product = products.find((item) => item.slug === slug);
-  if (!product) notFound();
+export default async function ProductDetailPage({
+  params,
+}: {
+  params: Promise<{ slug: string; locale: string }>;
+}) {
+  const { slug, locale } = await params;
+  const normalizedLocale = normalizeLocale(locale);
+  const productSource = products.find((item) => item.slug === slug);
+  if (!productSource) notFound();
+  const product = getLocalizedProduct(productSource, normalizedLocale);
+  const labels = uiCopy[normalizedLocale].product;
 
   return (
     <PageShell className="min-h-screen pt-20 md:ml-20">
@@ -29,10 +42,10 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
         </div>
         <div className="flex flex-col justify-center px-margin-mobile py-16 md:px-margin-desktop">
           <Link
-            href="/products"
+            href={localizePath(normalizedLocale, "/products")}
             className="font-mono text-label-xs uppercase tracking-[0.18em] text-outline hover:text-warning-red"
           >
-            Technical archive
+            {labels.technicalArchive}
           </Link>
           <div className="mt-8 font-mono text-label-xs uppercase tracking-[0.18em] text-warning-red">
             {product.partNumber}
@@ -52,8 +65,10 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
             ))}
           </dl>
           <div className="mt-10 flex flex-wrap gap-4">
-            <TechnicalButton href={`/rfq?productSlug=${product.slug}`}>
-              Request Quote
+            <TechnicalButton
+              href={localizePath(normalizedLocale, `/rfq?productSlug=${product.slug}`)}
+            >
+              {labels.requestQuote}
             </TechnicalButton>
           </div>
         </div>
