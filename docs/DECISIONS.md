@@ -67,3 +67,24 @@ Format: `## YYYY-MM-DD — <title>`
 **Decision:** Standardize on a single, high-fidelity premium image (originally created as the dark variant) for both light and dark modes.
 **Consequences:** Complete visual consistency during theme transitions. Eliminates composition mismatches. `ThemedProductImage` will fallback dynamically to the premium `darkSrc` in both light and dark modes, completely eradicating the old low-quality AI images.
 
+---
+
+## 2026-05-27 — Dynamic i18n Routing with next-intl
+
+**Context:** The application requires multilingual capabilities targeting English, German, and French.
+**Decision:** Integrated `next-intl` to handle locale prefixing (`/app/[locale]/`).
+**Consequences:**
+- Relocated all App Router routes under `app/[locale]/`.
+- Established `middleware.ts` for automated locale detection and URL-rewriting.
+- Custom `LanguageSwitcher` (`EN | DE | FR`) integrated seamlessly into the Brutalist mono-styled top navigation.
+- Created fully translated dictionary JSON structures in `/messages/`.
+
+---
+
+## 2026-05-27 — Reverting to CSS background-image for High-Fidelity Hero Images
+
+**Context:** Next.js `next/image` optimization engine was causing downscaling, resulting in pixelation on high-density displays (retina) for main hero assets.
+**Decision:** Reverted the hero component `MaskedImageFrame` to a pure CSS `background-image` layout (`bg-cover bg-center`) as originally designed in v1.
+**Consequences:** Complete removal of Next.js image optimization bottlenecks for main landing hero assets. Browser naturally renders the full high-resolution asset without pixelation or compression artifacts, restoring the pristine cinematic premium quality.
+
+

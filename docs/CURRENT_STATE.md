@@ -1,15 +1,15 @@
 # Current State
 
-Last updated: 2026-05-19
+Last updated: 2026-05-27
 
 ## What's done
 
 ### Application
 
-- Next.js 15 App Router — 18 page route patterns + 3 API routes implemented and rendering
-- Cinematic graphite/macro visual language — fully intact
-- Component system: TopNav, Footer, SiteChrome, HudMetric, SideRail, TechnicalButton
-- Motion primitives: MotionProvider (PageShell), MaskedImageFrame, StaggerText, Reveals
+- Next.js 15 App Router — 18 page route patterns + 3 API routes fully migrated to dynamic i18n prefix matching (`/[locale]/`)
+- Multilingual Architecture — Integrated `next-intl` dictionary configuration mapping English (`en`), German (`de`), and French (`fr`)
+- Component system: TopNav (with integrated custom `LanguageSwitcher` replacing social links), Footer, SiteChrome, HudMetric, SideRail, TechnicalButton
+- Motion primitives: MotionProvider (PageShell), MaskedImageFrame (reverted to pure CSS `background-image` to prevent Next.js image optimization downscaling for maximum high-density retina clarity), StaggerText, Reveals
 - Product components: ProductCard, ProductGrid, IndustrySystemsPanel
 - RFQ flow: RfqFlow — full API submission with loading/success/error states
 - Contact form: ContactForm — full API submission with loading/success/error states
@@ -69,7 +69,6 @@ Last updated: 2026-05-19
 
 ### Low priority
 
-- [ ] i18n — DE locale (German market primary)
 - [ ] Storybook — component isolation and visual regression
 
 ## Deployment path
