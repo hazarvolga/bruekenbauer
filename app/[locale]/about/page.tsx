@@ -1,12 +1,12 @@
 import Image from "next/image";
 import { PageShell } from "@/components/motion/MotionProvider";
 import { images } from "@/lib/assets";
-import { useTranslations } from "next-intl";
-import { setRequestLocale } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 
-export default function AboutPage({ params }: { params: { locale: string } }) {
-  setRequestLocale(params.locale);
-  const t = useTranslations("AboutPage");
+export default async function AboutPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+  const t = await getTranslations("AboutPage");
 
   const services = [
     {

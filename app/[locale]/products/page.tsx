@@ -3,14 +3,14 @@ import { PageShell } from "@/components/motion/MotionProvider";
 import { ThemedProductImage } from "@/components/product/ThemedProductImage";
 import { productTaxonomy } from "@/data/productTaxonomy";
 import { products } from "@/data/products";
-import { useTranslations } from "next-intl";
-import { setRequestLocale } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 
-export default function ProductsPage({ params }: { params: { locale: string } }) {
-  setRequestLocale(params.locale);
-  const t = useTranslations("ProductsPage");
-  const tShortDesc = useTranslations("ProductShortDescriptions");
-  const tTitles = useTranslations("CategoryTitles");
+export default async function ProductsPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+  const t = await getTranslations("ProductsPage");
+  const tShortDesc = await getTranslations("ProductShortDescriptions");
+  const tTitles = await getTranslations("CategoryTitles");
 
   return (
     <PageShell className="min-h-screen px-margin-mobile pb-24 pt-32 md:ml-20 md:px-margin-desktop">
@@ -38,7 +38,7 @@ export default function ProductsPage({ params }: { params: { locale: string } })
             <div className="relative mb-6 aspect-[4/3] overflow-hidden border border-graphite-muted bg-surface-container-lowest">
               <ThemedProductImage
                 src={category.image}
-                darkSrc={category.imageDark}
+                darkSrc={(category as Record<string, string>).imageDark}
                 alt=""
                 sizes="(min-width: 1280px) 25vw, (min-width: 768px) 50vw, 100vw"
                 className="object-cover transition-transform duration-700 group-hover:scale-102"
@@ -55,10 +55,12 @@ export default function ProductsPage({ params }: { params: { locale: string } })
               </span>
             </div>
             <h2 className="product-card-title mt-4 break-words font-mono uppercase text-on-surface">
-              {tTitles(category.slug)} 
+              {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
+              {tTitles(category.slug as any)} 
             </h2>
             <p className="mt-4 font-mono text-data-sm text-on-surface-variant">
-              {tShortDesc(category.slug)}
+              {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
+              {tShortDesc(category.slug as any)}
             </p>
           </Link>
         ))}

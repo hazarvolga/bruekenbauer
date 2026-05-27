@@ -3,8 +3,7 @@ import { ThemedProductImage } from "@/components/product/ThemedProductImage";
 import type { Metadata } from "next";
 import { PageShell } from "@/components/motion/MotionProvider";
 import { applications } from "@/data/applications";
-import { useTranslations } from "next-intl";
-import { setRequestLocale } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 
 export const metadata: Metadata = {
   title: "Application Sectors | brüeckenbauer GmbH",
@@ -12,9 +11,10 @@ export const metadata: Metadata = {
     "Customized electronic component application sectors for aerospace, automotive, e-mobility, industrial automation, medical, HVAC, renewable energy, and building systems.",
 };
 
-export default function IndustriesPage({ params }: { params: { locale: string } }) {
-  setRequestLocale(params.locale);
-  const t = useTranslations("IndustriesPage");
+export default async function IndustriesPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+  const t = await getTranslations("IndustriesPage");
 
   return (
     <PageShell className="min-h-screen px-margin-mobile pb-24 pt-32 md:ml-20 md:px-margin-desktop">

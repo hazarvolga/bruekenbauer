@@ -36,9 +36,11 @@ export default async function ProductCategoryPage({
         Back to product groups
       </Link>
       <h1 className="mt-6 max-w-5xl font-mono text-headline-lg-mobile uppercase text-on-surface md:text-headline-lg">
+        {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
         {tTitles(category.slug as any)}
       </h1>
       <p className="mt-4 max-w-3xl font-mono text-technical-md text-on-surface-variant">
+        {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
         {tDesc(category.slug as any)}
       </p>
       <div className="mt-6 font-mono text-label-xs uppercase tracking-[0.18em] text-warning-red">
