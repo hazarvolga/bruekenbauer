@@ -42,7 +42,7 @@ export default async function IndustriesPage({ params }: { params: Promise<{ loc
           </div>
         </div>
       </section>
-      <div className="mt-12 grid gap-gutter md:grid-cols-2 xl:grid-cols-4">
+      <div className="mt-12 grid gap-gutter md:grid-cols-2 xl:grid-cols-3">
         {applications.map((app, index) => (
           <Link
             key={app.slug}
@@ -63,7 +63,7 @@ export default async function IndustriesPage({ params }: { params: Promise<{ loc
                 src={app.heroImage}
                 alt=""
                 sizes="(min-width: 1280px) 25vw, (min-width: 768px) 50vw, 100vw"
-                className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-102"
+                className="group-hover:scale-102 object-cover object-center transition-transform duration-700 ease-out"
               />
             </div>
             <span className="absolute bottom-4 right-5 z-10 font-mono text-data-sm text-outline">

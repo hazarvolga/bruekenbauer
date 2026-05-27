@@ -37,7 +37,7 @@
     }
   },
   "AboutPage": {
-    "label": "Swiss engineering precision",
+    "label": "Précision d'ingénierie suisse",
     "title_1": "Nous ne faisons",
     "title_2": "pas que conseiller",
     "description": "Chez brüeckenbauer GmbH, nous construisons des ponts - entre les disciplines, les secteurs et les frontières.\nBasés en Suisse depuis 2022, nous combinons une vaste expérience à l'intersection de la politique, de l'administration, des affaires et de l'innovation. Grâce à un vaste réseau, nous relions l'expertise locale à une perspective mondiale et aidons nos clients à maîtriser des défis complexes et à libérer de nouveaux potentiels.\nNous connectons, concevons et autonomisons.",
@@ -54,6 +54,27 @@
       "srv_03_copy": "Nous identifions les opportunités de croissance, développons des modèles commerciaux et aidons nos clients à réaliser pleinement leur potentiel.",
       "srv_04_title": "Renforcement de l'équipe",
       "srv_04_copy": "À court terme et pour une période définie, nous complétons les équipes de nos clients avec notre savoir-faire pour combler les manques de ressources ou pour mener à bien des projets."
+    },
+    "team": {
+      "label": "Leadership node",
+      "title": "The Bridge Builders",
+      "subtitle": "Un duo dynamique dont les compétences se complètent.",
+      "andreas": {
+        "bio_1": "Andreas Werthmüller est un expert orienté vers la pratique, doté d'une vaste expérience dans des environnements interdisciplinaires et interculturels. En associant pensée stratégique et exécution opérationnelle, il apporte une expertise approfondie en recherche, technologie, innovation et gestion des parties prenantes.",
+        "bio_2": "Au cours de sa carrière, Andreas a dirigé et coordonné avec succès de nombreux programmes et projets internationaux dans les secteurs public et privé. En tant que PMO et chef de projet expérimenté, il aide les organisations à naviguer dans des défis complexes et à transformer les idées en résultats durables à long terme.",
+        "bio_3": "Son approche est pragmatique, orientée solutions et fortement axée sur la création d'un impact mesurable grâce à une collaboration efficace et à une exécution structurée.",
+        "focus_1": "Research & Technology",
+        "focus_2": "PMO Leadership",
+        "focus_3": "Stakeholder Strategy"
+      },
+      "konstantin": {
+        "bio_1": "Konstantin Gochua est un professionnel du business development et du product management, doté d'une vaste expérience internationale dans les semiconductors, la microélectronique et les advanced materials. Son parcours combine une expertise technique approfondie avec une stratégie commerciale orientée client, lui permettant de relier engineering, innovation et croissance commerciale.",
+        "bio_2": "Tout au long de sa carrière, Konstantin a contribué à l'innovation dans les semiconductors, les technologies RFID, la power electronics et le développement commercial international, tout en soutenant des partenariats stratégiques et une collaboration transversale dans des industries hautement techniques.",
+        "bio_3": "Avec une base solide en recherche appliquée et en innovation industrielle, Konstantin apporte une approche analytique, adaptable et internationale aux défis technologiques et commerciaux complexes.",
+        "focus_1": "Semiconductors",
+        "focus_2": "Product Strategy",
+        "focus_3": "Business Development"
+      }
     },
     "sequence": {
       "label": "Séquence opérationnelle",

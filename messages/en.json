@@ -55,6 +55,27 @@
       "srv_04_title": "Strengthening the team",
       "srv_04_copy": "In the short term and for a defined period, we supplement our customers' teams with our know-how to bridge resource gaps or to successfully complete projects."
     },
+    "team": {
+      "label": "Leadership node",
+      "title": "The Bridge Builders",
+      "subtitle": "A dynamic duo whose skills complement each other.",
+      "andreas": {
+        "bio_1": "Andreas Werthmüller is a practice-oriented expert with extensive experience across interdisciplinary and intercultural environments. Combining strategic thinking with operational execution, he brings deep expertise in research, technology, innovation, and stakeholder management.",
+        "bio_2": "Over the course of his career, Andreas has successfully led and coordinated numerous international programs and projects in both the public and private sectors. As an experienced PMO and project leader, he supports organizations in navigating complex challenges and transforming ideas into sustainable, long-term results.",
+        "bio_3": "His approach is pragmatic, solution-driven, and strongly focused on creating measurable impact through effective collaboration and structured execution.",
+        "focus_1": "Research & technology",
+        "focus_2": "PMO leadership",
+        "focus_3": "Stakeholder strategy"
+      },
+      "konstantin": {
+        "bio_1": "Konstantin Gochua is a business development and product management professional with extensive international experience in semiconductors, microelectronics, and advanced materials. His background combines deep technical expertise with customer-oriented business strategy, enabling him to bridge the gap between engineering, innovation, and commercial growth.",
+        "bio_2": "Throughout his career, Konstantin has contributed to semiconductor innovation, RFID technologies, power electronics, and international business development while supporting strategic partnerships and cross-functional collaboration in highly technical industries.",
+        "bio_3": "With a strong foundation in applied research and industrial innovation, Konstantin brings an analytical, adaptable, and internationally minded approach to complex technological and business challenges.",
+        "focus_1": "Semiconductors",
+        "focus_2": "Product strategy",
+        "focus_3": "Business development"
+      }
+    },
     "sequence": {
       "label": "Operating sequence",
       "title": "From need definition to long-term support",
