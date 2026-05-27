@@ -33,7 +33,6 @@ export const RfqEmailTemplate: React.FC<RfqEmailTemplateProps> = ({
     fontWeight: 600,
     color: "#d1d1d1",
     margin: "0 0 10px 0",
-    textTransform: "uppercase",
     letterSpacing: "0.05em",
   };
 
