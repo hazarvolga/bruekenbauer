@@ -65,6 +65,7 @@ export function MaskedImageFrame({
           alt={label}
           fill
           priority={priority}
+          quality={100}
           className={cn("object-cover", imageClassName)}
           sizes="(max-width: 768px) 100vw, 50vw"
         />
