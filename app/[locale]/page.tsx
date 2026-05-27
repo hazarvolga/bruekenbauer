@@ -16,6 +16,7 @@ export default function HomePage() {
           label="Macro transformer circuit board"
           className="h-[520px] border-b border-graphite-muted md:sticky md:top-20 md:h-[calc(100vh-80px)] md:w-1/2 md:border-b-0 md:border-r"
           imageClassName="object-[85%_52%]"
+          sizes="(max-width: 768px) 100vw, 50vw"
           priority
         />
         <div className="flex flex-1 flex-col justify-center px-margin-mobile py-16 md:px-margin-desktop">

@@ -41,6 +41,7 @@ export function MaskedImageFrame({
   imageClassName = "",
   overlayClassName = "",
   priority = false,
+  sizes = "(max-width: 768px) 100vw, 50vw",
   children,
 }: {
   image: string;
@@ -49,6 +50,7 @@ export function MaskedImageFrame({
   imageClassName?: string;
   overlayClassName?: string;
   priority?: boolean;
+  sizes?: string;
   children?: ReactNode;
 }) {
   const reduce = useReducedMotion();
@@ -65,9 +67,9 @@ export function MaskedImageFrame({
           alt={label}
           fill
           priority={priority}
-          quality={100}
+          quality={95}
+          sizes={sizes}
           className={cn("object-cover", imageClassName)}
-          sizes="(max-width: 768px) 100vw, 50vw"
         />
       </motion.div>
       <div className={cn("absolute inset-0", overlayClassName)} />
