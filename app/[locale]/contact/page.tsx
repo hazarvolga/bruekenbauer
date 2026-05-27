@@ -1,17 +1,17 @@
 import type { Metadata } from "next";
 import { ContactForm } from "@/components/contact/ContactForm";
 import { PageShell } from "@/components/motion/MotionProvider";
-import { useTranslations } from "next-intl";
-import { setRequestLocale } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 
 export const metadata: Metadata = {
   title: "Engineering Contact — brüeckenbauer GmbH",
   description: "Direct contact channel for procurement, technical, and partnership inquiries.",
 };
 
-export default function ContactPage({ params }: { params: { locale: string } }) {
-  setRequestLocale(params.locale);
-  const t = useTranslations("ContactPage");
+export default async function ContactPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+  const t = await getTranslations({ locale, namespace: "ContactPage" });
 
   return (
     <PageShell className="min-h-screen px-margin-mobile pb-24 pt-32 md:ml-20 md:px-margin-desktop">
