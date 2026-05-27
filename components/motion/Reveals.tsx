@@ -9,6 +9,7 @@ import {
 } from "@/lib/motion.config";
 import { motion, useReducedMotion } from "./MotionProvider";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 
 export function CurtainReveal({
   children,
@@ -46,6 +47,7 @@ export function MaskedImageFrame({
   className?: string;
   imageClassName?: string;
   overlayClassName?: string;
+  priority?: boolean;
   children?: ReactNode;
 }) {
   const reduce = useReducedMotion();
@@ -55,11 +57,17 @@ export function MaskedImageFrame({
         variants={reduce ? undefined : maskedImageReveal}
         initial={reduce ? false : "hidden"}
         animate={reduce ? undefined : "visible"}
-        className={cn("absolute inset-0 bg-cover bg-center", imageClassName)}
-        aria-label={label}
-        role="img"
-        style={{ backgroundImage: `url(${image})` }}
-      />
+        className="absolute inset-0"
+      >
+        <Image
+          src={image}
+          alt={label}
+          fill
+          priority={priority}
+          className={cn("object-cover", imageClassName)}
+          sizes="(max-width: 768px) 100vw, 50vw"
+        />
+      </motion.div>
       <div className={cn("absolute inset-0", overlayClassName)} />
       {children}
     </div>
