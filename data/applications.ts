@@ -217,6 +217,5 @@ export const applications = applicationNames.map((name, index) => ({
   node: `APP-${String(index + 1).padStart(2, "0")}`,
   summary: applicationSummaries[name],
   heroImage: `/images/industries/${slugify(name)}.webp`,
-  originalHeroImage: `/images/industries/${slugify(name)}.png`,
   detail: applicationDetails[name],
 }));

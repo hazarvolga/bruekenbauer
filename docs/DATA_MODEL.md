@@ -49,8 +49,8 @@ Industry verticals used to filter products:
 "Home Appliances & White Goods" | "HVAC" | "Renewable Energy"
 ```
 
-Each application maps to a record with `name`, `slug`, `node`, `summary`, `heroImage`, `originalHeroImage`, and `detail`.
-Industry detail pages and overview cards use optimized WebP `heroImage` assets; original full-size generated PNG files stay in `originalHeroImage` for reuse.
+Each application maps to a record with `name`, `slug`, `node`, `summary`, `heroImage`, and `detail`.
+Industry detail pages and overview cards use optimized WebP `heroImage` assets. Full-size generated PNG sources are archived under `asset-sources/images/industries/` and excluded from Vercel deployment.
 
 ### `PowerManagementFamily` — `data/powerManagement.ts`
 
@@ -97,10 +97,10 @@ Used for both product and industry route segments.
 | Asset type           | Path pattern                                     |
 | -------------------- | ------------------------------------------------ |
 | Product images       | `/public/images/products/<slug>-ai.png`          |
-| Product group covers | `/public/images/product-groups/<slug>-cover.png` |
+| Product group covers | `/public/images/product-groups-premium/dark/<slug>-cover.webp` |
 | Industry images      | `/public/images/industries/<slug>.webp`          |
-| Industry originals   | `/public/images/industries/<slug>.png`           |
-| Page heroes          | `/public/images/<page>-hero.png`                 |
+| Source PNG archive   | `/asset-sources/images/...`                      |
+| Page heroes          | `/public/images/generated/<page>.webp`           |
 
 All images served via `next/image` with explicit dimensions.
 
