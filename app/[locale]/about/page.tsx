@@ -152,17 +152,17 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
             {teamMembers.map((member) => (
               <article
                 key={member.id}
-                className="reticle-corners grid gap-0 overflow-hidden border border-graphite-muted bg-surface-container-low/50 md:grid-cols-[0.42fr_0.58fr] xl:grid-cols-1"
+                className="reticle-corners group grid gap-0 overflow-hidden border border-graphite-muted bg-surface-container-low/50 md:grid-cols-[0.42fr_0.58fr] xl:grid-cols-1"
               >
-                <div className="relative min-h-80 border-b border-graphite-muted bg-graphite-muted/20 md:min-h-full md:border-b-0 md:border-r xl:min-h-[420px] xl:border-b xl:border-r-0">
+                <div className="relative aspect-[4/3] border-b border-graphite-muted bg-graphite-muted/20 md:aspect-auto md:min-h-full md:border-b-0 md:border-r xl:min-h-[420px] xl:border-b xl:border-r-0">
                   <Image
                     src={member.image}
                     alt={member.name}
                     fill
                     sizes="(min-width: 1280px) 28vw, (min-width: 768px) 32vw, 100vw"
-                    className="object-cover grayscale"
+                    className="object-cover object-center grayscale transition duration-700 ease-out group-focus-within:grayscale-0 group-hover:grayscale-0"
                   />
-                  <div className="bg-industrial-blue/20 absolute inset-0 mix-blend-multiply" />
+                  <div className="bg-industrial-blue/20 absolute inset-0 mix-blend-multiply transition-opacity duration-700 ease-out group-focus-within:opacity-0 group-hover:opacity-0" />
                   <div className="absolute left-5 top-5 border border-graphite-muted bg-background/70 px-3 py-2 font-mono text-label-xs uppercase tracking-[0.16em] text-warning-red backdrop-blur-sm">
                     TEAM-{member.id}
                   </div>
