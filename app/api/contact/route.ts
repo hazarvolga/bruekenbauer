@@ -74,7 +74,7 @@ export async function POST(request: Request) {
       await resend.emails.send({
         from: fromEmail,
         to: toEmail,
-        subject: `[brüeckenbauer Contact] ${body.name} (${body.company || "N/A"}) — ${referenceId}`,
+        subject: `[brückenbauer Contact] ${body.name} (${body.company || "N/A"}) — ${referenceId}`,
         react: React.createElement(ContactEmailTemplate, { request: body, referenceId, timestamp }),
       });
     } catch (err) {
@@ -85,4 +85,3 @@ export async function POST(request: Request) {
 
   return NextResponse.json({ referenceId, timestamp }, { status: 201 });
 }
-

@@ -18,7 +18,7 @@ export default function PresentationReviewPage() {
               Presentation review
             </div>
             <h1 className="mt-3 font-mono text-headline-lg-mobile uppercase text-on-surface md:text-headline-lg">
-              brüeckenbauer Brand Dossier
+              brückenbauer Brand Dossier
             </h1>
           </div>
           <div className="flex flex-wrap gap-3 font-mono text-label-xs uppercase tracking-[0.14em]">
@@ -56,7 +56,7 @@ export default function PresentationReviewPage() {
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={slide.src}
-              alt={`brüeckenbauer Brand Dossier slide ${slide.number}`}
+              alt={`brückenbauer Brand Dossier slide ${slide.number}`}
               className="block w-full border border-graphite-muted"
             />
           </article>

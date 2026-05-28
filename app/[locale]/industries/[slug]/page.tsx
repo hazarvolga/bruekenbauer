@@ -30,7 +30,7 @@ export async function generateMetadata({
   const copy = getApplicationCopy(locale, application);
 
   return {
-    title: `${copy.name} | brüeckenbauer GmbH`,
+    title: `${copy.name} | brückenbauer GmbH`,
     description: copy.detail.intro,
   };
 }

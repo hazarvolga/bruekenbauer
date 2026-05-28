@@ -90,7 +90,7 @@ export async function POST(request: Request) {
       await resend.emails.send({
         from: fromEmail,
         to: toEmail,
-        subject: `[brüeckenbauer RFQ] ${body.company} — ${referenceId}`,
+        subject: `[brückenbauer RFQ] ${body.company} — ${referenceId}`,
         react: React.createElement(RfqEmailTemplate, { request: body, referenceId, timestamp }),
       });
     } catch (err) {
@@ -101,4 +101,3 @@ export async function POST(request: Request) {
 
   return NextResponse.json({ referenceId, timestamp }, { status: 201 });
 }
-

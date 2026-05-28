@@ -4,7 +4,7 @@ export function Footer() {
   return (
     <footer className="border-t border-graphite-muted bg-surface px-margin-mobile py-5 font-mono text-data-sm text-on-surface-variant md:ml-20 md:px-gutter">
       <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
-        <span>brüeckenbauer GmbH // System status active</span>
+        <span>brückenbauer GmbH // System status active</span>
         <div className="flex gap-5 uppercase">
           <Link href="/compliance" className="hover:text-warning-red">
             Compliance

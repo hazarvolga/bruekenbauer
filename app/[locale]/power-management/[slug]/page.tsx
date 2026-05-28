@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const family = getPowerFamilyCopy(familySource, locale);
 
   return {
-    title: `${family.name} | brüeckenbauer GmbH`,
+    title: `${family.name} | brückenbauer GmbH`,
     description: family.summary,
   };
 }

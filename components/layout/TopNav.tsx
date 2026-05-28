@@ -52,7 +52,7 @@ export function TopNav() {
           href="/"
           className="min-w-0 flex-1 truncate font-mono text-base font-bold leading-none text-on-surface sm:text-lg md:flex-none md:text-xl"
         >
-          brüeckenbauer GmbH
+          brückenbauer GmbH
         </Link>
         <nav className="hidden items-center gap-5 md:flex lg:gap-7" aria-label="Primary navigation">
           {primaryLinks.map((link) => (
@@ -77,19 +77,19 @@ export function TopNav() {
             <span className="relative h-4 w-5" aria-hidden="true">
               <span
                 className={cn("absolute left-0 top-0 h-px w-5 bg-current transition-transform", {
-                    "translate-y-[7px] rotate-45": isMenuOpen,
-                  })}
+                  "translate-y-[7px] rotate-45": isMenuOpen,
+                })}
               />
               <span
                 className={cn("absolute left-0 top-[7px] h-px w-5 bg-current transition-opacity", {
-                    "opacity-0": isMenuOpen,
-                    "opacity-100": !isMenuOpen,
-                  })}
+                  "opacity-0": isMenuOpen,
+                  "opacity-100": !isMenuOpen,
+                })}
               />
               <span
                 className={cn("absolute bottom-0 left-0 h-px w-5 bg-current transition-transform", {
-                    "-translate-y-[7px] -rotate-45": isMenuOpen,
-                  })}
+                  "-translate-y-[7px] -rotate-45": isMenuOpen,
+                })}
               />
             </span>
           </button>
@@ -100,7 +100,7 @@ export function TopNav() {
         aria-label="Mobile primary navigation"
         className={cn(
           "grid overflow-hidden border-t border-graphite-muted bg-surface-container-low/95 transition-[grid-template-rows,opacity] duration-300 ease-out md:hidden",
-          isMenuOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0",
+          isMenuOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
         )}
       >
         <div className="min-h-0">

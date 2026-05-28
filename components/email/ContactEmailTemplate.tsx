@@ -101,7 +101,7 @@ export const ContactEmailTemplate: React.FC<ContactEmailTemplateProps> = ({
   return (
     <div style={containerStyle}>
       <div style={headerStyle}>
-        <h1 style={titleStyle}>brüeckenbauer GmbH</h1>
+        <h1 style={titleStyle}>brückenbauer GmbH</h1>
         <p style={subTitleStyle}>INBOUND MESSAGE TRANSMISSION</p>
       </div>
 
@@ -130,7 +130,10 @@ export const ContactEmailTemplate: React.FC<ContactEmailTemplateProps> = ({
           <tr>
             <td style={tableHeaderStyle}>EMAIL ADDRESS</td>
             <td style={tableDataStyle}>
-              <a href={`mailto:${request.email}`} style={{ color: "#cc5500", textDecoration: "none" }}>
+              <a
+                href={`mailto:${request.email}`}
+                style={{ color: "#cc5500", textDecoration: "none" }}
+              >
                 {request.email}
               </a>
             </td>
@@ -148,8 +151,8 @@ export const ContactEmailTemplate: React.FC<ContactEmailTemplateProps> = ({
       <div style={messageBoxStyle}>{request.message}</div>
 
       <div style={footerStyle}>
-        SYSTEMS REALISM / INBOUND RELAY LAYER<br />
-        © {new Date().getFullYear()} brüeckenbauer GmbH. All rights reserved.
+        SYSTEMS REALISM / INBOUND RELAY LAYER
+        <br />© {new Date().getFullYear()} brückenbauer GmbH. All rights reserved.
       </div>
     </div>
   );

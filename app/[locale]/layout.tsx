@@ -41,7 +41,7 @@ export async function generateMetadata({
     openGraph: {
       title,
       description,
-      siteName: "brüeckenbauer GmbH",
+      siteName: "brückenbauer GmbH",
       url,
       type: "website",
       images: [

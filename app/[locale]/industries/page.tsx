@@ -6,7 +6,7 @@ import { applications } from "@/data/applications";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 
 export const metadata: Metadata = {
-  title: "Application Sectors | brüeckenbauer GmbH",
+  title: "Application Sectors | brückenbauer GmbH",
   description:
     "Customized electronic component application sectors for aerospace, automotive, e-mobility, industrial automation, medical, HVAC, renewable energy, and building systems.",
 };

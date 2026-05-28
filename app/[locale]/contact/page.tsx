@@ -4,7 +4,7 @@ import { PageShell } from "@/components/motion/MotionProvider";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 
 export const metadata: Metadata = {
-  title: "Engineering Contact — brüeckenbauer GmbH",
+  title: "Engineering Contact — brückenbauer GmbH",
   description: "Direct contact channel for procurement, technical, and partnership inquiries.",
 };
 
