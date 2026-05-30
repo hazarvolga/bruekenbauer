@@ -693,6 +693,8 @@ export const documents = [
     status: "Active",
     issueDate: "2025-11-08",
     documentType: "Product portfolio",
+    fileSize: "5.8 MB",
+    description: "Comprehensive catalog of active component groups, temperature sensors, electromechanical adapters, and acoustics.",
     downloadHref: "/documents/component-portfolio-2025.pdf",
   },
   {
@@ -704,6 +706,8 @@ export const documents = [
     status: "Active",
     issueDate: "2025-11-08",
     documentType: "Technical portfolio",
+    fileSize: "3.2 MB",
+    description: "Detailed technical dossier for advanced IGBT, SiC MOSFET, power rectifiers, and high-frequency power supplies.",
     downloadHref: "/documents/power-management-portfolio.pdf",
   },
   {
@@ -715,6 +719,8 @@ export const documents = [
     status: "Active",
     issueDate: "2025-11-08",
     documentType: "Company profile",
+    fileSize: "1.7 MB",
+    description: "Overview of corporate engineering philosophy, Swiss distribution precision, and strategic partnership models.",
     downloadHref: "/documents/brueckenbauer-company-profile.pdf",
   },
 ];
