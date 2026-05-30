@@ -58,14 +58,14 @@ export default async function PartnersPage({ params }: { params: Promise<{ local
               key={partner.id}
               className="reticle-corners relative border border-graphite-muted bg-surface-container-low/40 p-8 font-mono transition-all duration-300 hover:border-warning-red hover:bg-surface-container-low/60"
             >
-              <div className="grid gap-8 lg:grid-cols-[200px_1fr]">
+              <div className="grid gap-8 lg:grid-cols-[220px_1fr]">
                 <div className="flex flex-col items-center justify-start gap-4">
-                  <div className="relative aspect-square w-full max-w-[160px] overflow-hidden border border-graphite-muted bg-surface p-2 shadow-inner">
+                  <div className="relative aspect-square w-full max-w-[200px] overflow-hidden border border-graphite-muted bg-surface shadow-inner">
                     <Image
                       src={partner.logo}
                       alt={`${partner.name} logo`}
                       fill
-                      className="object-contain p-2 grayscale transition-all duration-300 hover:grayscale-0"
+                      className="object-cover grayscale transition-all duration-300 hover:grayscale-0"
                     />
                   </div>
                   <span className="text-[10px] text-outline uppercase tracking-wider">
