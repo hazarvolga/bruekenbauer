@@ -18,10 +18,16 @@ export function ContactForm({ locale = "en" }: { locale?: string }) {
       aria: "Contact form",
       name: "Contact Name",
       email: "Preferred Contact Method",
-      company: "Company / coordinates",
-      message: "Project Information",
+      company: "Company Name",
+      phone: "Phone Number",
+      message: "Project Description",
       submitting: "Submitting...",
       submit: "Submit Inquiry",
+      placeholderName: "e.g. Dr. Arthur Vance",
+      placeholderEmail: "e.g. vance@company.com",
+      placeholderCompany: "e.g. Vance Semiconductor (optional)",
+      placeholderPhone: "e.g. +49 89 1234567 (optional)",
+      placeholderMessage: "Describe your design requirements, target volume, and technical specifications...",
     },
     de: {
       confirmed: "Übermittlung bestätigt",
@@ -31,10 +37,16 @@ export function ContactForm({ locale = "en" }: { locale?: string }) {
       aria: "Kontaktformular",
       name: "Kontaktname",
       email: "Bevorzugte Kontaktmethode",
-      company: "Unternehmen / Koordinaten",
-      message: "Projektinformationen",
+      company: "Unternehmensname",
+      phone: "Telefonnummer",
+      message: "Projektbeschreibung",
       submitting: "Wird gesendet...",
       submit: "Anfrage senden",
+      placeholderName: "z.B. Dr. Arthur Vance",
+      placeholderEmail: "z.B. vance@company.de",
+      placeholderCompany: "z.B. Vance Halbleiter (optional)",
+      placeholderPhone: "z.B. +49 89 1234567 (optional)",
+      placeholderMessage: "Beschreiben Sie Ihre Designanforderungen, das Zielvolumen und die technischen Spezifikationen...",
     },
     fr: {
       confirmed: "Transmission confirmée",
@@ -44,16 +56,23 @@ export function ContactForm({ locale = "en" }: { locale?: string }) {
       aria: "Formulaire de contact",
       name: "Nom du contact",
       email: "Méthode de contact préférée",
-      company: "Entreprise / coordonnées",
-      message: "Informations projet",
+      company: "Nom de l'entreprise",
+      phone: "Numéro de téléphone",
+      message: "Description du projet",
       submitting: "Envoi...",
       submit: "Soumettre la demande",
+      placeholderName: "ex. Dr. Arthur Vance",
+      placeholderEmail: "ex. vance@company.fr",
+      placeholderCompany: "ex. Vance Semi-conducteurs (optionnel)",
+      placeholderPhone: "ex. +33 1 23 45 67 89 (optionnel)",
+      placeholderMessage: "Décrivez vos besoins de conception, le volume cible et les spécifications techniques...",
     },
   }[normalizedLocale];
   const [form, setForm] = useState<ContactRequest>({
     name: "",
     email: "",
     company: "",
+    phone: "",
     message: "",
   });
   const [status, setStatus] = useState<Status>("idle");
@@ -75,7 +94,7 @@ export function ContactForm({ locale = "en" }: { locale?: string }) {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
+        body: JSON.stringify({ ...form, locale }),
       });
       if (!res.ok) {
         const data = (await res.json()) as { error?: string };
@@ -108,7 +127,7 @@ export function ContactForm({ locale = "en" }: { locale?: string }) {
           onClick={() => {
             setStatus("idle");
             setReferenceId(null);
-            setForm({ name: "", email: "", company: "", message: "" });
+            setForm({ name: "", email: "", company: "", phone: "", message: "" });
           }}
         >
           {copy.newMessage}
@@ -125,25 +144,28 @@ export function ContactForm({ locale = "en" }: { locale?: string }) {
     >
       {(
         [
-          ["name", copy.name, "text"],
-          ["email", copy.email, "email"],
-          ["company", copy.company, "text"],
+          ["name", copy.name, "text", copy.placeholderName, true],
+          ["email", copy.email, "email", copy.placeholderEmail, true],
+          ["company", copy.company, "text", copy.placeholderCompany, false],
+          ["phone", copy.phone, "tel", copy.placeholderPhone, false],
         ] as const
-      ).map(([id, label, type]) => (
+      ).map(([id, label, type, placeholder, required]) => (
         <div key={id}>
           <label
             htmlFor={id}
             className="mb-2 block font-mono text-label-xs uppercase tracking-[0.18em] text-outline"
           >
             {label}
+            {required && <span className="ml-1 text-warning-red">*</span>}
           </label>
           <input
             id={id}
             type={type}
-            required={id !== "company"}
-            value={form[id]}
+            required={required}
+            placeholder={placeholder}
+            value={form[id] || ""}
             onChange={(e) => update(id, e.target.value)}
-            className="w-full border-0 border-b border-graphite-muted bg-transparent py-3 font-mono text-technical-md text-on-surface focus:border-warning-red focus:ring-0"
+            className="w-full border border-outline-variant hover:border-outline focus:border-warning-red bg-surface-container-low/60 px-4 py-3 font-mono text-technical-md text-on-surface placeholder:text-outline/40 focus:ring-1 focus:ring-warning-red/20 focus:outline-none transition-colors duration-200"
           />
         </div>
       ))}
@@ -153,14 +175,16 @@ export function ContactForm({ locale = "en" }: { locale?: string }) {
           className="mb-2 block font-mono text-label-xs uppercase tracking-[0.18em] text-outline"
         >
           {copy.message}
+          <span className="ml-1 text-warning-red">*</span>
         </label>
         <textarea
           id="message"
           rows={6}
           required
+          placeholder={copy.placeholderMessage}
           value={form.message}
           onChange={(e) => update("message", e.target.value)}
-          className="w-full border border-graphite-muted bg-surface-dim/50 p-4 font-mono text-technical-md text-on-surface focus:border-warning-red focus:ring-0"
+          className="w-full border border-outline-variant hover:border-outline focus:border-warning-red bg-surface-container-low/60 p-4 font-mono text-technical-md text-on-surface placeholder:text-outline/40 focus:ring-1 focus:ring-warning-red/20 focus:outline-none transition-colors duration-200"
         />
       </div>
       {errorMsg && (

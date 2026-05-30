@@ -5,13 +5,61 @@ interface ContactEmailTemplateProps {
   request: ContactRequest;
   referenceId: string;
   timestamp: string;
+  locale?: string;
 }
+
+const translations = {
+  en: {
+    title: "INBOUND MESSAGE TRANSMISSION",
+    referenceId: "REFERENCE ID",
+    timestamp: "TIMESTAMP",
+    senderMetadata: "1. SENDER METADATA",
+    contactName: "CONTACT NAME",
+    emailAddress: "EMAIL ADDRESS",
+    companyName: "COMPANY NAME",
+    phoneNumber: "PHONE NUMBER",
+    communicatedContent: "2. COMMUNICATED CONTENT",
+    footerText: "SYSTEMS REALISM / INBOUND RELAY LAYER",
+    allRightsReserved: "All rights reserved.",
+  },
+  de: {
+    title: "EINGEHENDE NACHRICHTENÜBERTRAGUNG",
+    referenceId: "REFERENZ-ID",
+    timestamp: "ZEITSTEMPEL",
+    senderMetadata: "1. ABSENDER-METADATEN",
+    contactName: "KONTAKTNAME",
+    emailAddress: "E-MAIL-ADRESSE",
+    companyName: "UNTERNEHMENSNAME",
+    phoneNumber: "TELEFONNUMMER",
+    communicatedContent: "2. ÜBERMITTELTER INHALT",
+    footerText: "SYSTEMS REALISM / EINGEHENDE RELAIS-SCHICHT",
+    allRightsReserved: "Alle Rechte vorbehalten.",
+  },
+  fr: {
+    title: "TRANSMISSION DU MESSAGE ENTRANT",
+    referenceId: "ID DE RÉFÉRENCE",
+    timestamp: "HORODATAGE",
+    senderMetadata: "1. MÉTADONNÉES DE L'EXPÉDITEUR",
+    contactName: "NOM DU CONTACT",
+    emailAddress: "ADRESSE E-MAIL",
+    companyName: "NOM DE L'ENTREPRISE",
+    phoneNumber: "NUMÉRO DE TÉLÉPHONE",
+    communicatedContent: "2. CONTENU COMMUNIQUÉ",
+    footerText: "SYSTEMS REALISM / COUCHE DE RELAIS ENTRANT",
+    allRightsReserved: "Tous droits réservés.",
+  },
+};
 
 export const ContactEmailTemplate: React.FC<ContactEmailTemplateProps> = ({
   request,
   referenceId,
   timestamp,
+  locale = "en",
 }) => {
+  // Normalize locale to en, de, fr
+  const lang = (locale === "de" || locale === "fr" ? locale : "en") as "en" | "de" | "fr";
+  const copy = translations[lang];
+
   const containerStyle: React.CSSProperties = {
     fontFamily: 'JetBrains Mono, Menlo, Monaco, Consolas, "Courier New", monospace',
     backgroundColor: "#141313",
@@ -102,33 +150,33 @@ export const ContactEmailTemplate: React.FC<ContactEmailTemplateProps> = ({
     <div style={containerStyle}>
       <div style={headerStyle}>
         <h1 style={titleStyle}>brückenbauer GmbH</h1>
-        <p style={subTitleStyle}>INBOUND MESSAGE TRANSMISSION</p>
+        <p style={subTitleStyle}>{copy.title}</p>
       </div>
 
       <table style={metaGridStyle}>
         <tbody>
           <tr>
-            <td style={tableHeaderStyle}>REFERENCE ID</td>
+            <td style={tableHeaderStyle}>{copy.referenceId}</td>
             <td style={tableDataStyle}>
               <strong style={{ color: "#ff0000" }}>{referenceId}</strong>
             </td>
           </tr>
           <tr>
-            <td style={tableHeaderStyle}>TIMESTAMP</td>
+            <td style={tableHeaderStyle}>{copy.timestamp}</td>
             <td style={tableDataStyle}>{timestamp}</td>
           </tr>
         </tbody>
       </table>
 
-      <h2 style={sectionTitleStyle}>1. SENDER METADATA</h2>
+      <h2 style={sectionTitleStyle}>{copy.senderMetadata}</h2>
       <table style={metaGridStyle}>
         <tbody>
           <tr>
-            <td style={tableHeaderStyle}>CONTACT NAME</td>
+            <td style={tableHeaderStyle}>{copy.contactName}</td>
             <td style={tableDataStyle}>{request.name}</td>
           </tr>
           <tr>
-            <td style={tableHeaderStyle}>EMAIL ADDRESS</td>
+            <td style={tableHeaderStyle}>{copy.emailAddress}</td>
             <td style={tableDataStyle}>
               <a
                 href={`mailto:${request.email}`}
@@ -140,19 +188,25 @@ export const ContactEmailTemplate: React.FC<ContactEmailTemplateProps> = ({
           </tr>
           {request.company && (
             <tr>
-              <td style={tableHeaderStyle}>COMPANY NAME</td>
+              <td style={tableHeaderStyle}>{copy.companyName}</td>
               <td style={tableDataStyle}>{request.company}</td>
+            </tr>
+          )}
+          {request.phone && (
+            <tr>
+              <td style={tableHeaderStyle}>{copy.phoneNumber}</td>
+              <td style={tableDataStyle}>{request.phone}</td>
             </tr>
           )}
         </tbody>
       </table>
 
-      <h2 style={sectionTitleStyle}>2. COMMUNICATED CONTENT</h2>
+      <h2 style={sectionTitleStyle}>{copy.communicatedContent}</h2>
       <div style={messageBoxStyle}>{request.message}</div>
 
       <div style={footerStyle}>
-        SYSTEMS REALISM / INBOUND RELAY LAYER
-        <br />© {new Date().getFullYear()} brückenbauer GmbH. All rights reserved.
+        {copy.footerText}
+        <br />© {new Date().getFullYear()} brückenbauer GmbH. {copy.allRightsReserved}
       </div>
     </div>
   );

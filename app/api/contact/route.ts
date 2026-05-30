@@ -7,7 +7,9 @@ export interface ContactRequest {
   name: string;
   email: string;
   company: string;
+  phone?: string;
   message: string;
+  locale?: string;
 }
 
 function generateRef(): string {
@@ -24,8 +26,10 @@ function validate(body: unknown): body is ContactRequest {
     b.name.trim().length > 0 &&
     typeof b.email === "string" &&
     /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(b.email) &&
+    (b.phone === undefined || typeof b.phone === "string") &&
     typeof b.message === "string" &&
-    b.message.trim().length > 0
+    b.message.trim().length > 0 &&
+    (b.locale === undefined || typeof b.locale === "string")
   );
 }
 
@@ -57,6 +61,7 @@ export async function POST(request: Request) {
         hasName: Boolean(body.name.trim()),
         hasEmail: Boolean(body.email.trim()),
         hasCompany: Boolean(body.company?.trim()),
+        hasPhone: Boolean(body.phone?.trim()),
         messageLength: body.message.trim().length,
       },
     })
@@ -70,12 +75,14 @@ export async function POST(request: Request) {
       const fromEmail = process.env.RESEND_FROM_EMAIL || "onboarding@resend.dev";
       const toEmailRaw = process.env.RESEND_TO_EMAIL || "info@brueckenbauer.de";
       const toEmail = toEmailRaw.split(",").map((e) => e.trim());
+      const locale = body.locale || "en";
+      const subjectPrefix = locale === "de" ? "Kontakt" : "Contact";
 
       await resend.emails.send({
         from: fromEmail,
         to: toEmail,
-        subject: `[brückenbauer Contact] ${body.name} (${body.company || "N/A"}) — ${referenceId}`,
-        react: React.createElement(ContactEmailTemplate, { request: body, referenceId, timestamp }),
+        subject: `[brückenbauer ${subjectPrefix}] ${body.name} (${body.company || "N/A"}) — ${referenceId}`,
+        react: React.createElement(ContactEmailTemplate, { request: body, referenceId, timestamp, locale }),
       });
     } catch (err) {
       console.error("Failed to send Contact email via Resend:", err);
