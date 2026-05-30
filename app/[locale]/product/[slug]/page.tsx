@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import Image from "next/image";
@@ -15,6 +16,44 @@ export function generateStaticParams() {
   return products.map((product) => ({ slug: product.slug }));
 }
 
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string; locale: string }>;
+}): Promise<Metadata> {
+  const { slug, locale } = await params;
+  const productSource = products.find((item) => item.slug === slug);
+  if (!productSource) return {};
+  const normalizedLocale = normalizeLocale(locale);
+  const product = getLocalizedProduct(productSource, normalizedLocale);
+  const ogUrl = `/api/og?title=${encodeURIComponent(product.name)}&subtitle=${encodeURIComponent(product.dossier)}&label=${encodeURIComponent(product.partNumber)}`;
+
+  return {
+    title: `${product.name} | brückenbauer GmbH`,
+    description: product.dossier,
+    openGraph: {
+      title: `${product.name} | brückenbauer GmbH`,
+      description: product.dossier,
+      siteName: "brückenbauer GmbH",
+      type: "website",
+      images: [
+        {
+          url: ogUrl,
+          width: 1200,
+          height: 630,
+          alt: product.name,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${product.name} | brückenbauer GmbH`,
+      description: product.dossier,
+      images: [ogUrl],
+    },
+  };
+}
+
 export default async function ProductDetailPage({
   params,
 }: {
@@ -26,9 +65,46 @@ export default async function ProductDetailPage({
   if (!productSource) notFound();
   const product = getLocalizedProduct(productSource, normalizedLocale);
   const labels = uiCopy[normalizedLocale].product;
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": product.name,
+    "image": `https://brueckenbauer.com${product.image}`,
+    "description": product.dossier,
+    "sku": product.partNumber,
+    "mpn": product.partNumber,
+    "brand": {
+      "@type": "Brand",
+      "name": "brückenbauer GmbH"
+    },
+    "offers": {
+      "@type": "AggregateOffer",
+      "priceCurrency": "EUR",
+      "lowPrice": "1.00",
+      "highPrice": "500.00",
+      "offerCount": "1",
+      "offers": [
+        {
+          "@type": "Offer",
+          "priceCurrency": "EUR",
+          "price": "100.00",
+          "availability": "https://schema.org/InStock",
+          "url": `https://brueckenbauer.com${localizePath(normalizedLocale, `/product/${product.slug}`)}`,
+          "seller": {
+            "@type": "Organization",
+            "name": "brückenbauer GmbH"
+          }
+        }
+      ]
+    }
+  };
 
   return (
     <PageShell className="min-h-screen pt-20 md:ml-20">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      />
       <section className="grid min-h-[calc(100vh-80px)] lg:grid-cols-[1.1fr_0.9fr]">
         <div className="relative min-h-[460px] overflow-hidden border-b border-graphite-muted bg-surface-container-lowest lg:border-b-0 lg:border-r">
           <Image

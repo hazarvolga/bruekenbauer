@@ -28,10 +28,31 @@ export async function generateMetadata({
   const application = applications.find((item) => item.slug === slug);
   if (!application) return {};
   const copy = getApplicationCopy(locale, application);
+  const ogUrl = `/api/og?title=${encodeURIComponent(copy.name)}&subtitle=${encodeURIComponent(copy.summary)}&label=${encodeURIComponent("INDUSTRY DOSSIER")}`;
 
   return {
     title: `${copy.name} | brückenbauer GmbH`,
     description: copy.detail.intro,
+    openGraph: {
+      title: `${copy.name} | brückenbauer GmbH`,
+      description: copy.detail.intro,
+      siteName: "brückenbauer GmbH",
+      type: "website",
+      images: [
+        {
+          url: ogUrl,
+          width: 1200,
+          height: 630,
+          alt: copy.name,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${copy.name} | brückenbauer GmbH`,
+      description: copy.detail.intro,
+      images: [ogUrl],
+    },
   };
 }
 
@@ -69,8 +90,33 @@ export default async function IndustryDetailPage({
                 : "MED",
   }));
 
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": applicationCopy.name,
+    "description": applicationCopy.detail.intro,
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "brückenbauer GmbH",
+      "image": "https://brueckenbauer.com/images/product-groups/power-management.png",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Zug",
+        "addressCountry": "CH"
+      }
+    },
+    "areaServed": {
+      "@type": "AdministrativeArea",
+      "name": "Global"
+    }
+  };
+
   return (
     <PageShell className="relative min-h-screen overflow-x-hidden pt-20 md:ml-20">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      />
       <div className="absolute inset-0 z-0">
         <Image
           src={application.heroImage}
