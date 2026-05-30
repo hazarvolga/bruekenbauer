@@ -310,22 +310,22 @@ export const applicationCopies: Record<
 > = {
   en: {} as Record<ApplicationName, ApplicationCopy>,
   de: {
-    "Aerospace & Defense": {
-      name: "Luft- und Raumfahrt & Verteidigung",
+    "AEROSPACE & AVIATION": {
+      name: "Luftfahrt & Raumfahrt",
       summary:
         "Belastbare Komponentenversorgung für Avionik, orbitale Subsysteme und EMI-sensitive Verteidigungsbaugruppen.",
       detail: {
         intro:
-          "In Luft- und Raumfahrt sowie Verteidigung gelten besonders hohe Anforderungen an Qualität, Sicherheit und Rückverfolgbarkeit. Als spezialisierter Distributor liefern wir geprüfte, qualifizierte und langfristig verfügbare Elektronikkomponenten für extreme Umgebungen.",
+          "In der Luft- und Raumfahrt sowie in der zivilen Luftfahrt gelten besonders hohe Anforderungen an Qualität, Sicherheit und Rückverfolgbarkeit. Als spezialisierter Distributor liefern wir geprüfte, qualifizierte und langfristig verfügbare Elektronikkomponenten für extreme Umgebungen.",
         applications: [
           "Avionik und Flugzeugsysteme",
           "Raumfahrttechnik",
-          "Verteidigungselektronik und militärische Systeme",
+          "Zivile und militärische Luftfahrtsysteme",
           "Bodenstationen und Überwachungssysteme",
         ],
         strengthsTitle: "Unsere Stärken für Ihre Mission",
         strengths: [
-          "Komponenten mit militärischen und luftfahrtspezifischen Zulassungen, einschließlich MIL-STD und AS9100",
+          "Komponenten mit luftfahrtspezifischen Zulassungen, einschließlich MIL-STD und AS9100",
           "Rückverfolgbare, chargenspezifische Lieferung mit CoC, CoO und Testprotokollen auf Anfrage",
           "Qualifizierte Hersteller und High-Reliability-Komponenten",
           "Langzeitverfügbarkeit und Obsoleszenzmanagement",
@@ -341,7 +341,6 @@ export const applicationCopies: Record<
         intro:
           "Die Automobilindustrie wird durch Elektrifizierung, autonomes Fahren, Konnektivität und Effizienz geprägt. Wir liefern geprüfte, AEC-Q-zertifizierte Komponenten für OEMs, Tier-1-Zulieferer und Automotive-Systementwickler.",
         applications: [
-          "Antriebs- und Leistungselektronik",
           "Karosserieelektronik und Komfortsysteme",
           "Sicherheits- und Fahrerassistenzsysteme (ADAS)",
           "Batteriemanagement und Ladeelektronik",
@@ -357,57 +356,58 @@ export const applicationCopies: Record<
         ],
       },
     },
-    "Building Automation": {
-      name: "Gebäudeautomation",
+    "INDUSTRIAL AUTOMATION": {
+      name: "Industrielle Automatisierung",
       summary:
-        "Steuerungs-, Sensorik- und Leistungskomponenten für vernetzte Gebäude und überwachte Facility-Systeme.",
+        "Präzise Steuerungs-, Sensorik- und Leistungskomponenten für zukunftsfähige industrielle Umgebungen und intelligente Systeme.",
       detail: {
         intro:
-          "Intelligentes Gebäude erfordern Energieeffizienz, Vernetzung, Nachhaltigkeit und Komfort. Wir liefern passende Elektronikkomponenten für leistungsfähige und zukunftssichere Automationslösungen in Gebäuden aller Art.",
+          "Moderne Industrieanlagen und automatisierte Systeme sind vernetzt, hocheffizient und datengetrieben. Ob Sensorik, Steuerungstechnik, Antriebssysteme oder industrielle Kommunikation – wir liefern robuste, langfristig verfügbare und qualitätsgeprüfte Elektronikkomponenten für die Fabrik- und Gebäudeautomation der Zukunft.",
         applications: [
-          "Heizungs-, Lüftungs- und Klimatechnik (HVAC)",
-          "Smart Metering und Energiemanagement",
-          "Intelligente Lichtsteuerung",
-          "Zugangskontrolle und Sicherheitssysteme",
-          "Zentrale Gebäudeleittechnik (BMS)",
+          "Automatisierungs- und Steuerungstechnik",
+          "Antriebstechnik und Motorsteuerung",
+          "Industriekommunikation und IoT",
+          "Sensing- und Messtechnik",
+          "Heizungs-, Lüftungs- und Klimatechnik (HVAC) Integration",
+          "Zentrale Gebäudeleittechnik (BMS) und Smart Metering",
         ],
-        strengthsTitle: "Warum Kunden uns vertrauen",
+        strengthsTitle: "Ihre Vorteile mit uns",
         strengths: [
-          "Große Auswahl industrietauglicher Komponenten führender Hersteller",
-          "Beratung für Systemintegration und Applikationsdesign",
-          "Schnelle Verfügbarkeit und langfristige Lieferfähigkeit",
-          "Technischer Support",
-          "Zuverlässige Logistik und projektbezogene Sonderbeschaffung",
+          "Industrieerprobte Komponenten führender Hersteller",
+          "Technische Beratung bei Auswahl und Design-In",
+          "Langzeitverfügbarkeit und Obsoleszenzmanagement",
+          "Zuverlässige Lieferlogistik für Serienfertigung",
+          "Komponenten nach Industrie- und Sicherheitsstandards wie IEC, UL und ISO 13849",
         ],
       },
     },
-    "E-Mobility & Battery Management": {
-      name: "E-Mobilität & Batteriemanagement",
+    "Solar PV & BESS": {
+      name: "Solar-PV & BESS",
       summary:
-        "Leistungswandlung, Sensorik und thermische Steuerung für Elektromobilität und Batteriearchitekturen.",
+        "Leistungselektronik, Wandlungs- und Sensorikkomponenten für hocheffiziente Photovoltaik- und Energiespeichersysteme.",
       detail: {
         intro:
-          "Elektromobilität verändert die Art, wie wir uns bewegen. Ob Ladeinfrastruktur, Onboard-Systeme oder Batteriemanagement: Elektronische Komponenten sind das Herz jeder E-Mobility-Anwendung.",
+          "Die globale Energiewende und der Ausbau nachhaltiger Mobilität erfordern absolut verlässliche Leistungselektronik. Ob Solaranlagen, Energiespeichersysteme (BESS), modernste Batteriemanagementsysteme (BMS) oder die zugehörige Ladeinfrastruktur – wir liefern robuste und langlebige Komponenten für anspruchsvolle Umgebungen.",
         applications: [
-          "Ladeinfrastruktur (AC und DC Charging)",
+          "Photovoltaik-Systeme und Wechselrichter",
+          "Batterie-Energiespeichersysteme (BESS)",
           "Batteriemanagementsysteme (BMS)",
-          "Onboard-Charger und Inverter",
-          "Telematik und Kommunikation",
-          "Fahrzeuginterne Steuerung und Peripherie",
+          "Ladeinfrastruktur und Onboard-Charger",
+          "Off-Grid- und intelligente Hybridnetze",
         ],
-        strengthsTitle: "Warum E-Mobility-Kunden auf uns setzen",
+        strengthsTitle: "Ihre Vorteile auf einen Blick",
         strengths: [
-          "Breites Portfolio automobiltauglicher Komponenten mit AEC-Q-Zertifizierung",
-          "Langzeitverfügbarkeit und zuverlässige Lieferketten",
-          "Support bei Prototyping, Design-In und Serienumstellung",
-          "Qualifizierte innovative Hersteller und High-Reliability-Komponenten",
+          "Komponenten mit hoher Temperatur- und Spannungsfestigkeit",
+          "Komponenten mit AEC-Q-Zertifizierung für raue Umgebungen",
+          "Langzeitverfügbarkeit für langlebige Energiespeicher- und Netzinfrastrukturen",
+          "Unterstützung bei Prototyping, Design-In und Serienproduktion",
         ],
       },
     },
-    "Home Appliances & White Goods": {
-      name: "Haushaltsgeräte & White Goods",
+    "Home Appliances": {
+      name: "Haushaltsgeräte",
       summary:
-        "Lifecycle-fähige Komponentenversorgung für Appliance-Elektronik, Motorsteuerung, Sensorik und geschützte Stromversorgung.",
+        "Dauerhafte Komponentenversorgung für Appliance-Elektronik, Motorsteuerung, Sensorik und effiziente Stromversorgung.",
       detail: {
         intro:
           "Für die Haushaltsgeräteindustrie liefern wir geprüfte Elektronikkomponenten, die langlebig, kompakt, energieeffizient und normgerecht ausgelegt sind.",
@@ -425,53 +425,6 @@ export const applicationCopies: Record<
           "Komponenten mit internationalen Zulassungen wie VDE, UL und IEC",
           "Energieeffiziente Lösungen",
           "Zuverlässige Lieferung und langfristige Verfügbarkeit",
-        ],
-      },
-    },
-    HVAC: {
-      name: "HVAC",
-      summary:
-        "Zuverlässige Sensorik, Umwandlungs- und Steuerungskomponenten für Heizungs-, Lüftungs-, Klima- und Energiesysteme.",
-      detail: {
-        intro:
-          "Moderne HVAC-Systeme müssen effizient, vernetzt und zuverlässig arbeiten, ob in Wohngebäuden, Industrieanlagen oder kommerziellen Immobilien.",
-        applications: [
-          "Heizsysteme und Wärmepumpen",
-          "Lüftungstechnik und Luftqualitätssysteme",
-          "Kälte- und Klimatechnik",
-          "Regel- und Steuerungssysteme",
-          "Energieeffizienz und Smart Control",
-        ],
-        strengthsTitle: "Ihre Vorteile mit uns als Partner",
-        strengths: [
-          "Vielseitiges Portfolio für HVAC-Anwendungen",
-          "Komponenten mit industrietauglicher Qualität und Lebensdauer",
-          "Technischer Applikationssupport und Auswahlberatung",
-          "Flexible Logistiklösungen und Langzeitverfügbarkeit",
-        ],
-      },
-    },
-    Industrial: {
-      name: "Industrie",
-      summary:
-        "Präzise Versorgungsprogramme für regulierte industrielle Umgebungen mit anspruchsvollen thermischen, akustischen und Lifecycle-Anforderungen.",
-      detail: {
-        intro:
-          "Moderne Industrieanlagen sind vernetzt, automatisiert und datengetrieben. Wir liefern robuste, langfristig verfügbare und qualitätsgeprüfte Elektronikkomponenten für industrielle Automatisierung.",
-        applications: [
-          "Automatisierungs- und Steuerungstechnik",
-          "Antriebstechnik und Motorsteuerung",
-          "Industriekommunikation und IoT",
-          "Sensorik und Messtechnik",
-          "Stromversorgung und Energieverteilung",
-        ],
-        strengthsTitle: "Ihre Vorteile mit uns",
-        strengths: [
-          "Industrieerprobte Komponenten führender Hersteller",
-          "Technische Beratung bei Auswahl und Design-In",
-          "Langzeitverfügbarkeit und Obsoleszenzmanagement",
-          "Zuverlässige Lieferlogistik für Serienfertigung",
-          "Komponenten nach Industrie- und Sicherheitsstandards wie IEC, UL und ISO 13849",
         ],
       },
     },
@@ -498,47 +451,24 @@ export const applicationCopies: Record<
         ],
       },
     },
-    "Renewable Energy": {
-      name: "Erneuerbare Energien",
-      summary:
-        "Leistungselektronik, Umwandlungs- und Sensorikkomponenten für Photovoltaik, Speicher, Wind und Grid-Support-Systeme.",
-      detail: {
-        intro:
-          "Die Energiewende braucht zuverlässige Elektronik. Ob Solar- und Windkraftanlagen, Batteriespeicher oder intelligente Netze: moderne Energieerzeugung basiert auf leistungsfähiger Elektronik.",
-        applications: [
-          "Photovoltaik-Systeme",
-          "Windkraftanlagen",
-          "Energiespeicher und Batteriesysteme",
-          "Smart Grid und Energieverteilung",
-          "Off-Grid- und Hybridsysteme",
-        ],
-        strengthsTitle: "Ihre Vorteile auf einen Blick",
-        strengths: [
-          "Komponenten mit hoher Temperatur- und Spannungsfestigkeit",
-          "Langzeitverfügbarkeit für langlebige Energiesysteme",
-          "Technische Beratung für Design-In und Systemintegration",
-          "Zuverlässige Lieferketten für Serienprojekte",
-        ],
-      },
-    },
   },
   fr: {
-    "Aerospace & Defense": {
-      name: "Aérospatial & Défense",
+    "AEROSPACE & AVIATION": {
+      name: "Aérospatiale & Aviation",
       summary:
         "Résilience des composants pour l'avionique, les sous-systèmes orbitaux et les assemblages de défense sensibles aux EMI.",
       detail: {
         intro:
-          "Dans l'aérospatial et la défense, les exigences en matière de qualité, de sécurité et de traçabilité sont particulièrement strictes. Nous fournissons des composants électroniques testés, qualifiés et disponibles à long terme pour des environnements extrêmes.",
+          "Dans l'aérospatiale, l'aviation civile et la défense, les exigences en matière de qualité, de sécurité et de traçabilité sont particulièrement strictes. Nous fournissons des composants électroniques testés, qualifiés et disponibles à long terme pour des environnements extrêmes.",
         applications: [
           "Avionique et systèmes aéronautiques",
           "Technologies spatiales",
-          "Électronique de défense et systèmes militaires",
+          "Électronique aéronautique civile et militaire",
           "Stations au sol et systèmes de surveillance",
         ],
         strengthsTitle: "Nos atouts pour votre mission",
         strengths: [
-          "Composants avec homologations militaires et aéronautiques, notamment MIL-STD et AS9100",
+          "Composants homologués pour l'aéronautique et le spatial, notamment MIL-STD et AS9100",
           "Livraison traçable et spécifique au lot avec CoC, CoO et rapports de test sur demande",
           "Fabricants qualifiés et composants high-reliability",
           "Disponibilité long terme et gestion de l'obsolescence",
@@ -554,8 +484,7 @@ export const applicationCopies: Record<
         intro:
           "L'industrie automotive évolue avec l'électrification, la conduite autonome, la connectivité et l'efficacité. Nous fournissons des composants testés et certifiés AEC-Q pour OEMs, Tier-1 et développeurs de systèmes automotive.",
         applications: [
-          "Électronique de traction et de puissance",
-          "Électronique de carrosserie et systèmes de confort",
+          "Body electronics et confort systèmes",
           "Systèmes de sécurité et d'aide à la conduite (ADAS)",
           "Batterie management et électronique de charge",
           "Infotainment et connectivité",
@@ -570,57 +499,58 @@ export const applicationCopies: Record<
         ],
       },
     },
-    "Building Automation": {
-      name: "Automatisation du bâtiment",
+    "INDUSTRIAL AUTOMATION": {
+      name: "Automatisation industrielle",
       summary:
-        "Programmes de composants de contrôle, détection et puissance pour bâtiments connectés et systèmes de facility monitoring.",
+        "Composants précis de contrôle, de détection et de puissance pour les environnements industriels réglementés et les systèmes intelligents.",
       detail: {
         intro:
-          "Les bâtiments intelligents exigent efficacité énergétique, connectivité, durabilité et confort utilisateur. Nous fournissons les composants électroniques adaptés à des solutions d'automatisation puissantes et pérennes.",
+          "Les installations industrielles et les systèmes automatisés modernes sont connectés, hautement efficaces et axés sur les données. Qu'il s'agisse de capteurs, de technologie de contrôle, d'entraînement ou de communication industrielle, nous fournissons des composants électroniques robustes, durables et testés pour l'automatisation industrielle et du bâtiment.",
         applications: [
-          "Chauffage, ventilation et climatisation (HVAC)",
-          "Smart metering et gestion de l'énergie",
-          "Contrôle d'éclairage intelligent",
-          "Contrôle d'accès et systèmes de sécurité",
-          "Systèmes centraux de gestion du bâtiment (BMS)",
+          "Automatisation et technologie de contrôle",
+          "Technologie d'entraînement et motor control",
+          "Communication industrielle et IoT",
+          "Détection et technologie de mesure",
+          "Intégration du chauffage, de la ventilation et de la climatisation (HVAC)",
+          "Gestion technique du bâtiment (GTB) et compteurs intelligents",
         ],
-        strengthsTitle: "Pourquoi nos clients nous font confiance",
+        strengthsTitle: "Vos avantages avec nous",
         strengths: [
-          "Large choix de composants industriels de fabricants leaders",
-          "Conseil pour intégration système et design d'application",
-          "Disponibilité rapide et capacité d'approvisionnement long terme",
-          "Support technique",
-          "Logistique fiable et approvisionnement spécial par projet",
+          "Composants éprouvés en industrie de fabricants leaders",
+          "Conseil technique pour sélection et design-in",
+          "Disponibilité long terme et gestion de l'obsolescence",
+          "Logistique fiable pour production série",
+          "Composants conformes aux normes industrielles et de sécurité telles que IEC, UL et ISO 13849",
         ],
       },
     },
-    "E-Mobility & Battery Management": {
-      name: "E-Mobility & Gestion batterie",
+    "Solar PV & BESS": {
+      name: "Solaire PV & BESS",
       summary:
-        "Conversion de puissance, détection et contrôle thermique pour mobilité électrique et architectures batterie.",
+        "Électronique de puissance, composants de conversion et de détection pour les systèmes photovoltaïques et de stockage d'énergie.",
       detail: {
         intro:
-          "L'électromobilité transforme la mobilité. Infrastructure de charge, systèmes embarqués ou batterie management: les composants électroniques sont au coeur de chaque application e-mobility.",
+          "La transition énergétique mondiale et la mobilité électrique exigent une électronique de puissance extrêmement fiable. Qu'il s'agisse d'installations solaires, de systèmes de stockage par batterie (BESS), de systèmes de gestion de batterie (BMS) ou d'infrastructures de recharge, nous fournissons des composants robustes pour relever ces défis.",
         applications: [
-          "Infrastructure de charge (AC et DC charging)",
-          "Systèmes de batterie management (BMS)",
-          "Onboard chargers et inverters",
-          "Télématique et communication",
-          "Contrôle embarqué et périphérie véhicule",
+          "Systèmes photovoltaïques et onduleurs",
+          "Systèmes de stockage d'énergie par batterie (BESS)",
+          "Systèmes de gestion de batterie (BMS)",
+          "Infrastructures de recharge et chargeurs embarqués",
+          "Systèmes hors réseau et réseaux hybrides intelligents",
         ],
-        strengthsTitle: "Pourquoi les clients e-mobility s'appuient sur nous",
+        strengthsTitle: "Vos avantages en un coup d'oeil",
         strengths: [
-          "Large portefeuille de composants automotive-grade avec certification AEC-Q",
-          "Disponibilité long terme et supply chains fiables",
-          "Support prototypage, design-in et transition série",
-          "Fabricants innovants qualifiés et composants high-reliability",
+          "Composants à haute résistance thermique et électrique",
+          "Large gamme de composants qualifiés AEC-Q pour environnements sévères",
+          "Disponibilité à long terme pour les infrastructures d'énergie et de stockage",
+          "Support pour le prototypage, le design-in et la transition vers la série",
         ],
       },
     },
-    "Home Appliances & White Goods": {
-      name: "Électroménager & White Goods",
+    "Home Appliances": {
+      name: "Électroménager",
       summary:
-        "Approvisionnement lifecycle-ready pour électronique d'appareils, motor control, détection et power delivery protégé.",
+        "Approvisionnement durable pour l'électronique des appareils, le contrôle des moteurs, les capteurs et l'alimentation protégée.",
       detail: {
         intro:
           "Pour l'industrie de l'électroménager, nous proposons des composants électroniques testés, durables, compacts, efficaces énergétiquement et conformes aux normes.",
@@ -638,53 +568,6 @@ export const applicationCopies: Record<
           "Composants avec homologations internationales telles que VDE, UL et IEC",
           "Solutions énergétiquement efficaces",
           "Livraison fiable et disponibilité long terme",
-        ],
-      },
-    },
-    HVAC: {
-      name: "HVAC",
-      summary:
-        "Composants fiables de détection, conversion et contrôle pour chauffage, ventilation, climatisation et systèmes énergétiques.",
-      detail: {
-        intro:
-          "Les systèmes HVAC modernes doivent fonctionner efficacement, de manière connectée et fiable, dans les bâtiments résidentiels, sites industriels et immeubles commerciaux.",
-        applications: [
-          "Systèmes de chauffage et pompes à chaleur",
-          "Technologie de ventilation et qualité de l'air",
-          "Réfrigération et climatisation",
-          "Systèmes de régulation et de contrôle",
-          "Efficacité énergétique et smart control",
-        ],
-        strengthsTitle: "Vos avantages avec nous comme partenaire",
-        strengths: [
-          "Portefeuille polyvalent pour applications HVAC",
-          "Composants de qualité industrielle et longue durée de vie",
-          "Support applicatif technique et conseil de sélection",
-          "Solutions logistiques flexibles et disponibilité long terme",
-        ],
-      },
-    },
-    Industrial: {
-      name: "Industrie",
-      summary:
-        "Programmes d'approvisionnement précis pour environnements industriels régulés avec contraintes thermiques, acoustiques et lifecycle exigeantes.",
-      detail: {
-        intro:
-          "Les installations industrielles modernes sont connectées, automatisées et data-driven. Nous fournissons des composants électroniques robustes, disponibles à long terme et testés qualité pour l'automatisation industrielle.",
-        applications: [
-          "Automatisation et technologie de contrôle",
-          "Technologie d'entraînement et motor control",
-          "Communication industrielle et IoT",
-          "Détection et technologie de mesure",
-          "Alimentation et distribution d'énergie",
-        ],
-        strengthsTitle: "Vos avantages avec nous",
-        strengths: [
-          "Composants éprouvés en industrie de fabricants leaders",
-          "Conseil technique pour sélection et design-in",
-          "Disponibilité long terme et gestion de l'obsolescence",
-          "Logistique fiable pour production série",
-          "Composants conformes aux normes industrielles et de sécurité telles que IEC, UL et ISO 13849",
         ],
       },
     },
@@ -708,29 +591,6 @@ export const applicationCopies: Record<
           "Supply chains fiables et traçabilité avec CoC et CoO",
           "Disponibilité long terme pour dispositifs avec cycles d'homologation",
           "Support individuel pour sélection et design-in",
-        ],
-      },
-    },
-    "Renewable Energy": {
-      name: "Énergies renouvelables",
-      summary:
-        "Électronique de puissance, conversion et détection pour photovoltaïque, stockage, éolien et systèmes grid-support.",
-      detail: {
-        intro:
-          "La transition énergétique exige une électronique fiable. Solaire, éolien, stockage batterie ou smart grids: la production et la distribution d'énergie modernes reposent sur une électronique puissante et efficace.",
-        applications: [
-          "Systèmes photovoltaïques",
-          "Éoliennes",
-          "Stockage d'énergie et systèmes batterie",
-          "Smart grid et distribution d'énergie",
-          "Systèmes off-grid et hybrides",
-        ],
-        strengthsTitle: "Vos avantages en un coup d'oeil",
-        strengths: [
-          "Composants à forte résistance thermique et tension",
-          "Disponibilité long terme pour systèmes énergétiques durables",
-          "Conseil technique pour design-in et intégration système",
-          "Supply chains fiables pour projets série",
         ],
       },
     },
@@ -888,8 +748,8 @@ export const powerFamilyCopies: Record<
       targetApplications: [
         "Industrial Drives",
         "Automotive",
-        "Erneuerbare Energien",
-        "Home Appliances",
+        "Solar PV & BESS",
+        "Haushaltsgeräte",
       ],
     },
     sic: {
@@ -904,10 +764,10 @@ export const powerFamilyCopies: Record<
         "Schnellere Schaltzeiten",
       ],
       targetApplications: [
-        "E-Mobility",
-        "Industrial Automation",
-        "Erneuerbare Energien",
-        "Power Electronics",
+        "BESS & Energiespeicher",
+        "Industrielle Automatisierung",
+        "Solar-PV",
+        "Leistungselektronik",
       ],
     },
     mosfet: {
@@ -924,11 +784,11 @@ export const powerFamilyCopies: Record<
         "Effizient bei Low/Medium Power und hoher Frequenz",
       ],
       targetApplications: [
-        "Drive Technology",
-        "Welding Technology",
-        "Wind Turbines",
-        "Power Electronics",
-        "Photovoltaic Systems",
+        "Antriebstechnik",
+        "Schweißtechnik",
+        "BESS-Systeme",
+        "Leistungselektronik",
+        "Solar-PV-Systeme",
       ],
     },
     converters: {
@@ -944,11 +804,11 @@ export const powerFamilyCopies: Record<
         "Energieeffizienz und Schutzfunktionen",
       ],
       targetApplications: [
-        "Photovoltaic Energy Storage",
-        "Railway Transportation",
-        "Industrial Control and ICT",
-        "Medical Applications",
-        "LED Lighting Applications",
+        "Photovoltaik & Speicher",
+        "Schienenverkehr",
+        "Industrielle Steuerung & IKT",
+        "Medizinische Anwendungen",
+        "Industrielle Beleuchtung",
       ],
     },
   },
@@ -975,8 +835,8 @@ export const powerFamilyCopies: Record<
       targetApplications: [
         "Industrial Drives",
         "Automotive",
-        "Énergies renouvelables",
-        "Home Appliances",
+        "Solaire PV & BESS",
+        "Électroménager",
       ],
     },
     sic: {
@@ -991,10 +851,10 @@ export const powerFamilyCopies: Record<
         "Temps de commutation plus rapides",
       ],
       targetApplications: [
-        "E-Mobility",
-        "Industrial Automation",
-        "Énergies renouvelables",
-        "Power Electronics",
+        "BESS & Stockage d'énergie",
+        "Automatisation industrielle",
+        "Solaire PV",
+        "Électronique de puissance",
       ],
     },
     mosfet: {
@@ -1011,11 +871,11 @@ export const powerFamilyCopies: Record<
         "Efficace en low/medium power et haute fréquence",
       ],
       targetApplications: [
-        "Drive Technology",
-        "Welding Technology",
-        "Wind Turbines",
-        "Power Electronics",
-        "Photovoltaic Systems",
+        "Technologie d'entraînement",
+        "Technologie de soudage",
+        "Systèmes BESS",
+        "Électronique de puissance",
+        "Systèmes Solaire PV",
       ],
     },
     converters: {
@@ -1030,11 +890,11 @@ export const powerFamilyCopies: Record<
         "Efficacité énergétique et protection",
       ],
       targetApplications: [
-        "Photovoltaic Energy Storage",
-        "Railway Transportation",
-        "Industrial Control and ICT",
-        "Medical Applications",
-        "LED Lighting Applications",
+        "Photovoltaïque & Stockage",
+        "Transport ferroviaire",
+        "Contrôle industriel & TIC",
+        "Applications médicales",
+        "Éclairage industriel",
       ],
     },
   },

@@ -1,37 +1,29 @@
 import { slugify } from "@/lib/slug";
 
 export const applicationNames = [
-  "Aerospace & Defense",
+  "AEROSPACE & AVIATION",
   "Automotive & Transportation",
-  "Building Automation",
-  "E-Mobility & Battery Management",
-  "Home Appliances & White Goods",
-  "HVAC",
-  "Industrial",
+  "INDUSTRIAL AUTOMATION",
+  "Solar PV & BESS",
+  "Home Appliances",
   "Medical & Healthcare",
-  "Renewable Energy",
 ] as const;
 
 export type ApplicationName = (typeof applicationNames)[number];
 
 const applicationSummaries: Record<ApplicationName, string> = {
-  "Aerospace & Defense":
+  "AEROSPACE & AVIATION":
     "High-stress component resilience for avionics, orbital subsystems, and EMI-sensitive defense assemblies.",
   "Automotive & Transportation":
     "Qualified component supply for vehicle platforms, charging systems, mobility electronics, and transport infrastructure.",
-  "Building Automation":
-    "Control, sensing, and power component programs for connected buildings and monitored facility systems.",
-  "E-Mobility & Battery Management":
-    "Power conversion, sensing, and thermal-control components for electric mobility and battery architectures.",
-  "Home Appliances & White Goods":
-    "Lifecycle-ready component supply for appliance electronics, motor control, sensing, and protected power delivery.",
-  HVAC: "Reliable sensing, conversion, and control components for heating, ventilation, air conditioning, and energy systems.",
-  Industrial:
+  "INDUSTRIAL AUTOMATION":
     "Precision supply programs for regulated industrial environments with demanding thermal, acoustic, and lifecycle constraints.",
+  "Solar PV & BESS":
+    "Power conversion, sensing, and thermal-control components for photovoltaic, storage, wind, and grid-support systems.",
+  "Home Appliances":
+    "Lifecycle-ready component supply for appliance electronics, motor control, sensing, and protected power delivery.",
   "Medical & Healthcare":
     "Traceable component supply for healthcare devices, diagnostic equipment, and regulated electronic assemblies.",
-  "Renewable Energy":
-    "Power electronics, conversion, and sensing components for photovoltaic, storage, wind, and grid-support systems.",
 };
 
 const applicationDetails: Record<
@@ -43,9 +35,9 @@ const applicationDetails: Record<
     strengths: string[];
   }
 > = {
-  "Aerospace & Defense": {
+  "AEROSPACE & AVIATION": {
     intro:
-      "Aerospace and defense programs place exceptionally strict demands on quality, safety, and traceability. As a specialized distributor, we deliver tested, qualified, and long-term available electronic components for use in extreme environments.",
+      "Aerospace and aviation programs place exceptionally strict demands on quality, safety, and traceability. As a specialized distributor, we deliver tested, qualified, and long-term available electronic components for use in extreme environments.",
     applications: [
       "Avionics and aircraft systems",
       "Space technology",
@@ -65,7 +57,6 @@ const applicationDetails: Record<
     intro:
       "The automotive industry is being reshaped by electrification, autonomous driving, connectivity, and efficiency. Electronics play a central role. As an experienced distributor, we supply tested, AEC-Q-certified components for OEMs, Tier 1 suppliers, and automotive system developers with a focus on quality, availability, and future-ready technology.",
     applications: [
-      "Drive and power electronics",
       "Body electronics and comfort systems",
       "Safety and driver assistance systems (ADAS)",
       "Battery management and charging electronics",
@@ -80,44 +71,45 @@ const applicationDetails: Record<
       "Support with design-in, sample procurement, and series release",
     ],
   },
-  "Building Automation": {
+  "INDUSTRIAL AUTOMATION": {
     intro:
-      "The requirements for intelligent buildings are growing steadily, with energy efficiency, connectivity, sustainability, and user comfort at the center. As an experienced distributor, we supply the right electronic components for powerful and future-proof automation solutions in every type of building.",
+      "Modern industrial and building automation plants are connected, automated, and data-driven. Whether sensing, control, drive technology, or communication, powerful electronic components are the foundation for efficiency, safety, and innovation. We deliver robust, long-term available, and quality-tested electronic components for every area of industrial automation.",
     applications: [
-      "Heating, ventilation, and air conditioning (HVAC)",
+      "Automation and control technology",
+      "Drive technology and motor control",
+      "Industrial communication and IoT",
+      "Sensing and measurement technology",
+      "Heating, ventilation, and air conditioning (HVAC) integration",
       "Smart metering and energy management",
-      "Intelligent lighting control",
-      "Access control and security systems",
-      "Central building management systems (BMS)",
     ],
     strengthsTitle: "Why our customers trust us",
     strengths: [
-      "Broad selection of industry-ready components from leading manufacturers",
-      "Competent consulting for system integration and application design",
-      "Fast availability and long-term supply capability",
-      "Technical support",
-      "Reliable logistics and project-specific special procurement",
+      "Industry-proven components from leading manufacturers",
+      "Technical consulting for selection and design-in",
+      "Long-term availability and obsolescence management",
+      "Reliable delivery logistics for series production",
+      "Components compliant with industrial and safety standards such as IEC, UL, and ISO 13849",
     ],
   },
-  "E-Mobility & Battery Management": {
+  "Solar PV & BESS": {
     intro:
-      "Electromobility is revolutionizing the way we move. Whether charging infrastructure, onboard systems, or battery management, electronic components are at the heart of every e-mobility application. As a specialized distributor, we offer a broad portfolio of high-quality components precisely matched to this demanding industry.",
+      "Modern energy systems and electromobility transition need reliable electronics. Whether charging infrastructure, solar systems, battery storage, or intelligent grids, modern generation and distribution are based on powerful electronics. As a specialized distributor, we deliver components that meet these exact requirements: robust, durable, and high-performing.",
     applications: [
-      "Charging infrastructure (AC and DC charging)",
+      "Photovoltaic systems and inverters",
+      "Energy storage systems (BESS)",
       "Battery management systems (BMS)",
-      "Onboard chargers and inverters",
-      "Telematics and communication",
-      "In-vehicle control and peripherals",
+      "Onboard chargers and charging infrastructure",
+      "Off-grid and hybrid grid-support systems",
     ],
-    strengthsTitle: "Why e-mobility customers rely on us",
+    strengthsTitle: "Why customers rely on us",
     strengths: [
+      "Components with high temperature and voltage resistance",
       "Broad portfolio of automotive-grade components with AEC-Q certification",
-      "Long-term availability and reliable supply chains",
+      "Long-term availability for durable energy and mobility systems",
       "Support with prototyping, design-in, and series transition",
-      "Qualified innovative manufacturers and high-reliability components",
     ],
   },
-  "Home Appliances & White Goods": {
+  "Home Appliances": {
     intro:
       "As an experienced distributor, we offer a broad portfolio of tested electronic components developed specifically for the requirements of the home appliance industry: durable, compact, energy-efficient, and standards-compliant.",
     applications: [
@@ -136,43 +128,6 @@ const applicationDetails: Record<
       "Reliable delivery and long-term availability",
     ],
   },
-  HVAC: {
-    intro:
-      "Modern HVAC systems must operate efficiently, reliably, and in connected environments, whether in residential buildings, industrial plants, or commercial properties. Our high-quality electronic components are precisely matched to heating, ventilation, and air conditioning requirements.",
-    applications: [
-      "Heating systems and heat pumps",
-      "Ventilation technology and air quality systems",
-      "Refrigeration and air conditioning technology",
-      "Regulation and control systems",
-      "Energy efficiency and smart control",
-    ],
-    strengthsTitle: "Your advantages with us as a partner",
-    strengths: [
-      "Versatile portfolio for HVAC applications",
-      "Components with industrial-grade quality and service life",
-      "Technical application support and selection consulting",
-      "Flexible logistics solutions and long-term availability",
-    ],
-  },
-  Industrial: {
-    intro:
-      "Modern industrial plants are connected, automated, and data-driven. Whether sensing, control, drive technology, or industrial communication, powerful electronic components are the foundation for efficiency, safety, and innovation. As an experienced distributor, we deliver robust, long-term available, and quality-tested electronic components for every area of industrial automation.",
-    applications: [
-      "Automation and control technology",
-      "Drive technology and motor control",
-      "Industrial communication and IoT",
-      "Sensing and measurement technology",
-      "Power supply and energy distribution",
-    ],
-    strengthsTitle: "Your advantages with us",
-    strengths: [
-      "Industry-proven components from leading manufacturers",
-      "Technical consulting for selection and design-in",
-      "Long-term availability and obsolescence management",
-      "Reliable delivery logistics for series production",
-      "Components compliant with industrial and safety standards such as IEC, UL, and ISO 13849",
-    ],
-  },
   "Medical & Healthcare": {
     intro:
       "In medical technology, every detail matters. Electronic components must meet the highest quality standards, remain available over the long term, and be absolutely reliable, especially for patient-near devices, diagnostic systems, and medical wearables. As a specialized distributor, we support you with tested components, technical know-how, and a clear understanding of regulatory requirements.",
@@ -189,24 +144,6 @@ const applicationDetails: Record<
       "Reliable supply chains and traceability with CoC and CoO",
       "Long-term availability for devices with approval cycles",
       "Individual support with selection and design-in",
-    ],
-  },
-  "Renewable Energy": {
-    intro:
-      "The energy transition needs reliable electronics. Whether solar and wind power systems, battery storage, or intelligent grids, modern energy generation and distribution are based on powerful and efficient electronics. As a specialized distributor, we deliver components that meet these exact requirements: robust, durable, high-performing, and available.",
-    applications: [
-      "Photovoltaic systems",
-      "Wind power systems",
-      "Energy storage and battery systems",
-      "Smart grid and energy distribution",
-      "Off-grid and hybrid systems",
-    ],
-    strengthsTitle: "Your advantages at a glance",
-    strengths: [
-      "Components with high temperature and voltage resistance",
-      "Long-term availability for durable energy systems",
-      "Technical consulting for design-in and system integration",
-      "Reliable supply chains for series projects",
     ],
   },
 };

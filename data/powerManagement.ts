@@ -82,10 +82,10 @@ export const powerManagementFamilies: PowerManagementFamily[] = [
       "Ease of Use",
     ],
     targetApplications: [
-      { label: "Industrial Drives", applicationName: "Industrial" },
+      { label: "Industrial Drives", applicationName: "INDUSTRIAL AUTOMATION" },
       { label: "Automotive", applicationName: "Automotive & Transportation" },
-      { label: "Renewable Energy", applicationName: "Renewable Energy" },
-      { label: "Home Appliances", applicationName: "Home Appliances & White Goods" },
+      { label: "Solar PV & BESS", applicationName: "Solar PV & BESS" },
+      { label: "Home Appliances", applicationName: "Home Appliances" },
     ],
   },
   {
@@ -130,10 +130,10 @@ export const powerManagementFamilies: PowerManagementFamily[] = [
       "Faster Switching Times",
     ],
     targetApplications: [
-      { label: "E-mobility", applicationName: "E-Mobility & Battery Management" },
-      { label: "Industrial Automation", applicationName: "Industrial" },
-      { label: "Renewable Energy", applicationName: "Renewable Energy" },
-      { label: "Power Electronics", applicationName: "Industrial" },
+      { label: "BESS & Energy Storage", applicationName: "Solar PV & BESS" },
+      { label: "Industrial Automation", applicationName: "INDUSTRIAL AUTOMATION" },
+      { label: "Solar PV", applicationName: "Solar PV & BESS" },
+      { label: "Power Electronics", applicationName: "INDUSTRIAL AUTOMATION" },
     ],
   },
   {
@@ -175,11 +175,11 @@ export const powerManagementFamilies: PowerManagementFamily[] = [
       "Efficient at low/medium power and high frequency",
     ],
     targetApplications: [
-      { label: "Drive Technology", applicationName: "Industrial" },
-      { label: "Welding Technology", applicationName: "Industrial" },
-      { label: "Wind Turbines", applicationName: "Renewable Energy" },
-      { label: "Power Electronics", applicationName: "Industrial" },
-      { label: "Photovoltaic Systems", applicationName: "Renewable Energy" },
+      { label: "Drive Technology", applicationName: "INDUSTRIAL AUTOMATION" },
+      { label: "Welding Technology", applicationName: "INDUSTRIAL AUTOMATION" },
+      { label: "BESS Systems", applicationName: "Solar PV & BESS" },
+      { label: "Power Electronics", applicationName: "INDUSTRIAL AUTOMATION" },
+      { label: "Solar PV Systems", applicationName: "Solar PV & BESS" },
     ],
   },
   {
@@ -224,11 +224,11 @@ export const powerManagementFamilies: PowerManagementFamily[] = [
       "Energy Efficiency and Protection",
     ],
     targetApplications: [
-      { label: "Photovoltaic Energy Storage", applicationName: "Renewable Energy" },
+      { label: "Photovoltaic & Storage", applicationName: "Solar PV & BESS" },
       { label: "Railway Transportation", applicationName: "Automotive & Transportation" },
-      { label: "Industrial Control and ICT", applicationName: "Industrial" },
+      { label: "Industrial Control & ICT", applicationName: "INDUSTRIAL AUTOMATION" },
       { label: "Medical Applications", applicationName: "Medical & Healthcare" },
-      { label: "LED Lighting Applications", applicationName: "Building Automation" },
+      { label: "Industrial Lighting", applicationName: "INDUSTRIAL AUTOMATION" },
     ],
   },
 ];

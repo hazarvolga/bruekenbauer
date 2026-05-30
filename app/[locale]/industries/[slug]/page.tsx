@@ -56,23 +56,17 @@ export default async function IndustryDetailPage({
     ...item,
     displayName: getApplicationCopy(normalizedLocale, item).name,
     code:
-      item.slug === "aerospace-and-defense"
+      item.slug === "aerospace-and-aviation"
         ? "AERO"
         : item.slug === "automotive-and-transportation"
           ? "AUTO"
-          : item.slug === "building-automation"
-            ? "BLDG"
-            : item.slug === "e-mobility-and-battery-management"
-              ? "E-MOB"
-              : item.slug === "home-appliances-and-white-goods"
+          : item.slug === "industrial-automation"
+            ? "IND"
+            : item.slug === "solar-pv-and-bess"
+              ? "SOLAR"
+              : item.slug === "home-appliances"
                 ? "HOME"
-                : item.slug === "hvac"
-                  ? "HVAC"
-                  : item.slug === "industrial"
-                    ? "IND"
-                    : item.slug === "medical-and-healthcare"
-                      ? "MED"
-                      : "REN",
+                : "MED",
   }));
 
   return (
@@ -174,27 +168,5 @@ export default async function IndustryDetailPage({
 }
 
 function buildSectorPortfolio(applicationName: ApplicationName, relatedProducts: typeof products) {
-  const supportSlugs: Partial<Record<ApplicationName, string[]>> = {
-    HVAC: [
-      "chip-ntc-thermistors",
-      "waterproof-temperature-sensors",
-      "current-sensors",
-      "converters",
-    ],
-    "Renewable Energy": ["converters", "igbt", "sic", "mosfet"],
-  };
-
-  if (relatedProducts.length >= 3) return relatedProducts;
-
-  const seen = new Set(relatedProducts.map((product) => product.slug));
-  const supported = (supportSlugs[applicationName] ?? [])
-    .map((productSlug) => products.find((product) => product.slug === productSlug))
-    .filter((product): product is (typeof products)[number] => Boolean(product))
-    .filter((product) => {
-      if (seen.has(product.slug)) return false;
-      seen.add(product.slug);
-      return true;
-    });
-
-  return [...relatedProducts, ...supported];
+  return relatedProducts;
 }
