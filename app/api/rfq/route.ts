@@ -16,6 +16,7 @@ export interface RfqRequest {
   email: string;
   company: string;
   notes: string;
+  locale?: string;
 }
 
 function generateRef(): string {
@@ -33,7 +34,8 @@ function validate(body: unknown): body is RfqRequest {
     typeof b.email === "string" &&
     /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(b.email) &&
     typeof b.company === "string" &&
-    b.company.trim().length > 0
+    b.company.trim().length > 0 &&
+    (b.locale === undefined || typeof b.locale === "string")
   );
 }
 
@@ -86,12 +88,20 @@ export async function POST(request: Request) {
       const fromEmail = process.env.RESEND_FROM_EMAIL || "onboarding@resend.dev";
       const toEmailRaw = process.env.RESEND_TO_EMAIL || "info@brueckenbauer.de";
       const toEmail = toEmailRaw.split(",").map((e) => e.trim());
+      const locale = body.locale || "en";
+      
+      let subject = `[brückenbauer RFQ] ${body.company} — ${referenceId}`;
+      if (locale === "de") {
+        subject = `[brückenbauer Angebotsanfrage] ${body.company} — ${referenceId}`;
+      } else if (locale === "fr") {
+        subject = `[brückenbauer Demande d'offre] ${body.company} — ${referenceId}`;
+      }
 
       await resend.emails.send({
         from: fromEmail,
         to: toEmail,
-        subject: `[brückenbauer RFQ] ${body.company} — ${referenceId}`,
-        react: React.createElement(RfqEmailTemplate, { request: body, referenceId, timestamp }),
+        subject,
+        react: React.createElement(RfqEmailTemplate, { request: body, referenceId, timestamp, locale }),
       });
     } catch (err) {
       console.error("Failed to send RFQ email via Resend:", err);

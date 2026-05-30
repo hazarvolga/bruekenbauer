@@ -199,7 +199,7 @@ export function RfqFlow({
       const res = await fetch("/api/rfq", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(state),
+        body: JSON.stringify({ ...state, locale }),
       });
       if (!res.ok) {
         const data = (await res.json()) as { error?: string };
