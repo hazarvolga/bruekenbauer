@@ -334,7 +334,7 @@ export const applicationCopies: Record<
       },
     },
     "Automotive & Transportation": {
-      name: "Automotive & Transport",
+      name: "Fahrzeugtechnik & Transport",
       summary:
         "Qualifizierte Komponentenversorgung für Fahrzeugplattformen, Ladesysteme, Mobilitätselektronik und Verkehrsinfrastruktur.",
       detail: {
@@ -363,7 +363,7 @@ export const applicationCopies: Record<
         "Steuerungs-, Sensorik- und Leistungskomponenten für vernetzte Gebäude und überwachte Facility-Systeme.",
       detail: {
         intro:
-          "Intelligente Gebäude erfordern Energieeffizienz, Vernetzung, Nachhaltigkeit und Komfort. Wir liefern passende Elektronikkomponenten für leistungsfähige und zukunftssichere Automationslösungen in Gebäuden aller Art.",
+          "Intelligentes Gebäude erfordern Energieeffizienz, Vernetzung, Nachhaltigkeit und Komfort. Wir liefern passende Elektronikkomponenten für leistungsfähige und zukunftssichere Automationslösungen in Gebäuden aller Art.",
         applications: [
           "Heizungs-, Lüftungs- und Klimatechnik (HVAC)",
           "Smart Metering und Energiemanagement",
@@ -382,7 +382,7 @@ export const applicationCopies: Record<
       },
     },
     "E-Mobility & Battery Management": {
-      name: "E-Mobility & Batteriemanagement",
+      name: "E-Mobilität & Batteriemanagement",
       summary:
         "Leistungswandlung, Sensorik und thermische Steuerung für Elektromobilität und Batteriearchitekturen.",
       detail: {
