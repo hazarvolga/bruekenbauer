@@ -39,14 +39,14 @@ export default async function PowerManagementDetailPage({ params }: Props) {
   return (
     <PageShell className="min-h-screen pt-20 md:ml-20">
       <section className="grid border-b border-graphite-muted lg:grid-cols-[0.9fr_1.1fr]">
-        <div className="relative min-h-[360px] overflow-hidden border-b border-graphite-muted bg-black lg:min-h-[560px] lg:border-b-0 lg:border-r">
+        <div className="relative aspect-square w-full overflow-hidden border-b border-graphite-muted bg-black lg:border-b-0 lg:border-r">
           <Image
             src={family.image}
             alt=""
             fill
             priority
             sizes="(min-width: 1024px) 48vw, 100vw"
-            className="hover:scale-102 object-contain bg-black transition-transform duration-700"
+            className="hover:scale-102 object-cover transition-transform duration-700"
           />
           <div className="absolute bottom-4 left-8 right-8 grid gap-2 border border-graphite-muted bg-surface/70 p-4 backdrop-blur-md">
             <div className="font-mono text-label-xs uppercase tracking-[0.16em] text-warning-red">
