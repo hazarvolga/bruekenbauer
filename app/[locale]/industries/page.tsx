@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { PageShell } from "@/components/motion/MotionProvider";
 import { applications } from "@/data/applications";
 import { getTranslations, setRequestLocale } from "next-intl/server";
+import { getApplicationCopy } from "@/data/localizedContent";
 
 export const metadata: Metadata = {
   title: "Application Sectors | brückenbauer GmbH",
@@ -21,7 +22,7 @@ export default async function IndustriesPage({ params }: { params: Promise<{ loc
       <span className="font-mono text-label-xs uppercase tracking-[0.18em] text-warning-red">
         {t("label")}
       </span>
-      <h1 className="mt-5 max-w-5xl font-mono text-headline-lg-mobile uppercase text-on-surface md:text-display-xl">
+      <h1 className="mt-5 max-w-5xl font-mono text-headline-lg-mobile uppercase text-on-surface md:text-[54px] md:leading-[0.92] lg:text-[72px] xl:text-display-xl break-words">
         {t("title")}
       </h1>
       <section className="mt-10 grid gap-gutter border-y border-graphite-muted py-6 lg:grid-cols-12">
@@ -43,35 +44,38 @@ export default async function IndustriesPage({ params }: { params: Promise<{ loc
         </div>
       </section>
       <div className="mt-12 grid gap-gutter md:grid-cols-2 xl:grid-cols-3">
-        {applications.map((app, index) => (
-          <Link
-            key={app.slug}
-            href={`/industries/${app.slug}`}
-            className="reticle-corners group relative min-h-[340px] overflow-hidden border border-graphite-muted bg-surface-container-low/40 p-6 transition-all duration-500 ease-out hover:border-warning-red hover:bg-surface-container-low/65"
-          >
-            <div className="relative z-10 transition-transform duration-700 ease-out group-hover:-translate-y-8">
-              <div className="font-mono text-label-xs uppercase tracking-[0.18em] text-warning-red transition-opacity duration-500 ease-out group-hover:opacity-0">
-                {app.node}
+        {applications.map((app, index) => {
+          const appCopy = getApplicationCopy(locale, app);
+          return (
+            <Link
+              key={app.slug}
+              href={`/industries/${app.slug}`}
+              className="reticle-corners group relative min-h-[340px] overflow-hidden border border-graphite-muted bg-surface-container-low/40 p-6 transition-all duration-500 ease-out hover:border-warning-red hover:bg-surface-container-low/65"
+            >
+              <div className="relative z-10 transition-transform duration-700 ease-out group-hover:-translate-y-8">
+                <div className="font-mono text-label-xs uppercase tracking-[0.18em] text-warning-red transition-opacity duration-500 ease-out group-hover:opacity-0">
+                  {app.node}
+                </div>
+                <h2 className="mt-5 font-mono text-technical-md uppercase text-industrial-silver">
+                  {appCopy.name}
+                </h2>
+                <p className="mt-5 font-mono text-data-sm uppercase text-outline">{appCopy.summary}</p>
               </div>
-              <h2 className="mt-5 font-mono text-technical-md uppercase text-industrial-silver">
-                {app.name}
-              </h2>
-              <p className="mt-5 font-mono text-data-sm uppercase text-outline">{app.summary}</p>
-            </div>
-            <div className="absolute bottom-0 left-0 right-0 h-28 overflow-hidden transition-all duration-700 ease-out group-hover:h-36">
-              <Image
-                src={app.heroImage}
-                alt=""
-                fill
-                sizes="(min-width: 1280px) 34vw, (min-width: 768px) 50vw, 100vw"
-                className="group-hover:scale-102 object-cover object-center transition-transform duration-700 ease-out"
-              />
-            </div>
-            <span className="absolute bottom-4 right-5 z-10 font-mono text-data-sm text-outline">
-              {String(index + 1).padStart(2, "0")}
-            </span>
-          </Link>
-        ))}
+              <div className="absolute bottom-0 left-0 right-0 h-28 overflow-hidden transition-all duration-700 ease-out group-hover:h-36">
+                <Image
+                  src={app.heroImage}
+                  alt=""
+                  fill
+                  sizes="(min-width: 1280px) 34vw, (min-width: 768px) 50vw, 100vw"
+                  className="group-hover:scale-102 object-cover object-center transition-transform duration-700 ease-out"
+                />
+              </div>
+              <span className="absolute bottom-4 right-5 z-10 font-mono text-data-sm text-outline">
+                {String(index + 1).padStart(2, "0")}
+              </span>
+            </Link>
+          );
+        })}
       </div>
     </PageShell>
   );
