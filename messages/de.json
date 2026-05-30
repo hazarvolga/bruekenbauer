@@ -5,6 +5,7 @@
     "products": "Produkte",
     "industries": "Branchen",
     "contact": "Kontakt",
+    "partners": "Partner",
     "finder": "Finder",
     "rfq": "Anfrage (RFQ)",
     "language": "Sprache"
@@ -135,6 +136,12 @@
     "acoustics": "Akustik",
     "pressure-and-flow-sensors": "Druck- & Durchflusssensoren",
     "current-and-position-sensors": "Strom- & Positionssensoren"
+  },
+  "PartnersPage": {
+    "label": "Strategische Zusammenarbeit",
+    "title": "Fokus auf fortschrittliche KI-Produkte und elektrische Geräte",
+    "censray_desc": "Censray ist ein Pionier im Bereich von KI-Beschleunigern, Edge-KI-Modulen und fortschrittlichen Silizium-Integrationslösungen.",
+    "iyaksh_desc": "Iyaksh liefert hochmoderne elektrotechnische Geräte, Netzumwandlungshardware und Batterieüberwachungsprodukte für schwere Industrienetze."
   },
   "MetaData": {
     "title": "brückenbauer GmbH: Wir beraten nicht nur",

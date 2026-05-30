@@ -13,6 +13,7 @@ const primaryLinks = [
   { href: "/about", key: "about" },
   { href: "/products", key: "products" },
   { href: "/industries", key: "industries" },
+  { href: "/partners", key: "partners" },
   { href: "/contact", key: "contact" },
 ];
 

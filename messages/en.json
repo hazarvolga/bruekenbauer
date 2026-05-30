@@ -5,6 +5,7 @@
     "products": "Products",
     "industries": "Industries",
     "contact": "Contact",
+    "partners": "Partners",
     "finder": "Finder",
     "rfq": "RFQ",
     "language": "Language"
@@ -135,6 +136,12 @@
     "acoustics": "Acoustics",
     "pressure-and-flow-sensors": "Pressure & Flow Sensors",
     "current-and-position-sensors": "Current & Position Sensors"
+  },
+  "PartnersPage": {
+    "label": "Strategic Collaborations",
+    "title": "Focus on advanced AI products and electric devices",
+    "censray_desc": "Censray is a pioneer in high-performance artificial intelligence accelerators, edge-AI modules, and advanced silicon integration solutions.",
+    "iyaksh_desc": "Iyaksh delivers state-of-the-art electrical engineering devices, grid conversion hardware, and battery monitoring products for heavy industrial networks."
   },
   "MetaData": {
     "title": "brückenbauer GmbH: We don't just advise",
