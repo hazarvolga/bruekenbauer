@@ -48,15 +48,15 @@ export default async function PowerManagementDetailPage({ params }: Props) {
             sizes="(min-width: 1024px) 48vw, 100vw"
             className="hover:scale-102 object-cover transition-transform duration-700"
           />
-          <div className="absolute bottom-8 left-8 right-8 grid gap-3 border border-graphite-muted bg-surface/70 p-5 backdrop-blur-md">
+          <div className="absolute bottom-4 left-8 right-8 grid gap-2 border border-graphite-muted bg-surface/70 p-4 backdrop-blur-md">
             <div className="font-mono text-label-xs uppercase tracking-[0.16em] text-warning-red">
               {labels.moduleVariants}
             </div>
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-wrap gap-1.5">
               {family.variants.map((variant) => (
                 <span
                   key={variant}
-                  className="border border-outline-variant bg-surface-container-low/70 px-3 py-2 font-mono text-label-xs uppercase text-industrial-silver"
+                  className="border border-outline-variant bg-surface-container-low/70 px-2.5 py-1.5 font-mono text-label-xs uppercase text-industrial-silver"
                 >
                   {variant}
                 </span>
