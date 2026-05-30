@@ -52,7 +52,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
   const teamMembers = [
     {
       id: "01",
-      image: "/images/team/andreas-werthmueller.webp",
+      image: "/images/team/andreas-werthmueller-yeni.jpeg",
       name: "Andreas Werthmüller",
       title: "Dr. rer. nat., dipl. phys.",
       bio: [t("team.andreas.bio_1"), t("team.andreas.bio_2"), t("team.andreas.bio_3")],
@@ -60,7 +60,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
     },
     {
       id: "02",
-      image: "/images/team/konstantin-gochua.webp",
+      image: "/images/team/konstantin-gochua-yeni.jpeg",
       name: "Konstantin Gochua, PhD",
       title: "Business Development & Semiconductor Specialist",
       bio: [t("team.konstantin.bio_1"), t("team.konstantin.bio_2"), t("team.konstantin.bio_3")],
@@ -68,6 +68,18 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
         t("team.konstantin.focus_1"),
         t("team.konstantin.focus_2"),
         t("team.konstantin.focus_3"),
+      ],
+    },
+    {
+      id: "03",
+      image: "/images/team/iponey-huang-yeni.jpeg",
+      name: "Mr. Iponey HUANG 丨MBA",
+      title: "Partner, Sourcing Head in Asia",
+      bio: [t("team.iponey.bio_1"), t("team.iponey.bio_2")],
+      focus: [
+        t("team.iponey.focus_1"),
+        t("team.iponey.focus_2"),
+        t("team.iponey.focus_3"),
       ],
     },
   ];
@@ -154,7 +166,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
                 key={member.id}
                 className="reticle-corners group grid gap-0 overflow-hidden border border-graphite-muted bg-surface-container-low/50"
               >
-                <div className="relative aspect-[4/5] border-b border-graphite-muted bg-graphite-muted/20 sm:aspect-[3/4] xl:min-h-[420px]">
+                <div className="relative aspect-[1.2/1] w-full border-b border-graphite-muted bg-graphite-muted/20">
                   <Image
                     src={member.image}
                     alt={member.name}

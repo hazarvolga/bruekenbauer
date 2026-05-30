@@ -15,7 +15,7 @@
     "read_more": "En savoir plus"
   },
   "HomePage": {
-    "operational_layer": "Operational layer / level 02",
+    "operational_layer": "Couche opérationnelle / niveau 02",
     "title": "Partenariats Stratégiques en Électronique",
     "subtitle": "Partenariats stratégiques et conseil technologique pour l'industrie de l'électronique avancée et des semi-conducteurs.",
     "metrics": {
@@ -57,24 +57,31 @@
       "srv_04_copy": "À court terme et pour une période définie, nous complétons les équipes de nos clients avec notre savoir-faire pour combler les manques de ressources ou pour mener à bien des projets."
     },
     "team": {
-      "label": "Leadership node",
-      "title": "The Bridge Builders",
-      "subtitle": "Un duo dynamique dont les compétences se complètent.",
+      "label": "Pôle de direction",
+      "title": "Les Bâtisseurs de Ponts",
+      "subtitle": "Une équipe dynamique dont les compétences se complètent.",
       "andreas": {
         "bio_1": "Andreas Werthmüller est un expert orienté vers la pratique, doté d'une vaste expérience dans des environnements interdisciplinaires et interculturels. En associant pensée stratégique et exécution opérationnelle, il apporte une expertise approfondie en recherche, technologie, innovation et gestion des parties prenantes.",
         "bio_2": "Au cours de sa carrière, Andreas a dirigé et coordonné avec succès de nombreux programmes et projets internationaux dans les secteurs public et privé. En tant que PMO et chef de projet expérimenté, il aide les organisations à naviguer dans des défis complexes et à transformer les idées en résultats durables à long terme.",
         "bio_3": "Son approche est pragmatique, orientée solutions et fortement axée sur la création d'un impact mesurable grâce à une collaboration efficace et à une exécution structurée.",
-        "focus_1": "Research & Technology",
-        "focus_2": "PMO Leadership",
-        "focus_3": "Stakeholder Strategy"
+        "focus_1": "Recherche & Technologie",
+        "focus_2": "Leadership PMO",
+        "focus_3": "Stratégie des parties prenantes"
       },
       "konstantin": {
         "bio_1": "Konstantin Gochua est un professionnel du business development et du product management, doté d'une vaste expérience internationale dans les semiconductors, la microélectronique et les advanced materials. Son parcours combine une expertise technique approfondie avec une stratégie commerciale orientée client, lui permettant de relier engineering, innovation et croissance commerciale.",
         "bio_2": "Tout au long de sa carrière, Konstantin a contribué à l'innovation dans les semiconductors, les technologies RFID, la power electronics et le développement commercial international, tout en soutenant des partenariats stratégiques et une collaboration transversale dans des industries hautement techniques.",
         "bio_3": "Avec une base solide en recherche appliquée et en innovation industrielle, Konstantin apporte une approche analytique, adaptable et internationale aux défis technologiques et commerciaux complexes.",
-        "focus_1": "Semiconductors",
-        "focus_2": "Product Strategy",
-        "focus_3": "Business Development"
+        "focus_1": "Semi-conducteurs",
+        "focus_2": "Stratégie de produit",
+        "focus_3": "Développement commercial"
+      },
+      "iponey": {
+        "bio_1": "Iponey HUANG a plus de 20 ans d'expérience professionnelle dans des entreprises du Fortune Global 500 et d'autres leaders industriels de renommée mondiale pour l'automobile (conduite autonome, véhicule électrique, pile à combustible, GNC, GNL), les énergies renouvelables (solaire photovoltaïque, systèmes de stockage d'énergie, énergie éolienne), l'automatisation industrielle, la logistique intelligente & l'entrepôt intelligent, la robotique.",
+        "bio_2": "Il est notre partenaire de sourcing stratégique pour les composants électriques et les solutions hautement personnalisées en Asie.",
+        "focus_1": "Sourcing & Logistique",
+        "focus_2": "Alliances stratégiques",
+        "focus_3": "Solutions sur mesure"
       }
     },
     "sequence": {

@@ -59,7 +59,7 @@
     "team": {
       "label": "Leadership node",
       "title": "The Bridge Builders",
-      "subtitle": "A dynamic duo whose skills complement each other.",
+      "subtitle": "A dynamic team whose skills complement each other.",
       "andreas": {
         "bio_1": "Andreas Werthmüller is a practice-oriented expert with extensive experience across interdisciplinary and intercultural environments. Combining strategic thinking with operational execution, he brings deep expertise in research, technology, innovation, and stakeholder management.",
         "bio_2": "Over the course of his career, Andreas has successfully led and coordinated numerous international programs and projects in both the public and private sectors. As an experienced PMO and project leader, he supports organizations in navigating complex challenges and transforming ideas into sustainable, long-term results.",
@@ -75,6 +75,13 @@
         "focus_1": "Semiconductors",
         "focus_2": "Product strategy",
         "focus_3": "Business development"
+      },
+      "iponey": {
+        "bio_1": "Iponey HUANG has over 20 years of working experience at Fortune Global 500 companies and other world-renowned industry leaders for automobile (autonomous driving, electric vehicle, fuel cell, CNG, LNG), renewable energies(solar photovoltaic, energy storage systems, wind power), industrial automation, intelligent logistics & smart warehouse, robotics.",
+        "bio_2": "He is our strategic sourcing partner for electric components and highly customized solutions in Asia.",
+        "focus_1": "Sourcing & Logistics",
+        "focus_2": "Strategic Alliances",
+        "focus_3": "Custom Solutions"
       }
     },
     "sequence": {

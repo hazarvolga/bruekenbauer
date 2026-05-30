@@ -3,7 +3,7 @@ export const images = {
     "https://lh3.googleusercontent.com/aida-public/AB6AXuAuye9YPfYVHK5hdOZJ-JUArQyeLUSmWmKyQiinsnVuAmUCGCThLfK1ujFKCOIL_ZTDjZ8DxaophZJji42kzIq0an9jqgMJJr9pOgM-t5N1TwM2hAaIu06Or46mzBQHKefuMgOGV-rog7kiz5masklTWuH24y0KwRacy17lmjx3pWi3-O1wCE6w0T83AbH_B5gxqCI7PAZo_cY8ikg9z1mn7Oh2DcTcA8x96PoIVl7MNyECp5SX5dolxAbtEs_5CuZ-YzbN9TnQJt4",
   operator:
     "https://lh3.googleusercontent.com/aida-public/AB6AXuCuqOBTog2eeNYpXKquqWiG-JQKr4V2xvvKkJqYlLYsyIgJtKHmGqJ9fMTA8CZKs0XI8UReuoENULurB62bk9xblXjK9JDrEqfMxZqPi9HjpQnJwQQZnWLi-3dLzGoqSWQsM2yevXdwGtIgiZs5GS2HNeoZhhCfh2DQBR-q8Gf1S6m8ZmN0qhvaLkblKilZ8nLEcnPNNvUeYRpvBIraHJkEJum0uxhVoaX3TQecRKRQhgGbq8xJLck3fQk_EkgPtWJ7VgH003TSmVw",
-  homepage: "/images/industries/e-mobility-and-battery-management.webp",
+  homepage: "/images/industries/solar-pv-and-bess.webp",
   aboutHero: "/images/generated/about-power-module-macro.webp",
   workflow:
     "https://lh3.googleusercontent.com/aida-public/AB6AXuAwm8jku4KjJReD_LF13kTG-fwg8J4GK1bKOsDxnE408NQBd8Tu7ar0gTKbXA1BnP8dHuLmb1vEVDCclLtNjdNaA4vsLIDD8uTxo3lKonKNWxOnYsJL6-tLhpyXS238tCwsbTmOJExwPNQNm4F_kMSUpE8dxz1uHimlfFZgInOcdG8jMH0IOYQWpWLLhtbVMMeBsTTmjmJmX3S5Z63-RIpBYG2gncWvB_CuEtytAC8RnK3CSdJd0rzm7o7MKBXtPMdYC-BPOYP28lQ",

@@ -4,7 +4,7 @@ import { useMemo, useState } from "react";
 import { TechnicalButton } from "@/components/layout/TechnicalButton";
 import { applications } from "@/data/applications";
 import { getApplicationCopy, getProductGroupCopy, normalizeLocale } from "@/data/localizedContent";
-import { productTaxonomy } from "@/data/productTaxonomy";
+import { productTaxonomy, type ProductGroup } from "@/data/productTaxonomy";
 import { products } from "@/data/products";
 import type { RfqRequest } from "@/app/api/rfq/route";
 
@@ -215,6 +215,72 @@ export function RfqFlow({
   }
 
   if (status === "success") {
+    const keyLabels: Record<string, string> = {
+      source: normalizedLocale === "de" ? "Quelle" : normalizedLocale === "fr" ? "Source" : "Source",
+      productSlug: normalizedLocale === "de" ? "Produkt-Slug" : normalizedLocale === "fr" ? "Slug du produit" : "Product Slug",
+      familySlug: normalizedLocale === "de" ? "Familien-Slug" : normalizedLocale === "fr" ? "Slug de la famille" : "Family Slug",
+      productGroup: copy.productGroup,
+      productFamily: copy.productFamily,
+      applicationSector: copy.applicationSector,
+      monthlyVolume: copy.monthlyVolume,
+      leadTime: copy.leadTime,
+      name: copy.contactName,
+      email: copy.email,
+      company: copy.company,
+      notes: copy.notes,
+    };
+
+    const getLocalizedValue = (key: string, val: string) => {
+      if (!val) return copy.notSupplied;
+      if (key === "source") {
+        const sourceTranslations: Record<string, Record<string, string>> = {
+          en: {
+            general: "General",
+            product: "Product",
+            "power-family": "Power Family",
+            "application-sector": "Application Sector",
+          },
+          de: {
+            general: "Allgemein",
+            product: "Produkt",
+            "power-family": "Power-Familie",
+            "application-sector": "Anwendungsbereich",
+          },
+          fr: {
+            general: "Général",
+            product: "Produit",
+            "power-family": "Famille d'alimentation",
+            "application-sector": "Secteur d'application",
+          },
+        };
+        return sourceTranslations[normalizedLocale]?.[val] || val;
+      }
+      if (key === "productGroup") {
+        try {
+          const groupCopy = getProductGroupCopy(normalizedLocale, val as ProductGroup);
+          return groupCopy?.title || val;
+        } catch {
+          return val;
+        }
+      }
+      if (key === "applicationSector") {
+        const appObj = applications.find((item) => item.name === val);
+        return appObj ? getApplicationCopy(normalizedLocale, appObj).name : val;
+      }
+      if (key === "leadTime") {
+        const lowerVal = val.toLowerCase();
+        if (lowerVal.includes("days")) {
+          const suffix = normalizedLocale === "de" ? " Tage" : normalizedLocale === "fr" ? " jours" : " days";
+          return val.replace(/\s*days/i, suffix);
+        }
+        if (lowerVal.includes("day")) {
+          const suffix = normalizedLocale === "de" ? " Tag" : normalizedLocale === "fr" ? " jour" : " day";
+          return val.replace(/\s*day/i, suffix);
+        }
+      }
+      return val;
+    };
+
     return (
       <section className="grid gap-gutter lg:grid-cols-[0.9fr_1.1fr]">
         <div>
@@ -250,8 +316,8 @@ export function RfqFlow({
               key={key}
               className="grid grid-cols-[0.45fr_1fr] gap-4 border-b border-graphite-muted py-4 last:border-b-0"
             >
-              <dt className="text-outline">{key.replace(/([A-Z])/g, " $1")}</dt>
-              <dd className="text-industrial-silver">{value || copy.notSupplied}</dd>
+              <dt className="text-outline">{keyLabels[key] || key.replace(/([A-Z])/g, " $1")}</dt>
+              <dd className="text-industrial-silver">{getLocalizedValue(key, value)}</dd>
             </div>
           ))}
         </dl>

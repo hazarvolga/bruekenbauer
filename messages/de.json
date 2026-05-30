@@ -15,7 +15,7 @@
     "read_more": "Mehr erfahren"
   },
   "HomePage": {
-    "operational_layer": "Operational layer / level 02",
+    "operational_layer": "Operative Ebene / Level 02",
     "title": "Strategische Partnerschaften für Elektroniksysteme",
     "subtitle": "Strategische Partnerschaften und Technologieberatung für die Halbleiter- und Hochleistungselektronik.",
     "metrics": {
@@ -33,7 +33,7 @@
       "search_desc": "Technische Suche mit prädiktiven Bauteil-Übereinstimmungen.",
       "compliance_title": "Compliance",
       "compliance_desc": "Rückverfolgbarkeit, Qualifizierung und Protokollprüfung.",
-      "oem_title": "OEM Supply",
+      "oem_title": "OEM-Versorgung",
       "oem_desc": "Massenbeschaffung und Logistikarchitektur."
     }
   },
@@ -58,23 +58,30 @@
     },
     "team": {
       "label": "Leadership Node",
-      "title": "The Bridge Builders",
-      "subtitle": "Ein dynamisches Duo, dessen Fähigkeiten sich gegenseitig ergänzen.",
+      "title": "Die Brückenbauer",
+      "subtitle": "Ein dynamisches Team, dessen Fähigkeiten sich gegenseitig ergänzen.",
       "andreas": {
         "bio_1": "Andreas Werthmüller ist ein praxisorientierter Experte mit umfassender Erfahrung in interdisziplinären und interkulturellen Umfeldern. Er verbindet strategisches Denken mit operativer Umsetzung und bringt fundierte Expertise in Forschung, Technologie, Innovation und Stakeholder-Management ein.",
         "bio_2": "Im Laufe seiner Karriere hat Andreas zahlreiche internationale Programme und Projekte im öffentlichen wie im privaten Sektor erfolgreich geleitet und koordiniert. Als erfahrener PMO- und Projektleiter unterstützt er Organisationen dabei, komplexe Herausforderungen zu meistern und Ideen in nachhaltige, langfristige Ergebnisse zu überführen.",
         "bio_3": "Sein Ansatz ist pragmatisch, lösungsorientiert und stark darauf ausgerichtet, durch wirksame Zusammenarbeit und strukturierte Umsetzung messbare Wirkung zu erzielen.",
-        "focus_1": "Research & Technology",
-        "focus_2": "PMO Leadership",
-        "focus_3": "Stakeholder Strategy"
+        "focus_1": "Forschung & Technologie",
+        "focus_2": "PMO-Leitung",
+        "focus_3": "Stakeholder-Strategie"
       },
       "konstantin": {
         "bio_1": "Konstantin Gochua ist ein Business-Development- und Product-Management-Experte mit umfangreicher internationaler Erfahrung in Halbleitern, Mikroelektronik und Advanced Materials. Sein Hintergrund verbindet tiefes technisches Fachwissen mit einer kundenorientierten Geschäftsstrategie und schlägt damit die Brücke zwischen Engineering, Innovation und kommerziellem Wachstum.",
         "bio_2": "Im Laufe seiner Karriere hat Konstantin zu Halbleiterinnovation, RFID-Technologien, Power Electronics und internationaler Geschäftsentwicklung beigetragen und dabei strategische Partnerschaften sowie funktionsübergreifende Zusammenarbeit in hoch technischen Branchen unterstützt.",
         "bio_3": "Mit einer starken Basis in angewandter Forschung und industrieller Innovation bringt Konstantin einen analytischen, anpassungsfähigen und international geprägten Ansatz in komplexe technologische und geschäftliche Herausforderungen ein.",
-        "focus_1": "Semiconductors",
-        "focus_2": "Product Strategy",
+        "focus_1": "Halbleiter",
+        "focus_2": "Produktstrategie",
         "focus_3": "Business Development"
+      },
+      "iponey": {
+        "bio_1": "Iponey HUANG verfügt über mehr als 20 Jahre Berufserfahrung bei Fortune Global 500-Unternehmen und anderen weltweit führenden Branchenführern in den Bereichen Automobil (autonomes Fahren, Elektrofahrzeuge, Brennstoffzellen, CNG, LNG), erneuerbare Energien (Photovoltaik, Energiespeichersysteme, Windkraft), Industrieautomatisierung, intelligente Logistik & Smart Warehouse und Robotik.",
+        "bio_2": "Er ist unser strategischer Sourcing-Partner für elektrische Komponenten und hochgradig maßgeschneiderte Lösungen in Asien.",
+        "focus_1": "Sourcing & Logistik",
+        "focus_2": "Strategische Allianzen",
+        "focus_3": "Maßgeschneiderte Lösungen"
       }
     },
     "sequence": {
