@@ -45,6 +45,7 @@ export function SearchClient({ products, locale = "en" }: SearchClientProps) {
       adjust: "Adjust query or",
       submit: "submit an RFQ",
       partNo: "Part no.",
+      partNoAndName: "Part no. / Name",
       initial: "Enter part no., product name, group, or application sector",
     },
     de: {
@@ -57,6 +58,7 @@ export function SearchClient({ products, locale = "en" }: SearchClientProps) {
       adjust: "Suchbegriff anpassen oder",
       submit: "RFQ absenden",
       partNo: "Teilenr.",
+      partNoAndName: "Teilenr. / Name",
       initial: "Teilenr., Produktname, Gruppe oder Anwendungsbereich eingeben",
     },
     fr: {
@@ -69,6 +71,7 @@ export function SearchClient({ products, locale = "en" }: SearchClientProps) {
       adjust: "Ajustez la recherche ou",
       submit: "soumettre une RFQ",
       partNo: "Réf.",
+      partNoAndName: "Réf. / Nom",
       initial: "Saisir une réf., un nom produit, un groupe ou un secteur d'application",
     },
   }[normalizedLocale];
@@ -149,14 +152,17 @@ export function SearchClient({ products, locale = "en" }: SearchClientProps) {
           <Link
             key={product.slug}
             href={localizePath(normalizedLocale, `/product/${product.slug}`)}
-            className="reticle-corners relative grid border border-graphite-muted bg-surface-container-low/50 p-6 transition-colors hover:border-warning-red md:grid-cols-[0.35fr_1fr_auto] md:items-center"
+            className="reticle-corners relative grid border border-graphite-muted bg-surface-container-low/50 p-6 transition-colors hover:border-warning-red md:grid-cols-[0.42fr_0.93fr_auto] md:items-center"
           >
             <div>
               <div className="font-mono text-label-xs uppercase text-warning-red">
-                {copy.partNo}
+                {copy.partNoAndName}
               </div>
               <div className="mt-2 font-mono text-headline-lg-mobile uppercase text-on-surface">
                 {highlight(product.partNumber, debouncedQuery)}
+              </div>
+              <div className="mt-1 font-mono text-technical-md uppercase text-outline">
+                {highlight(product.name, debouncedQuery)}
               </div>
             </div>
             <div className="mt-6 grid gap-4 font-mono text-data-sm uppercase md:mt-0 md:grid-cols-3">
