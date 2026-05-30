@@ -106,24 +106,30 @@ Status: **Phase 3 active.** GitHub + Vercel production deploy complete. Power Ma
 - Custom LanguageSwitcher ✅ — Replaced top-navigation social media links with a high-fidelity Brutalist `EN | DE | FR` language switcher.
 - Hero Image Quality Restoration ✅ — Reverted `MaskedImageFrame` to raw CSS `background-image: url(...)` with `bg-cover` to bypass Next.js downscaling and ensure pixel-perfect resolution on high-density retina displays.
 
+### ✅ Shipped (Phase 5 — 2026-05-30)
+
+- Dynamic OG Image Generation ✅ — `/api/og` route handler implemented using Satori and `next/og` producing dark industrial brutalist images dynamically.
+- Structured JSON-LD Data Schemas ✅ — Embedded `<script type="application/ld+json">` of type `Product` on `/product/[slug]` and `Service` on `/industries/[slug]`.
+- Lighthouse CI Performance Budget ✅ — Integrated `lhci` checking into the GitHub Actions pipeline, enforcing `LCP < 2.5s` and `CLS < 0.1` budgets.
+- Next.js 15 Root Layout Resolution ✅ — Configured `app/layout.tsx` to safely resolve compilation errors for root-level static pages.
+- Multilingual RFQ success registry view ✅ — Fully translated both keys and values in German and French on the final B2B RFQ success detail dashboard.
+- Full product names in Search Results ✅ — Enhanced `SearchClient` rows to present full product names with debounced term highlights.
+
 ### ❌ Still missing
 
 **High priority (next session)**
 
-- OG images — `/api/og` route with `@vercel/og` or `satori`
-- Structured data — `<script type="application/ld+json">` on `/product/[slug]` and `/industries/[slug]`
-- Decide production target — Vercel is live; Coolify remains optional if Oracle VPS deployment becomes preferred
+- [ ] Decide production target — Vercel is live; Coolify remains optional if Oracle VPS deployment becomes preferred
 
 **Medium priority**
 
-- RFQ/Contact API — connect to real destination (CRM, email, n8n webhook); currently stdout only
-- Compare entry point — "Compare" link on `/product/[slug]` pages
-- Lighthouse CI — `treosh/lighthouse-ci-action` in `.github/workflows/ci.yml` with perf budget
+- [ ] RFQ/Contact API — connect to real destination (CRM, email, n8n webhook); currently stdout only
+- [ ] Compare entry point — "Compare" link on `/product/[slug]` pages
 
 **Low priority**
 
-- Storybook — component isolation and visual regression
-- Graphify / codebase-memory-mcp — evaluate after repo is stable on GitHub
+- [ ] Storybook — component isolation and visual regression
+- [ ] Graphify / codebase-memory-mcp — evaluate after repo is stable on GitHub
 
 ---
 

@@ -11,16 +11,16 @@ Last updated: 2026-05-27
 - Component system: TopNav (with integrated custom `LanguageSwitcher` replacing social links), Footer, SiteChrome, HudMetric, SideRail, TechnicalButton
 - Motion primitives: MotionProvider (PageShell), MaskedImageFrame (reverted to pure CSS `background-image` to prevent Next.js image optimization downscaling for maximum high-density retina clarity), StaggerText, Reveals
 - Product components: ProductCard, ProductGrid, IndustrySystemsPanel
-- RFQ flow: RfqFlow — full API submission with loading/success/error states
+- RFQ flow: RfqFlow — full API submission with loading/success/error states. Localized keys (labels) and values (group, sector, leadTime, source) in the success registry view for German (DE) and French (FR) locales.
 - Contact form: ContactForm — full API submission with loading/success/error states
-- Search: SearchClient — debounced (150ms), filters name/partNumber/group/applications, highlight matches
+- Search: SearchClient — debounced (150ms), filters name/partNumber/group/applications, highlight matches, displays full product names alongside part numbers in the results row.
 - Compare: URL-based state `?ids=slug-a,slug-b` (max 3), spec union diff with `warning-red` highlights
 - Power Management intro: `/intro` uses PDF-derived IGBT, SiC MOSFET, MOSFET, and Converters data
 - Power Management detail pages: `/power-management/{igbt,sic,mosfet,converters}` use PDF-derived performance parameters, selling points, and target application links
 - Static data layer: products (full catalogue), productTaxonomy (8 groups), applications (9 strategic industry verticals)
-- Font: JetBrains Mono via `next/font/google` — `--font-jetbrains` variable injected on `<html>`
-- SEO: `app/sitemap.ts` (all static + dynamic routes), `app/robots.ts`
-- API routes: `/api/health`, `/api/rfq` (POST), `/api/contact` (POST)
+- SEO: `app/sitemap.ts` (all static + dynamic routes), `app/robots.ts`, dynamic OG images at `/api/og` using `next/og` & satori, structured B2B JSON-LD schemas (`Product` & `Service`) on `/product/[slug]` and `/industries/[slug]`.
+- API routes: `/api/health`, `/api/rfq` (POST), `/api/contact` (POST), `/api/og` (GET - edge runtime dynamic OG images)
+- Root Layout: Introduced `app/layout.tsx` to satisfy Next.js 15 routing for root-level pages, resolving not-found.tsx compilation errors.
 
 ### DevOps & tooling
 
@@ -29,15 +29,12 @@ Last updated: 2026-05-27
 - `.nvmrc` — Node 22
 - `README.md` — project overview, scripts, structure
 - `AGENTS.md` — AI agent working instructions
-- `.github/workflows/ci.yml` — quality → build → smoke test pipeline
+- `.github/workflows/ci.yml` — quality → build → smoke test + Lighthouse CI (LCP < 2.5s, CLS < 0.1) pipeline
 - `.github/PULL_REQUEST_TEMPLATE.md` — checklist-driven PR flow
 - `.github/ISSUE_TEMPLATE/` — bug report + feature request forms
 - `.github/CODEOWNERS` — all PRs require hazarekiz review
 - `renovate.json` — weekly dependency updates, auto-merge patches
-- `.prettierrc` + `prettier-plugin-tailwindcss` — consistent formatting with class sorting
-- `commitlint.config.mjs` — conventional commits with scope enforcement
-- `.husky/pre-commit` — lint-staged (`--no-warn-ignored` flag, avoids next-env.d.ts false warning)
-- `.husky/commit-msg` — commitlint check
+- `lh-budget.json` — strict performance and script payload budget for audits
 - `playwright.config.ts` + `e2e/smoke.spec.ts` — route smoke tests + CWV + a11y checks
 - `Dockerfile` — multi-stage Node 22 Alpine, standalone output, non-root user, healthcheck
 - `docker-compose.yml` — local production simulation with resource limits
@@ -50,21 +47,18 @@ Last updated: 2026-05-27
 
 ### Git status
 
-- GitHub remote ✅ — `hazarvolga/bruekenbauer`
+- GitHub remote ✅ — `hazarvolga/bruekenbauer` (all local commits successfully pushed to origin/main)
 - Vercel production ✅ — `https://bruekenbauer.vercel.app`
 
 ## What's missing
 
 ### High priority
 
-- [ ] OG images — `/api/og` route with `@vercel/og` or `satori`
-- [ ] Structured data — `<script type="application/ld+json">` on `/product/[slug]` and `/industries/[slug]`
 - [ ] CI/Renovate monitoring after GitHub activation
 
 ### Medium priority
 
 - [ ] RFQ/Contact API — connect to real destination (CRM, email, n8n webhook). Currently logs to stdout.
-- [ ] Lighthouse CI — `treosh/lighthouse-ci-action` in `.github/workflows/ci.yml` with perf budget
 - [ ] Compare — add "Compare" entry point on `/product/[slug]` pages
 
 ### Low priority
