@@ -7,6 +7,8 @@ export const applicationNames = [
   "Solar PV & BESS",
   "Home Appliances",
   "Medical & Healthcare",
+  "Test & Measurement Systems",
+  "Power Supply & Grid Infrastructure",
 ] as const;
 
 export type ApplicationName = (typeof applicationNames)[number];
@@ -24,6 +26,10 @@ const applicationSummaries: Record<ApplicationName, string> = {
     "Lifecycle-ready component supply for appliance electronics, motor control, sensing, and protected power delivery.",
   "Medical & Healthcare":
     "Traceable component supply for healthcare devices, diagnostic equipment, and regulated electronic assemblies.",
+  "Test & Measurement Systems":
+    "Qualified instrumentation and diagnostic systems for high-precision calibration, laboratory analysis, and manufacturing lines.",
+  "Power Supply & Grid Infrastructure":
+    "High-efficiency power supplies, grid interface hardware, and rugged distribution units for uninterrupted industrial operation.",
 };
 
 const applicationDetails: Record<
@@ -144,6 +150,40 @@ const applicationDetails: Record<
       "Reliable supply chains and traceability with CoC and CoO",
       "Long-term availability for devices with approval cycles",
       "Individual support with selection and design-in",
+    ],
+  },
+  "Test & Measurement Systems": {
+    intro:
+      "Precision testing, laboratory diagnostic, and calibration programs require highly stable and certified components. We provide traceable passives, sensors, and EMV solutions that ensure exact measurement under any conditions.",
+    applications: [
+      "Laboratory diagnostics & analyzers",
+      "Industrial calibration systems",
+      "Automated test equipment (ATE)",
+      "Field measurement instruments",
+    ],
+    strengthsTitle: "Why measurement leaders partner with us",
+    strengths: [
+      "Ultra-precise resistors and capacitors with minimal thermal drift",
+      "Traceable calibration certificates and full documentation",
+      "EMC-shielded components for low-noise signaling",
+      "Long-term design-in support and sample provisioning",
+    ],
+  },
+  "Power Supply & Grid Infrastructure": {
+    intro:
+      "Continuous power supply, clean energy conversion, and stable grid interfaces form the backbone of modern infrastructure. We deliver rugged transformers, chokes, power modules, and sensors designed to meet absolute reliability standards.",
+    applications: [
+      "Uninterruptible power supplies (UPS)",
+      "Grid-tie converters & distribution units",
+      "Industrial DIN-rail power modules",
+      "High-frequency switching systems",
+    ],
+    strengthsTitle: "Our strengths for continuous power",
+    strengths: [
+      "Heavy-duty power management modules (IGBTs, SiC, MOSFETs)",
+      "High-efficiency transformers and EMC filters",
+      "Tested and certified for harsh environments and thermal stress",
+      "Obsolescence management for multi-decade infrastructure lifecycles",
     ],
   },
 };

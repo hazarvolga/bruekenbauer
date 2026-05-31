@@ -451,6 +451,50 @@ export const applicationCopies: Record<
         ],
       },
     },
+    "Test & Measurement Systems": {
+      name: "Mess- & Prüfsysteme",
+      summary:
+        "Qualifizierte Instrumentierung und Diagnosesysteme für hochpräzise Kalibrierung, Laboranalyse und Fertigungslinien.",
+      detail: {
+        intro:
+          "Präzisionsprüf-, Labordiagnose- und Kalibrierprogramme erfordern hochstabile und zertifizierte Komponenten. Wir liefern rückverfolgbare passive Bauelemente, Sensoren und EMV-Lösungen für exakte Messungen.",
+        applications: [
+          "Labordiagnostik & Analysegeräte",
+          "Industrielle Kalibriersysteme",
+          "Automatische Testgeräte (ATE)",
+          "Feldmessgeräte",
+        ],
+        strengthsTitle: "Warum führende Messgerätehersteller auf uns setzen",
+        strengths: [
+          "Hochpräzise Widerstände und Kondensatoren mit minimaler thermischer Drift",
+          "Rückverfolgbare Kalibrierzertifikate und vollständige Dokumentation",
+          "EMV-abgeschirmte Komponenten für rauscharme Signalisierung",
+          "Langfristige Design-In-Unterstützung und Musterbereitstellung",
+        ],
+      },
+    },
+    "Power Supply & Grid Infrastructure": {
+      name: "Stromversorgung & Netzinfrastruktur",
+      summary:
+        "Hocheffiziente Stromversorgungen, Netzschnittstellen und robuste Verteilerbaugruppen für den unterbrechungsfreien Industriebetrieb.",
+      detail: {
+        intro:
+          "Kontinuierliche Stromversorgung, saubere Energieumwandlung und stabile Netzschnittstellen bilden das Rückgrat moderner Infrastruktur. Wir liefern robuste Transformatoren, Drosseln, Leistungsmodule und Sensoren.",
+        applications: [
+          "Unterbrechungsfreie Stromversorgungen (USV)",
+          "Netzgekoppelte Wechselrichter & Verteiler",
+          "Industrielle Hutschienen-Netzteile",
+          "Hochfrequenz-Schaltsysteme",
+        ],
+        strengthsTitle: "Unsere Stärken für kontinuierliche Energieversorgung",
+        strengths: [
+          "Robuste Power-Management-Module (IGBTs, SiC, MOSFETs)",
+          "Hocheffiziente Transformatoren und EMV-Filter",
+          "Geprüft und zertifiziert für raue Umgebungen und thermische Belastung",
+          "Obsoleszenzmanagement für jahrzehntelange Infrastrukturlebenszyklen",
+        ],
+      },
+    },
   },
   fr: {
     "AEROSPACE & AVIATION": {
@@ -577,7 +621,7 @@ export const applicationCopies: Record<
         "Approvisionnement traçable pour dispositifs de santé, diagnostic et assemblages électroniques réglementés.",
       detail: {
         intro:
-          "En technologie médicale, chaque détail compte. Les composants électroniques doivent répondre aux standards qualité les plus élevés, rester disponibles à long terme et être absolument fiables.",
+          "En technologie médicale, chaque detail compte. Les composants électroniques doivent répondre aux standards qualité les plus élevés, rester disponibles à long terme et être absolument fiables.",
         applications: [
           "Diagnostic",
           "Surveillance patient",
@@ -591,6 +635,50 @@ export const applicationCopies: Record<
           "Supply chains fiables et traçabilité avec CoC et CoO",
           "Disponibilité long terme pour dispositifs avec cycles d'homologation",
           "Support individuel pour sélection et design-in",
+        ],
+      },
+    },
+    "Test & Measurement Systems": {
+      name: "Systèmes de Test & Mesure",
+      summary:
+        "Systèmes d'instrumentation et de diagnostic qualifiés pour l'étalonnage de haute précision, l'analyse en laboratoire et les lignes de production.",
+      detail: {
+        intro:
+          "Les programmes de test de précision, de diagnostic de laboratoire et d'étalonnage exigent des composants hautement stables et certifiés. Nous fournissons des composants passifs, des capteurs et des solutions CEM traçables.",
+        applications: [
+          "Diagnostics de laboratoire & analyseurs",
+          "Systèmes d'étalonnage industriels",
+          "Équipements de test automatisés (ATE)",
+          "Instruments de mesure sur le terrain",
+        ],
+        strengthsTitle: "Pourquoi les leaders de la mesure s'appuient sur nous",
+        strengths: [
+          "Résistances et condensateurs ultra-précis avec dérive thermique minimale",
+          "Certificats d'étalonnage traçables et documentation complète",
+          "Composants blindés CEM pour une signalisation à faible bruit",
+          "Support de conception à long terme et fourniture d'échantillons",
+        ],
+      },
+    },
+    "Power Supply & Grid Infrastructure": {
+      name: "Alimentation & Infrastructure Réseau",
+      summary:
+        "Alimentations à haut rendement, interfaces réseau et modules de distribution robustes pour un fonctionnement industriel ininterrompu.",
+      detail: {
+        intro:
+          "Une alimentation continue, une conversion d'énergie propre et des interfaces réseau stables constituent l'épine dorsale des infrastructures modernes. Nous livrons des transformateurs, des selfs, des modules de puissance et des capteurs robustes.",
+        applications: [
+          "Alimentations sans interruption (ASI / UPS)",
+          "Convertisseurs connectés au réseau & unités de distribution",
+          "Modules d'alimentation industriels sur rail DIN",
+          "Systèmes de commutation haute fréquence",
+        ],
+        strengthsTitle: "Nos forces pour une alimentation ininterrompue",
+        strengths: [
+          "Modules de gestion de puissance robustes (IGBT, SiC, MOSFET)",
+          "Transformateurs et filtres CEM à haut rendement",
+          "Testé et certifié pour les environnements sévères et le stress thermique",
+          "Gestion de l'obsolescence pour des cycles de vie d'infrastructures sur plusieurs décennies",
         ],
       },
     },

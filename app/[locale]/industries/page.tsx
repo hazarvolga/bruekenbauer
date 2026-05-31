@@ -17,6 +17,9 @@ export default async function IndustriesPage({ params }: { params: Promise<{ loc
   setRequestLocale(locale);
   const t = await getTranslations("IndustriesPage");
 
+  const group1 = applications.slice(0, 6);
+  const group2 = applications.slice(6);
+
   return (
     <PageShell className="min-h-screen px-margin-mobile pb-24 pt-32 md:ml-20 md:px-margin-desktop">
       <span className="font-mono text-label-xs uppercase tracking-[0.18em] text-warning-red">
@@ -26,11 +29,11 @@ export default async function IndustriesPage({ params }: { params: Promise<{ loc
         {t("title")}
       </h1>
       <section className="mt-10 grid gap-gutter border-y border-graphite-muted py-6 lg:grid-cols-12">
-        <div className="lg:col-span-4">
+        <div className="lg:col-span-5">
           <div className="font-mono text-label-xs uppercase tracking-[0.18em] text-warning-red">
             {t("section_label")}
           </div>
-          <h2 className="mt-4 max-w-md font-mono text-headline-lg-mobile uppercase text-industrial-silver md:text-headline-lg">
+          <h2 className="mt-4 max-w-md font-mono text-headline-lg-mobile uppercase text-industrial-silver xl:text-headline-lg break-words">
             {t("section_title")}
           </h2>
         </div>
@@ -43,9 +46,20 @@ export default async function IndustriesPage({ params }: { params: Promise<{ loc
           </div>
         </div>
       </section>
-      <div className="mt-12 grid gap-gutter md:grid-cols-2 xl:grid-cols-3">
-        {applications.map((app, index) => {
+
+      {/* Group 01: Strategic Industry Verticals */}
+      <div className="mt-16 flex items-center gap-6 border-b border-graphite-muted pb-4">
+        <span className="font-mono text-label-xs uppercase tracking-[0.18em] text-warning-red">
+          [ Group 01 ]
+        </span>
+        <h2 className="font-mono text-technical-md uppercase tracking-[0.1em] text-industrial-silver">
+          {t("group_1_title")}
+        </h2>
+      </div>
+      <div className="mt-8 grid gap-gutter md:grid-cols-2 xl:grid-cols-3">
+        {group1.map((app) => {
           const appCopy = getApplicationCopy(locale, app);
+          const globalIndex = app.node.split("-")[1];
           return (
             <Link
               key={app.slug}
@@ -71,7 +85,52 @@ export default async function IndustriesPage({ params }: { params: Promise<{ loc
                 />
               </div>
               <span className="absolute bottom-4 right-5 z-10 font-mono text-data-sm text-outline">
-                {String(index + 1).padStart(2, "0")}
+                {globalIndex}
+              </span>
+            </Link>
+          );
+        })}
+      </div>
+
+      {/* Group 02: Equipment & Devices */}
+      <div className="mt-20 flex items-center gap-6 border-b border-graphite-muted pb-4">
+        <span className="font-mono text-label-xs uppercase tracking-[0.18em] text-warning-red">
+          [ Group 02 ]
+        </span>
+        <h2 className="font-mono text-technical-md uppercase tracking-[0.1em] text-industrial-silver">
+          {t("group_2_title")}
+        </h2>
+      </div>
+      <div className="mt-8 grid gap-gutter md:grid-cols-2 xl:grid-cols-3">
+        {group2.map((app) => {
+          const appCopy = getApplicationCopy(locale, app);
+          const globalIndex = app.node.split("-")[1];
+          return (
+            <Link
+              key={app.slug}
+              href={`/industries/${app.slug}`}
+              className="reticle-corners group relative min-h-[340px] overflow-hidden border border-graphite-muted bg-surface-container-low/40 p-6 transition-all duration-500 ease-out hover:border-warning-red hover:bg-surface-container-low/65"
+            >
+              <div className="relative z-10 transition-transform duration-700 ease-out group-hover:-translate-y-8">
+                <div className="font-mono text-label-xs uppercase tracking-[0.18em] text-warning-red transition-opacity duration-500 ease-out group-hover:opacity-0">
+                  {app.node}
+                </div>
+                <h2 className="mt-5 font-mono text-technical-md uppercase text-industrial-silver">
+                  {appCopy.name}
+                </h2>
+                <p className="mt-5 font-mono text-data-sm uppercase text-outline">{appCopy.summary}</p>
+              </div>
+              <div className="absolute bottom-0 left-0 right-0 h-28 overflow-hidden transition-all duration-700 ease-out group-hover:h-36">
+                <Image
+                  src={app.heroImage}
+                  alt=""
+                  fill
+                  sizes="(min-width: 1280px) 34vw, (min-width: 768px) 50vw, 100vw"
+                  className="group-hover:scale-102 object-cover object-center transition-transform duration-700 ease-out"
+                />
+              </div>
+              <span className="absolute bottom-4 right-5 z-10 font-mono text-data-sm text-outline">
+                {globalIndex}
               </span>
             </Link>
           );
