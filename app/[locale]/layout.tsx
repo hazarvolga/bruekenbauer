@@ -34,6 +34,8 @@ export async function generateMetadata({
   const baseUrl = getBaseUrl();
   const url = getLocalizedUrl(baseUrl, locale);
 
+  const ogUrl = `/api/og?title=${encodeURIComponent(title)}&subtitle=${encodeURIComponent(description)}&label=${encodeURIComponent("B2B CORE DOSSIER")}`;
+
   return {
     metadataBase: new URL(baseUrl),
     title,
@@ -46,7 +48,7 @@ export async function generateMetadata({
       type: "website",
       images: [
         {
-          url: "/images/product-groups/power-management.png",
+          url: ogUrl,
           width: 1200,
           height: 630,
           alt: title,
@@ -57,7 +59,7 @@ export async function generateMetadata({
       card: "summary_large_image",
       title,
       description,
-      images: ["/images/product-groups/power-management.png"],
+      images: [ogUrl],
     },
     alternates: {
       canonical: url,

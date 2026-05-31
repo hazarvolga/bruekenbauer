@@ -6,11 +6,43 @@ import { applications } from "@/data/applications";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { getApplicationCopy } from "@/data/localizedContent";
 
-export const metadata: Metadata = {
-  title: "Application Sectors | brückenbauer GmbH",
-  description:
-    "Customized electronic component application sectors for aerospace, automotive, e-mobility, industrial automation, medical, HVAC, renewable energy, and building systems.",
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "IndustriesPage" });
+
+  const title = `${t("title")} | brückenbauer GmbH`;
+  const description = t("description");
+  const ogUrl = `/api/og?title=${encodeURIComponent(t("title"))}&subtitle=${encodeURIComponent(t("description").slice(0, 120) + "...")}&label=${encodeURIComponent(t("label"))}`;
+
+  return {
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      siteName: "brückenbauer GmbH",
+      type: "website",
+      images: [
+        {
+          url: ogUrl,
+          width: 1200,
+          height: 630,
+          alt: title,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [ogUrl],
+    },
+  };
+}
 
 export default async function IndustriesPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
