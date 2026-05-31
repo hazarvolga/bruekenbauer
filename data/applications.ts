@@ -163,10 +163,11 @@ const applicationDetails: Record<
     ],
     strengthsTitle: "Why measurement leaders partner with us",
     strengths: [
-      "Ultra-precise resistors and capacitors with minimal thermal drift",
-      "Traceable calibration certificates and full documentation",
-      "EMC-shielded components for low-noise signaling",
-      "Long-term design-in support and sample provisioning",
+      "Turnkey test and measurement solutions",
+      "System integration and customization",
+      "Calibration, validation and commissioning support",
+      "Industrial-grade reliability and lifecycle support",
+      "Compliance with international standards and certification requirements",
     ],
   },
   "Power Supply & Grid Infrastructure": {
@@ -180,10 +181,11 @@ const applicationDetails: Record<
     ],
     strengthsTitle: "Our strengths for continuous power",
     strengths: [
-      "Heavy-duty power management modules (IGBTs, SiC, MOSFETs)",
-      "High-efficiency transformers and EMC filters",
-      "Tested and certified for harsh environments and thermal stress",
-      "Obsolescence management for multi-decade infrastructure lifecycles",
+      "Turnkey power conversion and distribution solutions",
+      "High-availability UPS and backup power systems",
+      "Grid integration and energy management expertise",
+      "Industrial-grade reliability for mission-critical applications",
+      "Long-term lifecycle and obsolescence management",
     ],
   },
 };
