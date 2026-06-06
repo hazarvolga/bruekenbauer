@@ -44,13 +44,13 @@ export function Footer() {
           </Link>
         </div>
       </div>
-      <div className="mt-4 border-t border-graphite-muted pt-4 text-outline">
+      <div className="mt-4 border-t border-graphite-muted pt-4 text-[10px] uppercase tracking-[0.08em] text-outline/70">
         Designed &amp; Developed by{" "}
         <a
           href="https://hazarvolga.com.tr"
           target="_blank"
           rel="noreferrer"
-          className="text-industrial-silver transition-colors hover:text-warning-red"
+          className="text-on-surface-variant transition-colors hover:text-warning-red"
         >
           Hazar Volga Ekiz
         </a>

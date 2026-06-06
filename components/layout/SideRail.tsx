@@ -1,9 +1,9 @@
 import Link from "next/link";
 
 const railLinks = [
-  { href: "/intro", icon: "power", label: "Initiate" },
-  { href: "/documents", icon: "archive", label: "Archive" },
-  { href: "/compliance", icon: "shield", label: "Protocol" },
+  { href: "/intro", icon: "power", label: "Power Management" },
+  { href: "/documents", icon: "archive", label: "Documents" },
+  { href: "/compliance", icon: "shield", label: "Compliance" },
 ];
 
 export function SideRail() {
@@ -15,9 +15,12 @@ export function SideRail() {
             key={link.href}
             href={link.href}
             title={link.label}
-            className="flex h-12 w-12 items-center justify-center border border-transparent font-mono text-label-xs text-on-surface-variant transition-colors hover:border-warning-red hover:bg-surface-container-highest hover:text-warning-red"
+            className="group relative flex h-12 w-12 items-center justify-center border border-transparent font-mono text-label-xs text-on-surface-variant transition-colors hover:border-warning-red hover:bg-surface-container-highest hover:text-warning-red focus-visible:border-warning-red focus-visible:outline-none"
           >
             <RailIcon name={link.icon} />
+            <span className="pointer-events-none absolute left-full top-1/2 z-50 ml-3 -translate-y-1/2 border border-graphite-muted bg-surface-container-high px-3 py-2 font-mono text-label-xs uppercase tracking-[0.16em] text-industrial-silver opacity-0 shadow-2xl transition-opacity duration-200 group-hover:opacity-100 group-focus-visible:opacity-100">
+              {link.label}
+            </span>
             <span className="sr-only">{link.label}</span>
           </Link>
         ))}
@@ -28,7 +31,7 @@ export function SideRail() {
           href="/contact"
           className="mt-4 block border border-warning-red p-1 transition-colors hover:bg-warning-red hover:text-primary-container"
         >
-          STOP
+          CONTACT
         </Link>
       </div>
     </aside>

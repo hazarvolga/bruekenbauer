@@ -28,7 +28,7 @@ export function TopNav() {
 
   return (
     <header className="fixed left-0 top-0 z-50 w-full border-b border-graphite-muted bg-surface/90 backdrop-blur-md">
-      <div className="flex h-10 items-center justify-between border-b border-graphite-muted px-6 py-1.5 md:px-10">
+      <div className="flex min-h-11 items-center justify-between border-b border-graphite-muted px-6 py-2 md:px-10">
         <div className="flex items-center gap-3" aria-label="Language selection">
           <LanguageSwitcher />
         </div>
@@ -39,10 +39,10 @@ export function TopNav() {
           >
             {t("finder")}
           </Link>
-          <ThemeToggle className="h-7 min-w-12 px-2 text-[9px] tracking-[0.12em]" />
+          <ThemeToggle className="h-8 min-w-12 px-2 text-[9px] tracking-[0.12em]" />
           <Link
             href="/rfq"
-            className="inline-flex h-7 items-center border border-warning-red px-4 text-warning-red transition-colors hover:bg-warning-red hover:text-primary-container"
+            className="inline-flex h-8 items-center border border-warning-red px-4 text-warning-red transition-colors hover:bg-warning-red hover:text-primary-container"
           >
             {t("rfq")}
           </Link>
