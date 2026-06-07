@@ -8,10 +8,18 @@
     "partners": "Partner",
     "finder": "Finder",
     "rfq": "Anfrage (RFQ)",
-    "language": "Sprache"
+    "language": "Sprache",
+    "switch_language": "Zu {language} wechseln",
+    "toggle_color_mode": "Farbmodus wechseln",
+    "theme_light": "Hell",
+    "theme_dark": "Dunkel",
+    "primary_navigation": "Hauptnavigation",
+    "mobile_navigation": "Mobile Hauptnavigation",
+    "open_menu": "Hauptmenü öffnen",
+    "close_menu": "Hauptmenü schließen"
   },
   "Common": {
-    "open_detail_dossier": "Detaildossier öffnen",
+    "open_product_details": "Produktdetails öffnen",
     "read_more": "Mehr erfahren"
   },
   "HomePage": {
@@ -19,13 +27,13 @@
     "title": "Strategische Partnerschaften für Elektroniksysteme",
     "subtitle": "Strategische Partnerschaften und Technologieberatung für die Halbleiter- und Hochleistungselektronik.",
     "metrics": {
-      "supply_continuity": "Supply continuity",
-      "active_classes": "Active component classes",
-      "latency": "Procurement latency",
-      "compliance": "Compliance state"
+      "supply_continuity": "Versorgungskontinuität",
+      "active_classes": "Aktive Komponentenklassen",
+      "latency": "Beschaffungslatenz",
+      "compliance": "Compliance-Status"
     },
     "cta": {
-      "open_dossier": "Dossier öffnen",
+      "explore_products": "Produkte entdecken",
       "initiate_rfq": "RFQ starten"
     },
     "features": {
@@ -45,6 +53,7 @@
     "services": {
       "label": "Dienstleistungen",
       "title": "Strategische und operative Unterstützung",
+      "intro": "Gezielte Unterstützung für Strategie, Kooperation, Geschäftsentwicklung und temporäre Teamverstärkung.",
       "and_more": "Und mehr...",
       "active": "Aktiv",
       "srv_01_title": "Strategische und operative Unterstützung",
@@ -57,7 +66,7 @@
       "srv_04_copy": "Kurzfristig und für einen definierten Zeitraum ergänzen wir die Teams unserer Kunden mit unserem Know-how, um Ressourcenengpässe zu überbrücken oder Projekte erfolgreich abzuschließen."
     },
     "team": {
-      "label": "Leadership Node",
+      "label": "Führungsebene",
       "title": "Die Brückenbauer",
       "subtitle": "Ein dynamisches Team, dessen Fähigkeiten sich gegenseitig ergänzen.",
       "andreas": {
@@ -94,6 +103,14 @@
       "step_2_copy": "Wir erstellen eine detaillierte Roadmap, die alle Phasen des Projekts und die umzusetzenden Maßnahmen umfasst.",
       "step_3_title": "Lieferung und Support",
       "step_3_copy": "Wir bieten die notwendige Unterstützung und alle damit verbundenen Elemente. Wir beraten Sie auch bei Ihrer langfristigen Strategie."
+    },
+    "cta": {
+      "label": "Nächster Schritt",
+      "title": "Starten Sie den Dialog mit brückenbauer GmbH",
+      "copy": "Teilen Sie Ihren technischen Kontext, Ihre Sourcing-Herausforderung oder strategische Anforderung und wir leiten sie in das passende Gespräch.",
+      "contact": "Kontakt",
+      "rfq": "Anfrage",
+      "consultation": "Beratung"
     }
   },
   "ContactPage": {
@@ -106,15 +123,28 @@
     "section_label": "Unsere Anwendungsbereiche",
     "section_title": "Maßgeschneiderte Anwendungen",
     "description": "Elektronische Komponenten für jede Anwendung - zuverlässig, vielseitig und individuell entwickelt. Von der Idee bis zur Serienproduktion liefern wir die passenden Komponenten für jede Anwendung. Als zuverlässiger Distributor für hochwertige elektronische Bauteile bieten wir mehr als nur ein umfangreiches Portfolio. Wir verstehen die Anforderungen unterschiedlichster Branchen und unterstützen unsere Kunden mit passenden Lösungen – schnell, kompetent und mit maximaler Versorgungssicherheit.",
+    "description_points": [
+      "Elektronische Komponenten für jede Anwendung - zuverlässig, vielseitig und individuell entwickelt.",
+      "Von der Idee bis zur Serienproduktion unterstützen wir Kunden bei der Auswahl passender Komponenten für den jeweiligen Anwendungskontext.",
+      "Wir verstehen branchenspezifische Anforderungen und unterstützen Projekte mit passenden Lösungen, kompetenter Koordination und Versorgungssicherheit."
+    ],
     "in_use_label": "Unsere Lösungen finden Anwendung in",
+    "explore_sector": "Sektor ansehen",
     "group_1_title": "Strategische Industriesektoren",
-    "group_2_title": "Ausrüstung & Geräte"
+    "group_2_title": "Ausrüstung & Geräte",
+    "cta_label": "Applikationssupport",
+    "cta_title": "Verbinden Sie Ihre Anwendung mit der passenden Komponentenstrategie",
+    "cta_copy": "Teilen Sie Betriebsumgebung, Lifecycle-Anforderungen und technische Randbedingungen Ihrer Anwendung. Wir helfen, daraus einen fokussierten Komponenten- und Sourcing-Pfad abzuleiten.",
+    "cta_contact": "Kontakt",
+    "cta_rfq": "RFQ"
   },
   "ProductsPage": {
     "label": "Komponentenportfolio 2026",
     "title": "Produktgruppen",
-    "description": "Archiv der Hauptkategorien aus dem Komponentenportfolio. Wählen Sie eine Dossiergruppe, um Bauteile auf Produktebene, Bildmaterial und technische Metadaten zu prüfen.",
-    "items": "Artikel"
+    "description": "Archiv der Hauptkategorien aus dem Komponentenportfolio. Wählen Sie eine Produktgruppe, um Bauteile auf Produktebene, Bildmaterial und technische Metadaten zu prüfen.",
+    "items": "Artikel",
+    "category_label": "Produktkategorie",
+    "explore_category": "Kategorie ansehen"
   },
   "ProductDescriptions": {
     "temperature-sensors": "Unsere Temperaturfühler-Baugruppen sind für extreme Präzision und raue Umgebungen konzipiert und garantieren ein zuverlässiges Wärmemanagement. Das Portfolio umfasst leistungsstarke NTCs, Thermistoren und Thermoelemente, die für die Industrieautomation und Automobilanwendungen entwickelt wurden.",
@@ -149,8 +179,14 @@
   "PartnersPage": {
     "label": "Strategische Zusammenarbeit",
     "title": "Fokus auf fortschrittliche KI-Produkte und elektrische Geräte",
-    "censray_desc": "Censray ist ein Pionier im Bereich von KI-Beschleunigern, Edge-KI-Modulen und fortschrittlichen Silizium-Integrationslösungen.",
-    "iyaksh_desc": "Iyaksh liefert hochmoderne elektrotechnische Geräte, Netzumwandlungshardware und Batterieüberwachungsprodukte für schwere Industrienetze."
+    "intro": "Unser Partner-Ökosystem erweitert brückenbauer GmbH um gezielte Technologie-, Sourcing- und Innovationskompetenzen, wenn Elektronikprojekte besondere Tiefe erfordern.",
+    "strategic_partner": "Strategischer Partner",
+    "technology_partner": "Technologiepartner",
+    "innovation_partner": "Innovationspartner",
+    "sourcing_partner": "Sourcing Partner",
+    "censray_desc": "Fortschrittliche Sensor- und Steuerungslösungen für IoT, erneuerbare Energien, Automotive und industrielle Automatisierung.",
+    "iyaksh_desc": "KI-gestützte Robotik- und Automatisierungslösungen für intelligentere, effizientere und vernetzte Abläufe.",
+    "suntek_desc": "Strategische Sourcing- und Technologiekooperation für elektronische Komponenten, technische Systeme und industrielle Anwendungen."
   },
   "MetaData": {
     "title": "brückenbauer GmbH: Wir beraten nicht nur",

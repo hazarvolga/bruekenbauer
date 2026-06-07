@@ -18,18 +18,18 @@ export default function PresentationReviewPage() {
               Presentation review
             </div>
             <h1 className="mt-3 font-mono text-headline-lg-mobile uppercase text-on-surface md:text-headline-lg">
-              brückenbauer Brand Dossier
+              brückenbauer Brand Presentation
             </h1>
           </div>
           <div className="flex flex-wrap gap-3 font-mono text-label-xs uppercase tracking-[0.14em]">
             <Link
-              href="/presentation-review/brueckenbauer-brand-dossier.pdf"
+              href="/presentation-review/brueckenbauer-brand-presentation.pdf"
               className="border border-graphite-muted px-4 py-3 text-on-surface-variant transition-colors hover:border-warning-red hover:text-warning-red"
             >
               Open PDF
             </Link>
             <Link
-              href="/presentation-review/brueckenbauer-brand-dossier.pptx"
+              href="/presentation-review/brueckenbauer-brand-presentation.pptx"
               className="border border-warning-red px-4 py-3 text-warning-red transition-colors hover:bg-warning-red hover:text-primary-container"
             >
               PPTX
@@ -56,7 +56,7 @@ export default function PresentationReviewPage() {
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={slide.src}
-              alt={`brückenbauer Brand Dossier slide ${slide.number}`}
+              alt={`brückenbauer Brand Presentation slide ${slide.number}`}
               className="block w-full border border-graphite-muted"
             />
           </article>

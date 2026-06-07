@@ -9,7 +9,17 @@ import { cn } from "@/lib/utils";
  * Visual label swap (Light ↔ Dark) is still driven by CSS classes on <html>
  * which next-themes manages — zero visual change vs v01.
  */
-export function ThemeToggle({ className = "" }: { className?: string }) {
+export function ThemeToggle({
+  className = "",
+  ariaLabel = "Toggle color mode",
+  lightLabel = "Light",
+  darkLabel = "Dark",
+}: {
+  className?: string;
+  ariaLabel?: string;
+  lightLabel?: string;
+  darkLabel?: string;
+}) {
   const { resolvedTheme, setTheme } = useTheme();
 
   function toggleTheme() {
@@ -23,14 +33,14 @@ export function ThemeToggle({ className = "" }: { className?: string }) {
         "theme-toggle inline-flex h-10 min-w-14 shrink-0 items-center justify-center border border-outline-variant px-2 font-mono text-[10px] uppercase tracking-[0.16em] text-on-surface-variant transition-colors hover:border-warning-red hover:text-warning-red",
         className,
       )}
-      aria-label="Toggle color mode"
+      aria-label={ariaLabel}
       onClick={toggleTheme}
     >
       <span className="theme-toggle-action-light" aria-hidden="true">
-        Light
+        {lightLabel}
       </span>
       <span className="theme-toggle-action-dark" aria-hidden="true">
-        Dark
+        {darkLabel}
       </span>
     </button>
   );

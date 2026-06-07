@@ -29,7 +29,7 @@ export function TopNav() {
   return (
     <header className="fixed left-0 top-0 z-50 w-full border-b border-graphite-muted bg-surface/90 backdrop-blur-md">
       <div className="flex min-h-11 items-center justify-between border-b border-graphite-muted px-6 py-2 md:px-10">
-        <div className="flex items-center gap-3" aria-label="Language selection">
+        <div className="flex items-center gap-3" aria-label={t("language")}>
           <LanguageSwitcher />
         </div>
         <div className="flex items-center gap-3 font-mono text-[9px] uppercase tracking-[0.14em] text-industrial-silver">
@@ -39,7 +39,12 @@ export function TopNav() {
           >
             {t("finder")}
           </Link>
-          <ThemeToggle className="h-8 min-w-12 px-2 text-[9px] tracking-[0.12em]" />
+          <ThemeToggle
+            ariaLabel={t("toggle_color_mode")}
+            lightLabel={t("theme_light")}
+            darkLabel={t("theme_dark")}
+            className="h-8 min-w-12 px-2 text-[9px] tracking-[0.12em]"
+          />
           <Link
             href="/rfq"
             className="inline-flex h-8 items-center border border-warning-red px-4 text-warning-red transition-colors hover:bg-warning-red hover:text-primary-container"
@@ -55,7 +60,7 @@ export function TopNav() {
         >
           brückenbauer GmbH
         </Link>
-        <nav className="hidden items-center gap-5 md:flex lg:gap-7" aria-label="Primary navigation">
+        <nav className="hidden items-center gap-5 lg:flex lg:gap-7" aria-label={t("primary_navigation")}>
           {primaryLinks.map((link) => (
             <Link
               key={link.href}
@@ -66,11 +71,11 @@ export function TopNav() {
             </Link>
           ))}
         </nav>
-        <div className="flex shrink-0 items-center gap-2 font-mono text-data-sm uppercase text-industrial-silver md:hidden">
+        <div className="flex shrink-0 items-center gap-2 font-mono text-data-sm uppercase text-industrial-silver lg:hidden">
           <button
             type="button"
-            className="inline-flex h-10 w-10 shrink-0 items-center justify-center border border-warning-red text-warning-red transition-colors hover:bg-warning-red hover:text-primary-container md:hidden"
-            aria-label={isMenuOpen ? "Close primary menu" : "Open primary menu"}
+            className="inline-flex h-10 w-10 shrink-0 items-center justify-center border border-warning-red text-warning-red transition-colors hover:bg-warning-red hover:text-primary-container lg:hidden"
+            aria-label={isMenuOpen ? t("close_menu") : t("open_menu")}
             aria-expanded={isMenuOpen}
             aria-controls="mobile-primary-navigation"
             onClick={() => setIsMenuOpen((open) => !open)}
@@ -98,9 +103,9 @@ export function TopNav() {
       </div>
       <nav
         id="mobile-primary-navigation"
-        aria-label="Mobile primary navigation"
+        aria-label={t("mobile_navigation")}
         className={cn(
-          "grid overflow-hidden border-t border-graphite-muted bg-surface-container-low/95 transition-[grid-template-rows,opacity] duration-300 ease-out md:hidden",
+          "grid overflow-hidden border-t border-graphite-muted bg-surface-container-low/95 transition-[grid-template-rows,opacity] duration-300 ease-out lg:hidden",
           isMenuOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
         )}
       >

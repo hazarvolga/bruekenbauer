@@ -1,5 +1,7 @@
 import { RfqFlow } from "@/components/rfq/RfqFlow";
 import { PageShell } from "@/components/motion/MotionProvider";
+import type { Metadata } from "next";
+import { normalizeLocale } from "@/data/localizedContent";
 import { images } from "@/lib/assets";
 import { resolveRfqContext } from "@/lib/rfqContext";
 
@@ -12,6 +14,30 @@ type Props = {
     applicationSector?: string;
   }>;
 };
+
+const metadataCopy = {
+  en: {
+    title: "Supplier Inquiry — brückenbauer GmbH",
+    description: "Submit product, application, volume, lead-time, and project requirements for a focused quotation.",
+  },
+  de: {
+    title: "Lieferantenanfrage — brückenbauer GmbH",
+    description: "Übermitteln Sie Produkt-, Anwendungs-, Volumen-, Lieferzeit- und Projektanforderungen für ein fokussiertes Angebot.",
+  },
+  fr: {
+    title: "Demande fournisseur — brückenbauer GmbH",
+    description: "Transmettez les exigences produit, application, volume, délai et projet pour un devis ciblé.",
+  },
+};
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  return metadataCopy[normalizeLocale(locale)];
+}
 
 export default async function RfqPage({ params, searchParams }: Props) {
   const { locale } = await params;

@@ -3,7 +3,6 @@ import Image from "next/image";
 import { PageShell } from "@/components/motion/MotionProvider";
 import { getProductGroupCopy, localizePath } from "@/data/localizedContent";
 import { productTaxonomy } from "@/data/productTaxonomy";
-import { products } from "@/data/products";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 
 export default async function ProductsPage({ params }: { params: Promise<{ locale: string }> }) {
@@ -17,16 +16,16 @@ export default async function ProductsPage({ params }: { params: Promise<{ local
         <span className="font-mono text-label-xs uppercase tracking-[0.18em] text-warning-red">
           {t("label")}
         </span>
-        <h1 className="mt-4 font-mono text-headline-lg-mobile uppercase text-industrial-silver sm:text-headline-lg md:text-display-xl">
+        <h1 className="mt-4 font-mono text-[44px] uppercase leading-[1.12] text-industrial-silver sm:text-[68px] md:text-[88px] lg:text-[104px]">
           {t("title")}
         </h1>
-        <p className="mt-6 max-w-3xl font-mono text-technical-md text-on-surface-variant">
+        <p className="mt-6 max-w-3xl font-mono text-technical-md leading-relaxed text-on-surface-variant">
           {t("description")}
         </p>
       </div>
       <nav
         className="grid grid-cols-1 gap-gutter md:grid-cols-2 xl:grid-cols-4"
-        aria-label="Product categories"
+        aria-label={t("category_label")}
       >
         {productTaxonomy.map((category) => {
           const copy = getProductGroupCopy(locale, category.name);
@@ -34,7 +33,8 @@ export default async function ProductsPage({ params }: { params: Promise<{ local
             <Link
               key={category.slug}
               href={localizePath(locale, `/products/${category.slug}`)}
-              className="reticle-corners group relative overflow-hidden border border-graphite-muted bg-surface-container-low/50 p-5 backdrop-blur-xl transition-colors hover:border-industrial-silver focus-visible:border-warning-red focus-visible:outline-none"
+              aria-label={`${t("explore_category")}: ${copy.title}`}
+              className="reticle-corners group relative flex min-h-full flex-col overflow-hidden border border-graphite-muted bg-surface-container-low/50 p-6 backdrop-blur-xl transition-colors hover:border-industrial-silver hover:bg-surface-container-low/75 focus-visible:border-warning-red focus-visible:outline-none"
             >
               <div className="relative mb-6 aspect-[4/3] overflow-hidden border border-graphite-muted bg-surface-container-lowest">
                 <Image
@@ -45,22 +45,18 @@ export default async function ProductsPage({ params }: { params: Promise<{ local
                   className="group-hover:scale-102 object-cover transition-transform duration-700"
                 />
               </div>
-              <div className="flex items-center justify-between gap-4 font-mono text-label-xs uppercase tracking-[0.16em] text-warning-red">
-                <span>{category.code}</span>
-                <span>
-                  {products
-                    .filter((product) => product.group === category.name)
-                    .length.toString()
-                    .padStart(2, "0")}{" "}
-                  {t("items")}
-                </span>
-              </div>
-              <h2 className="product-card-title mt-4 break-words font-mono uppercase text-on-surface">
+              <span className="font-mono text-label-xs uppercase tracking-[0.16em] text-warning-red">
+                {t("category_label")}
+              </span>
+              <h2 className="product-card-title mt-3 break-words font-mono uppercase text-on-surface">
                 {copy.title}
               </h2>
-              <p className="mt-4 font-mono text-data-sm text-on-surface-variant">
+              <p className="mt-4 font-mono text-[12px] leading-relaxed text-on-surface-variant md:text-data-sm">
                 {copy.shortDescription}
               </p>
+              <span className="mt-6 inline-flex w-fit items-center border border-graphite-muted px-3 py-2 font-mono text-[10px] uppercase tracking-[0.14em] text-industrial-silver transition-colors group-hover:border-warning-red group-hover:text-warning-red">
+                {t("explore_category")} <span aria-hidden="true">-&gt;</span>
+              </span>
             </Link>
           );
         })}

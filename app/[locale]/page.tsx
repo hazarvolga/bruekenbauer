@@ -29,7 +29,7 @@ export default function HomePage() {
             <span className="h-1 w-1 bg-warning-red" />
             {t("operational_layer")}
           </div>
-          <h1 className="font-mono text-headline-lg-mobile uppercase leading-tight text-industrial-silver md:text-[34px]">
+          <h1 className="font-mono text-[40px] uppercase leading-[1.14] text-industrial-silver sm:text-headline-lg-mobile sm:leading-[1.12] md:text-[34px] md:leading-[1.14]">
             <StaggerText text={t("title")} />
           </h1>
           <p className="mt-6 max-w-xl font-mono text-technical-md text-on-surface-variant">
@@ -56,7 +56,7 @@ export default function HomePage() {
             ))}
           </div>
           <div className="mt-10 flex flex-wrap gap-4">
-            <TechnicalButton href="/products">{t("cta.open_dossier")}</TechnicalButton>
+            <TechnicalButton href="/products">{t("cta.explore_products")}</TechnicalButton>
             <TechnicalButton href="/rfq" variant="ghost">
               {t("cta.initiate_rfq")}
             </TechnicalButton>

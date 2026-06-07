@@ -15,9 +15,10 @@ export function ContactForm({ locale = "en" }: { locale?: string }) {
       received: "Message received. An engineer will respond within 2 business days.",
       reference: "Reference",
       newMessage: "New Message",
+      response: "Typical response within 1-2 business days.",
       aria: "Contact form",
       name: "Contact Name",
-      email: "Preferred Contact Method",
+      email: "Business Email",
       company: "Company Name",
       phone: "Phone Number",
       message: "Project Description",
@@ -31,12 +32,13 @@ export function ContactForm({ locale = "en" }: { locale?: string }) {
     },
     de: {
       confirmed: "Übermittlung bestätigt",
-      received: "Nachricht erhalten. Ein Engineer meldet sich innerhalb von 2 Werktagen.",
+      received: "Nachricht erhalten. Ein Ingenieur meldet sich innerhalb von 2 Werktagen.",
       reference: "Referenz",
       newMessage: "Neue Nachricht",
+      response: "Typische Antwort innerhalb von 1-2 Werktagen.",
       aria: "Kontaktformular",
       name: "Kontaktname",
-      email: "Bevorzugte Kontaktmethode",
+      email: "Business E-Mail",
       company: "Unternehmensname",
       phone: "Telefonnummer",
       message: "Projektbeschreibung",
@@ -50,12 +52,13 @@ export function ContactForm({ locale = "en" }: { locale?: string }) {
     },
     fr: {
       confirmed: "Transmission confirmée",
-      received: "Message reçu. Un engineer répondra sous 2 jours ouvrables.",
+      received: "Message reçu. Un ingénieur répondra sous 2 jours ouvrables.",
       reference: "Référence",
       newMessage: "Nouveau message",
+      response: "Réponse habituelle sous 1 à 2 jours ouvrables.",
       aria: "Formulaire de contact",
       name: "Nom du contact",
-      email: "Méthode de contact préférée",
+      email: "E-mail professionnel",
       company: "Nom de l'entreprise",
       phone: "Numéro de téléphone",
       message: "Description du projet",
@@ -198,6 +201,9 @@ export function ContactForm({ locale = "en" }: { locale?: string }) {
       >
         {status === "loading" ? copy.submitting : copy.submit}
       </TechnicalButton>
+      <p className="font-mono text-label-xs uppercase tracking-[0.14em] text-outline">
+        {copy.response}
+      </p>
     </form>
   );
 }

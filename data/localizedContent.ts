@@ -52,7 +52,7 @@ export const uiCopy = {
       supportedPortfolio: "Supported portfolio",
       supportNote:
         "This sector is supported through related sensing, conversion, and power-management portfolio coverage.",
-      openDetail: "Open detail dossier",
+      openDetail: "Open product details",
     },
     product: {
       technicalArchive: "Technical archive",
@@ -80,7 +80,7 @@ export const uiCopy = {
       supportedPortfolio: "Unterstütztes Portfolio",
       supportNote:
         "Dieser Sektor wird über verwandte Sensorik-, Umwandlungs- und Power-Management-Portfolios abgedeckt.",
-      openDetail: "Detaildossier öffnen",
+      openDetail: "Produktdetails öffnen",
     },
     product: {
       technicalArchive: "Technisches Archiv",
@@ -108,7 +108,7 @@ export const uiCopy = {
       supportedPortfolio: "Portefeuille associé",
       supportNote:
         "Ce secteur est couvert par des portefeuilles associés en détection, conversion et gestion de l'énergie.",
-      openDetail: "Ouvrir le dossier détaillé",
+      openDetail: "Ouvrir les détails du produit",
     },
     product: {
       technicalArchive: "Archive technique",
@@ -313,10 +313,10 @@ export const applicationCopies: Record<
     "AEROSPACE & AVIATION": {
       name: "Luftfahrt & Raumfahrt",
       summary:
-        "Belastbare Komponentenversorgung für Avionik, orbitale Subsysteme und EMI-sensitive Verteidigungsbaugruppen.",
+        "Rückverfolgbare Komponentenbeschaffung für Avionik, Aerospace-Programme und EMI-sensitive Systeme.",
       detail: {
         intro:
-          "In der Luft- und Raumfahrt sowie in der zivilen Luftfahrt gelten besonders hohe Anforderungen an Qualität, Sicherheit und Rückverfolgbarkeit. Als spezialisierter Distributor liefern wir geprüfte, qualifizierte und langfristig verfügbare Elektronikkomponenten für extreme Umgebungen.",
+          "In der Luft- und Raumfahrt sowie in der zivilen Luftfahrt gelten besonders hohe Anforderungen an Qualität, Dokumentation und Versorgungskontinuität. Als spezialisierter Distributor und Sourcing-Partner unterstützen wir Engineering-Teams mit qualifizierten Komponenten, Rückverfolgbarkeitsdokumentation und Lifecycle-Planung für anspruchsvolle Umgebungen.",
         applications: [
           "Avionik und Flugzeugsysteme",
           "Raumfahrttechnik",
@@ -359,10 +359,10 @@ export const applicationCopies: Record<
     "INDUSTRIAL AUTOMATION": {
       name: "Industrielle Automatisierung",
       summary:
-        "Präzise Steuerungs-, Sensorik- und Leistungskomponenten für zukunftsfähige industrielle Umgebungen und intelligente Systeme.",
+        "Zuverlässige Komponentenversorgung für Automatisierung, Sensorik, Steuerung, Antriebstechnik und industrielle Kommunikation.",
       detail: {
         intro:
-          "Moderne Industrieanlagen und automatisierte Systeme sind vernetzt, hocheffizient und datengetrieben. Ob Sensorik, Steuerungstechnik, Antriebssysteme oder industrielle Kommunikation – wir liefern robuste, langfristig verfügbare und qualitätsgeprüfte Elektronikkomponenten für die Fabrik- und Gebäudeautomation der Zukunft.",
+          "Industrielle Automatisierung braucht stabile Versorgung, robuste Komponenten und klare technische Koordination. Wir unterstützen Projekte in Automatisierung, Sensorik, Steuerung, Antriebstechnik und Kommunikation mit langfristig verfügbaren Elektronikkomponenten und praxisnaher Design-In-Unterstützung.",
         applications: [
           "Automatisierungs- und Steuerungstechnik",
           "Antriebstechnik und Motorsteuerung",
@@ -502,10 +502,10 @@ export const applicationCopies: Record<
     "AEROSPACE & AVIATION": {
       name: "Aérospatiale & Aviation",
       summary:
-        "Résilience des composants pour l'avionique, les sous-systèmes orbitaux et les assemblages de défense sensibles aux EMI.",
+        "Sourcing traçable de composants pour avionique, programmes aerospace et systèmes sensibles aux EMI.",
       detail: {
         intro:
-          "Dans l'aérospatiale, l'aviation civile et la défense, les exigences en matière de qualité, de sécurité et de traçabilité sont particulièrement strictes. Nous fournissons des composants électroniques testés, qualifiés et disponibles à long terme pour des environnements extrêmes.",
+          "Les programmes aerospace et aviation exigent une qualité, une documentation et une continuité d'approvisionnement strictes. En tant que distributeur spécialisé et partenaire sourcing, nous aidons les équipes d'ingénierie avec des composants qualifiés, une documentation de traçabilité et une planification lifecycle pour les environnements exigeants.",
         applications: [
           "Avionique et systèmes aéronautiques",
           "Technologies spatiales",
@@ -548,10 +548,10 @@ export const applicationCopies: Record<
     "INDUSTRIAL AUTOMATION": {
       name: "Automatisation industrielle",
       summary:
-        "Composants précis de contrôle, de détection et de puissance pour les environnements industriels réglementés et les systèmes intelligents.",
+        "Approvisionnement fiable en composants pour l'automatisation, la détection, le contrôle, les drives et la communication industrielle.",
       detail: {
         intro:
-          "Les installations industrielles et les systèmes automatisés modernes sont connectés, hautement efficaces et axés sur les données. Qu'il s'agisse de capteurs, de technologie de contrôle, d'entraînement ou de communication industrielle, nous fournissons des composants électroniques robustes, durables et testés pour l'automatisation industrielle et du bâtiment.",
+          "L'automatisation industrielle dépend d'une supply stable, de composants robustes et d'une coordination technique claire. Nous accompagnons les projets d'automatisation, de détection, de contrôle, de drives et de communication avec des composants électroniques disponibles à long terme et un support design-in pragmatique.",
         applications: [
           "Automatisation et technologie de contrôle",
           "Technologie d'entraînement et motor control",
@@ -689,7 +689,7 @@ export const applicationCopies: Record<
   },
 };
 
-export const productDossiers: Record<SupportedLocale, Partial<Record<string, string>>> = {
+export const productSummaries: Record<SupportedLocale, Partial<Record<string, string>>> = {
   en: {},
   de: {
     "chip-ntc-thermistors":
@@ -1010,7 +1010,7 @@ export function getLocalizedProduct<T extends Product>(product: T, locale: strin
   const normalized = normalizeLocale(locale);
   return {
     ...product,
-    dossier: productDossiers[normalized][product.slug] ?? product.dossier,
+    summary: productSummaries[normalized][product.slug] ?? product.summary,
   };
 }
 

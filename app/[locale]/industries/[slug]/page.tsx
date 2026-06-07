@@ -28,7 +28,7 @@ export async function generateMetadata({
   const application = applications.find((item) => item.slug === slug);
   if (!application) return {};
   const copy = getApplicationCopy(locale, application);
-  const ogUrl = `/api/og?title=${encodeURIComponent(copy.name)}&subtitle=${encodeURIComponent(copy.summary)}&label=${encodeURIComponent("INDUSTRY DOSSIER")}`;
+  const ogUrl = `/api/og?title=${encodeURIComponent(copy.name)}&subtitle=${encodeURIComponent(copy.summary)}&label=${encodeURIComponent("APPLICATION SECTOR")}`;
 
   return {
     title: `${copy.name} | brückenbauer GmbH`,

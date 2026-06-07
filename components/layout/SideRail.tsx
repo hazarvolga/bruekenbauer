@@ -1,19 +1,49 @@
 import Link from "next/link";
+import { localizePath, normalizeLocale } from "@/data/localizedContent";
 
-const railLinks = [
-  { href: "/intro", icon: "power", label: "Power Management" },
-  { href: "/documents", icon: "archive", label: "Documents" },
-  { href: "/compliance", icon: "shield", label: "Compliance" },
-];
+const railCopy = {
+  en: {
+    nav: "Technical navigation",
+    power: "Power Management",
+    documents: "Documents",
+    compliance: "Compliance",
+    operator: "Operator",
+    contact: "Contact",
+  },
+  de: {
+    nav: "Technische Navigation",
+    power: "Power Management",
+    documents: "Dokumente",
+    compliance: "Compliance",
+    operator: "Kontakt",
+    contact: "Kontakt",
+  },
+  fr: {
+    nav: "Navigation technique",
+    power: "Gestion de l'énergie",
+    documents: "Documents",
+    compliance: "Conformité",
+    operator: "Contact",
+    contact: "Contact",
+  },
+} as const;
 
-export function SideRail() {
+export function SideRail({ locale = "en" }: { locale?: string }) {
+  const normalizedLocale = normalizeLocale(locale);
+  const copy = railCopy[normalizedLocale];
+  const railLinks = [
+    { href: "/intro", icon: "power", label: copy.power },
+    { href: "/documents", icon: "archive", label: copy.documents },
+    { href: "/compliance", icon: "shield", label: copy.compliance },
+  ];
+
   return (
     <aside className="fixed left-0 top-0 z-40 hidden h-full w-20 flex-col justify-between border-r border-graphite-muted bg-graphite-surface/90 pb-8 pt-28 backdrop-blur-xl md:flex">
-      <nav className="flex flex-col items-center gap-5" aria-label="Technical navigation">
+      <nav className="flex flex-col items-center gap-5" aria-label={copy.nav}>
         {railLinks.map((link) => (
           <Link
             key={link.href}
-            href={link.href}
+            href={localizePath(normalizedLocale, link.href)}
             title={link.label}
             className="group relative flex h-12 w-12 items-center justify-center border border-transparent font-mono text-label-xs text-on-surface-variant transition-colors hover:border-warning-red hover:bg-surface-container-highest hover:text-warning-red focus-visible:border-warning-red focus-visible:outline-none"
           >
@@ -26,12 +56,12 @@ export function SideRail() {
         ))}
       </nav>
       <div className="px-2 text-center font-mono text-label-xs uppercase text-warning-red">
-        <div className="truncate">OPERATOR_01</div>
+        <div className="truncate">{copy.operator}</div>
         <Link
-          href="/contact"
+          href={localizePath(normalizedLocale, "/contact")}
           className="mt-4 block border border-warning-red p-1 transition-colors hover:bg-warning-red hover:text-primary-container"
         >
-          CONTACT
+          {copy.contact}
         </Link>
       </div>
     </aside>

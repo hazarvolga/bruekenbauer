@@ -19,7 +19,7 @@ export default async function IntroPage({ params }: { params: Promise<{ locale: 
   );
   const copy = {
     en: {
-      label: "Power conversion dossier",
+      label: "Power conversion portfolio",
       title: "Power Management",
       description:
         "IGBT, SiC MOSFET, MOSFET, and converter systems for high-efficiency industrial architectures.",
@@ -28,7 +28,7 @@ export default async function IntroPage({ params }: { params: Promise<{ locale: 
       compliance: "Compliance signal",
     },
     de: {
-      label: "Power-Conversion-Dossier",
+      label: "Power-Conversion-Portfolio",
       title: "Power Management",
       description:
         "IGBT-, SiC-MOSFET-, MOSFET- und Converter-Systeme für hocheffiziente Industriearchitekturen.",
@@ -37,7 +37,7 @@ export default async function IntroPage({ params }: { params: Promise<{ locale: 
       compliance: "Compliance-Signal",
     },
     fr: {
-      label: "Dossier de conversion de puissance",
+      label: "Portefeuille de conversion de puissance",
       title: "Gestion de l'énergie",
       description:
         "Systèmes IGBT, SiC MOSFET, MOSFET et converters pour architectures industrielles haute efficacité.",
@@ -100,7 +100,7 @@ export default async function IntroPage({ params }: { params: Promise<{ locale: 
               <Link
                 href={localizePath(normalizedLocale, `/power-management/${family.slug}`)}
                 className="absolute inset-0 z-20"
-                aria-label={`Open ${family.name} detail dossier`}
+                aria-label={`Open ${family.name} product details`}
               />
               <div className="relative aspect-[16/10] overflow-hidden border border-graphite-muted bg-surface-container-lowest md:aspect-auto md:min-h-[320px]">
                 <Image

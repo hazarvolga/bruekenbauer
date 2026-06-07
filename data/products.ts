@@ -12,7 +12,7 @@ export type Product = {
   leadTime: string;
   image: string;
   imageDark?: string;
-  dossier: string;
+  summary: string;
   specs: Record<string, string>;
 };
 
@@ -44,7 +44,7 @@ export const products: Product[] = [
     leadTime: "12 days",
     image: "/images/products/chip-ntc-thermistors-ai.png",
     imageDark: "/images/products-premium/dark/chip-ntc-thermistors.webp",
-    dossier: "Compact chip NTC and thermistor platforms for temperature measurement up to +250C.",
+    summary: "Compact chip NTC and thermistor platforms for temperature measurement up to +250C.",
     specs: { range: "Up to +250C", format: "Chip / SMD", tolerance: "Application matched" },
   },
   {
@@ -58,7 +58,7 @@ export const products: Product[] = [
     leadTime: "14 days",
     image: "/images/products/waterproof-temperature-sensors-ai.png",
     imageDark: "/images/products-premium/dark/waterproof-temperature-sensors.webp",
-    dossier:
+    summary:
       "Waterproof temperature probes for protected measurement in industrial and appliance environments.",
     specs: { protection: "IP68", format: "Cable probe", sealing: "Waterproof" },
   },
@@ -73,7 +73,7 @@ export const products: Product[] = [
     leadTime: "18 days",
     image: "/images/products/thermistors-ai.png",
     imageDark: "/images/products-premium/dark/thermistors.webp",
-    dossier: "Resistance tolerance thermistors for high accuracy temperature control.",
+    summary: "Resistance tolerance thermistors for high accuracy temperature control.",
     specs: {
       accuracy: "Resistance tolerance up to +/-0.05C",
       format: "Probe / leaded",
@@ -91,7 +91,7 @@ export const products: Product[] = [
     leadTime: "28 days",
     image: "/images/products/custom-temperature-sensors-ai.png",
     imageDark: "/images/products-premium/dark/custom-temperature-sensors.webp",
-    dossier:
+    summary:
       "Custom temperature sensor assemblies engineered for high-temperature operating envelopes.",
     specs: { range: "Up to +600C", build: "Custom geometry", interface: "Project defined" },
   },
@@ -106,7 +106,7 @@ export const products: Product[] = [
     leadTime: "16 days",
     image: "/images/products/microchip-thermistors-ai.png",
     imageDark: "/images/products-premium/dark/microchip-thermistors.webp",
-    dossier: "YSI400-compatible microchip thermistor options for compact electronic assemblies.",
+    summary: "YSI400-compatible microchip thermistor options for compact electronic assemblies.",
     specs: { compatibility: "YSI400 compatible", format: "Microchip", integration: "PCB / probe" },
   },
   {
@@ -120,8 +120,8 @@ export const products: Product[] = [
     leadTime: "30 days",
     image: "/images/products/custom-thermocouples-ai.png",
     imageDark: "/images/products-premium/dark/custom-thermocouples.webp",
-    dossier: "Custom thermocouple configurations for high-reliability thermal instrumentation.",
-    specs: { types: "K / T / J / E / N", format: "Custom probe", validation: "Project dossier" },
+    summary: "Custom thermocouple configurations for high-reliability thermal instrumentation.",
+    specs: { types: "K / T / J / E / N", format: "Custom probe", validation: "Project documentation" },
   },
   {
     slug: "pressure-sensors-transmitters",
@@ -134,7 +134,7 @@ export const products: Product[] = [
     leadTime: "15 days",
     image: "/images/products/pressure-sensors-transmitters-ai.png",
     imageDark: "/images/products-premium/dark/pressure-sensors-transmitters.webp",
-    dossier: "Pressure sensor and transmitter families for process, machine, and fluid systems.",
+    summary: "Pressure sensor and transmitter families for process, machine, and fluid systems.",
     specs: { range: "0.1 - 1000 bar", output: "Transmitter ready", media: "Liquid / gas" },
   },
   {
@@ -148,7 +148,7 @@ export const products: Product[] = [
     leadTime: "21 days",
     image: "/images/products/ultrasonic-flow-meters-ai.png",
     imageDark: "/images/products-premium/dark/ultrasonic-flow-meters.webp",
-    dossier: "Non-contact ultrasonic flow measurement modules for controlled media paths.",
+    summary: "Non-contact ultrasonic flow measurement modules for controlled media paths.",
     specs: { measurement: "Non-contact", media: "Flow media", integration: "Inline / module" },
   },
   {
@@ -162,7 +162,7 @@ export const products: Product[] = [
     leadTime: "24 days",
     image: "/images/products/level-transmitters-ai.png",
     imageDark: "/images/products-premium/dark/level-transmitters.webp",
-    dossier: "Liquid-level measurement transmitters for process tanks and industrial systems.",
+    summary: "Liquid-level measurement transmitters for process tanks and industrial systems.",
     specs: { measurement: "Liquid-level", output: "Transmitter", useCase: "Process telemetry" },
   },
   {
@@ -176,7 +176,7 @@ export const products: Product[] = [
     leadTime: "18 days",
     image: "/images/products/gas-sensors-ai.png",
     imageDark: "/images/products-premium/dark/gas-sensors.webp",
-    dossier:
+    summary:
       "Gas sensing options for oxygen, CO2, methane, propane, ammonia, and additional gases.",
     specs: {
       gases: "O2 / CO2 / CH4 / propane / ammonia",
@@ -195,7 +195,7 @@ export const products: Product[] = [
     leadTime: "20 days",
     image: "/images/products/flow-meters-switches-ai.png",
     imageDark: "/images/products-premium/dark/flow-meters-switches.webp",
-    dossier: "Liquid and gas flow meter and switch solutions for monitored fluid systems.",
+    summary: "Liquid and gas flow meter and switch solutions for monitored fluid systems.",
     specs: {
       measurement: "Liquid & gas flow",
       function: "Meter / switch",
@@ -213,7 +213,7 @@ export const products: Product[] = [
     leadTime: "26 days",
     image: "/images/products/strain-gauges-ai.png",
     imageDark: "/images/products-premium/dark/strain-gauges.webp",
-    dossier: "Static and dynamic strain measurement elements for precision mechanical sensing.",
+    summary: "Static and dynamic strain measurement elements for precision mechanical sensing.",
     specs: {
       measurement: "Static / dynamic strain",
       format: "Gauge element",
@@ -231,7 +231,7 @@ export const products: Product[] = [
     leadTime: "16 days",
     image: "/images/products/current-sensors-ai.png",
     imageDark: "/images/products-premium/dark/current-sensors.webp",
-    dossier: "Clamp-on, busbar mount, and PCB mount current sensing options for power electronics.",
+    summary: "Clamp-on, busbar mount, and PCB mount current sensing options for power electronics.",
     specs: {
       formats: "Clamp-on / busbar / PCB mount",
       signal: "Current telemetry",
@@ -249,7 +249,7 @@ export const products: Product[] = [
     leadTime: "18 days",
     image: "/images/products/position-sensors-ai.png",
     imageDark: "/images/products-premium/dark/position-sensors.webp",
-    dossier: "Rotary position, encoder, and potentiometer platforms for controlled motion systems.",
+    summary: "Rotary position, encoder, and potentiometer platforms for controlled motion systems.",
     specs: {
       formats: "Rotary position / encoder / potentiometer",
       signal: "Position telemetry",
@@ -267,7 +267,7 @@ export const products: Product[] = [
     leadTime: "15 days",
     image: "/images/products/chokes-ai.png",
     imageDark: "/images/products-premium/dark/chokes.webp",
-    dossier:
+    summary:
       "Linear, saturated, and storage chokes for electromagnetic control in compact assemblies.",
     specs: {
       types: "Linear / saturated / storage",
@@ -286,7 +286,7 @@ export const products: Product[] = [
     leadTime: "24 days",
     image: "/images/products/filters-ai.png",
     imageDark: "/images/products-premium/dark/filters.webp",
-    dossier:
+    summary:
       "One-to-three-phase and compounded filters for print, inlet, and industrial EMC interfaces.",
     specs: {
       phases: "1 to 3 phases",
@@ -305,7 +305,7 @@ export const products: Product[] = [
     leadTime: "14 days",
     image: "/images/products/inductors-ai.png",
     imageDark: "/images/products-premium/dark/inductors.webp",
-    dossier:
+    summary:
       "Magnetic, secondary, and unipolar inductor options for power and signal conditioning.",
     specs: {
       types: "Magnetic / secondary / unipolar",
@@ -324,7 +324,7 @@ export const products: Product[] = [
     leadTime: "22 days",
     image: "/images/products/transformers-ai.png",
     imageDark: "/images/products-premium/dark/transformers.webp",
-    dossier: "Flyback, EE/ETD, high-frequency, SMD, and THT transformer families.",
+    summary: "Flyback, EE/ETD, high-frequency, SMD, and THT transformer families.",
     specs: {
       types: "Flyback / EE / ETD / high frequency",
       mounting: "SMD & THT",
@@ -342,7 +342,7 @@ export const products: Product[] = [
     leadTime: "25 days",
     image: "/images/products/igbt.png",
     imageDark: "/images/products-premium/dark/igbt.webp",
-    dossier: "Half bridge, three-phase bridge, and SiC module options for power management stacks.",
+    summary: "Half bridge, three-phase bridge, and SiC module options for power management stacks.",
     specs: {
       topology: "Half bridge / 3 phase bridge",
       module: "SiC module option",
@@ -360,7 +360,7 @@ export const products: Product[] = [
     leadTime: "20 days",
     image: "/images/products/sic.png",
     imageDark: "/images/products-premium/dark/sic.webp",
-    dossier:
+    summary:
       "SiC half-bridge, power diode, and three-phase options for efficient power conversion.",
     specs: { topology: "Half bridge / 3 phase", devices: "Power diodes", material: "SiC" },
   },
@@ -375,7 +375,7 @@ export const products: Product[] = [
     leadTime: "17 days",
     image: "/images/products/mosfet.png",
     imageDark: "/images/products-premium/dark/mosfet.webp",
-    dossier: "MOSFET modules, rectifiers, and power diode options for switching architectures.",
+    summary: "MOSFET modules, rectifiers, and power diode options for switching architectures.",
     specs: {
       devices: "Rectifiers / MOSFET modules / power diodes",
       function: "Power switching",
@@ -393,7 +393,7 @@ export const products: Product[] = [
     leadTime: "16 days",
     image: "/images/products/converters.png",
     imageDark: "/images/products-premium/dark/converters.webp",
-    dossier:
+    summary:
       "AC/DC, DC/DC, power supply, and plug converter options for regulated power interfaces.",
     specs: {
       conversion: "AC/DC / DC/DC",
@@ -412,7 +412,7 @@ export const products: Product[] = [
     leadTime: "10 days",
     image: "/images/products/resistors-ai.png",
     imageDark: "/images/products-premium/dark/resistors.webp",
-    dossier: "Thin film, thick film, and precision resistor options for electronic assemblies.",
+    summary: "Thin film, thick film, and precision resistor options for electronic assemblies.",
     specs: {
       types: "Thin film / thick film / precision",
       format: "SMD",
@@ -430,7 +430,7 @@ export const products: Product[] = [
     leadTime: "12 days",
     image: "/images/products/film-capacitors-ai.png",
     imageDark: "/images/products-premium/dark/film-capacitors.webp",
-    dossier: "X film, Y film poly, and RC capacitor options for passive filtering and suppression.",
+    summary: "X film, Y film poly, and RC capacitor options for passive filtering and suppression.",
     specs: {
       types: "X Film / Y Film poly / RC",
       function: "Filtering / suppression",
@@ -448,7 +448,7 @@ export const products: Product[] = [
     leadTime: "9 days",
     image: "/images/products/mlcc-capacitors-ai.png",
     imageDark: "/images/products-premium/dark/mlcc-capacitors.webp",
-    dossier: "MLCC, aluminium, and interference suppression capacitor options.",
+    summary: "MLCC, aluminium, and interference suppression capacitor options.",
     specs: {
       types: "MLCC / aluminium / interference suppression",
       format: "SMD / leaded",
@@ -466,7 +466,7 @@ export const products: Product[] = [
     leadTime: "14 days",
     image: "/images/products/quartz-crystals-ai.png",
     imageDark: "/images/products-premium/dark/quartz-crystals.webp",
-    dossier: "SMD, THT, and oscillator quartz timing components for stable electronic systems.",
+    summary: "SMD, THT, and oscillator quartz timing components for stable electronic systems.",
     specs: { formats: "SMD / THT / oscillator", function: "Timing", integration: "PCB" },
   },
   {
@@ -480,7 +480,7 @@ export const products: Product[] = [
     leadTime: "13 days",
     image: "/images/products/connectors-ai.png",
     imageDark: "/images/products-premium/dark/connectors.webp",
-    dossier: "Push-pull, Y-Circ P, high-speed SPE, and RJ45 industrial connector options.",
+    summary: "Push-pull, Y-Circ P, high-speed SPE, and RJ45 industrial connector options.",
     specs: {
       types: "Push-pull / Y-Circ P / SPE / RJ45 industrial",
       function: "Interface",
@@ -498,7 +498,7 @@ export const products: Product[] = [
     leadTime: "12 days",
     image: "/images/products/cables-ai.png",
     imageDark: "/images/products-premium/dark/cables.webp",
-    dossier: "Ribbon, Y-cable, IP55, and customized cable solutions for industrial assemblies.",
+    summary: "Ribbon, Y-cable, IP55, and customized cable solutions for industrial assemblies.",
     specs: {
       types: "Ribbon / Y-cable / IP55",
       customization: "Available",
@@ -516,7 +516,7 @@ export const products: Product[] = [
     leadTime: "15 days",
     image: "/images/products/ventilators-ai.png",
     imageDark: "/images/products-premium/dark/ventilators.webp",
-    dossier: "Radial, axial, array, and MagLev ventilation options for thermal management.",
+    summary: "Radial, axial, array, and MagLev ventilation options for thermal management.",
     specs: {
       types: "Radial / axial / arrays / MagLev",
       function: "Thermal airflow",
@@ -534,7 +534,7 @@ export const products: Product[] = [
     leadTime: "20 days",
     image: "/images/products/card-readers-ai.png",
     imageDark: "/images/products-premium/dark/card-readers.webp",
-    dossier: "Memory card, SIM card, and Compact Flash reader interfaces for embedded systems.",
+    summary: "Memory card, SIM card, and Compact Flash reader interfaces for embedded systems.",
     specs: {
       media: "Memory cards / SIM / Compact Flash",
       function: "Reader interface",
@@ -552,7 +552,7 @@ export const products: Product[] = [
     leadTime: "32 days",
     image: "/images/products/test-sockets-ai.png",
     imageDark: "/images/products-premium/dark/test-sockets.webp",
-    dossier: "Custom Y-ETI, open module, BLT, and COM test socket platforms.",
+    summary: "Custom Y-ETI, open module, BLT, and COM test socket platforms.",
     specs: {
       types: "Custom Y-ETI / open module / BLT / COM test",
       function: "Test interface",
@@ -570,7 +570,7 @@ export const products: Product[] = [
     leadTime: "18 days",
     image: "/images/products/wireless-ai.png",
     imageDark: "/images/products-premium/dark/wireless.webp",
-    dossier: "RF, outdoor, GNSS, adapter, and connector wireless interface hardware.",
+    summary: "RF, outdoor, GNSS, adapter, and connector wireless interface hardware.",
     specs: {
       types: "RF / outdoor / GNSS / adapter / connectors",
       function: "Wireless interface",
@@ -588,7 +588,7 @@ export const products: Product[] = [
     leadTime: "12 days",
     image: "/images/products/buzzers-ai.png",
     imageDark: "/images/products-premium/dark/buzzers.webp",
-    dossier: "Piezo, self-drive, and transducer buzzer platforms for acoustic signaling.",
+    summary: "Piezo, self-drive, and transducer buzzer platforms for acoustic signaling.",
     specs: {
       types: "Piezo / self drive / transducer",
       function: "Acoustic signaling",
@@ -606,7 +606,7 @@ export const products: Product[] = [
     leadTime: "14 days",
     image: "/images/products/magnetic-types-ai.png",
     imageDark: "/images/products-premium/dark/magnetic-types.webp",
-    dossier: "Magnetic transducer, buzzer, and SMD acoustic components.",
+    summary: "Magnetic transducer, buzzer, and SMD acoustic components.",
     specs: {
       types: "Transducer / buzzer / SMD",
       function: "Acoustic output",
@@ -624,7 +624,7 @@ export const products: Product[] = [
     leadTime: "16 days",
     image: "/images/products/microphones-ai.png",
     imageDark: "/images/products-premium/dark/microphones.webp",
-    dossier: "Omni-directional, uni-directional, and noise-canceling microphone options.",
+    summary: "Omni-directional, uni-directional, and noise-canceling microphone options.",
     specs: {
       patterns: "Omni / uni directional",
       feature: "Noise canceling",
@@ -642,7 +642,7 @@ export const products: Product[] = [
     leadTime: "24 days",
     image: "/images/products/piezos-ai.png",
     imageDark: "/images/products-premium/dark/piezos.webp",
-    dossier: "Piezo acoustic elements with feedback and non-feedback configurations.",
+    summary: "Piezo acoustic elements with feedback and non-feedback configurations.",
     specs: {
       modes: "Feedback / non feedback",
       function: "Piezo output",
@@ -660,7 +660,7 @@ export const products: Product[] = [
     leadTime: "15 days",
     image: "/images/products/receivers-ai.png",
     imageDark: "/images/products-premium/dark/receivers.webp",
-    dossier: "Dynamic and piezo receiver options for compact acoustic output assemblies.",
+    summary: "Dynamic and piezo receiver options for compact acoustic output assemblies.",
     specs: { types: "Dynamic / piezo", function: "Receiver output", format: "Compact module" },
   },
   {
@@ -674,7 +674,7 @@ export const products: Product[] = [
     leadTime: "13 days",
     image: "/images/products/speakers-ai.png",
     imageDark: "/images/products-premium/dark/speakers.webp",
-    dossier: "Mylar, loud, and SMD speaker options for compact electronic products.",
+    summary: "Mylar, loud, and SMD speaker options for compact electronic products.",
     specs: {
       types: "Mylar / loud / SMD",
       function: "Acoustic output",
@@ -707,7 +707,7 @@ export const documents = [
     issueDate: "2026-11-08",
     documentType: "Technical portfolio",
     fileSize: "3.2 MB",
-    description: "Detailed technical dossier for advanced IGBT, SiC MOSFET, power rectifiers, and high-frequency power supplies.",
+    description: "Detailed technical documentation for advanced IGBT, SiC MOSFET, power rectifiers, and high-frequency power supplies.",
     downloadHref: "/documents/power-management-portfolio.pdf",
   },
   {

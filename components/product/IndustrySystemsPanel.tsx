@@ -10,7 +10,7 @@ export function IndustrySystemsPanel({
   products,
   heading = "Active systems",
   supportNote,
-  openDetailLabel = "Open detail dossier",
+  openDetailLabel = "Open product details",
   locale = "en",
 }: {
   products: Product[];
@@ -192,7 +192,7 @@ export function IndustrySystemsPanel({
                     {product.name}
                   </h2>
                   <p className="mt-4 max-w-2xl font-mono text-data-sm uppercase text-on-surface-variant">
-                    {product.dossier}
+                    {product.summary}
                   </p>
                   <dl className="mt-5 grid grid-cols-2 gap-3 font-mono text-data-sm uppercase">
                     {Object.entries(product.specs)

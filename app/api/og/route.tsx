@@ -7,7 +7,7 @@ export async function GET(request: Request) {
     const { searchParams } = new URL(request.url);
     const title = searchParams.get("title") || "brückenbauer";
     const subtitle = searchParams.get("subtitle") || "High-Reliability B2B Industrial Components";
-    const label = searchParams.get("label") || "ENGINEERING DOSSIER";
+    const label = searchParams.get("label") || "ENGINEERING PORTFOLIO";
 
     return new ImageResponse(
       (

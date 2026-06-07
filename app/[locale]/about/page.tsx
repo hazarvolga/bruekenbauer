@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { TechnicalButton } from "@/components/layout/TechnicalButton";
 import { PageShell } from "@/components/motion/MotionProvider";
 import { images } from "@/lib/assets";
 import { getTranslations, setRequestLocale } from "next-intl/server";
@@ -86,21 +87,21 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
 
   return (
     <PageShell className="min-h-screen pt-20 md:ml-20">
-      <section className="grid min-h-[calc(100vh-80px)] lg:grid-cols-[1.15fr_0.85fr]">
-        <div className="flex flex-col justify-center px-margin-mobile py-16 md:px-margin-desktop">
+      <section className="grid lg:min-h-[calc(100vh-80px)] lg:grid-cols-[1.08fr_0.92fr]">
+        <div className="flex flex-col justify-start px-margin-mobile py-12 md:px-margin-desktop md:py-16 lg:pb-16 lg:pt-28">
           <span className="font-mono text-label-xs uppercase tracking-[0.18em] text-warning-red">
             {t("label")}
           </span>
-          <h1 className="mt-6 font-mono text-headline-lg-mobile uppercase text-on-surface md:text-display-xl">
+          <h1 className="mt-5 max-w-4xl font-mono text-[44px] uppercase leading-[1.14] text-on-surface sm:text-headline-lg sm:leading-[1.1] md:text-[64px] lg:text-[72px]">
             {t("title_1")}
             <br />
             {t("title_2")}
           </h1>
-          <p className="mt-8 max-w-2xl whitespace-pre-line font-mono text-technical-md text-on-surface-variant">
+          <p className="mt-7 max-w-xl whitespace-pre-line font-mono text-technical-md leading-relaxed text-industrial-silver">
             {t("description")}
           </p>
         </div>
-        <div className="relative min-h-[520px] overflow-hidden border-l border-graphite-muted">
+        <div className="relative min-h-[460px] overflow-hidden border-t border-graphite-muted lg:min-h-[calc(100vh-80px)] lg:border-l lg:border-t-0">
           <Image
             src={images.aboutHero}
             alt=""
@@ -111,62 +112,67 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
         </div>
       </section>
 
-      <section className="border-y border-graphite-muted bg-surface-container-lowest px-margin-mobile py-20 md:px-margin-desktop">
-        <div className="grid gap-gutter lg:grid-cols-[0.34fr_0.66fr]">
+      <section className="border-y border-graphite-muted bg-surface-container-lowest px-margin-mobile py-12 md:px-margin-desktop">
+        <div className="grid gap-gutter border border-graphite-muted bg-surface-container-low/45 p-6 md:grid-cols-[0.38fr_0.62fr] md:items-end md:p-8">
           <div>
             <span className="font-mono text-label-xs uppercase tracking-[0.18em] text-warning-red">
               {t("services.label")}
             </span>
-            <h2 className="mt-5 max-w-xl font-mono text-headline-lg-mobile uppercase text-on-surface md:text-headline-lg">
+            <h2 className="mt-4 max-w-xl font-mono text-[34px] uppercase leading-tight text-on-surface md:text-[44px]">
               {t("services.title")}
             </h2>
           </div>
+          <p className="max-w-lg font-mono text-data-sm uppercase leading-relaxed text-industrial-silver md:justify-self-end">
+            {t("services.intro")}
+          </p>
+        </div>
+      </section>
+
+      <section className="border-b border-graphite-muted bg-surface-container-lowest px-margin-mobile py-12 md:px-margin-desktop md:py-14">
           <div className="grid gap-gutter md:grid-cols-2">
             {services.map((service) => (
               <article
                 key={service.id}
-                className="reticle-corners relative min-h-72 border border-graphite-muted bg-surface/55 p-6"
+                className="reticle-corners relative min-h-64 border border-graphite-muted bg-surface-container-low/75 p-6 shadow-[0_18px_60px_rgba(0,0,0,0.18)] transition-colors hover:border-industrial-silver"
               >
-                <div className="flex items-center justify-between border-b border-graphite-muted pb-4 font-mono text-label-xs uppercase tracking-[0.16em]">
-                  <span className="text-warning-red">SRV-{service.id}</span>
-                  <span className="text-outline">{t("services.active")}</span>
-                </div>
-                <h3 className="mt-8 font-mono text-technical-md uppercase text-industrial-silver">
+                <h3 className="font-mono text-technical-md uppercase text-industrial-silver">
                   {service.title}
                 </h3>
-                <p className="mt-5 font-mono text-data-sm uppercase leading-relaxed text-on-surface-variant">
+                <p className="mt-4 font-mono text-data-sm uppercase leading-relaxed text-on-surface-variant">
                   {service.copy}
                 </p>
               </article>
             ))}
-            <div className="border border-dashed border-graphite-muted bg-background/40 p-6 font-mono text-technical-md uppercase text-warning-red">
+            <div className="border border-dashed border-graphite-muted bg-background/40 p-6 font-mono text-data-sm uppercase tracking-[0.16em] text-warning-red">
               {t("services.and_more")}
             </div>
           </div>
-        </div>
       </section>
 
-      <section className="border-b border-graphite-muted bg-background px-margin-mobile py-20 md:px-margin-desktop">
-        <div className="grid gap-gutter lg:grid-cols-[0.34fr_0.66fr]">
+      <section className="border-b border-graphite-muted bg-background px-margin-mobile py-12 md:px-margin-desktop">
+        <div className="grid gap-gutter border border-graphite-muted bg-surface-container-low/45 p-6 md:grid-cols-[0.38fr_0.62fr] md:items-end md:p-8">
           <div>
             <span className="font-mono text-label-xs uppercase tracking-[0.18em] text-warning-red">
               {t("team.label")}
             </span>
-            <h2 className="mt-5 max-w-xl font-mono text-headline-lg-mobile uppercase text-on-surface md:text-headline-lg">
+            <h2 className="mt-4 max-w-xl font-mono text-[34px] uppercase leading-tight text-on-surface md:text-[44px]">
               {t("team.title")}
             </h2>
-            <p className="mt-6 max-w-md font-mono text-data-sm uppercase leading-relaxed text-on-surface-variant">
-              {t("team.subtitle")}
-            </p>
           </div>
+          <p className="max-w-lg font-mono text-data-sm uppercase leading-relaxed text-industrial-silver md:justify-self-end">
+            {t("team.subtitle")}
+          </p>
+        </div>
+      </section>
 
-          <div className="grid gap-gutter xl:grid-cols-2">
-            {teamMembers.map((member) => (
+      <section className="border-b border-graphite-muted bg-background px-margin-mobile py-12 md:px-margin-desktop md:py-14">
+        <div className="grid gap-gutter lg:grid-cols-3">
+          {teamMembers.map((member) => (
               <article
                 key={member.id}
-                className="reticle-corners group grid gap-0 overflow-hidden border border-graphite-muted bg-surface-container-low/50"
+                className="reticle-corners group flex min-w-0 flex-col overflow-hidden border border-graphite-muted bg-surface-container-low/50"
               >
-                <div className="relative aspect-[1.2/1] w-full border-b border-graphite-muted bg-graphite-muted/20">
+                <div className="relative h-72 w-full shrink-0 border-b border-graphite-muted bg-graphite-muted/20 md:h-[300px] lg:h-[280px]">
                   <Image
                     src={member.image}
                     alt={member.name}
@@ -175,37 +181,34 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
                     className="object-cover object-center grayscale transition duration-700 ease-out group-focus-within:grayscale-0 group-hover:grayscale-0"
                   />
                   <div className="bg-industrial-blue/20 absolute inset-0 mix-blend-multiply transition-opacity duration-700 ease-out group-focus-within:opacity-0 group-hover:opacity-0" />
-                  <div className="absolute left-5 top-5 border border-graphite-muted bg-background/70 px-3 py-2 font-mono text-label-xs uppercase tracking-[0.16em] text-warning-red backdrop-blur-sm">
-                    TEAM-{member.id}
-                  </div>
                 </div>
 
-                <div className="flex min-h-full flex-col p-6 md:p-8">
-                  <div className="border-b border-graphite-muted pb-6">
-                    <h3 className="font-mono text-[24px] uppercase leading-[30px] text-on-surface">
+                <div className="flex min-w-0 flex-1 flex-col justify-start p-5 md:p-6">
+                  <div className="min-w-0 border-b border-graphite-muted pb-4">
+                    <h3 className="break-words font-mono text-[21px] uppercase leading-[27px] tracking-normal text-on-surface xl:text-[23px] xl:leading-[29px]">
                       {member.name}
                     </h3>
-                    <p className="mt-3 font-mono text-label-xs uppercase tracking-[0.14em] text-warning-red">
+                    <p className="mt-3 break-words font-mono text-[9px] uppercase leading-tight tracking-[0.08em] text-warning-red">
                       {member.title}
                     </p>
                   </div>
 
-                  <div className="mt-6 space-y-4">
+                  <div className="mt-4 space-y-3">
                     {member.bio.map((paragraph) => (
                       <p
                         key={paragraph}
-                        className="font-mono text-data-sm uppercase leading-relaxed text-on-surface-variant"
+                        className="break-words font-mono text-[10.75px] uppercase leading-[1.62] tracking-normal text-on-surface-variant [overflow-wrap:anywhere] md:text-[11px]"
                       >
                         {paragraph}
                       </p>
                     ))}
                   </div>
 
-                  <div className="mt-8 grid gap-2 border-t border-graphite-muted pt-6 sm:grid-cols-3">
+                  <div className="mt-4 grid gap-0.5 border-t border-graphite-muted pt-2.5">
                     {member.focus.map((item) => (
                       <span
                         key={item}
-                        className="border border-graphite-muted px-3 py-2 font-mono text-[10px] uppercase tracking-[0.14em] text-industrial-silver"
+                        className="min-w-0 break-words border border-graphite-muted/70 px-3 py-1 font-mono text-[10px] uppercase leading-tight tracking-[0.08em] text-industrial-silver"
                       >
                         {item}
                       </span>
@@ -214,28 +217,27 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
                 </div>
               </article>
             ))}
-          </div>
         </div>
       </section>
 
-      <section className="px-margin-mobile py-20 md:px-margin-desktop">
+      <section className="px-margin-mobile py-14 md:px-margin-desktop md:py-16">
         <div className="grid gap-gutter lg:grid-cols-[0.34fr_0.66fr]">
           <div>
             <span className="font-mono text-label-xs uppercase tracking-[0.18em] text-warning-red">
               {t("sequence.label")}
             </span>
-            <h2 className="mt-5 max-w-xl font-mono text-headline-lg-mobile uppercase text-on-surface md:text-headline-lg">
+            <h2 className="mt-4 max-w-md font-mono text-headline-lg-mobile uppercase leading-tight text-on-surface md:text-[34px]">
               {t("sequence.title")}
             </h2>
           </div>
-          <div className="divide-y divide-graphite-muted border border-graphite-muted bg-surface-container-low/40">
+          <div className="divide-y divide-graphite-muted border border-graphite-muted bg-surface-container-low/60 shadow-[0_18px_60px_rgba(0,0,0,0.14)]">
             {processSteps.map((step) => (
               <article key={step.id} className="grid gap-5 p-6 md:grid-cols-[120px_1fr]">
-                <div className="font-mono text-label-xs uppercase tracking-[0.16em] text-warning-red">
+                <div className="font-mono text-data-sm uppercase tracking-[0.16em] text-warning-red">
                   {t("sequence.phase")} {step.id}
                 </div>
                 <div>
-                  <h3 className="font-mono text-technical-md uppercase text-industrial-silver">
+                  <h3 className="font-mono text-[22px] uppercase leading-tight text-industrial-silver">
                     {step.title}
                   </h3>
                   <p className="mt-4 font-mono text-data-sm uppercase leading-relaxed text-on-surface-variant">
@@ -244,6 +246,31 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
                 </div>
               </article>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t border-graphite-muted bg-surface-container-lowest px-margin-mobile py-12 md:px-margin-desktop">
+        <div className="grid gap-6 border border-graphite-muted bg-surface-container-low/50 p-6 md:grid-cols-[1fr_auto] md:items-center md:p-8">
+          <div>
+            <span className="font-mono text-label-xs uppercase tracking-[0.18em] text-warning-red">
+              {t("cta.label")}
+            </span>
+            <h2 className="mt-3 max-w-3xl font-mono text-technical-md uppercase text-industrial-silver md:text-[28px] md:leading-tight">
+              {t("cta.title")}
+            </h2>
+            <p className="mt-4 max-w-2xl font-mono text-data-sm uppercase leading-relaxed text-on-surface-variant">
+              {t("cta.copy")}
+            </p>
+          </div>
+          <div className="flex flex-wrap gap-3">
+            <TechnicalButton href="/contact">{t("cta.contact")}</TechnicalButton>
+            <TechnicalButton href="/rfq" variant="ghost">
+              {t("cta.rfq")}
+            </TechnicalButton>
+            <TechnicalButton href="/contact" variant="ghost">
+              {t("cta.consultation")}
+            </TechnicalButton>
           </div>
         </div>
       </section>

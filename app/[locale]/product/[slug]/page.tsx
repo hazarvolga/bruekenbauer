@@ -26,14 +26,14 @@ export async function generateMetadata({
   if (!productSource) return {};
   const normalizedLocale = normalizeLocale(locale);
   const product = getLocalizedProduct(productSource, normalizedLocale);
-  const ogUrl = `/api/og?title=${encodeURIComponent(product.name)}&subtitle=${encodeURIComponent(product.dossier)}&label=${encodeURIComponent(product.partNumber)}`;
+  const ogUrl = `/api/og?title=${encodeURIComponent(product.name)}&subtitle=${encodeURIComponent(product.summary)}&label=${encodeURIComponent(product.partNumber)}`;
 
   return {
     title: `${product.name} | brückenbauer GmbH`,
-    description: product.dossier,
+    description: product.summary,
     openGraph: {
       title: `${product.name} | brückenbauer GmbH`,
-      description: product.dossier,
+      description: product.summary,
       siteName: "brückenbauer GmbH",
       type: "website",
       images: [
@@ -48,7 +48,7 @@ export async function generateMetadata({
     twitter: {
       card: "summary_large_image",
       title: `${product.name} | brückenbauer GmbH`,
-      description: product.dossier,
+      description: product.summary,
       images: [ogUrl],
     },
   };
@@ -70,7 +70,7 @@ export default async function ProductDetailPage({
     "@type": "Product",
     "name": product.name,
     "image": `https://brueckenbauer.com${product.image}`,
-    "description": product.dossier,
+    "description": product.summary,
     "sku": product.partNumber,
     "mpn": product.partNumber,
     "brand": {
@@ -130,7 +130,7 @@ export default async function ProductDetailPage({
             {product.name}
           </h1>
           <p className="mt-6 font-mono text-technical-md text-on-surface-variant">
-            {product.dossier}
+            {product.summary}
           </p>
           <dl className="mt-10 grid grid-cols-2 gap-4 border-y border-graphite-muted py-6 font-mono text-data-sm uppercase">
             {Object.entries(product.specs).map(([key, value]) => (

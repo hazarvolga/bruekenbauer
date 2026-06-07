@@ -34,7 +34,7 @@ export async function generateMetadata({
   const baseUrl = getBaseUrl();
   const url = getLocalizedUrl(baseUrl, locale);
 
-  const ogUrl = `/api/og?title=${encodeURIComponent(title)}&subtitle=${encodeURIComponent(description)}&label=${encodeURIComponent("B2B CORE DOSSIER")}`;
+  const ogUrl = `/api/og?title=${encodeURIComponent(title)}&subtitle=${encodeURIComponent(description)}&label=${encodeURIComponent("B2B COMPONENT SUPPLY")}`;
 
   return {
     metadataBase: new URL(baseUrl),
@@ -110,7 +110,7 @@ export default async function RootLayout({
       <body className="font-mono antialiased">
         <NextIntlClientProvider messages={messages}>
           <Providers>
-            <SiteChrome>{children}</SiteChrome>
+            <SiteChrome locale={locale}>{children}</SiteChrome>
           </Providers>
         </NextIntlClientProvider>
       </body>

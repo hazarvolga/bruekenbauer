@@ -1,17 +1,71 @@
 import type { Metadata } from "next";
 import { ContactForm } from "@/components/contact/ContactForm";
 import { PageShell } from "@/components/motion/MotionProvider";
+import { normalizeLocale } from "@/data/localizedContent";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 
-export const metadata: Metadata = {
-  title: "Engineering Contact — brückenbauer GmbH",
-  description: "Direct contact channel for procurement, technical, and partnership inquiries.",
+const sidebarCopy = {
+  en: {
+    title: "Corporate Registry",
+    address: "Address",
+    representation: "Representation",
+    managingDirector: "Managing Director",
+    directContacts: "Direct Contacts",
+    registry: "Registry",
+    canton: "Canton Bern",
+    country: "Switzerland",
+  },
+  de: {
+    title: "Handelsregister",
+    address: "Adresse",
+    representation: "Vertretung",
+    managingDirector: "Geschäftsführer",
+    directContacts: "Direkte Kontakte",
+    registry: "Register",
+    canton: "Kanton Bern",
+    country: "Schweiz",
+  },
+  fr: {
+    title: "Registre de l'entreprise",
+    address: "Adresse",
+    representation: "Représentation",
+    managingDirector: "Directeur général",
+    directContacts: "Contacts directs",
+    registry: "Registre",
+    canton: "Canton de Berne",
+    country: "Suisse",
+  },
 };
+
+const metadataCopy = {
+  en: {
+    title: "Engineering Contact — brückenbauer GmbH",
+    description: "Direct contact channel for procurement, technical, and partnership inquiries.",
+  },
+  de: {
+    title: "Engineering Kontakt — brückenbauer GmbH",
+    description: "Direkter Kontaktkanal für Beschaffung, technische Anfragen und Partnerschaften.",
+  },
+  fr: {
+    title: "Contact ingénierie — brückenbauer GmbH",
+    description: "Canal de contact direct pour les demandes d'approvisionnement, techniques et partenariats.",
+  },
+};
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  return metadataCopy[normalizeLocale(locale)];
+}
 
 export default async function ContactPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations({ locale, namespace: "ContactPage" });
+  const sidebar = sidebarCopy[normalizeLocale(locale)];
 
   return (
     <PageShell className="min-h-screen px-margin-mobile pb-24 pt-32 md:ml-20 md:px-margin-desktop">
@@ -29,33 +83,33 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
         <div className="lg:pt-20">
           <div className="reticle-corners relative border border-graphite-muted bg-surface-container-low/40 p-8 font-mono">
             <h2 className="text-label-xs uppercase tracking-[0.18em] text-warning-red mb-6 border-b border-graphite-muted pb-4">
-              Corporate Registry
+              {sidebar.title}
             </h2>
             
             <div className="space-y-6 text-technical-md">
               <div>
-                <span className="text-label-xs text-outline uppercase block tracking-wider">Address</span>
+                <span className="text-label-xs text-outline uppercase block tracking-wider">{sidebar.address}</span>
                 <p className="text-industrial-silver font-semibold mt-1">
                   brückenbauer GmbH<br />
                   Dachsweg 12<br />
                   3075 Rüfenacht BE<br />
-                  Switzerland
+                  {sidebar.country}
                 </p>
               </div>
 
               <div>
-                <span className="text-label-xs text-outline uppercase block tracking-wider">Representation</span>
+                <span className="text-label-xs text-outline uppercase block tracking-wider">{sidebar.representation}</span>
                 <p className="text-industrial-silver font-semibold mt-1">
                   Dr. Andreas Werthmüller<br />
-                  <span className="text-warning-red text-label-xs tracking-wider block mt-0.5">Managing Director</span>
+                  <span className="text-warning-red text-label-xs tracking-wider block mt-0.5">{sidebar.managingDirector}</span>
                 </p>
               </div>
 
               <div>
-                <span className="text-label-xs text-outline uppercase block tracking-wider">Direct Contacts</span>
+                <span className="text-label-xs text-outline uppercase block tracking-wider">{sidebar.directContacts}</span>
                 <p className="text-industrial-silver font-semibold mt-1">
                   Tel. <a href="tel:+41762224554" className="text-industrial-silver hover:text-warning-red transition-colors">+41 (0)76 222 45 54</a><br />
-                  <a href="mailto:werand@bluewin.ch" className="text-warning-red hover:underline mt-1 block">werand@bluewin.ch</a>
+                  <a href="mailto:bus.dev@brueckenbauer-gmbh.ch" className="text-warning-red hover:underline mt-1 block">bus.dev@brueckenbauer-gmbh.ch</a>
                 </p>
               </div>
 
@@ -66,8 +120,8 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
                     <span className="text-industrial-silver text-data-sm block mt-1 font-semibold">CHE-191.442.645</span>
                   </div>
                   <div>
-                    <span className="text-[10px] text-outline uppercase block tracking-wider">Registry</span>
-                    <span className="text-industrial-silver text-data-sm block mt-1 font-semibold">Canton Bern</span>
+                    <span className="text-[10px] text-outline uppercase block tracking-wider">{sidebar.registry}</span>
+                    <span className="text-industrial-silver text-data-sm block mt-1 font-semibold">{sidebar.canton}</span>
                   </div>
                 </div>
               </div>

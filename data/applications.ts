@@ -15,11 +15,11 @@ export type ApplicationName = (typeof applicationNames)[number];
 
 const applicationSummaries: Record<ApplicationName, string> = {
   "AEROSPACE & AVIATION":
-    "High-stress component resilience for avionics, orbital subsystems, and EMI-sensitive defense assemblies.",
+    "Traceable component sourcing support for avionics, aerospace programs, and EMI-sensitive systems.",
   "Automotive & Transportation":
     "Qualified component supply for vehicle platforms, charging systems, mobility electronics, and transport infrastructure.",
   "INDUSTRIAL AUTOMATION":
-    "Precision supply programs for regulated industrial environments with demanding thermal, acoustic, and lifecycle constraints.",
+    "Reliable component supply for automation, sensing, control, drives, and industrial communication systems.",
   "Solar PV & BESS":
     "Power conversion, sensing, and thermal-control components for photovoltaic, storage, wind, and grid-support systems.",
   "Home Appliances":
@@ -43,7 +43,7 @@ const applicationDetails: Record<
 > = {
   "AEROSPACE & AVIATION": {
     intro:
-      "Aerospace and aviation programs place exceptionally strict demands on quality, safety, and traceability. As a specialized distributor, we deliver tested, qualified, and long-term available electronic components for use in extreme environments.",
+      "Aerospace and aviation programs require strict quality, documentation, and supply continuity. As a specialized distributor and sourcing partner, we support engineering teams with qualified components, traceability documentation, and lifecycle planning for demanding environments.",
     applications: [
       "Avionics and aircraft systems",
       "Space technology",
@@ -79,7 +79,7 @@ const applicationDetails: Record<
   },
   "INDUSTRIAL AUTOMATION": {
     intro:
-      "Modern industrial and building automation plants are connected, automated, and data-driven. Whether sensing, control, drive technology, or communication, powerful electronic components are the foundation for efficiency, safety, and innovation. We deliver robust, long-term available, and quality-tested electronic components for every area of industrial automation.",
+      "Industrial automation depends on stable supply, robust components, and clear technical coordination. We support automation, sensing, control, drive, and communication projects with long-term available electronic components and practical design-in support.",
     applications: [
       "Automation and control technology",
       "Drive technology and motor control",

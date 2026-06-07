@@ -8,10 +8,18 @@
     "partners": "Partners",
     "finder": "Finder",
     "rfq": "RFQ",
-    "language": "Language"
+    "language": "Language",
+    "switch_language": "Switch to {language}",
+    "toggle_color_mode": "Toggle color mode",
+    "theme_light": "Light",
+    "theme_dark": "Dark",
+    "primary_navigation": "Primary navigation",
+    "mobile_navigation": "Mobile primary navigation",
+    "open_menu": "Open primary menu",
+    "close_menu": "Close primary menu"
   },
   "Common": {
-    "open_detail_dossier": "Open detail dossier",
+    "open_product_details": "Open product details",
     "read_more": "Read more"
   },
   "HomePage": {
@@ -25,7 +33,7 @@
       "compliance": "Compliance state"
     },
     "cta": {
-      "open_dossier": "Open Dossier",
+      "explore_products": "Explore Products",
       "initiate_rfq": "Initiate RFQ"
     },
     "features": {
@@ -45,6 +53,7 @@
     "services": {
       "label": "Services",
       "title": "Strategic and operational support",
+      "intro": "Focused support for strategy, cooperation, business development, and temporary team reinforcement.",
       "and_more": "And more...",
       "active": "Active",
       "srv_01_title": "Strategic and operational support",
@@ -94,6 +103,14 @@
       "step_2_copy": "We will create a detailed roadmap that includes all phases of the project and the measures to be implemented.",
       "step_3_title": "Delivery and support",
       "step_3_copy": "We provide the necessary support and all related elements. We also advise you on your long-term strategy."
+    },
+    "cta": {
+      "label": "Next step",
+      "title": "Start the conversation with brückenbauer GmbH",
+      "copy": "Share your technical context, sourcing challenge, or strategic requirement and we will route it to the right conversation.",
+      "contact": "Contact",
+      "rfq": "RFQ",
+      "consultation": "Consultation"
     }
   },
   "ContactPage": {
@@ -106,15 +123,28 @@
     "section_label": "Our application sectors",
     "section_title": "Customized applications",
     "description": "Electronic components for every application - reliable, versatile, and individually developed. From idea to series production, we deliver the right components for every application. As a reliable distributor of high-quality electronic components, we offer more than an extensive portfolio. We understand the requirements of diverse industries and support our customers with suitable solutions - quickly, competently, and with maximum supply reliability.",
+    "description_points": [
+      "Electronic components for every application - reliable, versatile, and individually developed.",
+      "From idea to series production, we help customers select the right components for each application context.",
+      "We understand diverse industry requirements and support projects with suitable solutions, competent coordination, and supply reliability."
+    ],
     "in_use_label": "Our solutions are used in",
+    "explore_sector": "Explore sector",
     "group_1_title": "Strategic Industry Verticals",
-    "group_2_title": "Equipment & Devices"
+    "group_2_title": "Equipment & Devices",
+    "cta_label": "Application support",
+    "cta_title": "Map your application to the right component strategy",
+    "cta_copy": "Share the operating environment, lifecycle requirements, and technical constraints behind your application. We will help translate them into a focused component and sourcing path.",
+    "cta_contact": "Contact",
+    "cta_rfq": "RFQ"
   },
   "ProductsPage": {
     "label": "Component Portfolio 2026",
     "title": "Product Groups",
-    "description": "Upper-category archive from the component portfolio. Select a dossier group to inspect product-level parts, imagery, and technical metadata.",
-    "items": "items"
+    "description": "Upper-category archive from the component portfolio. Select a product group to inspect product-level parts, imagery, and technical metadata.",
+    "items": "items",
+    "category_label": "Product category",
+    "explore_category": "Explore Category"
   },
   "ProductDescriptions": {
     "temperature-sensors": "Engineered for extreme precision and harsh environments, our temperature sensing assemblies guarantee reliable thermal management. The portfolio includes high-performance NTCs, thermistors, and thermocouples designed for industrial automation and automotive applications.",
@@ -149,8 +179,14 @@
   "PartnersPage": {
     "label": "Strategic Collaborations",
     "title": "Focus on advanced AI products and electric devices",
-    "censray_desc": "Censray is a pioneer in high-performance artificial intelligence accelerators, edge-AI modules, and advanced silicon integration solutions.",
-    "iyaksh_desc": "Iyaksh delivers state-of-the-art electrical engineering devices, grid conversion hardware, and battery monitoring products for heavy industrial networks."
+    "intro": "Our partner ecosystem extends brückenbauer GmbH with focused technology, sourcing, and innovation capabilities where advanced electronics projects need specialized depth.",
+    "strategic_partner": "Strategic Partner",
+    "technology_partner": "Technology Partner",
+    "innovation_partner": "Innovation Partner",
+    "sourcing_partner": "Sourcing Partner",
+    "censray_desc": "Advanced sensing and control solutions for IoT, renewable energy, automotive, and industrial automation applications.",
+    "iyaksh_desc": "Providing AI-driven robotics and automation solutions that enable smarter, more efficient, and connected operations.",
+    "suntek_desc": "Strategic sourcing and technology collaboration for electronic components, engineered systems, and industrial applications."
   },
   "MetaData": {
     "title": "brückenbauer GmbH: We don't just advise",

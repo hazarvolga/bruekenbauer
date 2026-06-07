@@ -3,13 +3,13 @@ import { Footer } from "./Footer";
 import { SideRail } from "./SideRail";
 import { TopNav } from "./TopNav";
 
-export function SiteChrome({ children }: { children: ReactNode }) {
+export function SiteChrome({ children, locale }: { children: ReactNode; locale: string }) {
   return (
     <>
       <TopNav />
-      <SideRail />
+      <SideRail locale={locale} />
       {children}
-      <Footer />
+      <Footer locale={locale} />
     </>
   );
 }

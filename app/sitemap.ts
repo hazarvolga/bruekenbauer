@@ -4,7 +4,7 @@ import { productTaxonomy } from "@/data/productTaxonomy";
 import { applications } from "@/data/applications";
 import { powerManagementFamilies } from "@/data/powerManagement";
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://brueckenbauer.de";
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://bruekenbauer.vercel.app";
 
 const staticRoutes: MetadataRoute.Sitemap = [
   { url: BASE_URL, priority: 1.0, changeFrequency: "weekly" },
@@ -18,6 +18,9 @@ const staticRoutes: MetadataRoute.Sitemap = [
   { url: `${BASE_URL}/compliance`, priority: 0.6, changeFrequency: "monthly" },
   { url: `${BASE_URL}/documents`, priority: 0.5, changeFrequency: "monthly" },
   { url: `${BASE_URL}/search`, priority: 0.7, changeFrequency: "weekly" },
+  { url: `${BASE_URL}/privacy-policy`, priority: 0.3, changeFrequency: "yearly" },
+  { url: `${BASE_URL}/terms-and-conditions`, priority: 0.3, changeFrequency: "yearly" },
+  { url: `${BASE_URL}/cookie-policy`, priority: 0.3, changeFrequency: "yearly" },
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

@@ -73,13 +73,20 @@ export function RfqFlow({
       company: "Company",
       notes: "RFQ notes",
       placeholder: "Technical requirements, compliance needs, packaging, forecast windows...",
+      placeholders: {
+        monthlyVolume: "Example: 10000",
+        leadTime: "Example: 14 days",
+        contactName: "Your full name",
+        email: "name@company.com",
+        company: "Company name",
+      },
       submitting: "Submitting...",
       submit: "Submit RFQ",
     },
     de: {
       confirmed: "RFQ bestätigt",
       received: "RFQ erhalten",
-      success: "Ihre Anfrage wurde erfasst. Ein Engineer meldet sich innerhalb von 2 Werktagen.",
+      success: "Ihre Anfrage wurde erfasst. Ein Ingenieur meldet sich innerhalb von 2 Werktagen.",
       reference: "Referenz",
       newInquiry: "Neue Anfrage",
       notSupplied: "Nicht angegeben",
@@ -97,13 +104,20 @@ export function RfqFlow({
       company: "Unternehmen",
       notes: "RFQ-Notizen",
       placeholder: "Technische Anforderungen, Compliance-Bedarf, Verpackung, Forecast-Fenster...",
+      placeholders: {
+        monthlyVolume: "Beispiel: 10000",
+        leadTime: "Beispiel: 14 Tage",
+        contactName: "Ihr vollständiger Name",
+        email: "name@unternehmen.com",
+        company: "Unternehmensname",
+      },
       submitting: "Wird gesendet...",
       submit: "RFQ absenden",
     },
     fr: {
       confirmed: "RFQ confirmé",
       received: "RFQ reçu",
-      success: "Votre demande a été enregistrée. Un engineer répondra sous 2 jours ouvrables.",
+      success: "Votre demande a été enregistrée. Un ingénieur répondra sous 2 jours ouvrables.",
       reference: "Référence",
       newInquiry: "Nouvelle demande",
       notSupplied: "Non renseigné",
@@ -121,6 +135,13 @@ export function RfqFlow({
       company: "Entreprise",
       notes: "Notes RFQ",
       placeholder: "Exigences techniques, conformité, packaging, fenêtres de forecast...",
+      placeholders: {
+        monthlyVolume: "Exemple : 10000",
+        leadTime: "Exemple : 14 jours",
+        contactName: "Votre nom complet",
+        email: "nom@entreprise.com",
+        company: "Nom de l'entreprise",
+      },
       submitting: "Envoi...",
       submit: "Soumettre RFQ",
     },
@@ -133,6 +154,8 @@ export function RfqFlow({
   const [status, setStatus] = useState<SubmitStatus>("idle");
   const [referenceId, setReferenceId] = useState<string | null>(null);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
+  const fieldClass =
+    "mt-2 w-full border border-outline/70 bg-surface-container-low/60 px-4 py-3 font-mono text-technical-md text-on-surface outline-none transition-colors duration-200 placeholder:text-outline/45 hover:border-industrial-silver focus:border-warning-red focus:ring-1 focus:ring-warning-red/20";
   const familyOptions = useMemo(
     () => products.filter((product) => product.group === state.productGroup),
     [state.productGroup]
@@ -348,7 +371,7 @@ export function RfqFlow({
             <select
               value={state.productGroup}
               onChange={(event) => updateProductGroup(event.target.value)}
-              className="mt-2 w-full border border-graphite-muted bg-surface p-3 font-mono text-technical-md text-on-surface focus:border-warning-red focus:ring-0"
+              className={fieldClass}
             >
               {productTaxonomy.map((group) => (
                 <option key={group.slug} value={group.name}>
@@ -362,7 +385,7 @@ export function RfqFlow({
             <select
               value={selectedFamily?.slug ?? ""}
               onChange={(event) => updateProductFamily(event.target.value)}
-              className="mt-2 w-full border border-graphite-muted bg-surface p-3 font-mono text-technical-md text-on-surface focus:border-warning-red focus:ring-0"
+              className={fieldClass}
             >
               {familyOptions.map((product) => (
                 <option key={product.slug} value={product.slug}>
@@ -376,7 +399,7 @@ export function RfqFlow({
             <select
               value={state.applicationSector}
               onChange={(event) => update("applicationSector", event.target.value)}
-              className="mt-2 w-full border border-graphite-muted bg-surface p-3 font-mono text-technical-md text-on-surface focus:border-warning-red focus:ring-0"
+              className={fieldClass}
             >
               {applicationOptions.map((application) => (
                 <option key={application} value={application}>
@@ -395,12 +418,16 @@ export function RfqFlow({
             label={copy.monthlyVolume}
             value={state.monthlyVolume}
             type="number"
+            placeholder={copy.placeholders.monthlyVolume}
+            inputClassName={fieldClass}
             onChange={(value) => update("monthlyVolume", value)}
           />
           <Field
             id="leadTime"
             label={copy.leadTime}
             value={state.leadTime}
+            placeholder={copy.placeholders.leadTime}
+            inputClassName={fieldClass}
             onChange={(value) => update("leadTime", value)}
           />
           <Field
@@ -408,6 +435,8 @@ export function RfqFlow({
             label={copy.contactName}
             value={state.name}
             required
+            placeholder={copy.placeholders.contactName}
+            inputClassName={fieldClass}
             onChange={(value) => update("name", value)}
           />
           <Field
@@ -416,6 +445,8 @@ export function RfqFlow({
             type="email"
             value={state.email}
             required
+            placeholder={copy.placeholders.email}
+            inputClassName={fieldClass}
             onChange={(value) => update("email", value)}
           />
           <Field
@@ -423,6 +454,8 @@ export function RfqFlow({
             label={copy.company}
             value={state.company}
             required
+            placeholder={copy.placeholders.company}
+            inputClassName={fieldClass}
             onChange={(value) => update("company", value)}
           />
         </div>
@@ -436,7 +469,7 @@ export function RfqFlow({
             rows={5}
             value={state.notes}
             onChange={(event) => update("notes", event.target.value)}
-            className="mt-2 w-full border border-graphite-muted bg-surface-dim/50 p-4 font-mono text-technical-md text-on-surface focus:border-warning-red focus:ring-0"
+            className={`${fieldClass} min-h-36 resize-y`}
             placeholder={copy.placeholder}
           />
         </label>
@@ -463,6 +496,8 @@ function Field({
   onChange,
   type = "text",
   required = false,
+  placeholder,
+  inputClassName,
 }: {
   id: keyof RfqState;
   label: string;
@@ -470,6 +505,8 @@ function Field({
   onChange: (value: string) => void;
   type?: string;
   required?: boolean;
+  placeholder?: string;
+  inputClassName?: string;
 }) {
   return (
     <label
@@ -482,8 +519,12 @@ function Field({
         type={type}
         required={required}
         value={value}
+        placeholder={placeholder}
         onChange={(event) => onChange(event.target.value)}
-        className="mt-2 w-full border-0 border-b border-graphite-muted bg-transparent py-3 font-mono text-technical-md text-on-surface focus:border-warning-red focus:ring-0"
+        className={
+          inputClassName ??
+          "mt-2 w-full border-0 border-b border-graphite-muted bg-transparent py-3 font-mono text-technical-md text-on-surface focus:border-warning-red focus:ring-0"
+        }
       />
     </label>
   );

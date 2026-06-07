@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 import { PageShell } from "@/components/motion/MotionProvider";
 import { applications } from "@/data/applications";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { getApplicationCopy } from "@/data/localizedContent";
+import { getApplicationCopy, localizePath } from "@/data/localizedContent";
 
 export async function generateMetadata({
   params,
@@ -48,6 +48,7 @@ export default async function IndustriesPage({ params }: { params: Promise<{ loc
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations("IndustriesPage");
+  const descriptionPoints = t.raw("description_points") as string[];
 
   const group1 = applications.slice(0, 6);
   const group2 = applications.slice(6);
@@ -65,14 +66,21 @@ export default async function IndustriesPage({ params }: { params: Promise<{ loc
           <div className="font-mono text-label-xs uppercase tracking-[0.18em] text-warning-red">
             {t("section_label")}
           </div>
-          <h2 className="mt-4 max-w-md font-mono text-headline-lg-mobile uppercase text-industrial-silver xl:text-headline-lg break-words">
+          <h2 className="mt-4 max-w-md font-mono text-[34px] uppercase leading-[0.98] text-industrial-silver md:text-[44px] lg:text-[52px] break-words">
             {t("section_title")}
           </h2>
         </div>
         <div className="min-w-0 lg:col-span-7 lg:col-start-6">
-          <p className="max-w-none font-mono text-technical-md uppercase leading-normal text-on-surface-variant">
-            {t("description")}
-          </p>
+          <div className="grid gap-3">
+            {descriptionPoints.map((point) => (
+              <p
+                key={point}
+                className="border-l border-graphite-muted pl-4 font-mono text-[13px] uppercase leading-relaxed text-on-surface-variant md:text-technical-md"
+              >
+                {point}
+              </p>
+            ))}
+          </div>
           <div className="mt-6 border-l border-warning-red pl-5 font-mono text-label-xs uppercase tracking-[0.18em] text-warning-red">
             {t("in_use_label")}
           </div>
@@ -95,11 +103,11 @@ export default async function IndustriesPage({ params }: { params: Promise<{ loc
           return (
             <Link
               key={app.slug}
-              href={`/industries/${app.slug}`}
-              className="reticle-corners group relative min-h-[340px] overflow-hidden border border-graphite-muted bg-surface-container-low/40 p-6 transition-all duration-500 ease-out hover:border-warning-red hover:bg-surface-container-low/65"
+              href={localizePath(locale, `/industries/${app.slug}`)}
+              className="reticle-corners group relative flex min-h-[340px] flex-col overflow-hidden border border-graphite-muted bg-surface-container-low/50 p-6 transition-colors duration-300 hover:border-industrial-silver hover:bg-surface-container-low/75 focus-visible:border-warning-red focus-visible:outline-none"
             >
-              <div className="relative z-10 transition-transform duration-700 ease-out group-hover:-translate-y-8">
-                <div className="font-mono text-label-xs uppercase tracking-[0.18em] text-warning-red transition-opacity duration-500 ease-out group-hover:opacity-0">
+              <div className="relative z-10">
+                <div className="font-mono text-label-xs uppercase tracking-[0.18em] text-warning-red">
                   {app.node}
                 </div>
                 <h2 className="mt-5 font-mono text-technical-md uppercase text-industrial-silver">
@@ -107,7 +115,10 @@ export default async function IndustriesPage({ params }: { params: Promise<{ loc
                 </h2>
                 <p className="mt-5 font-mono text-data-sm uppercase text-outline">{appCopy.summary}</p>
               </div>
-              <div className="absolute bottom-0 left-0 right-0 h-28 overflow-hidden transition-all duration-700 ease-out group-hover:h-36">
+              <span className="relative z-10 mt-6 inline-flex w-fit items-center border border-graphite-muted px-3 py-2 font-mono text-[10px] uppercase tracking-[0.14em] text-industrial-silver transition-colors group-hover:border-warning-red group-hover:text-warning-red">
+                {t("explore_sector")} <span aria-hidden="true">-&gt;</span>
+              </span>
+              <div className="absolute bottom-0 left-0 right-0 h-28 overflow-hidden">
                 <Image
                   src={app.heroImage}
                   alt=""
@@ -140,11 +151,11 @@ export default async function IndustriesPage({ params }: { params: Promise<{ loc
           return (
             <Link
               key={app.slug}
-              href={`/industries/${app.slug}`}
-              className="reticle-corners group relative min-h-[340px] overflow-hidden border border-graphite-muted bg-surface-container-low/40 p-6 transition-all duration-500 ease-out hover:border-warning-red hover:bg-surface-container-low/65"
+              href={localizePath(locale, `/industries/${app.slug}`)}
+              className="reticle-corners group relative flex min-h-[340px] flex-col overflow-hidden border border-graphite-muted bg-surface-container-low/50 p-6 transition-colors duration-300 hover:border-industrial-silver hover:bg-surface-container-low/75 focus-visible:border-warning-red focus-visible:outline-none"
             >
-              <div className="relative z-10 transition-transform duration-700 ease-out group-hover:-translate-y-8">
-                <div className="font-mono text-label-xs uppercase tracking-[0.18em] text-warning-red transition-opacity duration-500 ease-out group-hover:opacity-0">
+              <div className="relative z-10">
+                <div className="font-mono text-label-xs uppercase tracking-[0.18em] text-warning-red">
                   {app.node}
                 </div>
                 <h2 className="mt-5 font-mono text-technical-md uppercase text-industrial-silver">
@@ -152,7 +163,10 @@ export default async function IndustriesPage({ params }: { params: Promise<{ loc
                 </h2>
                 <p className="mt-5 font-mono text-data-sm uppercase text-outline">{appCopy.summary}</p>
               </div>
-              <div className="absolute bottom-0 left-0 right-0 h-28 overflow-hidden transition-all duration-700 ease-out group-hover:h-36">
+              <span className="relative z-10 mt-6 inline-flex w-fit items-center border border-graphite-muted px-3 py-2 font-mono text-[10px] uppercase tracking-[0.14em] text-industrial-silver transition-colors group-hover:border-warning-red group-hover:text-warning-red">
+                {t("explore_sector")} <span aria-hidden="true">-&gt;</span>
+              </span>
+              <div className="absolute bottom-0 left-0 right-0 h-28 overflow-hidden">
                 <Image
                   src={app.heroImage}
                   alt=""
@@ -168,6 +182,35 @@ export default async function IndustriesPage({ params }: { params: Promise<{ loc
           );
         })}
       </div>
+      <section className="mt-20 border border-graphite-muted bg-surface-container-low/45 p-6 md:p-8">
+        <span className="font-mono text-label-xs uppercase tracking-[0.18em] text-warning-red">
+          {t("cta_label")}
+        </span>
+        <div className="mt-5 grid gap-6 lg:grid-cols-[1fr_auto] lg:items-end">
+          <div>
+            <h2 className="font-mono text-headline-md-mobile uppercase text-industrial-silver md:text-headline-md">
+              {t("cta_title")}
+            </h2>
+            <p className="mt-4 max-w-3xl font-mono text-technical-md leading-relaxed text-on-surface-variant">
+              {t("cta_copy")}
+            </p>
+          </div>
+          <div className="flex flex-wrap gap-3">
+            <Link
+              href={localizePath(locale, "/contact")}
+              className="border border-warning-red bg-warning-red px-5 py-3 font-mono text-label-xs uppercase tracking-[0.18em] text-graphite-deep transition-colors hover:bg-warning-red/85"
+            >
+              {t("cta_contact")}
+            </Link>
+            <Link
+              href={localizePath(locale, "/rfq")}
+              className="border border-graphite-muted px-5 py-3 font-mono text-label-xs uppercase tracking-[0.18em] text-industrial-silver transition-colors hover:border-warning-red hover:text-warning-red"
+            >
+              {t("cta_rfq")}
+            </Link>
+          </div>
+        </div>
+      </section>
     </PageShell>
   );
 }
