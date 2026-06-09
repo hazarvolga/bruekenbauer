@@ -186,7 +186,13 @@
     "sourcing_partner": "Sourcing Partner",
     "censray_desc": "Fortschrittliche Sensor- und Steuerungslösungen für IoT, erneuerbare Energien, Automotive und industrielle Automatisierung.",
     "iyaksh_desc": "KI-gestützte Robotik- und Automatisierungslösungen für intelligentere, effizientere und vernetzte Abläufe.",
-    "suntek_desc": "Strategische Sourcing- und Technologiekooperation für elektronische Komponenten, technische Systeme und industrielle Anwendungen."
+    "suntek_desc": "Strategische Sourcing- und Technologiekooperation für elektronische Komponenten, technische Systeme und industrielle Anwendungen.",
+    "esa_desc": "Europäische Raumfahrtprogramme und institutionelle Aerospace-Zusammenarbeit in Forschung, Engineering und Missionsumfeldern.",
+    "nasa_desc": "Weltraumforschung, Luft- und Raumfahrtentwicklung sowie missionstaugliche Technologieprogramme für hochzuverlässige Engineering-Kontexte.",
+    "airbus_desc": "Defence-, Aerospace-, Satelliten- und sichere Kommunikationsprogramme mit hohen Anforderungen an Engineering und Lieferkontinuität.",
+    "thales_desc": "Raumsysteme, Satelliteninfrastruktur und missionskritische Technologie-Ökosysteme für anspruchsvolle Aerospace-Programme.",
+    "swisscom_desc": "Schweizer Kommunikationsinfrastruktur, Enterprise-Konnektivität und digitale Service-Ökosysteme für sichere industrielle Abläufe.",
+    "stadler_desc": "Bahntechnologie, Mobilitätssysteme und Verkehrsinfrastrukturprogramme mit hohen Anforderungen an Zuverlässigkeit."
   },
   "MetaData": {
     "title": "brückenbauer GmbH: Wir beraten nicht nur",

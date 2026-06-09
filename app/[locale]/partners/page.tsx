@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { PageShell } from "@/components/motion/MotionProvider";
 import { normalizeLocale } from "@/data/localizedContent";
+import { cn } from "@/lib/utils";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 
 const metadataCopy = {
@@ -11,11 +12,13 @@ const metadataCopy = {
   },
   de: {
     title: "Strategische Partner — brückenbauer GmbH",
-    description: "Kooperationen in fortschrittlichen KI-Produkten, Mikroelektronik und elektrischen Geräten.",
+    description:
+      "Kooperationen in fortschrittlichen KI-Produkten, Mikroelektronik und elektrischen Geräten.",
   },
   fr: {
     title: "Partenaires stratégiques — brückenbauer GmbH",
-    description: "Collaborations autour des produits IA avancés, de la microélectronique et des dispositifs électriques.",
+    description:
+      "Collaborations autour des produits IA avancés, de la microélectronique et des dispositifs électriques.",
   },
 };
 
@@ -55,6 +58,54 @@ export default async function PartnersPage({ params }: { params: Promise<{ local
       type: t("strategic_partner"),
       description: t("suntek_desc"),
     },
+    {
+      id: "ESA",
+      name: "ESA",
+      logo: "/images/partners/esa-logo-transparent.png",
+      type: t("strategic_partner"),
+      description: t("esa_desc"),
+      logoClassName: "p-8",
+    },
+    {
+      id: "NASA",
+      name: "NASA",
+      logo: "/images/partners/nasa-worm-logo.svg",
+      type: t("strategic_partner"),
+      description: t("nasa_desc"),
+      logoClassName: "p-8",
+    },
+    {
+      id: "AIRBUS_DEFENCE_SPACE",
+      name: "Airbus Defence & Space",
+      logo: "/images/partners/airbus-defense-space.svg",
+      type: t("technology_partner"),
+      description: t("airbus_desc"),
+      logoClassName: "p-7",
+    },
+    {
+      id: "THALES_ALENIA_SPACE",
+      name: "Thales Alenia Space",
+      logo: "/images/partners/thales-alenia-space-logo.svg",
+      type: t("technology_partner"),
+      description: t("thales_desc"),
+      logoClassName: "p-8",
+    },
+    {
+      id: "SWISSCOM",
+      name: "Swisscom",
+      logo: "/images/partners/swisscom-logo.svg",
+      type: t("strategic_partner"),
+      description: t("swisscom_desc"),
+      logoClassName: "p-7",
+    },
+    {
+      id: "STADLER_RAIL",
+      name: "Stadler Rail",
+      logo: "/images/partners/stadler-logo.png",
+      type: t("technology_partner"),
+      description: t("stadler_desc"),
+      logoClassName: "p-7",
+    },
   ];
 
   return (
@@ -81,7 +132,10 @@ export default async function PartnersPage({ params }: { params: Promise<{ local
                   src={partner.logo}
                   alt={`${partner.name} logo`}
                   fill
-                  className="object-contain p-6 grayscale transition-all duration-500 group-hover:grayscale-0"
+                  className={cn(
+                    "object-contain p-6 grayscale transition-all duration-500 group-hover:grayscale-0",
+                    partner.logoClassName
+                  )}
                   priority={partner.id === "CENSRAY"}
                 />
               </div>

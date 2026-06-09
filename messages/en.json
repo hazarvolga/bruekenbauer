@@ -186,7 +186,13 @@
     "sourcing_partner": "Sourcing Partner",
     "censray_desc": "Advanced sensing and control solutions for IoT, renewable energy, automotive, and industrial automation applications.",
     "iyaksh_desc": "Providing AI-driven robotics and automation solutions that enable smarter, more efficient, and connected operations.",
-    "suntek_desc": "Strategic sourcing and technology collaboration for electronic components, engineered systems, and industrial applications."
+    "suntek_desc": "Strategic sourcing and technology collaboration for electronic components, engineered systems, and industrial applications.",
+    "esa_desc": "European space programs and institutional aerospace collaboration across research, engineering, and mission ecosystems.",
+    "nasa_desc": "Space exploration, aerospace research, and mission-grade technology programs for high-reliability engineering contexts.",
+    "airbus_desc": "Defence, aerospace, satellite, and secure communications programs requiring advanced engineering and supply continuity.",
+    "thales_desc": "Space systems, satellite infrastructure, and mission-critical technology ecosystems for demanding aerospace programs.",
+    "swisscom_desc": "Swiss communications infrastructure, enterprise connectivity, and digital service ecosystems for secure industrial operations.",
+    "stadler_desc": "Rail technology, mobility systems, and transportation infrastructure programs with demanding reliability requirements."
   },
   "MetaData": {
     "title": "brückenbauer GmbH: We don't just advise",
