@@ -457,7 +457,7 @@ export const applicationCopies: Record<
         "Qualifizierte Instrumentierung und Diagnosesysteme für hochpräzise Kalibrierung, Laboranalyse und Fertigungslinien.",
       detail: {
         intro:
-          "Präzisionsprüf-, Labordiagnose- und Kalibrierprogramme erfordern hochstabile und zertifizierte Komponenten. Wir liefern rückverfolgbare passive Bauelemente, Sensoren und EMV-Lösungen für exakte Messungen.",
+          "Präzisionsprüf-, Labordiagnose- und Kalibrierprogramme benötigen vollständige Instrumentierungs- und Messsysteme, die stabil, rückverfolgbar und validierbar bleiben. Wir unterstützen Teams mit qualifizierten Geräten, Systemintegration, Inbetriebnahme und Lebenszyklusplanung für anspruchsvolle Messumgebungen.",
         applications: [
           "Labordiagnostik & Analysegeräte",
           "Industrielle Kalibriersysteme",
@@ -480,7 +480,7 @@ export const applicationCopies: Record<
         "Hocheffiziente Stromversorgungen, Netzschnittstellen und robuste Verteilerbaugruppen für den unterbrechungsfreien Industriebetrieb.",
       detail: {
         intro:
-          "Kontinuierliche Stromversorgung, saubere Energieumwandlung und stabile Netzschnittstellen bilden das Rückgrat moderner Infrastruktur. Wir liefern robuste Transformatoren, Drosseln, Leistungsmodule und Sensoren.",
+          "Kontinuierliche Stromversorgung, saubere Energieumwandlung und stabile Netzschnittstellen bilden das Rückgrat moderner Infrastruktur. Wir unterstützen schlüsselfertige Power-Conversion-, USV-, Backup-Power- und Verteilprogramme mit Systemintegration, Zuverlässigkeitsplanung und langfristiger Lebenszykluskontrolle.",
         applications: [
           "Unterbrechungsfreie Stromversorgungen (USV)",
           "Netzgekoppelte Wechselrichter & Verteiler",
@@ -646,7 +646,7 @@ export const applicationCopies: Record<
         "Systèmes d'instrumentation et de diagnostic qualifiés pour l'étalonnage de haute précision, l'analyse en laboratoire et les lignes de production.",
       detail: {
         intro:
-          "Les programmes de test de précision, de diagnostic de laboratoire et d'étalonnage exigent des composants hautement stables et certifiés. Nous fournissons des composants passifs, des capteurs et des solutions CEM traçables.",
+          "Les programmes de test de précision, de diagnostic de laboratoire et d'étalonnage reposent sur des systèmes complets d'instrumentation et de mesure qui restent stables, traçables et faciles à valider. Nous accompagnons les équipes avec des équipements qualifiés, l'intégration système, la mise en service et la planification du cycle de vie.",
         applications: [
           "Diagnostics de laboratoire & analyseurs",
           "Systèmes d'étalonnage industriels",
@@ -669,7 +669,7 @@ export const applicationCopies: Record<
         "Alimentations à haut rendement, interfaces réseau et modules de distribution robustes pour un fonctionnement industriel ininterrompu.",
       detail: {
         intro:
-          "Une alimentation continue, une conversion d'énergie propre et des interfaces réseau stables constituent l'épine dorsale des infrastructures modernes. Nous livrons des transformateurs, des selfs, des modules de puissance et des capteurs robustes.",
+          "Une alimentation continue, une conversion d'énergie propre et des interfaces réseau stables constituent l'épine dorsale des infrastructures modernes. Nous accompagnons les programmes clés en main de conversion de puissance, d'UPS, d'alimentation de secours et de distribution avec intégration système, planification de fiabilité et maîtrise du cycle de vie.",
         applications: [
           "Alimentations sans interruption (ASI / UPS)",
           "Convertisseurs connectés au réseau & unités de distribution",
@@ -837,12 +837,7 @@ export const powerFamilyCopies: Record<
         "Geringe Verluste",
         "Einfache Integration",
       ],
-      targetApplications: [
-        "Industrial Drives",
-        "Automotive",
-        "Solar PV & BESS",
-        "Haushaltsgeräte",
-      ],
+      targetApplications: ["Industrial Drives", "Automotive", "Solar PV & BESS", "Haushaltsgeräte"],
     },
     sic: {
       label: "Siliziumkarbid-Schaltarchitektur",

@@ -154,7 +154,7 @@ const applicationDetails: Record<
   },
   "Test & Measurement Systems": {
     intro:
-      "Precision testing, laboratory diagnostic, and calibration programs require highly stable and certified components. We provide traceable passives, sensors, and EMV solutions that ensure exact measurement under any conditions.",
+      "Precision testing, laboratory diagnostics, and calibration programs depend on complete instrumentation systems that remain stable, traceable, and easy to validate. We support teams with qualified equipment, integration guidance, commissioning support, and lifecycle planning for demanding measurement environments.",
     applications: [
       "Laboratory diagnostics & analyzers",
       "Industrial calibration systems",
@@ -172,7 +172,7 @@ const applicationDetails: Record<
   },
   "Power Supply & Grid Infrastructure": {
     intro:
-      "Continuous power supply, clean energy conversion, and stable grid interfaces form the backbone of modern infrastructure. We deliver rugged transformers, chokes, power modules, and sensors designed to meet absolute reliability standards.",
+      "Continuous power supply, clean energy conversion, and stable grid interfaces form the backbone of modern infrastructure. We support turnkey power conversion, UPS, backup power, and distribution programs with system-level integration, reliability planning, and long-term lifecycle control.",
     applications: [
       "Uninterruptible power supplies (UPS)",
       "Grid-tie converters & distribution units",
