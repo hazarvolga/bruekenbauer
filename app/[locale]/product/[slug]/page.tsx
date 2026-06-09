@@ -65,38 +65,42 @@ export default async function ProductDetailPage({
   if (!productSource) notFound();
   const product = getLocalizedProduct(productSource, normalizedLocale);
   const labels = uiCopy[normalizedLocale].product;
+  const relatedProducts = products
+    .filter((item) => item.group === productSource.group && item.slug !== productSource.slug)
+    .slice(0, 3)
+    .map((item) => getLocalizedProduct(item, normalizedLocale));
   const schema = {
     "@context": "https://schema.org",
     "@type": "Product",
-    "name": product.name,
-    "image": `https://brueckenbauer.com${product.image}`,
-    "description": product.summary,
-    "sku": product.partNumber,
-    "mpn": product.partNumber,
-    "brand": {
+    name: product.name,
+    image: `https://brueckenbauer.com${product.image}`,
+    description: product.summary,
+    sku: product.partNumber,
+    mpn: product.partNumber,
+    brand: {
       "@type": "Brand",
-      "name": "brückenbauer GmbH"
+      name: "brückenbauer GmbH",
     },
-    "offers": {
+    offers: {
       "@type": "AggregateOffer",
-      "priceCurrency": "EUR",
-      "lowPrice": "1.00",
-      "highPrice": "500.00",
-      "offerCount": "1",
-      "offers": [
+      priceCurrency: "EUR",
+      lowPrice: "1.00",
+      highPrice: "500.00",
+      offerCount: "1",
+      offers: [
         {
           "@type": "Offer",
-          "priceCurrency": "EUR",
-          "price": "100.00",
-          "availability": "https://schema.org/InStock",
-          "url": `https://brueckenbauer.com${localizePath(normalizedLocale, `/product/${product.slug}`)}`,
-          "seller": {
+          priceCurrency: "EUR",
+          price: "100.00",
+          availability: "https://schema.org/InStock",
+          url: `https://brueckenbauer.com${localizePath(normalizedLocale, `/product/${product.slug}`)}`,
+          seller: {
             "@type": "Organization",
-            "name": "brückenbauer GmbH"
-          }
-        }
-      ]
-    }
+            name: "brückenbauer GmbH",
+          },
+        },
+      ],
+    },
   };
 
   return (
@@ -105,18 +109,18 @@ export default async function ProductDetailPage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
       />
-      <section className="grid min-h-[calc(100vh-80px)] lg:grid-cols-[1.1fr_0.9fr]">
-        <div className="relative min-h-[460px] overflow-hidden border-b border-graphite-muted bg-surface-container-lowest lg:border-b-0 lg:border-r">
+      <section className="grid lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
+        <div className="relative aspect-square min-h-[360px] overflow-hidden border-b border-graphite-muted bg-surface-container-lowest lg:min-h-0 lg:border-b-0 lg:border-r">
           <Image
             src={product.imageDark ?? product.image}
             alt=""
             fill
             priority
             sizes="(min-width: 1024px) 55vw, 100vw"
-            className="object-cover opacity-90"
+            className="object-contain opacity-90"
           />
         </div>
-        <div className="flex flex-col justify-center px-margin-mobile py-16 md:px-margin-desktop">
+        <div className="flex flex-col px-margin-mobile py-12 md:px-margin-desktop lg:pt-28">
           <Link
             href={localizePath(normalizedLocale, "/products")}
             className="font-mono text-label-xs uppercase tracking-[0.18em] text-outline hover:text-warning-red"
@@ -149,6 +153,58 @@ export default async function ProductDetailPage({
           </div>
         </div>
       </section>
+      {relatedProducts.length > 0 ? (
+        <section className="px-margin-mobile pb-24 pt-10 md:px-margin-desktop lg:pl-[calc(theme(spacing.margin-desktop)+theme(spacing.20))]">
+          <div className="border-y border-graphite-muted py-8">
+            <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+              <div>
+                <span className="font-mono text-label-xs uppercase tracking-[0.18em] text-warning-red">
+                  Related product family
+                </span>
+                <h2 className="text-headline-sm mt-3 font-mono uppercase text-on-surface">
+                  Explore adjacent components
+                </h2>
+              </div>
+              <p className="max-w-xl font-mono text-data-sm uppercase leading-relaxed text-on-surface-variant">
+                Continue through the same engineering category with products that share the current
+                technical context.
+              </p>
+            </div>
+
+            <div className="mt-8 grid gap-gutter md:grid-cols-3">
+              {relatedProducts.map((relatedProduct) => (
+                <Link
+                  key={relatedProduct.slug}
+                  href={localizePath(normalizedLocale, `/product/${relatedProduct.slug}`)}
+                  className="group border border-graphite-muted bg-surface-container-low/45 p-4 transition-colors hover:border-industrial-silver hover:bg-surface-container-low/70"
+                >
+                  <div className="relative aspect-[4/3] overflow-hidden border border-graphite-muted bg-surface-container-lowest">
+                    <Image
+                      src={relatedProduct.imageDark ?? relatedProduct.image}
+                      alt=""
+                      fill
+                      sizes="(min-width: 768px) 30vw, 100vw"
+                      className="object-contain opacity-85 transition-opacity group-hover:opacity-100"
+                    />
+                  </div>
+                  <div className="mt-4 font-mono text-label-xs uppercase tracking-[0.18em] text-warning-red">
+                    {relatedProduct.partNumber}
+                  </div>
+                  <h3 className="mt-2 font-mono text-technical-md uppercase text-industrial-silver">
+                    {relatedProduct.name}
+                  </h3>
+                  <p className="mt-3 font-mono text-data-sm uppercase leading-relaxed text-on-surface-variant">
+                    {relatedProduct.summary}
+                  </p>
+                  <span className="mt-5 inline-flex font-mono text-label-xs uppercase tracking-[0.16em] text-outline transition-colors group-hover:text-warning-red">
+                    View product -&gt;
+                  </span>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      ) : null}
     </PageShell>
   );
 }
