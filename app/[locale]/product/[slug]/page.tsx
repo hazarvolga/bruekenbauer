@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import { TechnicalButton } from "@/components/layout/TechnicalButton";
 import { PageShell } from "@/components/motion/MotionProvider";
+import { RelatedProductsCarousel } from "@/components/product/RelatedProductsCarousel";
 import {
   getLocalizedProduct,
   localizePath,
@@ -67,7 +68,6 @@ export default async function ProductDetailPage({
   const labels = uiCopy[normalizedLocale].product;
   const relatedProducts = products
     .filter((item) => item.group === productSource.group && item.slug !== productSource.slug)
-    .slice(0, 3)
     .map((item) => getLocalizedProduct(item, normalizedLocale));
   const schema = {
     "@context": "https://schema.org",
@@ -120,31 +120,31 @@ export default async function ProductDetailPage({
             className="object-contain opacity-90"
           />
         </div>
-        <div className="flex flex-col px-margin-mobile py-12 md:px-margin-desktop lg:pt-28">
+        <div className="flex flex-col px-margin-mobile py-10 md:px-margin-desktop lg:py-16">
           <Link
             href={localizePath(normalizedLocale, "/products")}
             className="font-mono text-label-xs uppercase tracking-[0.18em] text-outline hover:text-warning-red"
           >
             {labels.technicalArchive}
           </Link>
-          <div className="mt-8 font-mono text-label-xs uppercase tracking-[0.18em] text-warning-red">
+          <div className="mt-6 font-mono text-label-xs uppercase tracking-[0.18em] text-warning-red">
             {product.partNumber}
           </div>
-          <h1 className="mt-4 font-mono text-headline-lg-mobile uppercase text-on-surface md:text-headline-lg">
+          <h1 className="mt-3 font-mono text-headline-lg-mobile uppercase leading-tight text-on-surface md:text-[42px] md:leading-[50px]">
             {product.name}
           </h1>
-          <p className="mt-6 font-mono text-technical-md text-on-surface-variant">
+          <p className="mt-5 font-mono text-[15px] leading-[22px] text-on-surface-variant">
             {product.summary}
           </p>
-          <dl className="mt-10 grid grid-cols-2 gap-4 border-y border-graphite-muted py-6 font-mono text-data-sm uppercase">
+          <dl className="mt-8 grid grid-cols-2 gap-3 border-y border-graphite-muted py-5 font-mono text-data-sm uppercase">
             {Object.entries(product.specs).map(([key, value]) => (
               <div key={key}>
                 <dt className="text-outline">{key}</dt>
-                <dd className="mt-2 text-industrial-silver">{value}</dd>
+                <dd className="mt-1.5 text-industrial-silver">{value}</dd>
               </div>
             ))}
           </dl>
-          <div className="mt-10 flex flex-wrap gap-4">
+          <div className="mt-8 flex flex-wrap gap-4">
             <TechnicalButton
               href={localizePath(normalizedLocale, `/rfq?productSlug=${product.slug}`)}
             >
@@ -159,49 +159,31 @@ export default async function ProductDetailPage({
             <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
               <div>
                 <span className="font-mono text-label-xs uppercase tracking-[0.18em] text-warning-red">
-                  Related product family
+                  {labels.relatedFamily}
                 </span>
                 <h2 className="text-headline-sm mt-3 font-mono uppercase text-on-surface">
-                  Explore adjacent components
+                  {labels.exploreAdjacent}
                 </h2>
               </div>
-              <p className="max-w-xl font-mono text-data-sm uppercase leading-relaxed text-on-surface-variant">
-                Continue through the same engineering category with products that share the current
-                technical context.
-              </p>
+              <div className="max-w-xl space-y-2">
+                <p className="font-mono text-data-sm uppercase leading-relaxed text-on-surface-variant">
+                  {labels.relatedIntro}
+                </p>
+                <div className="font-mono text-label-xs uppercase tracking-[0.16em] text-outline">
+                  {relatedProducts.length} {labels.relatedCount} / {labels.scrollHint} -&gt;
+                </div>
+              </div>
             </div>
 
-            <div className="mt-8 grid gap-gutter md:grid-cols-3">
-              {relatedProducts.map((relatedProduct) => (
-                <Link
-                  key={relatedProduct.slug}
-                  href={localizePath(normalizedLocale, `/product/${relatedProduct.slug}`)}
-                  className="group border border-graphite-muted bg-surface-container-low/45 p-4 transition-colors hover:border-industrial-silver hover:bg-surface-container-low/70"
-                >
-                  <div className="relative aspect-[4/3] overflow-hidden border border-graphite-muted bg-surface-container-lowest">
-                    <Image
-                      src={relatedProduct.imageDark ?? relatedProduct.image}
-                      alt=""
-                      fill
-                      sizes="(min-width: 768px) 30vw, 100vw"
-                      className="object-contain opacity-85 transition-opacity group-hover:opacity-100"
-                    />
-                  </div>
-                  <div className="mt-4 font-mono text-label-xs uppercase tracking-[0.18em] text-warning-red">
-                    {relatedProduct.partNumber}
-                  </div>
-                  <h3 className="mt-2 font-mono text-technical-md uppercase text-industrial-silver">
-                    {relatedProduct.name}
-                  </h3>
-                  <p className="mt-3 font-mono text-data-sm uppercase leading-relaxed text-on-surface-variant">
-                    {relatedProduct.summary}
-                  </p>
-                  <span className="mt-5 inline-flex font-mono text-label-xs uppercase tracking-[0.16em] text-outline transition-colors group-hover:text-warning-red">
-                    View product -&gt;
-                  </span>
-                </Link>
-              ))}
-            </div>
+            <RelatedProductsCarousel
+              locale={normalizedLocale}
+              products={relatedProducts}
+              labels={{
+                previousRelated: labels.previousRelated,
+                nextRelated: labels.nextRelated,
+                viewProduct: labels.viewProduct,
+              }}
+            />
           </div>
         </section>
       ) : null}
