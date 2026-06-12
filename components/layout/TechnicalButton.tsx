@@ -12,7 +12,7 @@ type Props = {
 };
 
 const base =
-  "inline-flex items-center justify-center gap-3 border px-6 py-3 font-mono text-label-xs uppercase tracking-[0.16em] transition-colors active:scale-[0.98]";
+  "inline-flex min-h-11 items-center justify-center gap-3 whitespace-normal border px-6 py-3 text-center font-mono text-label-xs uppercase tracking-[0.16em] transition-colors active:scale-[0.98]";
 
 /**
  * TechnicalButton — v02
