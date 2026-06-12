@@ -287,10 +287,10 @@ export const products: Product[] = [
     image: "/images/products/filters-ai.png",
     imageDark: "/images/products-premium/dark/filters.webp",
     summary:
-      "One-to-three-phase and compounded filters for print, inlet, and industrial EMC interfaces.",
+      "One-to-three-phase and multistage filters for PCB, inlet, and industrial EMC interfaces.",
     specs: {
       phases: "1 to 3 phases",
-      formats: "Compounded / print / inlet",
+      formats: "Multistage / PCB / inlet",
       function: "EMC filtering",
     },
   },
@@ -306,9 +306,9 @@ export const products: Product[] = [
     image: "/images/products/inductors-ai.png",
     imageDark: "/images/products-premium/dark/inductors.webp",
     summary:
-      "Magnetic, secondary, and unipolar inductor options for power and signal conditioning.",
+      "Power, shielded, and high-current inductor options for power and signal conditioning.",
     specs: {
-      types: "Magnetic / secondary / unipolar",
+      types: "Power / shielded / high current",
       function: "Inductance",
       integration: "PCB / module",
     },
@@ -362,7 +362,11 @@ export const products: Product[] = [
     imageDark: "/images/products-premium/dark/sic.webp",
     summary:
       "SiC half-bridge, power diode, and three-phase options for efficient power conversion.",
-    specs: { topology: "Half bridge / 3 phase", devices: "Power diodes", material: "SiC" },
+    specs: {
+      topology: "Half bridge / 3 phase",
+      devices: "Power diodes",
+      "semiconductor material": "Silicon carbide (SiC)",
+    },
   },
   {
     slug: "mosfet",

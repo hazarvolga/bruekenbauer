@@ -198,7 +198,7 @@ export const productGroupCopies: Record<SupportedLocale, Record<ProductGroup, Pr
       title: "Passives",
       shortDescription: "Resistors, capacitors, MLCC packages, and quartz timing components.",
       description:
-        "The foundation of stable circuitry, our passive components offer unmatched reliability under continuous stress. Discover our extensive selection of resistors, MLCC capacitors, and precision quartz timing components for high-end electronics.",
+        "We source and distribute passive components from qualified suppliers for industrial and electronic applications. The portfolio covers resistors, film and MLCC capacitors, and quartz timing components with application support, supply continuity, and lifecycle requirements in view.",
     },
     Electromechanics: {
       title: "Electromechanics",
@@ -255,7 +255,7 @@ export const productGroupCopies: Record<SupportedLocale, Record<ProductGroup, Pr
       title: "Passive Bauelemente",
       shortDescription: "Widerstände, Kondensatoren, MLCC-Pakete und Quarz-Timing-Komponenten.",
       description:
-        "Passive Bauelemente bilden die Grundlage stabiler Schaltungen. Unser Portfolio umfasst Widerstände, MLCC-Kondensatoren und präzise Quarz-Timing-Komponenten für hochwertige Elektronik.",
+        "Wir beschaffen und vertreiben passive Bauelemente qualifizierter Lieferanten für industrielle und elektronische Anwendungen. Das Portfolio umfasst Widerstände, Film- und MLCC-Kondensatoren sowie Quarz-Timing-Komponenten mit Blick auf Applikationssupport, Lieferkontinuität und Lebenszyklusanforderungen.",
     },
     Electromechanics: {
       title: "Elektromechanik",
@@ -312,7 +312,7 @@ export const productGroupCopies: Record<SupportedLocale, Record<ProductGroup, Pr
       title: "Composants passifs",
       shortDescription: "Résistances, condensateurs, packages MLCC et composants quartz de timing.",
       description:
-        "Les composants passifs constituent la base de circuits stables. Notre portefeuille couvre les résistances, condensateurs MLCC et composants quartz de précision pour électronique haut de gamme.",
+        "Nous assurons le sourcing et la distribution de composants passifs provenant de fournisseurs qualifiés pour les applications industrielles et électroniques. Le portefeuille couvre les résistances, les condensateurs film et MLCC ainsi que les composants de synchronisation à quartz, avec une attention portée au support applicatif, à la continuité d'approvisionnement et au cycle de vie.",
     },
     Electromechanics: {
       title: "Électromécanique",
@@ -471,7 +471,8 @@ export const applicationCopies: Record<
         ],
         strengthsTitle: "Warum Medizintechnik-Kunden auf uns setzen",
         strengths: [
-          "Komponenten mit medizinischer Eignung, einschließlich ISO 13485 und YSI400",
+          "Komponenten von Lieferanten mit relevanten Qualitätsmanagementsystemen wie ISO 13485",
+          "YSI400-kompatible Temperatursensorik für geeignete medizinische Anwendungen",
           "Zuverlässige Lieferketten und Rückverfolgbarkeit mit CoC und CoO",
           "Langzeitverfügbarkeit für Geräte mit Zulassungszyklen",
           "Individuelle Unterstützung bei Auswahl und Design-In",
@@ -660,7 +661,8 @@ export const applicationCopies: Record<
         ],
         strengthsTitle: "Pourquoi les clients medtech s'appuient sur nous",
         strengths: [
-          "Composants adaptés au médical, notamment ISO 13485 et YSI400",
+          "Composants issus de fournisseurs appliquant des systèmes qualité pertinents tels que l'ISO 13485",
+          "Solutions de détection de température compatibles YSI400 pour les applications médicales appropriées",
           "Supply chains fiables et traçabilité avec CoC et CoO",
           "Disponibilité long terme pour dispositifs avec cycles d'homologation",
           "Support individuel pour sélection et design-in",

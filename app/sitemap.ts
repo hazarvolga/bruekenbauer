@@ -15,7 +15,6 @@ const staticRoutes: MetadataRoute.Sitemap = [
   { url: `${BASE_URL}/rfq`, priority: 0.8, changeFrequency: "monthly" },
   { url: `${BASE_URL}/oem-supply`, priority: 0.7, changeFrequency: "monthly" },
   { url: `${BASE_URL}/logistics`, priority: 0.6, changeFrequency: "monthly" },
-  { url: `${BASE_URL}/compliance`, priority: 0.6, changeFrequency: "monthly" },
   { url: `${BASE_URL}/documents`, priority: 0.5, changeFrequency: "monthly" },
   { url: `${BASE_URL}/search`, priority: 0.7, changeFrequency: "weekly" },
   { url: `${BASE_URL}/privacy-policy`, priority: 0.3, changeFrequency: "yearly" },

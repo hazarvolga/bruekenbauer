@@ -136,7 +136,7 @@ const applicationDetails: Record<
   },
   "Medical & Healthcare": {
     intro:
-      "In medical technology, every detail matters. Electronic components must meet the highest quality standards, remain available over the long term, and be absolutely reliable, especially for patient-near devices, diagnostic systems, and medical wearables. As a specialized distributor, we support you with tested components, technical know-how, and a clear understanding of regulatory requirements.",
+      "In medical technology, every detail matters. Electronic components must meet demanding quality requirements, remain available over the long term, and be reliable, especially for patient-near devices, diagnostic systems, and medical wearables. As a specialized distributor, we support you with components from qualified suppliers, technical know-how, and a clear understanding of application-specific requirements.",
     applications: [
       "Diagnostics",
       "Patient monitoring",
@@ -146,7 +146,8 @@ const applicationDetails: Record<
     ],
     strengthsTitle: "Why medical technology customers rely on us",
     strengths: [
-      "Components suitable for medical applications, including ISO 13485 and YSI400",
+      "Components sourced from suppliers operating under relevant quality-management frameworks such as ISO 13485",
+      "YSI400-compatible temperature-sensing options for suitable medical applications",
       "Reliable supply chains and traceability with CoC and CoO",
       "Long-term availability for devices with approval cycles",
       "Individual support with selection and design-in",

@@ -6,7 +6,6 @@ const railCopy = {
     nav: "Technical navigation",
     power: "Power Management",
     documents: "Documents",
-    compliance: "Compliance",
     operator: "Operator",
     contact: "Contact",
   },
@@ -14,7 +13,6 @@ const railCopy = {
     nav: "Technische Navigation",
     power: "Power Management",
     documents: "Dokumente",
-    compliance: "Compliance",
     operator: "Kontakt",
     contact: "Kontakt",
   },
@@ -22,7 +20,6 @@ const railCopy = {
     nav: "Navigation technique",
     power: "Gestion de l'énergie",
     documents: "Documents",
-    compliance: "Conformité",
     operator: "Contact",
     contact: "Contact",
   },
@@ -34,7 +31,6 @@ export function SideRail({ locale = "en" }: { locale?: string }) {
   const railLinks = [
     { href: "/intro", icon: "power", label: copy.power },
     { href: "/documents", icon: "archive", label: copy.documents },
-    { href: "/compliance", icon: "shield", label: copy.compliance },
   ];
 
   return (

@@ -10,7 +10,6 @@ const footerCopy = {
     response: "Status: Available for New Projects",
     commercialRegister: "Commercial Register Canton Bern",
     managingDirector: "Managing Director",
-    compliance: "Compliance",
     documents: "Documents",
     contactLink: "Contact",
     privacy: "Privacy Policy",
@@ -27,7 +26,6 @@ const footerCopy = {
     response: "Status: Verfügbar für neue Projekte",
     commercialRegister: "Handelsregister Kanton Bern",
     managingDirector: "Geschäftsführer",
-    compliance: "Compliance",
     documents: "Dokumente",
     contactLink: "Kontakt",
     privacy: "Datenschutzerklärung",
@@ -44,7 +42,6 @@ const footerCopy = {
     response: "Statut : disponible pour de nouveaux projets",
     commercialRegister: "Registre du commerce Canton de Berne",
     managingDirector: "Directeur général",
-    compliance: "Conformité",
     documents: "Documents",
     contactLink: "Contact",
     privacy: "Politique de confidentialité",
@@ -101,9 +98,6 @@ export function Footer({ locale }: { locale: string }) {
           </Link>
         </div>
         <div className="flex flex-wrap gap-3 uppercase">
-          <Link href={localizePath(normalizedLocale, "/compliance")} className="border border-graphite-muted px-3 py-2 text-on-surface-variant transition-colors hover:border-warning-red hover:text-warning-red">
-            {copy.compliance}
-          </Link>
           <Link href={localizePath(normalizedLocale, "/documents")} className="border border-graphite-muted px-3 py-2 text-on-surface-variant transition-colors hover:border-warning-red hover:text-warning-red">
             {copy.documents}
           </Link>

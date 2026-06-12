@@ -38,7 +38,6 @@ export default function HomePage() {
           <div className="mt-8 grid max-w-xl gap-3">
             {[
               [t("features.search_title"), "/search", t("features.search_desc")],
-              [t("features.compliance_title"), "/compliance", t("features.compliance_desc")],
               [t("features.oem_title"), "/oem-supply", t("features.oem_desc")],
             ].map(([label, href, copy]) => (
               <Link
