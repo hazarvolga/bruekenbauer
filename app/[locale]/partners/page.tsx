@@ -139,11 +139,11 @@ export default async function PartnersPage({ params }: { params: Promise<{ local
                   priority={partner.id === "CENSRAY"}
                 />
               </div>
-              <div className="mt-6 flex flex-col items-start gap-3 border-b border-graphite-muted pb-4 xl:flex-row xl:items-center xl:justify-between xl:gap-4">
+              <div className="mt-6 flex flex-col gap-3 border-b border-graphite-muted pb-4">
                 <h2 className="font-mono text-technical-md uppercase text-industrial-silver">
                   {partner.name}
                 </h2>
-                <span className="shrink-0 border border-warning-red/70 px-3 py-1 font-mono text-[10px] uppercase tracking-[0.14em] text-warning-red">
+                <span className="inline-flex w-full items-center justify-center border border-warning-red/70 px-3 py-1.5 text-center font-mono text-[10px] uppercase tracking-[0.14em] text-warning-red">
                   {partner.type}
                 </span>
               </div>
