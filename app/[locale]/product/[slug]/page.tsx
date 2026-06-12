@@ -4,13 +4,16 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import { TechnicalButton } from "@/components/layout/TechnicalButton";
 import { PageShell } from "@/components/motion/MotionProvider";
+import { PowerManagementDetails } from "@/components/product/PowerManagementDetails";
 import { RelatedProductsCarousel } from "@/components/product/RelatedProductsCarousel";
 import {
+  getPowerFamilyCopy,
   getLocalizedProduct,
   localizePath,
   normalizeLocale,
   uiCopy,
 } from "@/data/localizedContent";
+import { powerManagementFamilies } from "@/data/powerManagement";
 import { products } from "@/data/products";
 
 export function generateStaticParams() {
@@ -65,6 +68,10 @@ export default async function ProductDetailPage({
   const productSource = products.find((item) => item.slug === slug);
   if (!productSource) notFound();
   const product = getLocalizedProduct(productSource, normalizedLocale);
+  const powerFamilySource = powerManagementFamilies.find((item) => item.slug === productSource.slug);
+  const powerFamily = powerFamilySource
+    ? getPowerFamilyCopy(powerFamilySource, normalizedLocale)
+    : null;
   const labels = uiCopy[normalizedLocale].product;
   const relatedProducts = products
     .filter((item) => item.group === productSource.group && item.slug !== productSource.slug)
@@ -153,6 +160,9 @@ export default async function ProductDetailPage({
           </div>
         </div>
       </section>
+      {powerFamily ? (
+        <PowerManagementDetails family={powerFamily} locale={normalizedLocale} />
+      ) : null}
       {relatedProducts.length > 0 ? (
         <section className="px-margin-mobile pb-24 pt-10 md:px-margin-desktop lg:pl-[calc(theme(spacing.margin-desktop)+theme(spacing.20))]">
           <div className="border-y border-graphite-muted py-8">

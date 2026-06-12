@@ -98,7 +98,7 @@ export default async function IntroPage({ params }: { params: Promise<{ locale: 
               className="group relative grid overflow-hidden border border-graphite-muted bg-surface-container-low/70 p-5 backdrop-blur-xl transition-colors hover:border-industrial-silver md:grid-cols-[minmax(0,0.78fr)_minmax(0,1.22fr)] md:gap-gutter"
             >
               <Link
-                href={localizePath(normalizedLocale, `/power-management/${family.slug}`)}
+                href={localizePath(normalizedLocale, `/product/${family.slug}`)}
                 className="absolute inset-0 z-20"
                 aria-label={`Open ${family.name} product details`}
               />

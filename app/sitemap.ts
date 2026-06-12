@@ -2,7 +2,6 @@ import type { MetadataRoute } from "next";
 import { products } from "@/data/products";
 import { productTaxonomy } from "@/data/productTaxonomy";
 import { applications } from "@/data/applications";
-import { powerManagementFamilies } from "@/data/powerManagement";
 
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://bruekenbauer.vercel.app";
 
@@ -41,17 +40,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     changeFrequency: "monthly",
   }));
 
-  const powerManagementRoutes: MetadataRoute.Sitemap = powerManagementFamilies.map((family) => ({
-    url: `${BASE_URL}/power-management/${family.slug}`,
-    priority: 0.8,
-    changeFrequency: "monthly",
-  }));
-
-  return [
-    ...staticRoutes,
-    ...productRoutes,
-    ...categoryRoutes,
-    ...industryRoutes,
-    ...powerManagementRoutes,
-  ];
+  return [...staticRoutes, ...productRoutes, ...categoryRoutes, ...industryRoutes];
 }

@@ -352,7 +352,7 @@ export const products: Product[] = [
   {
     slug: "sic",
     partNumber: "BR-PWR-002",
-    name: "SiC",
+    name: "SiC MOSFET",
     group: "Power Management",
     applications: mobilityApps,
     status: "Optimal",
