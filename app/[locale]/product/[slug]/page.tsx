@@ -179,9 +179,6 @@ export default async function ProductDetailPage({
                 <p className="font-mono text-data-sm uppercase leading-relaxed text-on-surface-variant">
                   {labels.relatedIntro}
                 </p>
-                <div className="font-mono text-label-xs uppercase tracking-[0.16em] text-outline">
-                  {relatedProducts.length} {labels.relatedCount} / {labels.scrollHint} -&gt;
-                </div>
               </div>
             </div>
 

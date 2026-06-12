@@ -37,7 +37,7 @@ export function RelatedProductsCarousel({ locale, products, labels }: RelatedPro
           <button
             type="button"
             onClick={() => scrollTrack("previous")}
-            className="flex h-9 w-12 items-center justify-center border border-graphite-muted bg-surface-container-low/60 font-mono text-label-xs uppercase tracking-[0.16em] text-industrial-silver transition-colors hover:border-warning-red hover:text-warning-red focus-visible:border-warning-red focus-visible:outline-none"
+            className="flex h-11 w-12 items-center justify-center border border-graphite-muted bg-surface-container-low/60 font-mono text-label-xs uppercase tracking-[0.16em] text-industrial-silver transition-colors hover:border-warning-red hover:text-warning-red focus-visible:border-warning-red focus-visible:outline-none"
             aria-label={labels.previousRelated}
           >
             &lt;
@@ -45,7 +45,7 @@ export function RelatedProductsCarousel({ locale, products, labels }: RelatedPro
           <button
             type="button"
             onClick={() => scrollTrack("next")}
-            className="flex h-9 w-12 items-center justify-center border border-warning-red bg-surface-container-low/60 font-mono text-label-xs uppercase tracking-[0.16em] text-warning-red transition-colors hover:bg-warning-red hover:text-black focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-warning-red"
+            className="flex h-11 w-12 items-center justify-center border border-warning-red bg-surface-container-low/60 font-mono text-label-xs uppercase tracking-[0.16em] text-warning-red transition-colors hover:bg-warning-red hover:text-black focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-warning-red"
             aria-label={labels.nextRelated}
           >
             &gt;
@@ -55,7 +55,7 @@ export function RelatedProductsCarousel({ locale, products, labels }: RelatedPro
 
       <div
         ref={trackRef}
-        className="scrollbar-none flex snap-x snap-mandatory gap-gutter overflow-x-auto pb-4 pr-[14%] sm:pr-[10%] lg:pr-0"
+        className="scrollbar-none flex items-stretch snap-x snap-mandatory gap-gutter overflow-x-auto pb-4 pr-[14%] sm:pr-[10%] lg:pr-0"
       >
         {products.map((relatedProduct) => (
           <Link
