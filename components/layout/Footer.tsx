@@ -58,28 +58,41 @@ export function Footer({ locale }: { locale: string }) {
 
   return (
     <footer className="border-t border-graphite-muted bg-surface px-margin-mobile py-8 font-mono text-data-sm text-on-surface-variant md:ml-20 md:px-gutter">
-      <div className="grid gap-6 border-b border-graphite-muted/40 pb-6 mb-6 md:grid-cols-3">
+      <div className="mb-6 grid gap-6 border-b border-graphite-muted/40 pb-6 md:grid-cols-3">
         <div>
-          <span className="text-label-xs text-outline uppercase block tracking-wider mb-2">{copy.headquarters}</span>
-          <p className="text-on-surface-variant leading-relaxed">
+          <span className="mb-2 block text-label-xs uppercase tracking-wider text-outline">
+            {copy.headquarters}
+          </span>
+          <p className="leading-relaxed text-on-surface-variant">
             brückenbauer GmbH<br />
             Dachsweg 12, 3075 Rüfenacht BE<br />
             {copy.country}
           </p>
         </div>
         <div>
-          <span className="text-label-xs text-outline uppercase block tracking-wider mb-2">{copy.registry}</span>
-          <p className="text-on-surface-variant leading-relaxed">
+          <span className="mb-2 block text-label-xs uppercase tracking-wider text-outline">
+            {copy.registry}
+          </span>
+          <p className="leading-relaxed text-on-surface-variant">
             UID: CHE-191.442.645<br />
             {copy.commercialRegister}<br />
             {copy.managingDirector}: Dr. Andreas Werthmüller
           </p>
         </div>
         <div>
-          <span className="text-label-xs text-outline uppercase block tracking-wider mb-2">{copy.contact}</span>
-          <p className="text-on-surface-variant leading-relaxed">
+          <span className="mb-2 block text-label-xs uppercase tracking-wider text-outline">
+            {copy.contact}
+          </span>
+          <p className="leading-relaxed text-on-surface-variant">
             Tel: +41 (0)76 222 45 54<br />
-            {copy.email}: <a href="mailto:bus.dev@brueckenbauer-gmbh.ch" className="text-warning-red hover:underline">bus.dev@brueckenbauer-gmbh.ch</a><br />
+            {copy.email}:{" "}
+            <a
+              href="mailto:bus.dev@brueckenbauer-gmbh.ch"
+              className="text-warning-red hover:underline"
+            >
+              bus.dev@brueckenbauer-gmbh.ch
+            </a>
+            <br />
             {copy.response}
           </p>
         </div>
@@ -87,21 +100,36 @@ export function Footer({ locale }: { locale: string }) {
       
       <div className="flex flex-col gap-4 border-t border-graphite-muted/50 pt-4 text-outline md:flex-row md:items-center md:justify-between">
         <div className="flex flex-wrap gap-5 text-[10px] uppercase tracking-[0.12em]">
-          <Link href={localizePath(normalizedLocale, "/privacy-policy")} className="transition-colors hover:text-warning-red">
+          <Link
+            href={localizePath(normalizedLocale, "/privacy-policy")}
+            className="transition-colors hover:text-warning-red"
+          >
             {copy.privacy}
           </Link>
-          <Link href={localizePath(normalizedLocale, "/terms-and-conditions")} className="transition-colors hover:text-warning-red">
+          <Link
+            href={localizePath(normalizedLocale, "/terms-and-conditions")}
+            className="transition-colors hover:text-warning-red"
+          >
             {copy.terms}
           </Link>
-          <Link href={localizePath(normalizedLocale, "/cookie-policy")} className="transition-colors hover:text-warning-red">
+          <Link
+            href={localizePath(normalizedLocale, "/cookie-policy")}
+            className="transition-colors hover:text-warning-red"
+          >
             {copy.cookies}
           </Link>
         </div>
         <div className="flex flex-wrap gap-3 uppercase">
-          <Link href={localizePath(normalizedLocale, "/documents")} className="border border-graphite-muted px-3 py-2 text-on-surface-variant transition-colors hover:border-warning-red hover:text-warning-red">
+          <Link
+            href={localizePath(normalizedLocale, "/documents")}
+            className="inline-flex min-h-11 items-center border border-graphite-muted px-3 py-2 text-on-surface-variant transition-colors hover:border-warning-red hover:text-warning-red"
+          >
             {copy.documents}
           </Link>
-          <Link href={localizePath(normalizedLocale, "/contact")} className="border border-graphite-muted px-3 py-2 text-on-surface-variant transition-colors hover:border-warning-red hover:text-warning-red">
+          <Link
+            href={localizePath(normalizedLocale, "/contact")}
+            className="inline-flex min-h-11 items-center border border-graphite-muted px-3 py-2 text-on-surface-variant transition-colors hover:border-warning-red hover:text-warning-red"
+          >
             {copy.contactLink}
           </Link>
         </div>
