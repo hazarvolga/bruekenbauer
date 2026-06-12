@@ -6,7 +6,8 @@ export const routing = defineRouting({
   defaultLocale: 'en',
   // localePrefix: 'as-needed' makes it so that English stays at `/`,
   // but German goes to `/de` and French goes to `/fr`.
-  localePrefix: 'as-needed'
+  localePrefix: 'as-needed',
+  localeDetection: false
 });
  
 export const {Link, redirect, usePathname, useRouter, getPathname} =

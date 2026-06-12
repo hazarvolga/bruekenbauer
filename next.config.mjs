@@ -7,6 +7,21 @@ const nextConfig = {
   // Required for Docker standalone deployment via Coolify
   output: "standalone",
 
+  async rewrites() {
+    return {
+      beforeFiles: [
+        {
+          source: "/",
+          destination: "/en",
+        },
+        {
+          source: "/:path((?!en(?:/|$)|de(?:/|$)|fr(?:/|$)|api(?:/|$)|_next(?:/|$)|_vercel(?:/|$)|.*\\..*).*)",
+          destination: "/en/:path*",
+        },
+      ],
+    };
+  },
+
   images: {
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
