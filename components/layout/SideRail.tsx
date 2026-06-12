@@ -4,21 +4,18 @@ import { localizePath, normalizeLocale } from "@/data/localizedContent";
 const railCopy = {
   en: {
     nav: "Technical navigation",
-    power: "Power Management",
     documents: "Documents",
     operator: "Operator",
     contact: "Contact",
   },
   de: {
     nav: "Technische Navigation",
-    power: "Power Management",
     documents: "Dokumente",
     operator: "Kontakt",
     contact: "Kontakt",
   },
   fr: {
     nav: "Navigation technique",
-    power: "Gestion de l'énergie",
     documents: "Documents",
     operator: "Contact",
     contact: "Contact",
@@ -29,7 +26,6 @@ export function SideRail({ locale = "en" }: { locale?: string }) {
   const normalizedLocale = normalizeLocale(locale);
   const copy = railCopy[normalizedLocale];
   const railLinks = [
-    { href: "/intro", icon: "power", label: copy.power },
     { href: "/documents", icon: "archive", label: copy.documents },
   ];
 
@@ -75,15 +71,6 @@ function RailIcon({ name }: { name: string }) {
     viewBox: "0 0 24 24",
     "aria-hidden": true,
   };
-
-  if (name === "power") {
-    return (
-      <svg {...common}>
-        <path d="M12 3v8" />
-        <path d="M7.2 6.8a7 7 0 1 0 9.6 0" />
-      </svg>
-    );
-  }
 
   if (name === "archive") {
     return (
