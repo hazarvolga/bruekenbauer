@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { TechnicalButton } from "@/components/layout/TechnicalButton";
+import { TechnicalButtonGroup } from "@/components/layout/TechnicalButtonGroup";
 import { PageShell } from "@/components/motion/MotionProvider";
 import { images } from "@/lib/assets";
 import { getTranslations, setRequestLocale } from "next-intl/server";
@@ -263,7 +264,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
               {t("cta.copy")}
             </p>
           </div>
-          <div className="flex flex-wrap gap-3">
+          <TechnicalButtonGroup className="md:w-72">
             <TechnicalButton href="/contact">{t("cta.contact")}</TechnicalButton>
             <TechnicalButton href="/rfq" variant="ghost">
               {t("cta.rfq")}
@@ -271,7 +272,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
             <TechnicalButton href="/contact" variant="ghost">
               {t("cta.consultation")}
             </TechnicalButton>
-          </div>
+          </TechnicalButtonGroup>
         </div>
       </section>
     </PageShell>

@@ -1,6 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
+import { TechnicalButton } from "@/components/layout/TechnicalButton";
+import { TechnicalButtonGroup } from "@/components/layout/TechnicalButtonGroup";
 import { PageShell } from "@/components/motion/MotionProvider";
 import { applications } from "@/data/applications";
 import { getTranslations, setRequestLocale } from "next-intl/server";
@@ -195,20 +197,14 @@ export default async function IndustriesPage({ params }: { params: Promise<{ loc
               {t("cta_copy")}
             </p>
           </div>
-          <div className="flex flex-wrap gap-3">
-            <Link
-              href={localizePath(locale, "/contact")}
-              className="border border-warning-red bg-warning-red px-5 py-3 font-mono text-label-xs uppercase tracking-[0.18em] text-graphite-deep transition-colors hover:bg-warning-red/85"
-            >
+          <TechnicalButtonGroup className="lg:w-64">
+            <TechnicalButton href={localizePath(locale, "/contact")}>
               {t("cta_contact")}
-            </Link>
-            <Link
-              href={localizePath(locale, "/rfq")}
-              className="border border-graphite-muted px-5 py-3 font-mono text-label-xs uppercase tracking-[0.18em] text-industrial-silver transition-colors hover:border-warning-red hover:text-warning-red"
-            >
+            </TechnicalButton>
+            <TechnicalButton href={localizePath(locale, "/rfq")} variant="ghost">
               {t("cta_rfq")}
-            </Link>
-          </div>
+            </TechnicalButton>
+          </TechnicalButtonGroup>
         </div>
       </section>
     </PageShell>

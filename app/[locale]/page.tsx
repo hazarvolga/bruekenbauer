@@ -2,6 +2,7 @@ import { Link } from "@/i18n/routing";
 import { useTranslations } from "next-intl";
 import { HudMetric } from "@/components/layout/HudMetric";
 import { TechnicalButton } from "@/components/layout/TechnicalButton";
+import { TechnicalButtonGroup } from "@/components/layout/TechnicalButtonGroup";
 import { PageShell } from "@/components/motion/MotionProvider";
 import { MaskedImageFrame, StaggerText } from "@/components/motion/Reveals";
 import { images } from "@/lib/assets";
@@ -54,12 +55,12 @@ export default function HomePage() {
               </Link>
             ))}
           </div>
-          <div className="mt-10 flex flex-wrap gap-4">
+          <TechnicalButtonGroup className="mt-10 max-w-xl">
             <TechnicalButton href="/products">{t("cta.explore_products")}</TechnicalButton>
             <TechnicalButton href="/rfq" variant="ghost">
               {t("cta.initiate_rfq")}
             </TechnicalButton>
-          </div>
+          </TechnicalButtonGroup>
         </div>
       </section>
     </PageShell>
