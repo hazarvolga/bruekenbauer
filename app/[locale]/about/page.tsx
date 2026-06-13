@@ -88,8 +88,8 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
 
   return (
     <PageShell className="min-h-screen pt-20 md:ml-20">
-      <section className="grid lg:min-h-[calc(100vh-80px)] lg:grid-cols-[1.08fr_0.92fr]">
-        <div className="flex flex-col justify-start px-margin-mobile py-12 md:px-margin-desktop md:py-16 lg:pb-16 lg:pt-28">
+      <section className="grid lg:min-h-[720px] lg:grid-cols-[1.08fr_0.92fr]">
+        <div className="flex flex-col justify-start px-margin-mobile py-12 md:px-margin-desktop md:py-16 lg:pb-12 lg:pt-20">
           <span className="font-mono text-label-xs uppercase tracking-[0.18em] text-warning-red">
             {t("label")}
           </span>
@@ -113,7 +113,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
             </p>
           </div>
         </div>
-        <div className="relative min-h-[460px] overflow-hidden border-t border-graphite-muted lg:min-h-[calc(100vh-80px)] lg:border-l lg:border-t-0">
+        <div className="relative min-h-[460px] overflow-hidden border-t border-graphite-muted lg:min-h-[720px] lg:border-l lg:border-t-0">
           <Image
             src={images.aboutHero}
             alt=""
