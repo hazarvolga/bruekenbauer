@@ -114,10 +114,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
             <div className="mt-6 divide-y divide-graphite-muted border-t border-graphite-muted">
               {services.map((service) => (
                 <div key={service.id} className="py-4">
-                  <div className="font-mono text-[10px] uppercase tracking-[0.16em] text-warning-red">
-                    {service.id}
-                  </div>
-                  <h3 className="mt-2 font-mono text-[15px] uppercase leading-tight text-industrial-silver">
+                  <h3 className="font-mono text-[15px] uppercase leading-tight text-industrial-silver">
                     {service.title}
                   </h3>
                   <p className="mt-3 font-mono text-[10px] uppercase leading-relaxed text-on-surface-variant">

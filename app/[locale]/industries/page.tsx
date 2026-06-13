@@ -101,7 +101,6 @@ export default async function IndustriesPage({ params }: { params: Promise<{ loc
       <div className="mt-8 grid gap-gutter md:grid-cols-2 xl:grid-cols-3">
         {group1.map((app) => {
           const appCopy = getApplicationCopy(locale, app);
-          const globalIndex = app.node.split("-")[1];
           return (
             <Link
               key={app.slug}
@@ -109,10 +108,7 @@ export default async function IndustriesPage({ params }: { params: Promise<{ loc
               className="reticle-corners group relative flex min-h-[340px] flex-col overflow-hidden border border-graphite-muted bg-surface-container-low/50 p-6 transition-colors duration-300 hover:border-industrial-silver hover:bg-surface-container-low/75 focus-visible:border-warning-red focus-visible:outline-none"
             >
               <div className="relative z-10">
-                <div className="font-mono text-label-xs uppercase tracking-[0.18em] text-warning-red">
-                  {app.node}
-                </div>
-                <h2 className="mt-5 font-mono text-technical-md uppercase text-industrial-silver">
+                <h2 className="font-mono text-technical-md uppercase text-industrial-silver">
                   {appCopy.name}
                 </h2>
                 <p className="mt-5 font-mono text-data-sm uppercase text-outline">{appCopy.summary}</p>
@@ -129,9 +125,6 @@ export default async function IndustriesPage({ params }: { params: Promise<{ loc
                   className="group-hover:scale-102 object-cover object-center transition-transform duration-700 ease-out"
                 />
               </div>
-              <span className="absolute bottom-4 right-5 z-10 font-mono text-data-sm text-outline">
-                {globalIndex}
-              </span>
             </Link>
           );
         })}
@@ -149,7 +142,6 @@ export default async function IndustriesPage({ params }: { params: Promise<{ loc
       <div className="mt-8 grid gap-gutter md:grid-cols-2 xl:grid-cols-3">
         {group2.map((app) => {
           const appCopy = getApplicationCopy(locale, app);
-          const globalIndex = app.node.split("-")[1];
           return (
             <Link
               key={app.slug}
@@ -157,10 +149,7 @@ export default async function IndustriesPage({ params }: { params: Promise<{ loc
               className="reticle-corners group relative flex min-h-[340px] flex-col overflow-hidden border border-graphite-muted bg-surface-container-low/50 p-6 transition-colors duration-300 hover:border-industrial-silver hover:bg-surface-container-low/75 focus-visible:border-warning-red focus-visible:outline-none"
             >
               <div className="relative z-10">
-                <div className="font-mono text-label-xs uppercase tracking-[0.18em] text-warning-red">
-                  {app.node}
-                </div>
-                <h2 className="mt-5 font-mono text-technical-md uppercase text-industrial-silver">
+                <h2 className="font-mono text-technical-md uppercase text-industrial-silver">
                   {appCopy.name}
                 </h2>
                 <p className="mt-5 font-mono text-data-sm uppercase text-outline">{appCopy.summary}</p>
@@ -177,9 +166,6 @@ export default async function IndustriesPage({ params }: { params: Promise<{ loc
                   className="group-hover:scale-102 object-cover object-center transition-transform duration-700 ease-out"
                 />
               </div>
-              <span className="absolute bottom-4 right-5 z-10 font-mono text-data-sm text-outline">
-                {globalIndex}
-              </span>
             </Link>
           );
         })}
