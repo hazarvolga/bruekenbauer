@@ -396,7 +396,7 @@ export const products: Product[] = [
     stock: "Series supply",
     leadTime: "16 days",
     image: "/images/products/converters.png",
-    imageDark: "/images/products-premium/dark/converters.webp",
+    imageDark: "/images/products-premium/dark/converters-v2.png",
     summary:
       "AC/DC, DC/DC, power supply, and plug converter options for regulated power interfaces.",
     specs: {

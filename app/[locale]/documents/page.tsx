@@ -5,7 +5,7 @@ import { setRequestLocale } from "next-intl/server";
 
 const copy = {
   en: {
-    label: "Technical archive",
+    label: "Downloadable documents",
     title: "Documents",
     revision: "Revision",
     fileSize: "File Size",
@@ -36,7 +36,7 @@ const copy = {
     },
   },
   de: {
-    label: "Technisches Archiv",
+    label: "Herunterladbare Dokumente",
     title: "Dokumente",
     revision: "Revision",
     fileSize: "Dateigröße",
@@ -67,7 +67,7 @@ const copy = {
     },
   },
   fr: {
-    label: "Archive technique",
+    label: "Documents téléchargeables",
     title: "Documents",
     revision: "Révision",
     fileSize: "Taille du fichier",
@@ -105,26 +105,26 @@ export default async function DocumentsPage({ params }: { params: Promise<{ loca
   const localized = copy[normalizeLocale(locale)];
 
   return (
-    <PageShell className="min-h-screen px-margin-mobile pb-24 pt-32 md:ml-20 md:px-margin-desktop">
+    <PageShell className="min-h-screen px-margin-mobile pb-12 pt-32 md:ml-20 md:px-margin-desktop">
       <span className="font-mono text-label-xs uppercase tracking-[0.18em] text-warning-red">
         {localized.label}
       </span>
       <h1 className="mt-5 font-mono text-headline-lg-mobile uppercase text-industrial-silver sm:text-headline-lg md:text-display-xl">
         {localized.title}
       </h1>
-      <div className="mt-12 grid gap-gutter md:grid-cols-3">
+      <div className="mt-10 grid gap-gutter md:grid-cols-3">
         {documents.map((doc) => {
           const docCopy = localized.docs[doc.id as keyof typeof localized.docs];
 
           return (
             <article
               key={doc.id}
-              className="reticle-corners relative flex min-h-[440px] flex-col border border-graphite-muted bg-surface-container-low/50 p-8 transition-colors hover:border-warning-red"
+              className="reticle-corners relative flex min-h-[380px] flex-col border border-graphite-muted bg-surface-container-low/50 p-7 transition-colors hover:border-warning-red"
             >
               <div className="font-mono text-label-xs uppercase tracking-[0.18em] text-warning-red">
                 {docCopy.type}
               </div>
-              <h2 className="mt-12 max-w-xs font-mono text-technical-md uppercase text-on-surface">
+              <h2 className="mt-8 max-w-xs font-mono text-technical-md uppercase text-on-surface">
                 {docCopy.title}
               </h2>
               <p className="mt-4 max-w-sm border-t border-graphite-muted pt-4 font-mono text-data-sm uppercase leading-relaxed text-on-surface-variant">
@@ -150,7 +150,7 @@ export default async function DocumentsPage({ params }: { params: Promise<{ loca
                 <a
                   href={doc.downloadHref}
                   download
-                  className="mt-auto inline-flex w-fit translate-y-[25px] border border-warning-red bg-warning-red px-5 py-3 font-mono text-label-xs uppercase tracking-[0.14em] text-primary-container transition-colors hover:bg-transparent hover:text-warning-red"
+                className="mt-auto inline-flex w-fit border border-warning-red bg-warning-red px-5 py-3 font-mono text-label-xs uppercase tracking-[0.14em] text-primary-container transition-colors hover:bg-transparent hover:text-warning-red"
                 >
                   {localized.download}
                 </a>

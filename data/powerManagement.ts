@@ -186,7 +186,7 @@ export const powerManagementFamilies: PowerManagementFamily[] = [
     slug: "converters",
     name: "Converters",
     label: "Regulated power interfaces",
-    image: "/images/products-premium/dark/converters.webp",
+    image: "/images/products-premium/dark/converters-v2.png",
     summary: "AC/DC, DC/DC, power supply, and plug converter options for protected power delivery.",
     variants: ["AC/DC", "DC/DC", "Power Supply", "Plug Converters"],
     performance: [

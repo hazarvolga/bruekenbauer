@@ -57,17 +57,17 @@ export default async function OemSupplyPage({ params }: { params: Promise<{ loca
 
   return (
     <PageShell className="min-h-screen pt-20 md:ml-20">
-      <section className="relative flex min-h-[calc(100vh-80px)] items-end overflow-x-hidden px-margin-mobile py-16 md:px-margin-desktop">
+      <section className="relative flex min-h-[720px] items-start overflow-x-hidden px-margin-mobile pb-14 pt-24 md:px-margin-desktop md:pt-28">
         <Image
           src={images.oemHero}
           alt=""
           fill
           priority
           sizes="100vw"
-          className="object-cover opacity-45 mix-blend-normal grayscale dark:mix-blend-luminosity"
+          className="object-cover opacity-60 mix-blend-normal grayscale dark:mix-blend-luminosity"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-transparent to-background/30" />
-        <div className="relative z-10 flex w-full flex-col justify-between gap-10 md:flex-row md:items-end">
+        <div className="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-surface-container-lowest/40 to-background/20" />
+        <div className="relative z-10 flex w-full flex-col justify-between gap-10 md:flex-row md:items-start">
           <div>
             <div className="mb-8 flex items-center gap-3 font-mono text-label-xs uppercase tracking-[0.18em] text-warning-red">
               <span className="h-px w-12 bg-warning-red" />
@@ -81,7 +81,7 @@ export default async function OemSupplyPage({ params }: { params: Promise<{ loca
               ))}
             </h1>
           </div>
-          <div className="max-w-sm text-left md:text-right">
+          <div className="max-w-sm pt-2 text-left md:pt-28 md:text-right">
             <p className="font-mono text-technical-md text-industrial-silver">
               {localized.intro}
             </p>
