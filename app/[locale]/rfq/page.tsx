@@ -17,15 +17,15 @@ type Props = {
 
 const metadataCopy = {
   en: {
-    title: "Supplier Inquiry — brückenbauer GmbH",
+    title: "Request for Quotation (RFQ) — brückenbauer GmbH",
     description: "Submit product, application, volume, lead-time, and project requirements for a focused quotation.",
   },
   de: {
-    title: "Lieferantenanfrage — brückenbauer GmbH",
+    title: "Angebotsanfrage (RFQ) — brückenbauer GmbH",
     description: "Übermitteln Sie Produkt-, Anwendungs-, Volumen-, Lieferzeit- und Projektanforderungen für ein fokussiertes Angebot.",
   },
   fr: {
-    title: "Demande fournisseur — brückenbauer GmbH",
+    title: "Demande de devis (RFQ) — brückenbauer GmbH",
     description: "Transmettez les exigences produit, application, volume, délai et projet pour un devis ciblé.",
   },
 };

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { localizePath, normalizeLocale } from "@/data/localizedContent";
+import { CookieSettingsButton } from "@/components/layout/CookieSettingsButton";
 
 const footerCopy = {
   en: {
@@ -15,6 +16,7 @@ const footerCopy = {
     privacy: "Privacy Policy",
     terms: "Terms & Conditions",
     cookies: "Cookie Policy",
+    cookieSettings: "Cookie Settings",
     credit: "Designed & Developed by",
     country: "Switzerland",
   },
@@ -31,6 +33,7 @@ const footerCopy = {
     privacy: "Datenschutzerklärung",
     terms: "Allgemeine Geschäftsbedingungen",
     cookies: "Cookie-Richtlinie",
+    cookieSettings: "Cookie-Einstellungen",
     credit: "Designed & Developed by",
     country: "Schweiz",
   },
@@ -47,6 +50,7 @@ const footerCopy = {
     privacy: "Politique de confidentialité",
     terms: "Conditions générales",
     cookies: "Politique de cookies",
+    cookieSettings: "Paramètres des cookies",
     credit: "Designed & Developed by",
     country: "Suisse",
   },
@@ -102,22 +106,29 @@ export function Footer({ locale }: { locale: string }) {
         <div className="flex flex-wrap gap-5 text-[10px] uppercase tracking-[0.12em]">
           <Link
             href={localizePath(normalizedLocale, "/privacy-policy")}
+            target="_blank"
+            rel="noopener noreferrer"
             className="transition-colors hover:text-warning-red"
           >
             {copy.privacy}
           </Link>
           <Link
             href={localizePath(normalizedLocale, "/terms-and-conditions")}
+            target="_blank"
+            rel="noopener noreferrer"
             className="transition-colors hover:text-warning-red"
           >
             {copy.terms}
           </Link>
           <Link
             href={localizePath(normalizedLocale, "/cookie-policy")}
+            target="_blank"
+            rel="noopener noreferrer"
             className="transition-colors hover:text-warning-red"
           >
             {copy.cookies}
           </Link>
+          <CookieSettingsButton>{copy.cookieSettings}</CookieSettingsButton>
         </div>
         <div className="grid grid-cols-2 gap-3 uppercase sm:w-72">
           <Link

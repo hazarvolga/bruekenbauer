@@ -3,6 +3,7 @@ import { JetBrains_Mono } from "next/font/google";
 import "@/styles/globals.css";
 import { Providers } from "./providers";
 import { SiteChrome } from "@/components/layout/SiteChrome";
+import { GoogleAnalyticsConsent } from "@/components/analytics/GoogleAnalyticsConsent";
 import { routing } from "@/i18n/routing";
 
 const jetbrainsMono = JetBrains_Mono({
@@ -111,6 +112,7 @@ export default async function RootLayout({
         <NextIntlClientProvider messages={messages}>
           <Providers>
             <SiteChrome locale={locale}>{children}</SiteChrome>
+            <GoogleAnalyticsConsent locale={locale} />
           </Providers>
         </NextIntlClientProvider>
       </body>

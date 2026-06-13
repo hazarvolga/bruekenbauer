@@ -8,7 +8,7 @@ const copy = {
   en: {
     label: "Legal information",
     title: "Cookie Policy",
-    updated: "Last updated: 12 June 2026",
+    updated: "Last updated: 13 June 2026",
     intro:
       "This Cookie Policy explains how brückenbauer GmbH uses cookies and similar browser storage on this website. The site is designed to keep tracking minimal and to use only what is needed for a stable professional experience.",
     sections: [
@@ -31,9 +31,11 @@ const copy = {
         ],
       },
       {
-        title: "Analytics And Marketing",
+        title: "Google Analytics 4",
         paragraphs: [
-          "At the current version, the website is not configured with advertising cookies or behavioral marketing tracking. If analytics, remarketing, embedded media tracking, or comparable non-essential services are introduced, this policy and the consent mechanism should be updated before activation.",
+          "With the user's consent, this website uses Google Analytics 4 to measure aggregate visits, visitor countries, traffic sources, popular pages, and successful Contact or RFQ submissions. Google Analytics is not loaded before analytics consent is given.",
+          "Google Analytics may use cookies and similar identifiers and may process technical information such as device and browser data, approximate location, referral source, page interactions, and timestamps. The website uses measurement ID G-RKKZZGQ7TT.",
+          "No Meta Pixel, LinkedIn Insight Tag, advertising personalization, remarketing, or behavioral advertising tools are used on this website.",
         ],
       },
       {
@@ -45,7 +47,7 @@ const copy = {
       {
         title: "Managing Cookies",
         paragraphs: [
-          "Users can delete or block cookies and browser storage through their browser settings. Blocking necessary storage may affect navigation, localization, forms, or interface preferences.",
+          "Users can reject analytics when first visiting the website and can reopen Cookie Settings from the footer to change their choice. Cookies and browser storage can also be deleted or blocked through browser settings. Blocking necessary storage may affect navigation, localization, forms, or interface preferences.",
         ],
       },
       {
@@ -65,7 +67,7 @@ const copy = {
   de: {
     label: "Rechtliche Information",
     title: "Cookie-Richtlinie",
-    updated: "Zuletzt aktualisiert: 12. Juni 2026",
+    updated: "Zuletzt aktualisiert: 13. Juni 2026",
     intro:
       "Diese Cookie-Richtlinie erläutert, wie brückenbauer GmbH Cookies und vergleichbaren Browser-Speicher auf dieser Website verwendet. Die Website ist darauf ausgelegt, Tracking minimal zu halten und nur das zu nutzen, was für eine stabile professionelle Nutzung erforderlich ist.",
     sections: [
@@ -88,9 +90,11 @@ const copy = {
         ],
       },
       {
-        title: "Analytics Und Marketing",
+        title: "Google Analytics 4",
         paragraphs: [
-          "In der aktuellen Version ist die Website nicht mit Werbe-Cookies oder verhaltensbasiertem Marketing-Tracking konfiguriert. Wenn Analytics, Remarketing, eingebettetes Medien-Tracking oder vergleichbare nicht essenzielle Dienste eingeführt werden, sollten diese Richtlinie und der Einwilligungsmechanismus vor Aktivierung aktualisiert werden.",
+          "Mit Einwilligung des Nutzers verwendet diese Website Google Analytics 4, um aggregierte Besuche, Herkunftsländer, Zugriffsquellen, beliebte Seiten sowie erfolgreiche Kontakt- oder RFQ-Übermittlungen zu messen. Google Analytics wird vor Erteilung der Analytics-Einwilligung nicht geladen.",
+          "Google Analytics kann Cookies und vergleichbare Kennungen einsetzen und technische Informationen wie Geräte- und Browserdaten, ungefähren Standort, Verweisquelle, Seiteninteraktionen und Zeitstempel verarbeiten. Die Website verwendet die Mess-ID G-RKKZZGQ7TT.",
+          "Auf dieser Website werden kein Meta Pixel, kein LinkedIn Insight Tag, keine personalisierte Werbung, kein Remarketing und keine verhaltensbasierte Werbung eingesetzt.",
         ],
       },
       {
@@ -102,7 +106,7 @@ const copy = {
       {
         title: "Cookies Verwalten",
         paragraphs: [
-          "Nutzer können Cookies und Browser-Speicher über die Browsereinstellungen löschen oder blockieren. Das Blockieren notwendiger Speicherfunktionen kann Navigation, Lokalisierung, Formulare oder Oberflächenpräferenzen beeinträchtigen.",
+          "Nutzer können Analytics beim ersten Besuch ablehnen und ihre Auswahl über die Cookie-Einstellungen im Footer später ändern. Cookies und Browser-Speicher können außerdem über die Browsereinstellungen gelöscht oder blockiert werden. Das Blockieren notwendiger Speicherfunktionen kann Navigation, Lokalisierung, Formulare oder Oberflächenpräferenzen beeinträchtigen.",
         ],
       },
       {
@@ -122,7 +126,7 @@ const copy = {
   fr: {
     label: "Information légale",
     title: "Politique de cookies",
-    updated: "Dernière mise à jour : 12 juin 2026",
+    updated: "Dernière mise à jour : 13 juin 2026",
     intro:
       "Cette Politique de cookies explique comment brückenbauer GmbH utilise les cookies et technologies similaires de stockage navigateur sur ce site. Le site est conçu pour limiter le tracking au minimum et n'utiliser que ce qui est nécessaire à une expérience professionnelle stable.",
     sections: [
@@ -145,9 +149,11 @@ const copy = {
         ],
       },
       {
-        title: "Analytics Et Marketing",
+        title: "Google Analytics 4",
         paragraphs: [
-          "Dans la version actuelle, le site n'est pas configuré avec des cookies publicitaires ou un suivi marketing comportemental. Si des analytics, du remarketing, du tracking de médias intégrés ou des services non essentiels comparables sont introduits, cette politique et le mécanisme de consentement devront être mis à jour avant activation.",
+          "Avec le consentement de l'utilisateur, ce site utilise Google Analytics 4 afin de mesurer les visites agrégées, les pays d'origine, les sources de trafic, les pages les plus consultées et les envois réussis des formulaires Contact ou RFQ. Google Analytics n'est pas chargé avant l'obtention du consentement analytique.",
+          "Google Analytics peut utiliser des cookies et des identifiants similaires et traiter des informations techniques telles que les données de l'appareil et du navigateur, la localisation approximative, la source de référence, les interactions avec les pages et les horodatages. Le site utilise l'identifiant de mesure G-RKKZZGQ7TT.",
+          "Aucun Meta Pixel, LinkedIn Insight Tag, outil de personnalisation publicitaire, de remarketing ou de publicité comportementale n'est utilisé sur ce site.",
         ],
       },
       {
@@ -159,7 +165,7 @@ const copy = {
       {
         title: "Gestion Des Cookies",
         paragraphs: [
-          "Les utilisateurs peuvent supprimer ou bloquer les cookies et le stockage navigateur via les paramètres de leur navigateur. Le blocage du stockage nécessaire peut affecter la navigation, la localisation, les formulaires ou les préférences d'interface.",
+          "Les utilisateurs peuvent refuser Analytics lors de leur première visite et modifier ensuite leur choix via les Paramètres des cookies dans le footer. Les cookies et le stockage navigateur peuvent également être supprimés ou bloqués via les paramètres du navigateur. Le blocage du stockage nécessaire peut affecter la navigation, la localisation, les formulaires ou les préférences d'interface.",
         ],
       },
       {

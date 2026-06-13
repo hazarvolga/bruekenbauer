@@ -114,8 +114,8 @@
     }
   },
   "ContactPage": {
-    "label": "Demande de fournisseur",
-    "title": "Contact Ingénierie"
+    "label": "Demande technique",
+    "title": "Contact"
   },
   "IndustriesPage": {
     "label": "Secteurs d'application",

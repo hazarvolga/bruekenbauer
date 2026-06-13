@@ -4,6 +4,9 @@ import { useState } from "react";
 import { TechnicalButton } from "@/components/layout/TechnicalButton";
 import type { ContactRequest } from "@/app/api/contact/route";
 import { normalizeLocale } from "@/data/localizedContent";
+import { localizePath } from "@/data/localizedContent";
+import { trackEvent } from "@/lib/analytics";
+import Link from "next/link";
 
 type Status = "idle" | "loading" | "success" | "error";
 
@@ -29,6 +32,8 @@ export function ContactForm({ locale = "en" }: { locale?: string }) {
       placeholderCompany: "e.g. Vance Semiconductor (optional)",
       placeholderPhone: "e.g. +49 89 1234567 (optional)",
       placeholderMessage: "Describe your design requirements, target volume, and technical specifications...",
+      privacyPrefix: "By submitting this inquiry, you acknowledge that your personal data will be processed in accordance with our",
+      privacyLink: "Privacy Policy",
     },
     de: {
       confirmed: "Übermittlung bestätigt",
@@ -49,6 +54,8 @@ export function ContactForm({ locale = "en" }: { locale?: string }) {
       placeholderCompany: "z.B. Vance Halbleiter (optional)",
       placeholderPhone: "z.B. +49 89 1234567 (optional)",
       placeholderMessage: "Beschreiben Sie Ihre Designanforderungen, das Zielvolumen und die technischen Spezifikationen...",
+      privacyPrefix: "Mit dem Absenden dieser Anfrage bestätigen Sie, dass Ihre personenbezogenen Daten gemäß unserer",
+      privacyLink: "Datenschutzerklärung verarbeitet werden.",
     },
     fr: {
       confirmed: "Transmission confirmée",
@@ -69,6 +76,8 @@ export function ContactForm({ locale = "en" }: { locale?: string }) {
       placeholderCompany: "ex. Vance Semi-conducteurs (optionnel)",
       placeholderPhone: "ex. +33 1 23 45 67 89 (optionnel)",
       placeholderMessage: "Décrivez vos besoins de conception, le volume cible et les spécifications techniques...",
+      privacyPrefix: "En envoyant cette demande, vous reconnaissez que vos données personnelles seront traitées conformément à notre",
+      privacyLink: "Politique de confidentialité.",
     },
   }[normalizedLocale];
   const [form, setForm] = useState<ContactRequest>({
@@ -77,6 +86,7 @@ export function ContactForm({ locale = "en" }: { locale?: string }) {
     company: "",
     phone: "",
     message: "",
+    website: "",
   });
   const [status, setStatus] = useState<Status>("idle");
   const [referenceId, setReferenceId] = useState<string | null>(null);
@@ -106,6 +116,10 @@ export function ContactForm({ locale = "en" }: { locale?: string }) {
       const data = (await res.json()) as { referenceId: string };
       setReferenceId(data.referenceId);
       setStatus("success");
+      trackEvent("contact_form_submit", {
+        form_name: "contact",
+        locale: normalizedLocale,
+      });
     } catch (err) {
       setErrorMsg(err instanceof Error ? err.message : "Submission failed.");
       setStatus("error");
@@ -130,7 +144,7 @@ export function ContactForm({ locale = "en" }: { locale?: string }) {
           onClick={() => {
             setStatus("idle");
             setReferenceId(null);
-            setForm({ name: "", email: "", company: "", phone: "", message: "" });
+            setForm({ name: "", email: "", company: "", phone: "", message: "", website: "" });
           }}
         >
           {copy.newMessage}
@@ -190,6 +204,18 @@ export function ContactForm({ locale = "en" }: { locale?: string }) {
           className="w-full border border-outline-variant hover:border-outline focus:border-warning-red bg-surface-container-low/60 p-4 font-mono text-technical-md text-on-surface placeholder:text-outline/40 focus:ring-1 focus:ring-warning-red/20 focus:outline-none transition-colors duration-200"
         />
       </div>
+      <div className="sr-only" aria-hidden="true">
+        <label htmlFor="website">Website</label>
+        <input
+          id="website"
+          name="website"
+          type="text"
+          tabIndex={-1}
+          autoComplete="off"
+          value={form.website || ""}
+          onChange={(e) => update("website", e.target.value)}
+        />
+      </div>
       {errorMsg && (
         <p className="font-mono text-label-xs uppercase tracking-[0.12em] text-warning-red">
           ERR — {errorMsg}
@@ -201,6 +227,17 @@ export function ContactForm({ locale = "en" }: { locale?: string }) {
       >
         {status === "loading" ? copy.submitting : copy.submit}
       </TechnicalButton>
+      <p className="max-w-3xl font-mono text-data-sm leading-relaxed text-outline">
+        {copy.privacyPrefix}{" "}
+        <Link
+          href={localizePath(normalizedLocale, "/privacy-policy")}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-on-surface-variant underline decoration-outline underline-offset-4 hover:text-warning-red"
+        >
+          {copy.privacyLink}
+        </Link>
+      </p>
       <p className="font-mono text-label-xs uppercase tracking-[0.14em] text-outline">
         {copy.response}
       </p>

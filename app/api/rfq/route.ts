@@ -2,6 +2,14 @@ import { NextResponse } from "next/server";
 import { Resend } from "resend";
 import * as React from "react";
 import { RfqEmailTemplate } from "@/components/email/RfqEmailTemplate";
+import {
+  checkFormRateLimit,
+  exceedsBodyLimit,
+  getClientIp,
+  hasValidJsonContentType,
+  isEmail,
+  isText,
+} from "@/lib/formSecurity";
 
 export interface RfqRequest {
   source: "general" | "product" | "power-family" | "application-sector";
@@ -17,6 +25,7 @@ export interface RfqRequest {
   company: string;
   notes: string;
   locale?: string;
+  website?: string;
 }
 
 function generateRef(): string {
@@ -29,17 +38,39 @@ function validate(body: unknown): body is RfqRequest {
   if (typeof body !== "object" || body === null) return false;
   const b = body as Record<string, unknown>;
   return (
-    typeof b.name === "string" &&
-    b.name.trim().length > 0 &&
-    typeof b.email === "string" &&
-    /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(b.email) &&
-    typeof b.company === "string" &&
-    b.company.trim().length > 0 &&
-    (b.locale === undefined || typeof b.locale === "string")
+    isText(b.source, 30, true) &&
+    isText(b.productSlug, 160) &&
+    isText(b.familySlug, 160) &&
+    isText(b.productGroup, 160, true) &&
+    isText(b.productFamily, 200, true) &&
+    isText(b.applicationSector, 200, true) &&
+    isText(b.monthlyVolume, 30, true) &&
+    isText(b.leadTime, 100, true) &&
+    isText(b.name, 120, true) &&
+    isEmail(b.email) &&
+    isText(b.company, 200, true) &&
+    isText(b.notes, 5000) &&
+    (b.locale === undefined || isText(b.locale, 5)) &&
+    (b.website === undefined || isText(b.website, 200))
   );
 }
 
 export async function POST(request: Request) {
+  if (!hasValidJsonContentType(request)) {
+    return NextResponse.json({ error: "Content-Type must be application/json." }, { status: 415 });
+  }
+  if (exceedsBodyLimit(request)) {
+    return NextResponse.json({ error: "Request body is too large." }, { status: 413 });
+  }
+
+  const rateLimit = checkFormRateLimit(`rfq:${getClientIp(request)}`);
+  if (!rateLimit.allowed) {
+    return NextResponse.json(
+      { error: "Too many requests. Please try again later." },
+      { status: 429, headers: { "Retry-After": String(rateLimit.retryAfter) } }
+    );
+  }
+
   let body: unknown;
   try {
     body = await request.json();
@@ -56,6 +87,10 @@ export async function POST(request: Request) {
 
   const referenceId = generateRef();
   const timestamp = new Date().toISOString();
+
+  if (body.website?.trim()) {
+    return NextResponse.json({ referenceId, timestamp }, { status: 201 });
+  }
 
   // Structured log — always log local record
   console.log(

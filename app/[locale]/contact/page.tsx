@@ -39,15 +39,15 @@ const sidebarCopy = {
 
 const metadataCopy = {
   en: {
-    title: "Engineering Contact — brückenbauer GmbH",
+    title: "Contact — brückenbauer GmbH",
     description: "Direct contact channel for procurement, technical, and partnership inquiries.",
   },
   de: {
-    title: "Engineering Kontakt — brückenbauer GmbH",
+    title: "Kontakt — brückenbauer GmbH",
     description: "Direkter Kontaktkanal für Beschaffung, technische Anfragen und Partnerschaften.",
   },
   fr: {
-    title: "Contact ingénierie — brückenbauer GmbH",
+    title: "Contact — brückenbauer GmbH",
     description: "Canal de contact direct pour les demandes d'approvisionnement, techniques et partenariats.",
   },
 };

@@ -2,6 +2,14 @@ import { NextResponse } from "next/server";
 import { Resend } from "resend";
 import * as React from "react";
 import { ContactEmailTemplate } from "@/components/email/ContactEmailTemplate";
+import {
+  checkFormRateLimit,
+  exceedsBodyLimit,
+  getClientIp,
+  hasValidJsonContentType,
+  isEmail,
+  isText,
+} from "@/lib/formSecurity";
 
 export interface ContactRequest {
   name: string;
@@ -10,6 +18,7 @@ export interface ContactRequest {
   phone?: string;
   message: string;
   locale?: string;
+  website?: string;
 }
 
 function generateRef(): string {
@@ -22,18 +31,32 @@ function validate(body: unknown): body is ContactRequest {
   if (typeof body !== "object" || body === null) return false;
   const b = body as Record<string, unknown>;
   return (
-    typeof b.name === "string" &&
-    b.name.trim().length > 0 &&
-    typeof b.email === "string" &&
-    /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(b.email) &&
-    (b.phone === undefined || typeof b.phone === "string") &&
-    typeof b.message === "string" &&
-    b.message.trim().length > 0 &&
-    (b.locale === undefined || typeof b.locale === "string")
+    isText(b.name, 120, true) &&
+    isEmail(b.email) &&
+    isText(b.company, 200) &&
+    (b.phone === undefined || isText(b.phone, 50)) &&
+    isText(b.message, 5000, true) &&
+    (b.locale === undefined || isText(b.locale, 5)) &&
+    (b.website === undefined || isText(b.website, 200))
   );
 }
 
 export async function POST(request: Request) {
+  if (!hasValidJsonContentType(request)) {
+    return NextResponse.json({ error: "Content-Type must be application/json." }, { status: 415 });
+  }
+  if (exceedsBodyLimit(request)) {
+    return NextResponse.json({ error: "Request body is too large." }, { status: 413 });
+  }
+
+  const rateLimit = checkFormRateLimit(`contact:${getClientIp(request)}`);
+  if (!rateLimit.allowed) {
+    return NextResponse.json(
+      { error: "Too many requests. Please try again later." },
+      { status: 429, headers: { "Retry-After": String(rateLimit.retryAfter) } }
+    );
+  }
+
   let body: unknown;
   try {
     body = await request.json();
@@ -50,6 +73,10 @@ export async function POST(request: Request) {
 
   const referenceId = generateRef();
   const timestamp = new Date().toISOString();
+
+  if (body.website?.trim()) {
+    return NextResponse.json({ referenceId, timestamp }, { status: 201 });
+  }
 
   // Structured log — always log local record
   console.log(

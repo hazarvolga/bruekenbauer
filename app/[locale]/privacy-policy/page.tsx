@@ -10,7 +10,7 @@ const copy = {
   en: {
     label: "Legal information",
     title: "Privacy Policy",
-    updated: "Last updated: 12 June 2026",
+    updated: "Last updated: 13 June 2026",
     intro:
       "This Privacy Policy explains how brückenbauer GmbH handles personal data submitted through this website, contact forms, RFQ workflows, email communication, and related business interactions.",
     sections: [
@@ -38,6 +38,13 @@ const copy = {
         paragraphs: [
           "Personal data is processed to respond to inquiries, evaluate technical and commercial requirements, prepare quotations, coordinate supplier or partner communication, operate and secure the website, keep business records, and comply with legal obligations.",
           "Depending on the context, the legal basis is pre-contractual or contractual necessity, legitimate business interests, compliance with legal obligations, or consent where a consent-based service is introduced.",
+        ],
+      },
+      {
+        title: "Consent-Based Website Analytics",
+        paragraphs: [
+          "If a visitor accepts analytics, Google Analytics 4 is used to understand aggregate visits, approximate visitor countries, traffic sources, popular pages, and successful Contact or RFQ submissions. The legal basis is consent, and Google Analytics remains disabled until that consent is given.",
+          "Analytics data may be processed by Google as a service provider and may involve international processing subject to Google's applicable contractual and transfer safeguards. Visitors can withdraw or change consent at any time through Cookie Settings in the footer.",
         ],
       },
       {
@@ -83,7 +90,7 @@ const copy = {
   de: {
     label: "Rechtliche Information",
     title: "Datenschutzerklärung",
-    updated: "Zuletzt aktualisiert: 12. Juni 2026",
+    updated: "Zuletzt aktualisiert: 13. Juni 2026",
     intro:
       "Diese Datenschutzerklärung erläutert, wie brückenbauer GmbH personenbezogene Daten verarbeitet, die über diese Website, Kontaktformulare, RFQ-Prozesse, E-Mail-Kommunikation und damit verbundene Geschäftsinteraktionen übermittelt werden.",
     sections: [
@@ -111,6 +118,13 @@ const copy = {
         paragraphs: [
           "Personenbezogene Daten werden verarbeitet, um Anfragen zu beantworten, technische und kommerzielle Anforderungen zu bewerten, Angebote vorzubereiten, Lieferanten- oder Partnerkommunikation zu koordinieren, die Website zu betreiben und zu sichern, Geschäftsunterlagen zu führen und rechtliche Pflichten zu erfüllen.",
           "Je nach Kontext beruht die Verarbeitung auf vorvertraglicher oder vertraglicher Notwendigkeit, berechtigten Geschäftsinteressen, gesetzlichen Pflichten oder Einwilligung, wenn ein einwilligungsbasierter Dienst eingeführt wird.",
+        ],
+      },
+      {
+        title: "Einwilligungsbasierte Website-Analyse",
+        paragraphs: [
+          "Wenn ein Besucher Analytics akzeptiert, wird Google Analytics 4 eingesetzt, um aggregierte Besuche, ungefähre Herkunftsländer, Zugriffsquellen, beliebte Seiten sowie erfolgreiche Kontakt- oder RFQ-Übermittlungen zu verstehen. Rechtsgrundlage ist die Einwilligung; Google Analytics bleibt bis zu deren Erteilung deaktiviert.",
+          "Analysedaten können von Google als Dienstleister verarbeitet werden und eine internationale Verarbeitung unter den anwendbaren vertraglichen und Übermittlungsgarantien von Google umfassen. Besucher können ihre Einwilligung jederzeit über die Cookie-Einstellungen im Footer widerrufen oder ändern.",
         ],
       },
       {
@@ -156,7 +170,7 @@ const copy = {
   fr: {
     label: "Information légale",
     title: "Politique de confidentialité",
-    updated: "Dernière mise à jour : 12 juin 2026",
+    updated: "Dernière mise à jour : 13 juin 2026",
     intro:
       "Cette politique de confidentialité explique comment brückenbauer GmbH traite les données personnelles transmises via ce site, les formulaires de contact, les parcours RFQ, les communications par e-mail et les interactions commerciales associées.",
     sections: [
@@ -184,6 +198,13 @@ const copy = {
         paragraphs: [
           "Les données personnelles sont traitées pour répondre aux demandes, évaluer les exigences techniques et commerciales, préparer des devis, coordonner la communication avec les fournisseurs ou partenaires, exploiter et sécuriser le site, conserver des documents commerciaux et respecter les obligations légales.",
           "Selon le contexte, la base juridique est la nécessité précontractuelle ou contractuelle, les intérêts commerciaux légitimes, le respect d'obligations légales ou le consentement lorsqu'un service fondé sur le consentement est introduit.",
+        ],
+      },
+      {
+        title: "Analyse Du Site Fondée Sur Le Consentement",
+        paragraphs: [
+          "Si un visiteur accepte Analytics, Google Analytics 4 est utilisé pour comprendre les visites agrégées, les pays d'origine approximatifs, les sources de trafic, les pages populaires et les envois réussis des formulaires Contact ou RFQ. La base juridique est le consentement et Google Analytics reste désactivé jusqu'à son obtention.",
+          "Les données analytiques peuvent être traitées par Google en tant que prestataire et impliquer un traitement international soumis aux garanties contractuelles et de transfert applicables de Google. Les visiteurs peuvent retirer ou modifier leur consentement à tout moment via les Paramètres des cookies dans le footer.",
         ],
       },
       {

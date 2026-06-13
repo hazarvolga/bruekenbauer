@@ -7,6 +7,9 @@ import { getApplicationCopy, getProductGroupCopy, normalizeLocale } from "@/data
 import { productTaxonomy, type ProductGroup } from "@/data/productTaxonomy";
 import { products } from "@/data/products";
 import type { RfqRequest } from "@/app/api/rfq/route";
+import { localizePath } from "@/data/localizedContent";
+import { trackEvent } from "@/lib/analytics";
+import Link from "next/link";
 
 type RfqState = RfqRequest;
 
@@ -25,6 +28,7 @@ const initialState: RfqState = {
   email: "",
   company: "",
   notes: "",
+  website: "",
 };
 
 type SubmitStatus = "idle" | "loading" | "success" | "error";
@@ -59,15 +63,15 @@ export function RfqFlow({
       reference: "Reference",
       newInquiry: "New Inquiry",
       notSupplied: "Not supplied",
-      eyebrow: "Engineering inquiry",
-      title: "Supplier Inquiry",
+      eyebrow: "Request for quotation",
+      title: "Request for Quotation (RFQ)",
       intro:
         "Share the product group, application sector, monthly volume, lead time, contact data, and project notes required for a precise quotation.",
       productGroup: "Product group",
       productFamily: "Product family",
       applicationSector: "Application sector",
-      monthlyVolume: "Monthly volume",
-      leadTime: "Lead time",
+      monthlyVolume: "Monthly volume (units/month)",
+      leadTime: "Required lead time (days/weeks)",
       contactName: "Contact name",
       email: "Email",
       company: "Company",
@@ -82,6 +86,10 @@ export function RfqFlow({
       },
       submitting: "Submitting...",
       submit: "Submit RFQ",
+      privacyPrefix: "By submitting this RFQ, you acknowledge that your personal data will be processed in accordance with our",
+      privacyLink: "Privacy Policy",
+      confidential: "Please do not submit confidential or export-controlled information unless covered by an appropriate agreement.",
+      response: "Typical response within 1-2 business days.",
     },
     de: {
       confirmed: "RFQ bestätigt",
@@ -90,15 +98,15 @@ export function RfqFlow({
       reference: "Referenz",
       newInquiry: "Neue Anfrage",
       notSupplied: "Nicht angegeben",
-      eyebrow: "Technische Anfrage",
-      title: "Lieferantenanfrage",
+      eyebrow: "Angebotsanfrage",
+      title: "Angebotsanfrage (RFQ)",
       intro:
         "Teilen Sie Produktgruppe, Anwendungsbereich, Monatsvolumen, Lieferzeit, Kontaktdaten und Projektnotizen für ein präzises Angebot.",
       productGroup: "Produktgruppe",
       productFamily: "Produktfamilie",
       applicationSector: "Anwendungsbereich",
-      monthlyVolume: "Monatsvolumen",
-      leadTime: "Lieferzeit",
+      monthlyVolume: "Monatsvolumen (Stück/Monat)",
+      leadTime: "Gewünschte Lieferzeit (Tage/Wochen)",
       contactName: "Kontaktname",
       email: "E-Mail",
       company: "Unternehmen",
@@ -113,6 +121,10 @@ export function RfqFlow({
       },
       submitting: "Wird gesendet...",
       submit: "RFQ absenden",
+      privacyPrefix: "Mit dem Absenden dieser RFQ bestätigen Sie, dass Ihre personenbezogenen Daten gemäß unserer",
+      privacyLink: "Datenschutzerklärung verarbeitet werden.",
+      confidential: "Bitte übermitteln Sie keine vertraulichen oder exportkontrollierten Informationen, sofern keine geeignete Vereinbarung besteht.",
+      response: "Typische Antwort innerhalb von 1-2 Werktagen.",
     },
     fr: {
       confirmed: "RFQ confirmé",
@@ -121,15 +133,15 @@ export function RfqFlow({
       reference: "Référence",
       newInquiry: "Nouvelle demande",
       notSupplied: "Non renseigné",
-      eyebrow: "Demande technique",
-      title: "Demande fournisseur",
+      eyebrow: "Demande de devis",
+      title: "Demande de devis (RFQ)",
       intro:
         "Partagez le groupe produit, le secteur d'application, le volume mensuel, le délai, les coordonnées et les notes projet nécessaires à un devis précis.",
       productGroup: "Groupe produit",
       productFamily: "Famille produit",
       applicationSector: "Secteur d'application",
-      monthlyVolume: "Volume mensuel",
-      leadTime: "Délai",
+      monthlyVolume: "Volume mensuel (unités/mois)",
+      leadTime: "Délai souhaité (jours/semaines)",
       contactName: "Nom du contact",
       email: "E-mail",
       company: "Entreprise",
@@ -144,6 +156,10 @@ export function RfqFlow({
       },
       submitting: "Envoi...",
       submit: "Soumettre RFQ",
+      privacyPrefix: "En envoyant cette RFQ, vous reconnaissez que vos données personnelles seront traitées conformément à notre",
+      privacyLink: "Politique de confidentialité.",
+      confidential: "Ne transmettez pas d'informations confidentielles ou soumises au contrôle des exportations sans accord approprié.",
+      response: "Réponse habituelle sous 1 à 2 jours ouvrables.",
     },
   }[normalizedLocale];
   const resolvedInitialState = useMemo(
@@ -231,6 +247,12 @@ export function RfqFlow({
       const data = (await res.json()) as { referenceId: string };
       setReferenceId(data.referenceId);
       setStatus("success");
+      trackEvent("rfq_form_submit", {
+        form_name: "rfq",
+        locale: normalizedLocale,
+        product_group: state.productGroup,
+        source: state.source,
+      });
     } catch (err) {
       setErrorMsg(err instanceof Error ? err.message : "Submission failed.");
       setStatus("error");
@@ -334,7 +356,7 @@ export function RfqFlow({
           </TechnicalButton>
         </div>
         <dl className="border border-graphite-muted bg-surface-container-low/50 p-8 font-mono text-data-sm uppercase">
-          {Object.entries(state).map(([key, value]) => (
+          {Object.entries(state).filter(([key]) => key !== "website").map(([key, value]) => (
             <div
               key={key}
               className="grid grid-cols-[0.45fr_1fr] gap-4 border-b border-graphite-muted py-4 last:border-b-0"
@@ -473,6 +495,18 @@ export function RfqFlow({
             placeholder={copy.placeholder}
           />
         </label>
+        <div className="sr-only" aria-hidden="true">
+          <label htmlFor="website">Website</label>
+          <input
+            id="website"
+            name="website"
+            type="text"
+            tabIndex={-1}
+            autoComplete="off"
+            value={state.website || ""}
+            onChange={(event) => update("website", event.target.value)}
+          />
+        </div>
         {errorMsg && (
           <p className="font-mono text-label-xs uppercase tracking-[0.12em] text-warning-red">
             ERR — {errorMsg}
@@ -484,6 +518,21 @@ export function RfqFlow({
         >
           {status === "loading" ? copy.submitting : copy.submit}
         </TechnicalButton>
+        <div className="space-y-3 border-t border-graphite-muted pt-5 font-mono text-data-sm leading-relaxed text-outline">
+          <p>
+            {copy.privacyPrefix}{" "}
+            <Link
+              href={localizePath(normalizedLocale, "/privacy-policy")}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-on-surface-variant underline decoration-outline underline-offset-4 hover:text-warning-red"
+            >
+              {copy.privacyLink}
+            </Link>
+          </p>
+          <p className="text-on-surface-variant">{copy.confidential}</p>
+          <p className="uppercase tracking-[0.12em]">{copy.response}</p>
+        </div>
       </div>
     </form>
   );
