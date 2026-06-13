@@ -101,6 +101,17 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
           <p className="mt-7 max-w-xl whitespace-pre-line font-mono text-technical-md leading-relaxed text-industrial-silver">
             {t("description")}
           </p>
+          <div className="mt-10 max-w-xl border border-graphite-muted bg-surface-container-low/45 p-6">
+            <span className="font-mono text-label-xs uppercase tracking-[0.18em] text-warning-red">
+              {t("services.label")}
+            </span>
+            <h2 className="mt-4 font-mono text-[30px] uppercase leading-tight text-on-surface md:text-[36px]">
+              {t("services.title")}
+            </h2>
+            <p className="mt-5 font-mono text-data-sm uppercase leading-relaxed text-industrial-silver">
+              {t("services.intro")}
+            </p>
+          </div>
         </div>
         <div className="relative min-h-[460px] overflow-hidden border-t border-graphite-muted lg:min-h-[calc(100vh-80px)] lg:border-l lg:border-t-0">
           <Image
@@ -113,23 +124,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
         </div>
       </section>
 
-      <section className="border-y border-graphite-muted bg-surface-container-lowest px-margin-mobile py-12 md:px-margin-desktop">
-        <div className="grid gap-gutter border border-graphite-muted bg-surface-container-low/45 p-6 md:grid-cols-[0.38fr_0.62fr] md:items-end md:p-8">
-          <div>
-            <span className="font-mono text-label-xs uppercase tracking-[0.18em] text-warning-red">
-              {t("services.label")}
-            </span>
-            <h2 className="mt-4 max-w-xl font-mono text-[34px] uppercase leading-tight text-on-surface md:text-[44px]">
-              {t("services.title")}
-            </h2>
-          </div>
-          <p className="max-w-lg font-mono text-data-sm uppercase leading-relaxed text-industrial-silver md:justify-self-end">
-            {t("services.intro")}
-          </p>
-        </div>
-      </section>
-
-      <section className="border-b border-graphite-muted bg-surface-container-lowest px-margin-mobile py-12 md:px-margin-desktop md:py-14">
+      <section className="border-y border-graphite-muted bg-surface-container-lowest px-margin-mobile py-12 md:px-margin-desktop md:py-14">
           <div className="grid gap-gutter md:grid-cols-2">
             {services.map((service) => (
               <article
