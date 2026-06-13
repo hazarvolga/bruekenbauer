@@ -117,7 +117,7 @@ export default async function ProductDetailPage({
             fill
             priority
             sizes="(min-width: 1024px) 55vw, 100vw"
-            className="object-contain opacity-90"
+            className="object-cover object-center opacity-90"
           />
         </div>
         <div className="flex flex-col px-margin-mobile py-10 md:px-margin-desktop lg:py-16">

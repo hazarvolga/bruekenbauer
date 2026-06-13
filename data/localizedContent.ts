@@ -192,7 +192,7 @@ export const productGroupCopies: Record<SupportedLocale, Record<ProductGroup, Pr
       title: "Passives",
       shortDescription: "Resistors, capacitors, MLCC packages, and quartz timing components.",
       description:
-        "We source and distribute passive components from qualified suppliers for industrial and electronic applications. The portfolio covers resistors, film and MLCC capacitors, and quartz timing components with application support, supply continuity, and lifecycle requirements in view.",
+        "We source and distribute passive components from qualified suppliers for industrial and electronic applications. The portfolio includes resistors, film and MLCC capacitors, and quartz timing components. Combined with application support, supply continuity, and lifecycle management, these solutions help customers meet performance, availability, and long-term product requirements.",
     },
     Electromechanics: {
       title: "Electromechanics",
@@ -249,7 +249,7 @@ export const productGroupCopies: Record<SupportedLocale, Record<ProductGroup, Pr
       title: "Passive Bauelemente",
       shortDescription: "Widerstände, Kondensatoren, MLCC-Pakete und Quarz-Timing-Komponenten.",
       description:
-        "Wir beschaffen und vertreiben passive Bauelemente qualifizierter Lieferanten für industrielle und elektronische Anwendungen. Das Portfolio umfasst Widerstände, Film- und MLCC-Kondensatoren sowie Quarz-Timing-Komponenten mit Blick auf Applikationssupport, Lieferkontinuität und Lebenszyklusanforderungen.",
+        "Wir beschaffen und vertreiben passive Bauelemente qualifizierter Lieferanten für industrielle und elektronische Anwendungen. Das Portfolio umfasst Widerstände, Film- und MLCC-Kondensatoren sowie Quarz-Timing-Komponenten. In Verbindung mit Applikationssupport, Lieferkontinuität und Lebenszyklusmanagement helfen diese Lösungen Kunden dabei, Anforderungen an Leistung, Verfügbarkeit und langfristige Produktplanung zu erfüllen.",
     },
     Electromechanics: {
       title: "Elektromechanik",
@@ -306,7 +306,7 @@ export const productGroupCopies: Record<SupportedLocale, Record<ProductGroup, Pr
       title: "Composants passifs",
       shortDescription: "Résistances, condensateurs, packages MLCC et composants quartz de timing.",
       description:
-        "Nous assurons le sourcing et la distribution de composants passifs provenant de fournisseurs qualifiés pour les applications industrielles et électroniques. Le portefeuille couvre les résistances, les condensateurs film et MLCC ainsi que les composants de synchronisation à quartz, avec une attention portée au support applicatif, à la continuité d'approvisionnement et au cycle de vie.",
+        "Nous assurons le sourcing et la distribution de composants passifs provenant de fournisseurs qualifiés pour les applications industrielles et électroniques. Le portefeuille comprend des résistances, des condensateurs film et MLCC ainsi que des composants de synchronisation à quartz. Associées au support applicatif, à la continuité d'approvisionnement et à la gestion du cycle de vie, ces solutions aident les clients à répondre aux exigences de performance, de disponibilité et de pérennité produit.",
     },
     Electromechanics: {
       title: "Électromécanique",
