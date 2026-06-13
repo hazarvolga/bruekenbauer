@@ -175,7 +175,7 @@ export function IndustrySystemsPanel({
                     : "border-graphite-muted opacity-70"
                 )}
               >
-                <div className="relative aspect-[4/3] overflow-hidden border border-graphite-muted bg-surface-container-lowest">
+                <div className="relative aspect-square overflow-hidden border border-graphite-muted bg-surface-container-lowest">
                   <Image
                     src={product.imageDark ?? product.image}
                     alt=""

@@ -11,7 +11,7 @@ export function ProductCard({ product, locale = "en" }: { product: Product; loca
         className="absolute inset-0 z-20"
         aria-label={`Open ${product.name}`}
       />
-      <div className="relative mb-6 aspect-[4/3] overflow-hidden border border-graphite-muted bg-surface-container-lowest">
+      <div className="relative mb-6 aspect-square overflow-hidden border border-graphite-muted bg-surface-container-lowest">
         <Image
           src={product.imageDark ?? product.image}
           alt=""

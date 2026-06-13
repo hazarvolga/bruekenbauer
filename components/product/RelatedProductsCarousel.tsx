@@ -63,7 +63,7 @@ export function RelatedProductsCarousel({ locale, products, labels }: RelatedPro
             href={localizePath(locale, `/product/${relatedProduct.slug}`)}
             className="group flex min-w-[84%] snap-start flex-col border border-graphite-muted bg-surface-container-low/45 p-4 transition-colors hover:border-industrial-silver hover:bg-surface-container-low/70 sm:min-w-[48%] lg:min-w-[calc((100%_-_48px)_/_3)]"
           >
-            <div className="relative aspect-[4/3] overflow-hidden border border-graphite-muted bg-surface-container-lowest">
+            <div className="relative aspect-square overflow-hidden border border-graphite-muted bg-surface-container-lowest">
               <Image
                 src={relatedProduct.imageDark ?? relatedProduct.image}
                 alt=""
