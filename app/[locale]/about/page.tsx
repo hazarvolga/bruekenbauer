@@ -93,7 +93,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
           <span className="font-mono text-label-xs uppercase tracking-[0.18em] text-warning-red">
             {t("label")}
           </span>
-          <h1 className="mt-5 max-w-4xl font-mono text-[44px] uppercase leading-[1.14] text-on-surface sm:text-headline-lg sm:leading-[1.1] md:text-[64px] lg:text-[72px]">
+          <h1 className="mt-5 max-w-4xl font-mono text-[38px] uppercase leading-[1.14] text-on-surface sm:text-[50px] sm:leading-[1.1] md:text-[56px] lg:text-[60px]">
             {t("title_1")}
             <br />
             {t("title_2")}
