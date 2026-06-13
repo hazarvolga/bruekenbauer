@@ -16,7 +16,7 @@ export const images = {
   industry:
     "https://lh3.googleusercontent.com/aida-public/AB6AXuAC63cre8YMM8hOxSOXSFKcHmpWx4DVKevx68FLQyIF9-sUZ-QnyITlIFvoB2njgvyTvuTTSERUx5KdZOK-B10LqMgD--_aY3xip7_hFn1QZ2mIwqpxlret8G-fKTREtQJZP06ymW_PpdilC8jzbZLBcWxvDOozCwNf5mhS5Sv-1OzGq75l2-24T-ukoOU4LRCsEYz49eVf8Y_cvUYn3itjgXiTa9_P7MbCA9DXyjj6QrCvCwk53WyPGON3YaoBsaqTderg5nLhb9U",
   oemHero:
-    "https://lh3.googleusercontent.com/aida-public/AB6AXuCK950bu_TnG8fv-7miwiObRPwnQ_NG4BCH8nxaB7zWp7k_TfJc2itW4Hjk-XkjIUD2FtLsErmyEiSUl2jzYZHszubsxf53QrR5RrNfdW64_t6S0OOsystbBOs3xJ0L9CpJWbnnWxhfO-1dm-7DO5JPBS88pJtNx6Rh58fGRO89cnAzOQc33xxbvZdebLIYOTWbxfIN0lforydpCEVkCqi1Ucf-bl1_fmsADS1Dkpgd5IPzcj0xJB_CNf9eWCoiVK6SXQSE6AU0RAg",
+    "/images/generated/oem-supply-hero-v2.png",
   oemMap:
     "https://lh3.googleusercontent.com/aida-public/AB6AXuCCYy5a1gFRrY8tHc3QXlb2NzvZpsQL0AtXMrmVM4YSbcIrgLQFWEdPreeAUrfVQQp76r7qC1-ozOIIjMWIAXZIMP9jeGWwvD0dva9yfS4RZF97Swp76JRnbGcBMCyk5pI9Z7RbYXWJu7SSOhvKXXESSE2SgKH1SA4LdzipLZl3iIpay_fyO25hBsf0L1Hkk4X700eJRx-XxJGlHDhlMecFFgETAVv90muwYYNeFbPcKvb91ikf0kGUeEiwEzMqlaQMxg2-J30x6wg",
   inquiry:
