@@ -24,7 +24,7 @@ export default async function ProductsPage({ params }: { params: Promise<{ local
         </p>
       </div>
       <nav
-        className="grid grid-cols-1 gap-gutter md:grid-cols-2 xl:grid-cols-4"
+        className="grid grid-cols-1 gap-gutter md:grid-cols-2 xl:grid-cols-3"
         aria-label={t("category_label")}
       >
         {productTaxonomy.map((category) => {
@@ -41,7 +41,7 @@ export default async function ProductsPage({ params }: { params: Promise<{ local
                   src={category.image}
                   alt=""
                   fill
-                  sizes="(min-width: 1280px) 25vw, (min-width: 768px) 50vw, 100vw"
+                  sizes="(min-width: 1280px) 33vw, (min-width: 768px) 50vw, 100vw"
                   className="group-hover:scale-102 object-cover transition-transform duration-700"
                 />
               </div>
