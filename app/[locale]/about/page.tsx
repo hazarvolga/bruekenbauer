@@ -111,6 +111,24 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
             <p className="mt-5 font-mono text-data-sm uppercase leading-relaxed text-industrial-silver">
               {t("services.intro")}
             </p>
+            <div className="mt-6 divide-y divide-graphite-muted border-t border-graphite-muted">
+              {services.map((service) => (
+                <div key={service.id} className="py-4">
+                  <div className="font-mono text-[10px] uppercase tracking-[0.16em] text-warning-red">
+                    {service.id}
+                  </div>
+                  <h3 className="mt-2 font-mono text-[15px] uppercase leading-tight text-industrial-silver">
+                    {service.title}
+                  </h3>
+                  <p className="mt-3 font-mono text-[10px] uppercase leading-relaxed text-on-surface-variant">
+                    {service.copy}
+                  </p>
+                </div>
+              ))}
+              <div className="pt-4 font-mono text-[10px] uppercase tracking-[0.16em] text-warning-red">
+                {t("services.and_more")}
+              </div>
+            </div>
           </div>
         </div>
         <div className="relative min-h-[460px] overflow-hidden border-t border-graphite-muted lg:min-h-[720px] lg:border-l lg:border-t-0">
@@ -124,28 +142,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
         </div>
       </section>
 
-      <section className="border-y border-graphite-muted bg-surface-container-lowest px-margin-mobile py-12 md:px-margin-desktop md:py-14">
-          <div className="grid gap-gutter md:grid-cols-2">
-            {services.map((service) => (
-              <article
-                key={service.id}
-                className="reticle-corners relative min-h-64 border border-graphite-muted bg-surface-container-low/75 p-6 shadow-[0_18px_60px_rgba(0,0,0,0.18)] transition-colors hover:border-industrial-silver"
-              >
-                <h3 className="font-mono text-technical-md uppercase text-industrial-silver">
-                  {service.title}
-                </h3>
-                <p className="mt-4 font-mono text-data-sm uppercase leading-relaxed text-on-surface-variant">
-                  {service.copy}
-                </p>
-              </article>
-            ))}
-            <div className="border border-dashed border-graphite-muted bg-background/40 p-6 font-mono text-data-sm uppercase tracking-[0.16em] text-warning-red">
-              {t("services.and_more")}
-            </div>
-          </div>
-      </section>
-
-      <section className="border-b border-graphite-muted bg-background px-margin-mobile py-12 md:px-margin-desktop">
+      <section className="border-y border-graphite-muted bg-background px-margin-mobile py-12 md:px-margin-desktop">
         <div className="grid gap-gutter border border-graphite-muted bg-surface-container-low/45 p-6 md:grid-cols-[0.38fr_0.62fr] md:items-end md:p-8">
           <div>
             <span className="font-mono text-label-xs uppercase tracking-[0.18em] text-warning-red">

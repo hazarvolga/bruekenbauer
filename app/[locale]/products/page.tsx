@@ -16,7 +16,7 @@ export default async function ProductsPage({ params }: { params: Promise<{ local
         <span className="font-mono text-label-xs uppercase tracking-[0.18em] text-warning-red">
           {t("label")}
         </span>
-        <h1 className="mt-4 font-mono text-[44px] uppercase leading-[1.12] text-industrial-silver sm:text-[68px] md:text-[88px] lg:text-[104px]">
+        <h1 className="mt-4 max-w-5xl font-mono text-[38px] uppercase leading-[1.12] text-industrial-silver sm:text-[56px] md:text-[72px] lg:text-[84px]">
           {t("title")}
         </h1>
         <p className="mt-6 max-w-3xl font-mono text-technical-md leading-relaxed text-on-surface-variant">
