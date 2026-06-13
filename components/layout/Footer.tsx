@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { TechnicalButtonGroup } from "@/components/layout/TechnicalButtonGroup";
 import { localizePath, normalizeLocale } from "@/data/localizedContent";
 
 const footerCopy = {
@@ -120,7 +119,7 @@ export function Footer({ locale }: { locale: string }) {
             {copy.cookies}
           </Link>
         </div>
-        <TechnicalButtonGroup className="sm:w-48 uppercase">
+        <div className="grid grid-cols-2 gap-3 uppercase sm:w-72">
           <Link
             href={localizePath(normalizedLocale, "/documents")}
             className="inline-flex min-h-11 w-full items-center justify-center border border-graphite-muted px-3 py-2 text-center text-on-surface-variant transition-colors hover:border-warning-red hover:text-warning-red"
@@ -133,7 +132,7 @@ export function Footer({ locale }: { locale: string }) {
           >
             {copy.contactLink}
           </Link>
-        </TechnicalButtonGroup>
+        </div>
       </div>
       <div className="mt-4 border-t border-graphite-muted pt-4 text-[10px] uppercase tracking-[0.08em] text-outline/70">
         {copy.credit}{" "}
