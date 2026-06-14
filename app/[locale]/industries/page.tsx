@@ -64,11 +64,11 @@ export default async function IndustriesPage({ params }: { params: Promise<{ loc
         {t("title")}
       </h1>
       <section className="mt-10 grid gap-gutter border-y border-graphite-muted py-6 lg:grid-cols-12">
-        <div className="lg:col-span-5">
+        <div className="min-w-0 lg:col-span-5">
           <div className="font-mono text-label-xs uppercase tracking-[0.18em] text-warning-red">
             {t("section_label")}
           </div>
-          <h2 className="mt-4 max-w-md font-mono text-[34px] uppercase leading-[0.98] text-industrial-silver md:text-[44px] lg:text-[52px] break-words">
+          <h2 className="mt-4 max-w-md break-words font-mono text-[clamp(1.25rem,8vw,2.125rem)] uppercase leading-[1.02] text-industrial-silver [overflow-wrap:anywhere] md:text-[44px] md:leading-[0.98] lg:text-[52px]">
             {t("section_title")}
           </h2>
         </div>
@@ -90,11 +90,11 @@ export default async function IndustriesPage({ params }: { params: Promise<{ loc
       </section>
 
       {/* Group 01: Strategic Industry Verticals */}
-      <div className="mt-16 flex items-center gap-6 border-b border-graphite-muted pb-4">
-        <span className="font-mono text-label-xs uppercase tracking-[0.18em] text-warning-red">
+      <div className="mt-16 flex min-w-0 flex-col items-start gap-3 border-b border-graphite-muted pb-4 sm:flex-row sm:items-center sm:gap-6">
+        <span className="shrink-0 font-mono text-label-xs uppercase tracking-[0.18em] text-warning-red">
           [ Group 01 ]
         </span>
-        <h2 className="font-mono text-technical-md uppercase tracking-[0.1em] text-industrial-silver">
+        <h2 className="min-w-0 break-words font-mono text-technical-md uppercase tracking-[0.1em] text-industrial-silver [overflow-wrap:anywhere]">
           {t("group_1_title")}
         </h2>
       </div>
@@ -131,11 +131,11 @@ export default async function IndustriesPage({ params }: { params: Promise<{ loc
       </div>
 
       {/* Group 02: Equipment & Devices */}
-      <div className="mt-20 flex items-center gap-6 border-b border-graphite-muted pb-4">
-        <span className="font-mono text-label-xs uppercase tracking-[0.18em] text-warning-red">
+      <div className="mt-20 flex min-w-0 flex-col items-start gap-3 border-b border-graphite-muted pb-4 sm:flex-row sm:items-center sm:gap-6">
+        <span className="shrink-0 font-mono text-label-xs uppercase tracking-[0.18em] text-warning-red">
           [ Group 02 ]
         </span>
-        <h2 className="font-mono text-technical-md uppercase tracking-[0.1em] text-industrial-silver">
+        <h2 className="min-w-0 break-words font-mono text-technical-md uppercase tracking-[0.1em] text-industrial-silver [overflow-wrap:anywhere]">
           {t("group_2_title")}
         </h2>
       </div>
