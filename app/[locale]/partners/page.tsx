@@ -106,6 +106,14 @@ export default async function PartnersPage({ params }: { params: Promise<{ local
       description: t("stadler_desc"),
       logoClassName: "p-7",
     },
+    {
+      id: "PML",
+      name: "PML",
+      logo: "/images/partners/pml.jpeg",
+      type: t("sourcing_partner"),
+      description: t("pml_desc"),
+      logoClassName: "p-5",
+    },
   ];
 
   return (

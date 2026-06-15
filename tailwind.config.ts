@@ -59,12 +59,12 @@ const config: Config = {
           { lineHeight: "24px", letterSpacing: "0.02em", fontWeight: "500" },
         ],
         "headline-lg-mobile": [
-          "32px",
-          { lineHeight: "40px", letterSpacing: "0", fontWeight: "600" },
+          "30px",
+          { lineHeight: "38px", letterSpacing: "0", fontWeight: "600" },
         ],
-        "headline-lg": ["48px", { lineHeight: "56px", letterSpacing: "0", fontWeight: "600" }],
+        "headline-lg": ["44px", { lineHeight: "52px", letterSpacing: "0", fontWeight: "600" }],
         "display-xl": [
-          "clamp(64px, 10vw, 120px)",
+          "clamp(56px, 9vw, 108px)",
           { lineHeight: "0.92", letterSpacing: "0", fontWeight: "700" },
         ],
       },
