@@ -59,10 +59,10 @@ const config: Config = {
           { lineHeight: "24px", letterSpacing: "0.02em", fontWeight: "500" },
         ],
         "headline-lg-mobile": [
-          "30px",
-          { lineHeight: "38px", letterSpacing: "0", fontWeight: "600" },
+          "28px",
+          { lineHeight: "36px", letterSpacing: "0", fontWeight: "600" },
         ],
-        "headline-lg": ["44px", { lineHeight: "52px", letterSpacing: "0", fontWeight: "600" }],
+        "headline-lg": ["42px", { lineHeight: "50px", letterSpacing: "0", fontWeight: "600" }],
         "display-xl": [
           "clamp(56px, 9vw, 108px)",
           { lineHeight: "0.92", letterSpacing: "0", fontWeight: "700" },
