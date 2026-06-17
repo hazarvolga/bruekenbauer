@@ -43,7 +43,7 @@ export default async function ProductsPage({ params }: { params: Promise<{ local
                     alt=""
                     fill
                     sizes="(min-width: 1800px) 500px, (min-width: 1280px) 33vw, (min-width: 768px) 50vw, 100vw"
-                    className="group-hover:scale-102 object-cover transition-transform duration-700"
+                    className="scale-[0.98] object-cover object-center transition-transform duration-700 ease-out group-hover:scale-102"
                   />
                 </div>
                 <span className="font-mono text-label-xs uppercase tracking-[0.16em] text-warning-red">

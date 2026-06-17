@@ -69,7 +69,7 @@ export function RelatedProductsCarousel({ locale, products, labels }: RelatedPro
                 alt=""
                 fill
                 sizes="(min-width: 1024px) 31vw, (min-width: 640px) 48vw, 84vw"
-                className="object-cover opacity-90 transition duration-700 group-hover:scale-105 group-hover:opacity-100"
+                className="scale-[0.96] object-cover object-center opacity-90 transition duration-700 ease-out group-hover:scale-[0.99] group-hover:opacity-100"
               />
             </div>
             <div className="mt-4 font-mono text-label-xs uppercase tracking-[0.18em] text-warning-red">

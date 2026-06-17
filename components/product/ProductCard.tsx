@@ -17,7 +17,7 @@ export function ProductCard({ product, locale = "en" }: { product: Product; loca
           alt=""
           fill
           sizes="(min-width: 1800px) 500px, (min-width: 768px) 33vw, 100vw"
-          className="group-hover:scale-102 object-cover transition-transform duration-700"
+          className="scale-[0.96] object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[0.99]"
         />
       </div>
       <div className="font-mono text-label-xs uppercase tracking-[0.16em] text-warning-red">

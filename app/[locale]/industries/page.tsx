@@ -105,9 +105,9 @@ export default async function IndustriesPage({ params }: { params: Promise<{ loc
             <Link
               key={app.slug}
               href={localizePath(locale, `/industries/${app.slug}`)}
-              className="reticle-corners group relative flex min-h-[340px] flex-col overflow-hidden border border-graphite-muted bg-surface-container-low/50 p-6 transition-colors duration-300 hover:border-industrial-silver hover:bg-surface-container-low/75 focus-visible:border-warning-red focus-visible:outline-none"
+              className="reticle-corners group relative flex min-h-full flex-col overflow-hidden border border-graphite-muted bg-surface-container-low/50 p-6 transition-colors duration-300 hover:border-industrial-silver hover:bg-surface-container-low/75 focus-visible:border-warning-red focus-visible:outline-none"
             >
-              <div className="relative z-10">
+              <div className="relative z-10 flex-1">
                 <h2 className="break-words font-mono text-technical-md uppercase text-industrial-silver [overflow-wrap:anywhere]">
                   {appCopy.name}
                 </h2>
@@ -118,13 +118,13 @@ export default async function IndustriesPage({ params }: { params: Promise<{ loc
               <span className="relative z-10 mt-6 inline-flex w-fit items-center border border-graphite-muted px-3 py-2 font-mono text-[10px] uppercase tracking-[0.14em] text-industrial-silver transition-colors group-hover:border-warning-red group-hover:text-warning-red">
                 {t("explore_sector")} <span aria-hidden="true">-&gt;</span>
               </span>
-              <div className="absolute bottom-0 left-0 right-0 h-28 overflow-hidden">
+              <div className="relative z-0 mt-6 aspect-[16/5] overflow-hidden border border-graphite-muted/70 bg-surface-container-lowest">
                 <Image
                   src={app.heroImage}
                   alt=""
                   fill
                   sizes="(min-width: 1280px) 34vw, (min-width: 768px) 50vw, 100vw"
-                  className="group-hover:scale-102 object-cover object-center transition-transform duration-700 ease-out"
+                  className="scale-[0.99] object-cover object-center opacity-90 transition-transform duration-700 ease-out group-hover:scale-102"
                 />
               </div>
             </Link>
@@ -148,9 +148,9 @@ export default async function IndustriesPage({ params }: { params: Promise<{ loc
             <Link
               key={app.slug}
               href={localizePath(locale, `/industries/${app.slug}`)}
-              className="reticle-corners group relative flex min-h-[340px] flex-col overflow-hidden border border-graphite-muted bg-surface-container-low/50 p-6 transition-colors duration-300 hover:border-industrial-silver hover:bg-surface-container-low/75 focus-visible:border-warning-red focus-visible:outline-none"
+              className="reticle-corners group relative flex min-h-full flex-col overflow-hidden border border-graphite-muted bg-surface-container-low/50 p-6 transition-colors duration-300 hover:border-industrial-silver hover:bg-surface-container-low/75 focus-visible:border-warning-red focus-visible:outline-none"
             >
-              <div className="relative z-10">
+              <div className="relative z-10 flex-1">
                 <h2 className="break-words font-mono text-technical-md uppercase text-industrial-silver [overflow-wrap:anywhere]">
                   {appCopy.name}
                 </h2>
@@ -161,13 +161,13 @@ export default async function IndustriesPage({ params }: { params: Promise<{ loc
               <span className="relative z-10 mt-6 inline-flex w-fit items-center border border-graphite-muted px-3 py-2 font-mono text-[10px] uppercase tracking-[0.14em] text-industrial-silver transition-colors group-hover:border-warning-red group-hover:text-warning-red">
                 {t("explore_sector")} <span aria-hidden="true">-&gt;</span>
               </span>
-              <div className="absolute bottom-0 left-0 right-0 h-28 overflow-hidden">
+              <div className="relative z-0 mt-6 aspect-[16/5] overflow-hidden border border-graphite-muted/70 bg-surface-container-lowest">
                 <Image
                   src={app.heroImage}
                   alt=""
                   fill
                   sizes="(min-width: 1280px) 34vw, (min-width: 768px) 50vw, 100vw"
-                  className="group-hover:scale-102 object-cover object-center transition-transform duration-700 ease-out"
+                  className="scale-[0.99] object-cover object-center opacity-90 transition-transform duration-700 ease-out group-hover:scale-102"
                 />
               </div>
             </Link>
