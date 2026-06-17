@@ -122,7 +122,7 @@ export default async function PartnersPage({ params }: { params: Promise<{ local
         <span className="font-mono text-label-xs uppercase tracking-[0.18em] text-warning-red">
           {t("label")}
         </span>
-        <h1 className="mt-6 max-w-4xl font-mono text-headline-lg-mobile uppercase leading-tight text-on-surface md:text-headline-lg">
+        <h1 className="mt-6 max-w-4xl break-words font-mono text-headline-lg-mobile uppercase leading-tight text-on-surface [overflow-wrap:anywhere] md:text-headline-lg">
           {t("title")}
         </h1>
         <p className="mt-6 max-w-3xl font-mono text-technical-md leading-relaxed text-on-surface-variant">
@@ -135,7 +135,7 @@ export default async function PartnersPage({ params }: { params: Promise<{ local
               key={partner.id}
               className="reticle-corners group relative overflow-hidden border border-graphite-muted bg-surface-container-low/45 p-6 transition-colors duration-300 hover:border-industrial-silver hover:bg-surface-container-low/70"
             >
-              <div className="relative aspect-[16/7] w-full overflow-hidden border border-graphite-muted bg-white shadow-inner">
+              <div className="relative aspect-[16/7] w-full overflow-hidden border border-graphite-muted bg-surface-container-high shadow-inner dark:bg-white">
                 <Image
                   src={partner.logo}
                   alt={`${partner.name} logo`}
@@ -148,14 +148,14 @@ export default async function PartnersPage({ params }: { params: Promise<{ local
                 />
               </div>
               <div className="mt-6 flex flex-col gap-3 border-b border-graphite-muted pb-4">
-                <h2 className="font-mono text-technical-md uppercase text-industrial-silver">
+                <h2 className="break-words font-mono text-technical-md uppercase text-industrial-silver [overflow-wrap:anywhere]">
                   {partner.name}
                 </h2>
-                <span className="inline-flex w-full items-center justify-center border border-warning-red/70 px-3 py-1.5 text-center font-mono text-[10px] uppercase tracking-[0.14em] text-warning-red">
+                <span className="inline-flex min-h-9 w-full items-center justify-center whitespace-normal border border-warning-red/70 px-3 py-1.5 text-center font-mono text-[10px] uppercase leading-snug tracking-[0.1em] text-warning-red [overflow-wrap:anywhere]">
                   {partner.type}
                 </span>
               </div>
-              <p className="mt-5 font-mono text-data-sm uppercase leading-relaxed text-on-surface-variant">
+              <p className="mt-5 break-words font-mono text-data-sm uppercase leading-relaxed text-on-surface-variant [overflow-wrap:anywhere]">
                 {partner.description}
               </p>
             </div>

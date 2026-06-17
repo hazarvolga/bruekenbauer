@@ -7,12 +7,18 @@ type Props = {
   href?: string;
   type?: "button" | "submit";
   variant?: "primary" | "ghost";
+  size?: "sm" | "md";
   className?: string;
   onClick?: () => void;
 };
 
 const base =
-  "inline-flex min-h-11 items-center justify-center gap-3 whitespace-normal border px-6 py-3 text-center font-mono text-label-xs uppercase tracking-[0.16em] transition-colors active:scale-[0.98]";
+  "inline-flex items-center justify-center gap-3 whitespace-normal border text-center font-mono text-label-xs uppercase transition-colors active:scale-[0.98]";
+
+const sizes = {
+  sm: "min-h-11 px-3 py-2 tracking-[0.14em]",
+  md: "min-h-11 px-6 py-3 tracking-[0.16em]",
+};
 
 /**
  * TechnicalButton — v02
@@ -24,11 +30,13 @@ export function TechnicalButton({
   href,
   type = "button",
   variant = "primary",
+  size = "md",
   className = "",
   onClick,
 }: Props) {
   const classes = cn(
     base,
+    sizes[size],
     variant === "primary"
       ? "border-warning-red bg-warning-red text-primary-container hover:bg-transparent hover:text-warning-red"
       : "border-industrial-silver/60 bg-transparent text-industrial-silver hover:border-warning-red hover:text-warning-red",
