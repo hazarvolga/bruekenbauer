@@ -39,27 +39,29 @@ export default async function ProductCategoryPage({
 
   return (
     <PageShell className="min-h-screen px-margin-mobile pb-24 pt-32 md:ml-20 md:px-margin-desktop">
-      <Link
-        href={localizePath(normalizedLocale, "/products")}
-        className="font-mono text-label-xs uppercase tracking-[0.18em] text-outline hover:text-warning-red"
-      >
-        {normalizedLocale === "de"
-          ? "Zurück zu Produktgruppen"
-          : normalizedLocale === "fr"
-            ? "Retour aux groupes de produits"
-            : "Back to product groups"}
-      </Link>
-      <h1 className="mt-6 max-w-5xl font-mono text-headline-lg-mobile uppercase text-on-surface md:text-headline-lg">
-        {copy.title}
-      </h1>
-      <p className="mt-4 max-w-3xl font-mono text-technical-md text-on-surface-variant">
-        {copy.description}
-      </p>
-      <div className="mt-6 font-mono text-label-xs uppercase tracking-[0.18em] text-warning-red">
-        {filtered.length.toString().padStart(2, "0")} {t("items")}
-      </div>
-      <div className="mt-12">
-        <ProductGrid products={filtered} locale={normalizedLocale} />
+      <div className="mx-auto w-full max-w-[1600px]">
+        <Link
+          href={localizePath(normalizedLocale, "/products")}
+          className="font-mono text-label-xs uppercase tracking-[0.18em] text-outline hover:text-warning-red"
+        >
+          {normalizedLocale === "de"
+            ? "Zurück zu Produktgruppen"
+            : normalizedLocale === "fr"
+              ? "Retour aux groupes de produits"
+              : "Back to product groups"}
+        </Link>
+        <h1 className="mt-6 max-w-5xl font-mono text-headline-lg-mobile uppercase text-on-surface md:text-headline-lg">
+          {copy.title}
+        </h1>
+        <p className="mt-4 max-w-3xl font-mono text-technical-md text-on-surface-variant">
+          {copy.description}
+        </p>
+        <div className="mt-6 font-mono text-label-xs uppercase tracking-[0.18em] text-warning-red">
+          {filtered.length.toString().padStart(2, "0")} {t("items")}
+        </div>
+        <div className="mt-12">
+          <ProductGrid products={filtered} locale={normalizedLocale} />
+        </div>
       </div>
     </PageShell>
   );

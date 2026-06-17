@@ -16,7 +16,7 @@ export function ProductCard({ product, locale = "en" }: { product: Product; loca
           src={product.imageDark ?? product.image}
           alt=""
           fill
-          sizes="(min-width: 768px) 33vw, 100vw"
+          sizes="(min-width: 1800px) 500px, (min-width: 768px) 33vw, 100vw"
           className="group-hover:scale-102 object-cover transition-transform duration-700"
         />
       </div>

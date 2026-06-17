@@ -69,7 +69,7 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
 
   return (
     <PageShell className="min-h-screen px-margin-mobile pb-12 pt-32 md:ml-20 md:px-margin-desktop">
-      <div className="grid gap-gutter lg:grid-cols-[1fr_400px]">
+      <div className="mx-auto grid w-full max-w-[1600px] gap-gutter lg:grid-cols-[minmax(0,1fr)_400px]">
         <div>
           <span className="font-mono text-label-xs uppercase tracking-[0.18em] text-warning-red">
             {t("label")}
