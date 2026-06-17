@@ -26,7 +26,7 @@ export function ProductCard({ product, locale = "en" }: { product: Product; loca
       <h2 className="product-card-title mt-3 break-words font-mono uppercase text-on-surface">
         {product.name}
       </h2>
-      <p className="mt-4 font-mono text-data-sm uppercase text-on-surface-variant">
+      <p className="mt-4 break-words font-mono text-data-sm uppercase text-on-surface-variant [overflow-wrap:anywhere]">
         {product.summary}
       </p>
     </article>

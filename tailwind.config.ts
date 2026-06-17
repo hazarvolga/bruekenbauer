@@ -62,11 +62,20 @@ const config: Config = {
           "28px",
           { lineHeight: "36px", letterSpacing: "0", fontWeight: "600" },
         ],
+        "headline-sm": ["24px", { lineHeight: "30px", letterSpacing: "0", fontWeight: "600" }],
+        "headline-md-mobile": [
+          "30px",
+          { lineHeight: "36px", letterSpacing: "0", fontWeight: "600" },
+        ],
+        "headline-md": ["36px", { lineHeight: "44px", letterSpacing: "0", fontWeight: "600" }],
         "headline-lg": ["42px", { lineHeight: "50px", letterSpacing: "0", fontWeight: "600" }],
         "display-xl": [
-          "clamp(56px, 9vw, 108px)",
+          "clamp(52px, 7vw, 96px)",
           { lineHeight: "0.92", letterSpacing: "0", fontWeight: "700" },
         ],
+      },
+      scale: {
+        102: "1.02",
       },
       boxShadow: {
         "red-reticle": "0 0 18px rgb(var(--color-warning-red) / 0.28)",
