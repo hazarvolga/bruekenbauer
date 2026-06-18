@@ -9,6 +9,7 @@ type Props = {
   variant?: "primary" | "ghost";
   size?: "sm" | "md";
   className?: string;
+  disabled?: boolean;
   onClick?: () => void;
 };
 
@@ -32,6 +33,7 @@ export function TechnicalButton({
   variant = "primary",
   size = "md",
   className = "",
+  disabled = false,
   onClick,
 }: Props) {
   const classes = cn(
@@ -40,6 +42,7 @@ export function TechnicalButton({
     variant === "primary"
       ? "border-warning-red bg-warning-red text-primary-container hover:bg-transparent hover:text-warning-red"
       : "border-industrial-silver/60 bg-transparent text-industrial-silver hover:border-warning-red hover:text-warning-red",
+    disabled && "cursor-not-allowed opacity-60 hover:bg-warning-red hover:text-primary-container",
     className,
   );
 
@@ -52,7 +55,7 @@ export function TechnicalButton({
   }
 
   return (
-    <button type={type} className={classes} onClick={onClick}>
+    <button type={type} className={classes} disabled={disabled} onClick={onClick}>
       {children}
     </button>
   );

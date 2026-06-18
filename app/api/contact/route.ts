@@ -10,6 +10,7 @@ import {
   isEmail,
   isText,
   readJsonBodyWithLimit,
+  verifyTurnstileToken,
 } from "@/lib/formSecurity";
 
 export interface ContactRequest {
@@ -20,6 +21,7 @@ export interface ContactRequest {
   message: string;
   locale?: string;
   website?: string;
+  turnstileToken?: string;
 }
 
 function generateRef(): string {
@@ -38,7 +40,8 @@ function validate(body: unknown): body is ContactRequest {
     (b.phone === undefined || isText(b.phone, 50)) &&
     isText(b.message, 5000, true) &&
     (b.locale === undefined || isText(b.locale, 5)) &&
-    (b.website === undefined || isText(b.website, 200))
+    (b.website === undefined || isText(b.website, 200)) &&
+    (b.turnstileToken === undefined || isText(b.turnstileToken, 4096))
   );
 }
 
@@ -76,6 +79,18 @@ export async function POST(request: Request) {
     return NextResponse.json(
       { error: "Missing required fields: name, email, message." },
       { status: 422 }
+    );
+  }
+
+  const turnstile = await verifyTurnstileToken(body.turnstileToken, getClientIp(request));
+  if (!turnstile.ok) {
+    console.error("Contact Turnstile verification failed", {
+      referenceId,
+      reason: turnstile.reason,
+    });
+    return NextResponse.json(
+      { error: "Bot verification failed. Please refresh and try again." },
+      { status: 403 }
     );
   }
 

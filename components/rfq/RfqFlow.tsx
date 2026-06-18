@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from "react";
 import { TechnicalButton } from "@/components/layout/TechnicalButton";
+import { TurnstileWidget } from "@/components/forms/TurnstileWidget";
 import { applications } from "@/data/applications";
 import { getApplicationCopy, getProductGroupCopy, normalizeLocale } from "@/data/localizedContent";
 import { productTaxonomy, type ProductGroup } from "@/data/productTaxonomy";
@@ -90,6 +91,8 @@ export function RfqFlow({
       privacyLink: "Privacy Policy",
       confidential: "Please do not submit confidential or export-controlled information unless covered by an appropriate agreement.",
       response: "Typical response within 1-2 business days.",
+      verificationFailed: "Bot verification failed. Please refresh and try again.",
+      verificationRequired: "Security verification is required before submission.",
     },
     de: {
       confirmed: "RFQ bestätigt",
@@ -125,6 +128,8 @@ export function RfqFlow({
       privacyLink: "Datenschutzerklärung verarbeitet werden.",
       confidential: "Bitte übermitteln Sie keine vertraulichen oder exportkontrollierten Informationen, sofern keine geeignete Vereinbarung besteht.",
       response: "Typische Antwort innerhalb von 1-2 Werktagen.",
+      verificationFailed: "Bot-Prüfung fehlgeschlagen. Bitte aktualisieren und erneut versuchen.",
+      verificationRequired: "Die Sicherheitsprüfung ist vor dem Absenden erforderlich.",
     },
     fr: {
       confirmed: "RFQ confirmé",
@@ -160,8 +165,11 @@ export function RfqFlow({
       privacyLink: "Politique de confidentialité.",
       confidential: "Ne transmettez pas d'informations confidentielles ou soumises au contrôle des exportations sans accord approprié.",
       response: "Réponse habituelle sous 1 à 2 jours ouvrables.",
+      verificationFailed: "La vérification anti-bot a échoué. Veuillez actualiser et réessayer.",
+      verificationRequired: "La vérification de sécurité est requise avant l'envoi.",
     },
   }[normalizedLocale];
+  const turnstileRequired = Boolean(process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY);
   const resolvedInitialState = useMemo(
     () => ({ ...initialState, ...initialContext }),
     [initialContext]
@@ -170,6 +178,7 @@ export function RfqFlow({
   const [status, setStatus] = useState<SubmitStatus>("idle");
   const [referenceId, setReferenceId] = useState<string | null>(null);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
+  const [turnstileToken, setTurnstileToken] = useState("");
   const fieldClass =
     "mt-2 w-full border border-outline/70 bg-surface-container-low/60 px-4 py-3 font-mono text-technical-md text-on-surface outline-none transition-colors duration-200 placeholder:text-outline/45 hover:border-industrial-silver focus:border-warning-red focus:ring-1 focus:ring-warning-red/20";
   const familyOptions = useMemo(
@@ -192,8 +201,12 @@ export function RfqFlow({
   }, [selectedFamily, state.applicationSector]);
 
   const complete = useMemo(
-    () => state.name.trim() && state.email.trim() && state.company.trim(),
-    [state]
+    () =>
+      state.name.trim() &&
+      state.email.trim() &&
+      state.company.trim() &&
+      (!turnstileRequired || turnstileToken),
+    [state, turnstileRequired, turnstileToken]
   );
 
   function update(field: keyof RfqState, value: string) {
@@ -238,7 +251,7 @@ export function RfqFlow({
       const res = await fetch("/api/rfq", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...state, locale }),
+        body: JSON.stringify({ ...state, locale, turnstileToken }),
       });
       if (!res.ok) {
         const data = (await res.json()) as { error?: string };
@@ -349,6 +362,7 @@ export function RfqFlow({
             onClick={() => {
               setStatus("idle");
               setReferenceId(null);
+              setTurnstileToken("");
               setState(resolvedInitialState);
             }}
           >
@@ -512,12 +526,26 @@ export function RfqFlow({
             ERR — {errorMsg}
           </p>
         )}
+        <TurnstileWidget
+          locale={normalizedLocale}
+          onVerify={setTurnstileToken}
+          onExpire={() => setTurnstileToken("")}
+          onError={() => {
+            setTurnstileToken("");
+            setErrorMsg(copy.verificationFailed);
+          }}
+        />
         <TechnicalButton
           type="submit"
-          className={!complete || status === "loading" ? "opacity-60" : ""}
+          disabled={!complete || status === "loading"}
         >
           {status === "loading" ? copy.submitting : copy.submit}
         </TechnicalButton>
+        {turnstileRequired && !turnstileToken && (
+          <p className="font-mono text-label-xs uppercase tracking-[0.12em] text-outline">
+            {copy.verificationRequired}
+          </p>
+        )}
         <div className="space-y-3 border-t border-graphite-muted pt-5 font-mono text-data-sm leading-relaxed text-outline">
           <p>
             {copy.privacyPrefix}{" "}

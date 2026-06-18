@@ -1,6 +1,7 @@
 const RATE_LIMIT_WINDOW_MS = 10 * 60 * 1000;
 const RATE_LIMIT_MAX_REQUESTS = 5;
 const DEFAULT_BODY_LIMIT_BYTES = 32_768;
+const TURNSTILE_VERIFY_ENDPOINT = "https://challenges.cloudflare.com/turnstile/v0/siteverify";
 
 type RateLimitEntry = {
   count: number;
@@ -97,6 +98,50 @@ export function getRequiredResendConfig() {
     fromEmail: config.fromEmail,
     toEmail,
   };
+}
+
+export async function verifyTurnstileToken(token: unknown, remoteIp?: string) {
+  const secret = process.env.TURNSTILE_SECRET_KEY?.trim();
+  const isProduction = process.env.NODE_ENV === "production";
+
+  if (!secret) {
+    return {
+      ok: !isProduction,
+      reason: isProduction ? "missing_turnstile_secret" : "turnstile_disabled_in_dev",
+    };
+  }
+
+  if (typeof token !== "string" || token.trim().length === 0) {
+    return { ok: false, reason: "missing_turnstile_token" };
+  }
+
+  const body = new URLSearchParams({
+    secret,
+    response: token,
+  });
+
+  if (remoteIp && remoteIp !== "unknown") {
+    body.set("remoteip", remoteIp);
+  }
+
+  try {
+    const response = await fetch(TURNSTILE_VERIFY_ENDPOINT, {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body,
+    });
+    const result = (await response.json()) as {
+      success?: boolean;
+      "error-codes"?: string[];
+    };
+
+    return {
+      ok: response.ok && result.success === true,
+      reason: result["error-codes"]?.join(",") || (response.ok ? "verification_failed" : "verification_unavailable"),
+    };
+  } catch {
+    return { ok: false, reason: "verification_unavailable" };
+  }
 }
 
 export function isText(value: unknown, maxLength: number, required = false) {

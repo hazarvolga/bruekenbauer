@@ -1,6 +1,7 @@
 "use client"; // form state + API submission
 
 import { useState } from "react";
+import { TurnstileWidget } from "@/components/forms/TurnstileWidget";
 import { TechnicalButton } from "@/components/layout/TechnicalButton";
 import type { ContactRequest } from "@/app/api/contact/route";
 import { normalizeLocale } from "@/data/localizedContent";
@@ -34,6 +35,8 @@ export function ContactForm({ locale = "en" }: { locale?: string }) {
       placeholderMessage: "Describe your design requirements, target volume, and technical specifications...",
       privacyPrefix: "By submitting this inquiry, you acknowledge that your personal data will be processed in accordance with our",
       privacyLink: "Privacy Policy",
+      verificationFailed: "Bot verification failed. Please refresh and try again.",
+      verificationRequired: "Security verification is required before submission.",
     },
     de: {
       confirmed: "Übermittlung bestätigt",
@@ -56,6 +59,8 @@ export function ContactForm({ locale = "en" }: { locale?: string }) {
       placeholderMessage: "Beschreiben Sie Ihre Designanforderungen, das Zielvolumen und die technischen Spezifikationen...",
       privacyPrefix: "Mit dem Absenden dieser Anfrage bestätigen Sie, dass Ihre personenbezogenen Daten gemäß unserer",
       privacyLink: "Datenschutzerklärung verarbeitet werden.",
+      verificationFailed: "Bot-Prüfung fehlgeschlagen. Bitte aktualisieren und erneut versuchen.",
+      verificationRequired: "Die Sicherheitsprüfung ist vor dem Absenden erforderlich.",
     },
     fr: {
       confirmed: "Transmission confirmée",
@@ -78,8 +83,11 @@ export function ContactForm({ locale = "en" }: { locale?: string }) {
       placeholderMessage: "Décrivez vos besoins de conception, le volume cible et les spécifications techniques...",
       privacyPrefix: "En envoyant cette demande, vous reconnaissez que vos données personnelles seront traitées conformément à notre",
       privacyLink: "Politique de confidentialité.",
+      verificationFailed: "La vérification anti-bot a échoué. Veuillez actualiser et réessayer.",
+      verificationRequired: "La vérification de sécurité est requise avant l'envoi.",
     },
   }[normalizedLocale];
+  const turnstileRequired = Boolean(process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY);
   const [form, setForm] = useState<ContactRequest>({
     name: "",
     email: "",
@@ -91,12 +99,17 @@ export function ContactForm({ locale = "en" }: { locale?: string }) {
   const [status, setStatus] = useState<Status>("idle");
   const [referenceId, setReferenceId] = useState<string | null>(null);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
+  const [turnstileToken, setTurnstileToken] = useState("");
 
   function update(field: keyof ContactRequest, value: string) {
     setForm((f) => ({ ...f, [field]: value }));
   }
 
-  const complete = form.name.trim() && form.email.trim() && form.message.trim();
+  const complete =
+    form.name.trim() &&
+    form.email.trim() &&
+    form.message.trim() &&
+    (!turnstileRequired || turnstileToken);
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -107,7 +120,7 @@ export function ContactForm({ locale = "en" }: { locale?: string }) {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...form, locale }),
+        body: JSON.stringify({ ...form, locale, turnstileToken }),
       });
       if (!res.ok) {
         const data = (await res.json()) as { error?: string };
@@ -144,6 +157,7 @@ export function ContactForm({ locale = "en" }: { locale?: string }) {
           onClick={() => {
             setStatus("idle");
             setReferenceId(null);
+            setTurnstileToken("");
             setForm({ name: "", email: "", company: "", phone: "", message: "", website: "" });
           }}
         >
@@ -221,12 +235,26 @@ export function ContactForm({ locale = "en" }: { locale?: string }) {
           ERR — {errorMsg}
         </p>
       )}
+      <TurnstileWidget
+        locale={normalizedLocale}
+        onVerify={setTurnstileToken}
+        onExpire={() => setTurnstileToken("")}
+        onError={() => {
+          setTurnstileToken("");
+          setErrorMsg(copy.verificationFailed);
+        }}
+      />
       <TechnicalButton
         type="submit"
-        className={!complete || status === "loading" ? "opacity-60" : ""}
+        disabled={!complete || status === "loading"}
       >
         {status === "loading" ? copy.submitting : copy.submit}
       </TechnicalButton>
+      {turnstileRequired && !turnstileToken && (
+        <p className="font-mono text-label-xs uppercase tracking-[0.12em] text-outline">
+          {copy.verificationRequired}
+        </p>
+      )}
       <p className="max-w-3xl font-mono text-data-sm leading-relaxed text-outline">
         {copy.privacyPrefix}{" "}
         <Link

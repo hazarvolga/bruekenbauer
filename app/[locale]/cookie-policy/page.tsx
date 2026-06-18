@@ -42,6 +42,7 @@ const copy = {
         title: "Third-Party Services",
         paragraphs: [
           "Contact and RFQ forms may be processed through service providers used for secure email delivery and website operation. Such providers may process technical metadata necessary to deliver the requested communication or maintain service security.",
+          "Cloudflare Turnstile may be loaded on Contact and RFQ forms as a strictly security-related bot-protection service. It is not used for advertising personalization or behavioral marketing.",
         ],
       },
       {
@@ -101,6 +102,7 @@ const copy = {
         title: "Dienste Dritter",
         paragraphs: [
           "Kontakt- und RFQ-Formulare können über Dienstleister verarbeitet werden, die für sichere E-Mail-Zustellung und Websitebetrieb eingesetzt werden. Solche Anbieter können technische Metadaten verarbeiten, die zur Zustellung der angeforderten Kommunikation oder zur Aufrechterhaltung der Servicesicherheit erforderlich sind.",
+          "Cloudflare Turnstile kann auf Kontakt- und RFQ-Formularen als strikt sicherheitsbezogener Bot-Schutzdienst geladen werden. Es wird nicht für personalisierte Werbung oder verhaltensbasiertes Marketing eingesetzt.",
         ],
       },
       {
@@ -160,6 +162,7 @@ const copy = {
         title: "Services Tiers",
         paragraphs: [
           "Les formulaires de contact et RFQ peuvent être traités par des prestataires utilisés pour l'envoi sécurisé d'e-mails et l'exploitation du site. Ces prestataires peuvent traiter des métadonnées techniques nécessaires à l'acheminement de la communication demandée ou au maintien de la sécurité du service.",
+          "Cloudflare Turnstile peut être chargé sur les formulaires Contact et RFQ comme service de protection anti-bot strictement lié à la sécurité. Il n'est pas utilisé pour la personnalisation publicitaire ou le marketing comportemental.",
         ],
       },
       {

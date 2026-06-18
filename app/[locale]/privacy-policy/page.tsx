@@ -77,6 +77,7 @@ const copy = {
         title: "Security And Automation",
         paragraphs: [
           "We apply reasonable technical and organizational measures to protect personal data against unauthorized access, loss, misuse, and alteration. No solely automated decision-making with legal or similarly significant effects is used through this website.",
+          "Contact and RFQ forms may use Cloudflare Turnstile or equivalent bot-protection services to verify that a submission is legitimate and to protect the website from automated abuse.",
         ],
       },
       {
@@ -157,6 +158,7 @@ const copy = {
         title: "Sicherheit Und Automatisierung",
         paragraphs: [
           "Wir setzen angemessene technische und organisatorische Maßnahmen ein, um personenbezogene Daten vor unbefugtem Zugriff, Verlust, Missbrauch und Veränderung zu schützen. Über diese Website findet keine ausschließlich automatisierte Entscheidungsfindung mit rechtlicher oder ähnlich erheblicher Wirkung statt.",
+          "Kontakt- und RFQ-Formulare können Cloudflare Turnstile oder gleichwertige Bot-Schutzdienste verwenden, um legitime Übermittlungen zu prüfen und die Website vor automatisiertem Missbrauch zu schützen.",
         ],
       },
       {
@@ -237,6 +239,7 @@ const copy = {
         title: "Sécurité Et Automatisation",
         paragraphs: [
           "Nous appliquons des mesures techniques et organisationnelles raisonnables pour protéger les données personnelles contre l'accès non autorisé, la perte, l'abus et l'altération. Aucune décision entièrement automatisée produisant des effets juridiques ou similaires significatifs n'est utilisée via ce site.",
+          "Les formulaires Contact et RFQ peuvent utiliser Cloudflare Turnstile ou des services équivalents de protection anti-bot afin de vérifier qu'un envoi est légitime et de protéger le site contre les abus automatisés.",
         ],
       },
       {

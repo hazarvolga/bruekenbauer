@@ -10,6 +10,7 @@ import {
   isEmail,
   isText,
   readJsonBodyWithLimit,
+  verifyTurnstileToken,
 } from "@/lib/formSecurity";
 
 export interface RfqRequest {
@@ -27,6 +28,7 @@ export interface RfqRequest {
   notes: string;
   locale?: string;
   website?: string;
+  turnstileToken?: string;
 }
 
 function generateRef(): string {
@@ -52,7 +54,8 @@ function validate(body: unknown): body is RfqRequest {
     isText(b.company, 200, true) &&
     isText(b.notes, 5000) &&
     (b.locale === undefined || isText(b.locale, 5)) &&
-    (b.website === undefined || isText(b.website, 200))
+    (b.website === undefined || isText(b.website, 200)) &&
+    (b.turnstileToken === undefined || isText(b.turnstileToken, 4096))
   );
 }
 
@@ -90,6 +93,18 @@ export async function POST(request: Request) {
     return NextResponse.json(
       { error: "Missing required fields: name, email, company." },
       { status: 422 }
+    );
+  }
+
+  const turnstile = await verifyTurnstileToken(body.turnstileToken, getClientIp(request));
+  if (!turnstile.ok) {
+    console.error("RFQ Turnstile verification failed", {
+      referenceId,
+      reason: turnstile.reason,
+    });
+    return NextResponse.json(
+      { error: "Bot verification failed. Please refresh and try again." },
+      { status: 403 }
     );
   }
 
