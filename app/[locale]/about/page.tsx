@@ -156,19 +156,19 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
       </section>
 
       <section className="border-b border-graphite-muted bg-background px-margin-mobile py-12 md:px-margin-desktop md:py-14">
-        <div className="grid gap-gutter lg:grid-cols-3">
+        <div className="mx-auto grid w-full max-w-[1600px] gap-gutter lg:grid-cols-3">
           {teamMembers.map((member) => (
               <article
                 key={member.id}
                 className="reticle-corners group flex min-w-0 flex-col overflow-hidden border border-graphite-muted bg-surface-container-low/50"
               >
-                <div className="relative h-72 w-full shrink-0 border-b border-graphite-muted bg-graphite-muted/20 md:h-[300px] lg:h-[280px]">
+                <div className="relative aspect-[4/3] w-full shrink-0 overflow-hidden border-b border-graphite-muted bg-graphite-muted/20">
                   <Image
                     src={member.image}
                     alt={member.name}
                     fill
-                    sizes="(min-width: 1280px) 28vw, (min-width: 768px) 60vw, 100vw"
-                    className="object-cover object-center grayscale transition duration-700 ease-out group-focus-within:grayscale-0 group-hover:grayscale-0"
+                    sizes="(min-width: 1800px) 500px, (min-width: 1280px) 30vw, (min-width: 768px) 60vw, 100vw"
+                    className="object-contain object-center grayscale transition duration-700 ease-out group-focus-within:grayscale-0 group-hover:grayscale-0"
                   />
                   <div className="bg-industrial-blue/20 absolute inset-0 mix-blend-multiply transition-opacity duration-700 ease-out group-focus-within:opacity-0 group-hover:opacity-0" />
                 </div>
