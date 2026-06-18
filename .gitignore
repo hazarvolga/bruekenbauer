@@ -14,6 +14,10 @@ build/
 .env.test.local
 .env.production.local
 apikey.md
+*key*.txt
+*Key*.txt
+*keys*.txt
+*Keys*.txt
 
 # ── Tooling cache ───────────────────────────────────────────────
 .eslintcache
