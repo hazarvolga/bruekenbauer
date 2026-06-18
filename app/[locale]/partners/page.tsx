@@ -109,10 +109,10 @@ export default async function PartnersPage({ params }: { params: Promise<{ local
     {
       id: "PML",
       name: "PML",
-      logo: "/images/partners/pml.jpeg",
+      logo: "/images/partners/pml.png",
       type: t("sourcing_partner"),
       description: t("pml_desc"),
-      logoClassName: "p-5",
+      logoClassName: "p-4",
     },
   ];
 
