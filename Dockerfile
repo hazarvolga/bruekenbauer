@@ -1,5 +1,5 @@
 # ── Stage 1: deps ───────────────────────────────────────────────
-FROM node:22-alpine AS deps
+FROM node:24-alpine AS deps
 RUN corepack enable pnpm
 
 WORKDIR /app
@@ -7,7 +7,7 @@ COPY package.json pnpm-lock.yaml ./
 RUN pnpm install --frozen-lockfile --prod=false
 
 # ── Stage 2: builder ────────────────────────────────────────────
-FROM node:22-alpine AS builder
+FROM node:24-alpine AS builder
 RUN corepack enable pnpm
 
 WORKDIR /app
@@ -25,7 +25,7 @@ ENV NEXT_PUBLIC_TURNSTILE_SITE_KEY=${NEXT_PUBLIC_TURNSTILE_SITE_KEY}
 RUN pnpm build
 
 # ── Stage 3: runner ─────────────────────────────────────────────
-FROM node:22-alpine AS runner
+FROM node:24-alpine AS runner
 WORKDIR /app
 
 ENV NODE_ENV=production

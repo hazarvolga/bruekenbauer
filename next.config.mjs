@@ -1,11 +1,13 @@
-import createNextIntlPlugin from 'next-intl/plugin';
- 
+import createNextIntlPlugin from "next-intl/plugin";
+
 const withNextIntl = createNextIntlPlugin();
+const isInfomaniak = process.env.DEPLOY_TARGET === "infomaniak";
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Required for Docker standalone deployment via Coolify
-  output: "standalone",
+  // Infomaniak manages the Node process directly. Docker deployments keep the
+  // smaller standalone artifact used by Coolify and local Compose workflows.
+  ...(isInfomaniak ? {} : { output: "standalone" }),
 
   async rewrites() {
     return {
@@ -15,7 +17,8 @@ const nextConfig = {
           destination: "/en",
         },
         {
-          source: "/:path((?!en(?:/|$)|de(?:/|$)|fr(?:/|$)|api(?:/|$)|_next(?:/|$)|_vercel(?:/|$)|.*\\..*).*)",
+          source:
+            "/:path((?!en(?:/|$)|de(?:/|$)|fr(?:/|$)|api(?:/|$)|_next(?:/|$)|_vercel(?:/|$)|.*\\..*).*)",
           destination: "/en/:path*",
         },
       ],
