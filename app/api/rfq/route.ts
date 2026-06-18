@@ -4,11 +4,12 @@ import * as React from "react";
 import { RfqEmailTemplate } from "@/components/email/RfqEmailTemplate";
 import {
   checkFormRateLimit,
-  exceedsBodyLimit,
   getClientIp,
+  getRequiredResendConfig,
   hasValidJsonContentType,
   isEmail,
   isText,
+  readJsonBodyWithLimit,
 } from "@/lib/formSecurity";
 
 export interface RfqRequest {
@@ -59,9 +60,6 @@ export async function POST(request: Request) {
   if (!hasValidJsonContentType(request)) {
     return NextResponse.json({ error: "Content-Type must be application/json." }, { status: 415 });
   }
-  if (exceedsBodyLimit(request)) {
-    return NextResponse.json({ error: "Request body is too large." }, { status: 413 });
-  }
 
   const rateLimit = checkFormRateLimit(`rfq:${getClientIp(request)}`);
   if (!rateLimit.allowed) {
@@ -71,11 +69,21 @@ export async function POST(request: Request) {
     );
   }
 
-  let body: unknown;
-  try {
-    body = await request.json();
-  } catch {
-    return NextResponse.json({ error: "Invalid JSON request." }, { status: 400 });
+  const parsed = await readJsonBodyWithLimit(request);
+  if (!parsed.ok) {
+    return NextResponse.json({ error: parsed.error }, { status: parsed.status });
+  }
+  const body = parsed.body;
+  const referenceId = generateRef();
+  const timestamp = new Date().toISOString();
+
+  if (
+    typeof body === "object" &&
+    body !== null &&
+    typeof (body as Record<string, unknown>).website === "string" &&
+    (body as Record<string, string>).website.trim()
+  ) {
+    return NextResponse.json({ referenceId, timestamp }, { status: 201 });
   }
 
   if (!validate(body)) {
@@ -83,13 +91,6 @@ export async function POST(request: Request) {
       { error: "Missing required fields: name, email, company." },
       { status: 422 }
     );
-  }
-
-  const referenceId = generateRef();
-  const timestamp = new Date().toISOString();
-
-  if (body.website?.trim()) {
-    return NextResponse.json({ referenceId, timestamp }, { status: 201 });
   }
 
   // Structured log — always log local record
@@ -115,33 +116,45 @@ export async function POST(request: Request) {
     })
   );
 
-  // Send email if key is provided
-  const apiKey = process.env.RESEND_API_KEY;
-  if (apiKey) {
-    try {
-      const resend = new Resend(apiKey);
-      const fromEmail = process.env.RESEND_FROM_EMAIL || "onboarding@resend.dev";
-      const toEmailRaw = process.env.RESEND_TO_EMAIL || "info@brueckenbauer.de";
-      const toEmail = toEmailRaw.split(",").map((e) => e.trim());
-      const locale = body.locale || "en";
-      
-      let subject = `[brückenbauer RFQ] ${body.company} — ${referenceId}`;
-      if (locale === "de") {
-        subject = `[brückenbauer Angebotsanfrage] ${body.company} — ${referenceId}`;
-      } else if (locale === "fr") {
-        subject = `[brückenbauer Demande d'offre] ${body.company} — ${referenceId}`;
-      }
+  const resendConfig = getRequiredResendConfig();
+  if (!resendConfig.ok) {
+    console.error("RFQ delivery disabled: missing Resend configuration", {
+      referenceId,
+      missing: resendConfig.missing,
+    });
+    return NextResponse.json(
+      { error: "Form delivery is temporarily unavailable." },
+      { status: 503 }
+    );
+  }
 
-      await resend.emails.send({
-        from: fromEmail,
-        to: toEmail,
-        subject,
-        react: React.createElement(RfqEmailTemplate, { request: body, referenceId, timestamp, locale }),
-      });
-    } catch (err) {
-      console.error("Failed to send RFQ email via Resend:", err);
-      // Gracefully continue so submitter still gets a success response
+  try {
+    const resend = new Resend(resendConfig.apiKey);
+    const locale = body.locale || "en";
+
+    let subject = `[brückenbauer RFQ] ${body.company} — ${referenceId}`;
+    if (locale === "de") {
+      subject = `[brückenbauer Angebotsanfrage] ${body.company} — ${referenceId}`;
+    } else if (locale === "fr") {
+      subject = `[brückenbauer Demande d'offre] ${body.company} — ${referenceId}`;
     }
+
+    const result = await resend.emails.send({
+      from: resendConfig.fromEmail,
+      to: resendConfig.toEmail,
+      subject,
+      react: React.createElement(RfqEmailTemplate, { request: body, referenceId, timestamp, locale }),
+    });
+
+    if (result && typeof result === "object" && "error" in result && result.error) {
+      throw new Error(String(result.error));
+    }
+  } catch (err) {
+    console.error("Failed to send RFQ email via Resend:", { referenceId, err });
+    return NextResponse.json(
+      { error: "Unable to deliver form at this time." },
+      { status: 502 }
+    );
   }
 
   return NextResponse.json({ referenceId, timestamp }, { status: 201 });

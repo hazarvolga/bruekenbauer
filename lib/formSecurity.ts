@@ -1,5 +1,6 @@
 const RATE_LIMIT_WINDOW_MS = 10 * 60 * 1000;
 const RATE_LIMIT_MAX_REQUESTS = 5;
+const DEFAULT_BODY_LIMIT_BYTES = 32_768;
 
 type RateLimitEntry = {
   count: number;
@@ -45,6 +46,57 @@ export function hasValidJsonContentType(request: Request) {
 export function exceedsBodyLimit(request: Request, maxBytes = 32_768) {
   const contentLength = Number(request.headers.get("content-length") || 0);
   return Number.isFinite(contentLength) && contentLength > maxBytes;
+}
+
+export async function readJsonBodyWithLimit(request: Request, maxBytes = DEFAULT_BODY_LIMIT_BYTES) {
+  if (exceedsBodyLimit(request, maxBytes)) {
+    return { ok: false as const, status: 413, error: "Request body is too large." };
+  }
+
+  let rawBody = "";
+  try {
+    rawBody = await request.text();
+  } catch {
+    return { ok: false as const, status: 400, error: "Unable to read request body." };
+  }
+
+  if (new TextEncoder().encode(rawBody).byteLength > maxBytes) {
+    return { ok: false as const, status: 413, error: "Request body is too large." };
+  }
+
+  try {
+    return { ok: true as const, body: JSON.parse(rawBody) as unknown };
+  } catch {
+    return { ok: false as const, status: 400, error: "Invalid JSON request." };
+  }
+}
+
+export function getRequiredResendConfig() {
+  const config = {
+    apiKey: process.env.RESEND_API_KEY?.trim() || "",
+    fromEmail: process.env.RESEND_FROM_EMAIL?.trim() || "",
+    toEmailRaw: process.env.RESEND_TO_EMAIL?.trim() || "",
+  };
+
+  const missing = Object.entries(config)
+    .filter(([, value]) => !value)
+    .map(([key]) => key);
+
+  if (missing.length > 0) {
+    return { ok: false as const, missing };
+  }
+
+  const toEmail = config.toEmailRaw.split(",").map((email) => email.trim()).filter(Boolean);
+  if (toEmail.length === 0) {
+    return { ok: false as const, missing: ["toEmailRaw"] };
+  }
+
+  return {
+    ok: true as const,
+    apiKey: config.apiKey,
+    fromEmail: config.fromEmail,
+    toEmail,
+  };
 }
 
 export function isText(value: unknown, maxLength: number, required = false) {
