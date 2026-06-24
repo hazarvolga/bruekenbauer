@@ -51,11 +51,11 @@ const copy = {
           "Umfassender Katalog aktiver Komponentengruppen, Temperatursensoren, elektromechanischer Adapter und Akustik.",
       },
       "BR-PWR-2026": {
-        title: "Power Management Portfolio",
+        title: "Leistungsmanagement-Portfolio",
         type: "Portfolio",
         status: "Aktiv",
         description:
-          "Technische Dokumentation zu IGBT, SiC MOSFET, Leistungsgleichrichtern und High-Frequency Power Supplies.",
+          "Technische Dokumentation zu IGBT, SiC-MOSFETs, Leistungsgleichrichtern und Hochfrequenz-Netzteilen.",
       },
       "BR-COMP-2026": {
         title: "Unternehmensprofil 2026",
@@ -82,11 +82,11 @@ const copy = {
           "Catalogue complet des groupes de composants actifs, capteurs de température, adaptateurs électromécaniques et acoustique.",
       },
       "BR-PWR-2026": {
-        title: "Power Management Portfolio",
+        title: "Portefeuille de gestion de puissance",
         type: "Portfolio",
         status: "Actif",
         description:
-          "Documentation technique pour IGBT, SiC MOSFET, redresseurs de puissance et high-frequency power supplies.",
+          "Documentation technique pour IGBT, MOSFET SiC, redresseurs de puissance et alimentations haute fréquence.",
       },
       "BR-COMP-2026": {
         title: "Profil d'entreprise 2026",
@@ -134,16 +134,22 @@ export default async function DocumentsPage({ params }: { params: Promise<{ loca
 
                 <div className="mt-6 grid grid-cols-2 gap-y-3 border-t border-graphite-muted/40 pt-4 font-mono text-[10px] uppercase text-outline">
                   <div>
-                    <span className="block text-[8px] text-outline/60 tracking-wider">{localized.revision}</span>
-                    <span className="text-industrial-silver font-semibold">{doc.revision}</span>
+                    <span className="block text-[8px] tracking-wider text-outline/60">
+                      {localized.revision}
+                    </span>
+                    <span className="font-semibold text-industrial-silver">{doc.revision}</span>
                   </div>
                   <div>
-                    <span className="block text-[8px] text-outline/60 tracking-wider">{localized.fileSize}</span>
-                    <span className="text-industrial-silver font-semibold">{doc.fileSize}</span>
+                    <span className="block text-[8px] tracking-wider text-outline/60">
+                      {localized.fileSize}
+                    </span>
+                    <span className="font-semibold text-industrial-silver">{doc.fileSize}</span>
                   </div>
                   <div className="col-span-2">
-                    <span className="block text-[8px] text-outline/60 tracking-wider">{localized.publicationDate}</span>
-                    <span className="text-industrial-silver font-semibold">{doc.issueDate}</span>
+                    <span className="block text-[8px] tracking-wider text-outline/60">
+                      {localized.publicationDate}
+                    </span>
+                    <span className="font-semibold text-industrial-silver">{doc.issueDate}</span>
                   </div>
                 </div>
 
@@ -158,7 +164,7 @@ export default async function DocumentsPage({ params }: { params: Promise<{ loca
                 ) : null}
                 <div className="mt-8 flex justify-between border-t border-graphite-muted pt-4 font-mono text-data-sm uppercase text-outline">
                   <span>{doc.id}</span>
-                  <span className="text-warning-red font-semibold">{docCopy.status}</span>
+                  <span className="font-semibold text-warning-red">{docCopy.status}</span>
                 </div>
               </article>
             );

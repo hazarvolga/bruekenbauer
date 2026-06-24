@@ -60,7 +60,7 @@
       "srv_01_copy": "Wir unterstützen oder leiten zielgerichtete Projekte und beraten unsere Kunden fundiert.",
       "srv_02_title": "Kooperation und Verhandlungen",
       "srv_02_copy": "Wir erleichtern die Zusammenarbeit mit Behörden, Geschäftspartnern oder anderen relevanten Stellen und bringen komplexe Interessen effizient zusammen.",
-      "srv_03_title": "Business Development",
+      "srv_03_title": "Geschäftsentwicklung",
       "srv_03_copy": "Wir identifizieren Wachstumschancen, entwickeln Geschäftsmodelle und unterstützen unsere Kunden dabei, ihr volles Potenzial auszuschöpfen.",
       "srv_04_title": "Teamverstärkung",
       "srv_04_copy": "Kurzfristig und für einen definierten Zeitraum ergänzen wir die Teams unserer Kunden mit unserem Know-how, um Ressourcenengpässe zu überbrücken oder Projekte erfolgreich abzuschließen."
@@ -75,20 +75,22 @@
         "bio_3": "Heute bringt er diese erstklassige Erfahrung in die Beratung europäischer Kunden und den Aufbau resilienter Lieferketten für aktive und passive elektronische Komponenten aus der Türkei, Indien und Asien ein. Seine Fähigkeit, globale Produktionszentren nahtlos mit den präzisen Anforderungen von Kunden in der DACH-Region, Frankreich, den Benelux-Ländern und den nordischen Ländern zu verbinden, gewährleistet nachhaltige Beschaffungsstrategien und langfristigen technologischen Erfolg.",
         "focus_1": "Forschung & Technologie",
         "focus_2": "PMO-Leitung",
-        "focus_3": "Stakeholder-Strategie"
+        "focus_3": "Anspruchsgruppen-Strategie"
       },
       "konstantin": {
-        "bio_1": "Konstantin Gochua ist ein Business-Development- und Product-Management-Experte mit umfangreicher internationaler Erfahrung in Halbleitern, Mikroelektronik und Advanced Materials. Sein Hintergrund verbindet tiefes technisches Fachwissen mit einer kundenorientierten Geschäftsstrategie und schlägt damit die Brücke zwischen Engineering, Innovation und kommerziellem Wachstum.",
-        "bio_2": "Im Laufe seiner Karriere hat Konstantin zu Halbleiterinnovation, RFID-Technologien, Power Electronics und internationaler Geschäftsentwicklung beigetragen und dabei strategische Partnerschaften sowie funktionsübergreifende Zusammenarbeit in hoch technischen Branchen unterstützt.",
+        "title": "Geschäftsentwicklung & Halbleiter-Spezialist",
+        "bio_1": "Konstantin Gochua ist ein Experte für Geschäftsentwicklung und Produktmanagement mit umfangreicher internationaler Erfahrung in Halbleitern, Mikroelektronik und fortschrittlichen Werkstoffen. Sein Hintergrund verbindet tiefes technisches Fachwissen mit einer kundenorientierten Geschäftsstrategie und schlägt damit die Brücke zwischen Ingenieurwesen, Innovation und kommerziellem Wachstum.",
+        "bio_2": "Im Laufe seiner Karriere hat Konstantin zu Halbleiterinnovation, RFID-Technologien, Leistungselektronik und internationaler Geschäftsentwicklung beigetragen und dabei strategische Partnerschaften sowie funktionsübergreifende Zusammenarbeit in hoch technischen Branchen unterstützt.",
         "bio_3": "Mit einer starken Basis in angewandter Forschung und industrieller Innovation bringt Konstantin einen analytischen, anpassungsfähigen und international geprägten Ansatz in komplexe technologische und geschäftliche Herausforderungen ein.",
         "focus_1": "Halbleiter",
         "focus_2": "Produktstrategie",
-        "focus_3": "Business Development"
+        "focus_3": "Geschäftsentwicklung"
       },
       "iponey": {
+        "title": "Partner, Beschaffungsleitung Asien",
         "bio_1": "Iponey HUANG verfügt über mehr als 20 Jahre Berufserfahrung bei Fortune Global 500-Unternehmen und anderen weltweit führenden Branchenführern in den Bereichen Automobil (autonomes Fahren, Elektrofahrzeuge, Brennstoffzellen, CNG, LNG), erneuerbare Energien (Photovoltaik, Energiespeichersysteme, Windkraft), Industrieautomatisierung, intelligente Logistik & Smart Warehouse und Robotik.",
-        "bio_2": "Er ist unser strategischer Sourcing-Partner für elektrische Komponenten und hochgradig maßgeschneiderte Lösungen in Asien.",
-        "focus_1": "Sourcing & Logistik",
+        "bio_2": "Er ist unser strategischer Beschaffungspartner für elektrische Komponenten und hochgradig maßgeschneiderte Lösungen in Asien.",
+        "focus_1": "Beschaffung & Logistik",
         "focus_2": "Strategische Allianzen",
         "focus_3": "Maßgeschneiderte Lösungen"
       }
@@ -107,7 +109,7 @@
     "cta": {
       "label": "Nächster Schritt",
       "title": "Starten Sie den Dialog mit brückenbauer GmbH",
-      "copy": "Teilen Sie Ihren technischen Kontext, Ihre Sourcing-Herausforderung oder strategische Anforderung und wir leiten sie in das passende Gespräch.",
+      "copy": "Teilen Sie Ihren technischen Kontext, Ihre Beschaffungsherausforderung oder strategische Anforderung und wir leiten sie in das passende Gespräch.",
       "contact": "Kontakt",
       "rfq": "Anfrage",
       "consultation": "Beratung"
@@ -134,7 +136,7 @@
     "group_2_title": "Ausrüstung & Geräte",
     "cta_label": "Applikationssupport",
     "cta_title": "Verbinden Sie Ihre Anwendung mit der passenden Komponentenstrategie",
-    "cta_copy": "Teilen Sie Betriebsumgebung, Lifecycle-Anforderungen und technische Randbedingungen Ihrer Anwendung. Wir helfen, daraus einen fokussierten Komponenten- und Sourcing-Pfad abzuleiten.",
+    "cta_copy": "Teilen Sie Betriebsumgebung, Lifecycle-Anforderungen und technische Randbedingungen Ihrer Anwendung. Wir helfen, daraus einen fokussierten Komponenten- und Beschaffungspfad abzuleiten.",
     "cta_contact": "Kontakt",
     "cta_rfq": "RFQ"
   },
@@ -149,7 +151,7 @@
   "ProductDescriptions": {
     "temperature-sensors": "Unsere Temperaturfühler-Baugruppen sind für extreme Präzision und raue Umgebungen konzipiert und garantieren ein zuverlässiges Wärmemanagement. Das Portfolio umfasst leistungsstarke NTCs, Thermistoren und Thermoelemente, die für die Industrieautomation und Automobilanwendungen entwickelt wurden.",
     "electromagnetic-compatibility-emc": "Schützen Sie Ihre elektronische Infrastruktur mit unseren erstklassigen EMV-Lösungen vor Störungen. Unser umfassendes Sortiment an Drosseln, Filtern und Induktivitäten sorgt für ein stabiles elektromagnetisches Verhalten und die strikte Einhaltung globaler Standards.",
-    "power-management": "Maximieren Sie Effizienz und Betriebssicherheit mit unseren fortschrittlichen Power-Management-Komponenten. Von robusten IGBT- und SiC-Modulen bis hin zu zuverlässigen MOSFETs und Netzteilen stärken wir hochbelastete Industriesysteme und Anwendungen für erneuerbare Energien.",
+    "power-management": "Maximieren Sie Effizienz und Betriebssicherheit mit unseren fortschrittlichen Leistungsmanagement-Komponenten. Von robusten IGBT- und SiC-Modulen bis hin zu zuverlässigen MOSFETs und Netzteilen stärken wir hochbelastete Industriesysteme und Anwendungen für erneuerbare Energien.",
     "passives": "Unsere passiven Bauelemente sind das Fundament stabiler Schaltkreise und bieten unübertroffene Zuverlässigkeit unter ständiger Belastung. Entdecken Sie unsere umfangreiche Auswahl an Widerständen, MLCC-Kondensatoren und Präzisions-Quarz-Timing-Komponenten für High-End-Elektronik.",
     "electromechanics": "Unsere elektromechanischen Komponenten verbinden elektrische Steuerung mit robuster mechanischer Ausführung und sind auf Langlebigkeit ausgelegt. Wir liefern langlebige Steckverbinder, Lüftungstechnik und maßgeschneiderte Schnittstellenlösungen, die komplexe Systeme reibungslos am Laufen halten.",
     "acoustics": "Sorgen Sie mit unseren High-Fidelity-Akustikkomponenten für klare akustische Signale und Rückmeldungen. Unsere speziellen Summer, Mikrofone und magnetischen Wandler liefern eine überragende Klangleistung für Medizin-, Industrie- und Verbraucheranwendungen.",
@@ -159,7 +161,7 @@
   "ProductShortDescriptions": {
     "temperature-sensors": "NTC, Thermistoren, Thermoelemente und kundenspezifische Hochtemperatur-Sensorbaugruppen.",
     "electromagnetic-compatibility-emc": "Drosseln, Filter, Induktivitäten und Transformatoren für kontrolliertes EMV-Verhalten.",
-    "power-management": "IGBT, SiC, MOSFET, Converter und Power-Supply-Komponenten für technische Systeme.",
+    "power-management": "IGBT, SiC, MOSFET, Wandler und Netzteilkomponenten für technische Systeme.",
     "passives": "Widerstände, Kondensatoren, MLCC-Pakete und Quarz-Timing-Komponenten.",
     "electromechanics": "Steckverbinder, Kabel, Lüftung, Kartenleser, Sockets und drahtlose Schnittstellenhardware.",
     "acoustics": "Buzzer, Mikrofone, Receiver, Lautsprecher, Piezos und magnetische Akustikwandler.",
@@ -179,18 +181,18 @@
   "PartnersPage": {
     "label": "Strategische Zusammenarbeit",
     "title": "Fokus auf fortschrittliche KI-Produkte und elektrische Geräte",
-    "intro": "Unser Partner-Ökosystem erweitert brückenbauer GmbH um gezielte Technologie-, Sourcing- und Innovationskompetenzen, wenn Elektronikprojekte besondere Tiefe erfordern.",
+    "intro": "Unser Partner-Ökosystem erweitert brückenbauer GmbH um gezielte Technologie-, Beschaffungs- und Innovationskompetenzen, wenn Elektronikprojekte besondere Tiefe erfordern.",
     "strategic_partner": "Strategischer Partner",
     "technology_partner": "Technologiepartner",
     "innovation_partner": "Innovationspartner",
-    "sourcing_partner": "Sourcing Partner",
-    "censray_desc": "Fortschrittliche Sensor- und Steuerungslösungen für IoT, erneuerbare Energien, Automotive und industrielle Automatisierung.",
+    "sourcing_partner": "Beschaffungspartner",
+    "censray_desc": "Fortschrittliche Sensor- und Steuerungslösungen für IoT, erneuerbare Energien, Automobilindustrie und industrielle Automatisierung.",
     "iyaksh_desc": "KI-gestützte Robotik- und Automatisierungslösungen für intelligentere, effizientere und vernetzte Abläufe.",
-    "suntek_desc": "Strategische Sourcing- und Technologiekooperation für elektronische Komponenten, technische Systeme und industrielle Anwendungen.",
-    "esa_desc": "Europäische Raumfahrtprogramme und institutionelle Aerospace-Zusammenarbeit in Forschung, Engineering und Missionsumfeldern.",
-    "nasa_desc": "Weltraumforschung, Luft- und Raumfahrtentwicklung sowie missionstaugliche Technologieprogramme für hochzuverlässige Engineering-Kontexte.",
-    "airbus_desc": "Defence-, Aerospace-, Satelliten- und sichere Kommunikationsprogramme mit hohen Anforderungen an Engineering und Lieferkontinuität.",
-    "thales_desc": "Raumsysteme, Satelliteninfrastruktur und missionskritische Technologie-Ökosysteme für anspruchsvolle Aerospace-Programme.",
+    "suntek_desc": "Strategische Beschaffungs- und Technologiekooperation für elektronische Komponenten, technische Systeme und industrielle Anwendungen.",
+    "esa_desc": "Europäische Raumfahrtprogramme und institutionelle Luft- und Raumfahrtzusammenarbeit in Forschung, Entwicklung und Missionsumfeldern.",
+    "nasa_desc": "Weltraumforschung, Luft- und Raumfahrtentwicklung sowie missionstaugliche Technologieprogramme für hochzuverlässige Entwicklungskontexte.",
+    "airbus_desc": "Verteidigungs-, Luft- und Raumfahrt-, Satelliten- und sichere Kommunikationsprogramme mit hohen Anforderungen an Entwicklung und Lieferkontinuität.",
+    "thales_desc": "Raumsysteme, Satelliteninfrastruktur und missionskritische Technologie-Ökosysteme für anspruchsvolle Luft- und Raumfahrtprogramme.",
     "swisscom_desc": "Schweizer Kommunikationsinfrastruktur, Enterprise-Konnektivität und digitale Service-Ökosysteme für sichere industrielle Abläufe.",
     "stadler_desc": "Bahntechnologie, Mobilitätssysteme und Verkehrsinfrastrukturprogramme mit hohen Anforderungen an Zuverlässigkeit.",
     "pml_desc": "Spezialisierte Partnerkompetenzen für Komponentenbeschaffung, Fertigungskoordination und Unterstützung industrieller Elektronikprojekte."

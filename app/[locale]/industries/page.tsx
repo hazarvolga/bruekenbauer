@@ -60,7 +60,7 @@ export default async function IndustriesPage({ params }: { params: Promise<{ loc
       <span className="font-mono text-label-xs uppercase tracking-[0.18em] text-warning-red">
         {t("label")}
       </span>
-      <h1 className="mt-5 max-w-5xl break-words font-mono text-headline-lg-mobile uppercase text-on-surface [overflow-wrap:anywhere] md:text-[54px] md:leading-[0.92] lg:text-[72px] xl:text-display-xl">
+      <h1 className="mt-5 max-w-5xl break-words font-mono text-headline-lg-mobile uppercase text-on-surface md:text-[54px] md:leading-[0.92] lg:text-[72px] xl:text-display-xl">
         {t("title")}
       </h1>
       <section className="mt-10 grid gap-gutter border-y border-graphite-muted py-6 lg:grid-cols-12">
@@ -68,7 +68,7 @@ export default async function IndustriesPage({ params }: { params: Promise<{ loc
           <div className="font-mono text-label-xs uppercase tracking-[0.18em] text-warning-red">
             {t("section_label")}
           </div>
-          <h2 className="mt-4 max-w-md break-words font-mono text-[clamp(1.25rem,8vw,2.125rem)] uppercase leading-[1.02] text-industrial-silver [overflow-wrap:anywhere] md:text-[44px] md:leading-[0.98] lg:text-[52px]">
+          <h2 className="mt-4 max-w-md break-words font-mono text-[clamp(1.25rem,8vw,2.125rem)] uppercase leading-[1.02] text-industrial-silver md:text-[44px] md:leading-[0.98] lg:text-[52px]">
             {t("section_title")}
           </h2>
         </div>
@@ -94,7 +94,7 @@ export default async function IndustriesPage({ params }: { params: Promise<{ loc
         <span className="shrink-0 font-mono text-label-xs uppercase tracking-[0.18em] text-warning-red">
           [ Group 01 ]
         </span>
-        <h2 className="min-w-0 break-words font-mono text-technical-md uppercase tracking-[0.1em] text-industrial-silver [overflow-wrap:anywhere]">
+        <h2 className="min-w-0 break-words font-mono text-technical-md uppercase tracking-[0.1em] text-industrial-silver">
           {t("group_1_title")}
         </h2>
       </div>
@@ -108,10 +108,10 @@ export default async function IndustriesPage({ params }: { params: Promise<{ loc
               className="reticle-corners group relative flex min-h-full flex-col overflow-hidden border border-graphite-muted bg-surface-container-low/50 p-6 transition-colors duration-300 hover:border-industrial-silver hover:bg-surface-container-low/75 focus-visible:border-warning-red focus-visible:outline-none"
             >
               <div className="relative z-10 flex-1">
-                <h2 className="break-words font-mono text-technical-md uppercase text-industrial-silver [overflow-wrap:anywhere]">
+                <h2 className="break-words font-mono text-technical-md uppercase text-industrial-silver">
                   {appCopy.name}
                 </h2>
-                <p className="mt-5 break-words font-mono text-data-sm uppercase text-outline [overflow-wrap:anywhere]">
+                <p className="mt-5 break-words font-mono text-data-sm uppercase text-outline">
                   {appCopy.summary}
                 </p>
               </div>
@@ -137,7 +137,7 @@ export default async function IndustriesPage({ params }: { params: Promise<{ loc
         <span className="shrink-0 font-mono text-label-xs uppercase tracking-[0.18em] text-warning-red">
           [ Group 02 ]
         </span>
-        <h2 className="min-w-0 break-words font-mono text-technical-md uppercase tracking-[0.1em] text-industrial-silver [overflow-wrap:anywhere]">
+        <h2 className="min-w-0 break-words font-mono text-technical-md uppercase tracking-[0.1em] text-industrial-silver">
           {t("group_2_title")}
         </h2>
       </div>
@@ -151,10 +151,10 @@ export default async function IndustriesPage({ params }: { params: Promise<{ loc
               className="reticle-corners group relative flex min-h-full flex-col overflow-hidden border border-graphite-muted bg-surface-container-low/50 p-6 transition-colors duration-300 hover:border-industrial-silver hover:bg-surface-container-low/75 focus-visible:border-warning-red focus-visible:outline-none"
             >
               <div className="relative z-10 flex-1">
-                <h2 className="break-words font-mono text-technical-md uppercase text-industrial-silver [overflow-wrap:anywhere]">
+                <h2 className="break-words font-mono text-technical-md uppercase text-industrial-silver">
                   {appCopy.name}
                 </h2>
-                <p className="mt-5 break-words font-mono text-data-sm uppercase text-outline [overflow-wrap:anywhere]">
+                <p className="mt-5 break-words font-mono text-data-sm uppercase text-outline">
                   {appCopy.summary}
                 </p>
               </div>
@@ -178,9 +178,9 @@ export default async function IndustriesPage({ params }: { params: Promise<{ loc
         <span className="font-mono text-label-xs uppercase tracking-[0.18em] text-warning-red">
           {t("cta_label")}
         </span>
-        <div className="mt-5 grid gap-6 lg:grid-cols-[1fr_auto] lg:items-end">
-          <div>
-            <h2 className="break-words font-mono text-headline-md-mobile uppercase text-industrial-silver [overflow-wrap:anywhere] md:text-headline-md">
+        <div className="mt-5 grid min-w-0 gap-6 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-end">
+          <div className="min-w-0">
+            <h2 className="break-words font-mono text-headline-md-mobile uppercase text-industrial-silver md:text-headline-md">
               {t("cta_title")}
             </h2>
             <p className="mt-4 max-w-3xl font-mono text-technical-md leading-relaxed text-on-surface-variant">

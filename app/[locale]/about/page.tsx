@@ -64,7 +64,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
       id: "02",
       image: "/images/team/konstantin-gochua-yeni.jpeg",
       name: "Konstantin Gochua, PhD",
-      title: "Business Development & Semiconductor Specialist",
+      title: t("team.konstantin.title"),
       bio: [t("team.konstantin.bio_1"), t("team.konstantin.bio_2"), t("team.konstantin.bio_3")],
       focus: [
         t("team.konstantin.focus_1"),
@@ -76,13 +76,9 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
       id: "03",
       image: "/images/team/iponey-huang-yeni.jpeg",
       name: "Mr. Iponey HUANG 丨MBA",
-      title: "Partner, Sourcing Head in Asia",
+      title: t("team.iponey.title"),
       bio: [t("team.iponey.bio_1"), t("team.iponey.bio_2")],
-      focus: [
-        t("team.iponey.focus_1"),
-        t("team.iponey.focus_2"),
-        t("team.iponey.focus_3"),
-      ],
+      focus: [t("team.iponey.focus_1"), t("team.iponey.focus_2"), t("team.iponey.focus_3")],
     },
   ];
 
@@ -158,55 +154,55 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
       <section className="border-b border-graphite-muted bg-background px-margin-mobile py-12 md:px-margin-desktop md:py-14">
         <div className="mx-auto grid w-full max-w-[1600px] gap-gutter lg:grid-cols-3">
           {teamMembers.map((member) => (
-              <article
-                key={member.id}
-                className="reticle-corners group flex min-w-0 flex-col overflow-hidden border border-graphite-muted bg-surface-container-low/50"
-              >
-                <div className="relative aspect-[4/3] w-full shrink-0 overflow-hidden border-b border-graphite-muted bg-graphite-muted/20">
-                  <Image
-                    src={member.image}
-                    alt={member.name}
-                    fill
-                    sizes="(min-width: 1800px) 500px, (min-width: 1280px) 30vw, (min-width: 768px) 60vw, 100vw"
-                    className="object-contain object-center grayscale transition duration-700 ease-out group-focus-within:grayscale-0 group-hover:grayscale-0"
-                  />
-                  <div className="bg-industrial-blue/20 absolute inset-0 mix-blend-multiply transition-opacity duration-700 ease-out group-focus-within:opacity-0 group-hover:opacity-0" />
+            <article
+              key={member.id}
+              className="reticle-corners group flex min-w-0 flex-col overflow-hidden border border-graphite-muted bg-surface-container-low/50"
+            >
+              <div className="relative aspect-[4/3] w-full shrink-0 overflow-hidden border-b border-graphite-muted bg-graphite-muted/20">
+                <Image
+                  src={member.image}
+                  alt={member.name}
+                  fill
+                  sizes="(min-width: 1800px) 500px, (min-width: 1280px) 30vw, (min-width: 768px) 60vw, 100vw"
+                  className="object-contain object-center grayscale transition duration-700 ease-out group-focus-within:grayscale-0 group-hover:grayscale-0"
+                />
+                <div className="bg-industrial-blue/20 absolute inset-0 mix-blend-multiply transition-opacity duration-700 ease-out group-focus-within:opacity-0 group-hover:opacity-0" />
+              </div>
+
+              <div className="flex min-w-0 flex-1 flex-col justify-start p-5 md:p-6">
+                <div className="min-w-0 border-b border-graphite-muted pb-4">
+                  <h3 className="break-words font-mono text-[21px] uppercase leading-[27px] tracking-normal text-on-surface xl:text-[23px] xl:leading-[29px]">
+                    {member.name}
+                  </h3>
+                  <p className="mt-3 break-words font-mono text-[9px] uppercase leading-tight tracking-[0.08em] text-warning-red">
+                    {member.title}
+                  </p>
                 </div>
 
-                <div className="flex min-w-0 flex-1 flex-col justify-start p-5 md:p-6">
-                  <div className="min-w-0 border-b border-graphite-muted pb-4">
-                    <h3 className="break-words font-mono text-[21px] uppercase leading-[27px] tracking-normal text-on-surface xl:text-[23px] xl:leading-[29px]">
-                      {member.name}
-                    </h3>
-                    <p className="mt-3 break-words font-mono text-[9px] uppercase leading-tight tracking-[0.08em] text-warning-red">
-                      {member.title}
+                <div className="mt-4 space-y-3">
+                  {member.bio.map((paragraph) => (
+                    <p
+                      key={paragraph}
+                      className="break-words font-mono text-[10.75px] uppercase leading-[1.62] tracking-normal text-on-surface-variant md:text-[11px]"
+                    >
+                      {paragraph}
                     </p>
-                  </div>
-
-                  <div className="mt-4 space-y-3">
-                    {member.bio.map((paragraph) => (
-                      <p
-                        key={paragraph}
-                        className="break-words font-mono text-[10.75px] uppercase leading-[1.62] tracking-normal text-on-surface-variant [overflow-wrap:anywhere] md:text-[11px]"
-                      >
-                        {paragraph}
-                      </p>
-                    ))}
-                  </div>
-
-                  <div className="mt-4 grid gap-0.5 border-t border-graphite-muted pt-2.5">
-                    {member.focus.map((item) => (
-                      <span
-                        key={item}
-                        className="min-w-0 break-words border border-graphite-muted/70 px-3 py-1 font-mono text-[10px] uppercase leading-tight tracking-[0.08em] text-industrial-silver"
-                      >
-                        {item}
-                      </span>
-                    ))}
-                  </div>
+                  ))}
                 </div>
-              </article>
-            ))}
+
+                <div className="mt-4 grid gap-0.5 border-t border-graphite-muted pt-2.5">
+                  {member.focus.map((item) => (
+                    <span
+                      key={item}
+                      className="min-w-0 break-words border border-graphite-muted/70 px-3 py-1 font-mono text-[10px] uppercase leading-tight tracking-[0.08em] text-industrial-silver"
+                    >
+                      {item}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </article>
+          ))}
         </div>
       </section>
 

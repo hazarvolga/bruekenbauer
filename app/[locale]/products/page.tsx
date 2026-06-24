@@ -52,7 +52,7 @@ export default async function ProductsPage({ params }: { params: Promise<{ local
                 <h2 className="product-card-title mt-3 break-words font-mono uppercase text-on-surface">
                   {copy.title}
                 </h2>
-                <p className="mt-4 break-words font-mono text-[12px] leading-relaxed text-on-surface-variant [overflow-wrap:anywhere] md:text-data-sm">
+                <p className="mt-4 break-words font-mono text-[12px] leading-relaxed text-on-surface-variant md:text-data-sm">
                   {copy.shortDescription}
                 </p>
                 <span className="mt-6 inline-flex w-fit items-center border border-graphite-muted px-3 py-2 font-mono text-[10px] uppercase tracking-[0.14em] text-industrial-silver transition-colors group-hover:border-warning-red group-hover:text-warning-red">

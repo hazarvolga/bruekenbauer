@@ -216,9 +216,10 @@ select:focus-visible {
 }
 
 .product-card-title {
-  overflow-wrap: anywhere;
+  overflow-wrap: break-word;
   word-break: normal;
-  hyphens: auto;
+  hyphens: manual;
+  text-wrap: balance;
   font-size: 21px;
   line-height: 1.18;
 }

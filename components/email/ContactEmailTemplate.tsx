@@ -40,7 +40,7 @@ const translations = {
     referenceId: "ID DE RÉFÉRENCE",
     timestamp: "HORODATAGE",
     senderMetadata: "1. MÉTADONNÉES DE L'EXPÉDITEUR",
-    contactName: "NOM DU CONTACT",
+    contactName: "PERSONNE DE CONTACT",
     emailAddress: "ADRESSE E-MAIL",
     companyName: "NOM DE L'ENTREPRISE",
     phoneNumber: "NUMÉRO DE TÉLÉPHONE",

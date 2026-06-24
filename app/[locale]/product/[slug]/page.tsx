@@ -130,19 +130,17 @@ export default async function ProductDetailPage({
           <div className="mt-6 font-mono text-label-xs uppercase tracking-[0.18em] text-warning-red">
             {product.partNumber}
           </div>
-          <h1 className="mt-3 break-words font-mono text-headline-lg-mobile uppercase leading-tight text-on-surface [overflow-wrap:anywhere] md:text-[42px] md:leading-[50px]">
+          <h1 className="mt-3 break-words font-mono text-headline-lg-mobile uppercase leading-tight text-on-surface md:text-[42px] md:leading-[50px]">
             {product.name}
           </h1>
-          <p className="mt-5 break-words font-mono text-[15px] leading-[22px] text-on-surface-variant [overflow-wrap:anywhere]">
+          <p className="mt-5 break-words font-mono text-[15px] leading-[22px] text-on-surface-variant">
             {product.summary}
           </p>
           <dl className="mt-8 grid grid-cols-1 gap-3 border-y border-graphite-muted py-5 font-mono text-data-sm uppercase sm:grid-cols-2">
             {Object.entries(product.specs).map(([key, value]) => (
-              <div key={key} className="min-w-0 break-words [overflow-wrap:anywhere]">
+              <div key={key} className="min-w-0 break-words">
                 <dt className="text-outline">{key}</dt>
-                <dd className="mt-1.5 break-words text-industrial-silver [overflow-wrap:anywhere]">
-                  {value}
-                </dd>
+                <dd className="mt-1.5 break-words text-industrial-silver">{value}</dd>
               </div>
             ))}
           </dl>
@@ -163,7 +161,7 @@ export default async function ProductDetailPage({
                 <span className="font-mono text-label-xs uppercase tracking-[0.18em] text-warning-red">
                   {labels.relatedFamily}
                 </span>
-                <h2 className="mt-3 break-words font-mono text-headline-sm uppercase text-on-surface [overflow-wrap:anywhere]">
+                <h2 className="mt-3 break-words font-mono text-headline-sm uppercase text-on-surface">
                   {labels.exploreAdjacent}
                 </h2>
               </div>

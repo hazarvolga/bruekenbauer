@@ -72,7 +72,7 @@ export function SearchClient({ products, locale = "en" }: SearchClientProps) {
       submit: "soumettre une RFQ",
       partNo: "Réf.",
       partNoAndName: "Réf. / Nom",
-      initial: "Saisir une réf., un nom produit, un groupe ou un secteur d'application",
+      initial: "Saisir une réf., un nom de produit, un groupe ou un secteur d'application",
     },
   }[normalizedLocale];
   const [query, setQuery] = useState("");

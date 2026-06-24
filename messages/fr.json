@@ -74,21 +74,23 @@
         "bio_2": "Ayant contribué à la politique d'approvisionnement de l'UE pour la recherche sur la fusion, exercé comme délégué expert pour les programmes-cadres européens en nanotechnologies et matériaux (FP-7 NMP), et accompagné le développement d'instruments satellitaires pour le programme scientifique de l'ESA, il possède une maîtrise rare des normes de qualité les plus exigeantes.",
         "bio_3": "Aujourd'hui, il met cette expérience de classe mondiale au service des clients européens et de la sécurisation de chaînes d'approvisionnement résilientes pour des composants électroniques actifs et passifs provenant de Turquie, d'Inde et d'Asie. Sa capacité à relier harmonieusement les centres de production mondiaux aux besoins précis des clients de la région DACH, de France, des pays du Benelux et des pays nordiques garantit des stratégies d'approvisionnement durables et une réussite technologique à long terme.",
         "focus_1": "Recherche & Technologie",
-        "focus_2": "Leadership PMO",
+        "focus_2": "Direction PMO",
         "focus_3": "Stratégie des parties prenantes"
       },
       "konstantin": {
-        "bio_1": "Konstantin Gochua est un professionnel du business development et du product management, doté d'une vaste expérience internationale dans les semiconductors, la microélectronique et les advanced materials. Son parcours combine une expertise technique approfondie avec une stratégie commerciale orientée client, lui permettant de relier engineering, innovation et croissance commerciale.",
-        "bio_2": "Tout au long de sa carrière, Konstantin a contribué à l'innovation dans les semiconductors, les technologies RFID, la power electronics et le développement commercial international, tout en soutenant des partenariats stratégiques et une collaboration transversale dans des industries hautement techniques.",
+        "title": "Développement commercial & spécialiste des semi-conducteurs",
+        "bio_1": "Konstantin Gochua est un professionnel du développement commercial et de la gestion de produits, doté d'une vaste expérience internationale dans les semi-conducteurs, la microélectronique et les matériaux avancés. Son parcours combine une expertise technique approfondie avec une stratégie commerciale orientée client, lui permettant de relier ingénierie, innovation et croissance commerciale.",
+        "bio_2": "Tout au long de sa carrière, Konstantin a contribué à l'innovation dans les semi-conducteurs, les technologies RFID, l'électronique de puissance et le développement commercial international, tout en soutenant des partenariats stratégiques et une collaboration transversale dans des industries hautement techniques.",
         "bio_3": "Avec une base solide en recherche appliquée et en innovation industrielle, Konstantin apporte une approche analytique, adaptable et internationale aux défis technologiques et commerciaux complexes.",
         "focus_1": "Semi-conducteurs",
         "focus_2": "Stratégie de produit",
         "focus_3": "Développement commercial"
       },
       "iponey": {
+        "title": "Partenaire, responsable approvisionnement en Asie",
         "bio_1": "Iponey HUANG a plus de 20 ans d'expérience professionnelle dans des entreprises du Fortune Global 500 et d'autres leaders industriels de renommée mondiale pour l'automobile (conduite autonome, véhicule électrique, pile à combustible, GNC, GNL), les énergies renouvelables (solaire photovoltaïque, systèmes de stockage d'énergie, énergie éolienne), l'automatisation industrielle, la logistique intelligente & l'entrepôt intelligent, la robotique.",
-        "bio_2": "Il est notre partenaire de sourcing stratégique pour les composants électriques et les solutions hautement personnalisées en Asie.",
-        "focus_1": "Sourcing & Logistique",
+        "bio_2": "Il est notre partenaire stratégique d'approvisionnement pour les composants électriques et les solutions hautement personnalisées en Asie.",
+        "focus_1": "Approvisionnement & logistique",
         "focus_2": "Alliances stratégiques",
         "focus_3": "Solutions sur mesure"
       }
@@ -107,7 +109,7 @@
     "cta": {
       "label": "Étape suivante",
       "title": "Engager le dialogue avec brückenbauer GmbH",
-      "copy": "Partagez votre contexte technique, votre défi de sourcing ou votre besoin stratégique et nous l'orienterons vers le bon échange.",
+      "copy": "Partagez votre contexte technique, votre défi d'approvisionnement ou votre besoin stratégique et nous l'orienterons vers le bon échange.",
       "contact": "Contact",
       "rfq": "Demande de devis",
       "consultation": "Consultation"
@@ -134,7 +136,7 @@
     "group_2_title": "Équipements & Dispositifs",
     "cta_label": "Support application",
     "cta_title": "Relier votre application à la bonne stratégie composants",
-    "cta_copy": "Partagez l'environnement d'exploitation, les exigences de cycle de vie et les contraintes techniques de votre application. Nous vous aidons à les traduire en un parcours composants et sourcing ciblé.",
+    "cta_copy": "Partagez l'environnement d'exploitation, les exigences de cycle de vie et les contraintes techniques de votre application. Nous vous aidons à les traduire en un parcours composants et approvisionnement ciblé.",
     "cta_contact": "Contact",
     "cta_rfq": "RFQ"
   },
@@ -179,21 +181,21 @@
   "PartnersPage": {
     "label": "Collaborations Stratégiques",
     "title": "Focus sur les produits d'IA avancés et les appareils électriques",
-    "intro": "Notre écosystème de partenaires renforce brückenbauer GmbH avec des capacités ciblées en technologie, sourcing et innovation lorsque les projets électroniques exigent une expertise spécialisée.",
+    "intro": "Notre écosystème de partenaires renforce brückenbauer GmbH avec des capacités ciblées en technologie, approvisionnement et innovation lorsque les projets électroniques exigent une expertise spécialisée.",
     "strategic_partner": "Partenaire stratégique",
     "technology_partner": "Partenaire technologique",
     "innovation_partner": "Partenaire innovation",
-    "sourcing_partner": "Partenaire sourcing",
+    "sourcing_partner": "Partenaire d'approvisionnement",
     "censray_desc": "Solutions avancées de détection et de contrôle pour l'IoT, les énergies renouvelables, l'automobile et l'automatisation industrielle.",
     "iyaksh_desc": "Solutions de robotique et d'automatisation pilotées par l'IA pour des opérations plus intelligentes, efficaces et connectées.",
-    "suntek_desc": "Collaboration stratégique en sourcing et technologie pour composants électroniques, systèmes techniques et applications industrielles.",
+    "suntek_desc": "Collaboration stratégique en approvisionnement et technologie pour composants électroniques, systèmes techniques et applications industrielles.",
     "esa_desc": "Programmes spatiaux européens et collaboration institutionnelle aérospatiale autour de la recherche, de l'ingénierie et des écosystèmes de mission.",
     "nasa_desc": "Exploration spatiale, recherche aérospatiale et programmes technologiques de niveau mission pour des contextes d'ingénierie hautement fiables.",
     "airbus_desc": "Programmes de défense, aérospatial, satellite et communications sécurisées exigeant ingénierie avancée et continuité d'approvisionnement.",
     "thales_desc": "Systèmes spatiaux, infrastructure satellite et écosystèmes technologiques critiques pour des programmes aérospatiaux exigeants.",
     "swisscom_desc": "Infrastructure de communication suisse, connectivité d'entreprise et services numériques pour des opérations industrielles sécurisées.",
     "stadler_desc": "Technologies ferroviaires, systèmes de mobilité et infrastructures de transport avec de fortes exigences de fiabilité.",
-    "pml_desc": "Capacités partenaires spécialisées pour le sourcing de composants, la coordination de fabrication et le support de projets électroniques industriels."
+    "pml_desc": "Capacités partenaires spécialisées pour l'approvisionnement en composants, la coordination de fabrication et le support de projets électroniques industriels."
   },
   "MetaData": {
     "title": "brückenbauer GmbH: Nous ne nous contentons pas de conseiller",

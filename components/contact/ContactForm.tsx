@@ -32,8 +32,10 @@ export function ContactForm({ locale = "en" }: { locale?: string }) {
       placeholderEmail: "e.g. vance@company.com",
       placeholderCompany: "e.g. Vance Semiconductor (optional)",
       placeholderPhone: "e.g. +49 89 1234567 (optional)",
-      placeholderMessage: "Describe your design requirements, target volume, and technical specifications...",
-      privacyPrefix: "By submitting this inquiry, you acknowledge that your personal data will be processed in accordance with our",
+      placeholderMessage:
+        "Describe your design requirements, target volume, and technical specifications...",
+      privacyPrefix:
+        "By submitting this inquiry, you acknowledge that your personal data will be processed in accordance with our",
       privacyLink: "Privacy Policy",
       verificationFailed: "Bot verification failed. Please refresh and try again.",
       verificationRequired: "Security verification is required before submission.",
@@ -56,8 +58,10 @@ export function ContactForm({ locale = "en" }: { locale?: string }) {
       placeholderEmail: "z.B. vance@company.de",
       placeholderCompany: "z.B. Vance Halbleiter (optional)",
       placeholderPhone: "z.B. +49 89 1234567 (optional)",
-      placeholderMessage: "Beschreiben Sie Ihre Designanforderungen, das Zielvolumen und die technischen Spezifikationen...",
-      privacyPrefix: "Mit dem Absenden dieser Anfrage bestätigen Sie, dass Ihre personenbezogenen Daten gemäß unserer",
+      placeholderMessage:
+        "Beschreiben Sie Ihre Designanforderungen, das Zielvolumen und die technischen Spezifikationen...",
+      privacyPrefix:
+        "Mit dem Absenden dieser Anfrage bestätigen Sie, dass Ihre personenbezogenen Daten gemäß unserer",
       privacyLink: "Datenschutzerklärung verarbeitet werden.",
       verificationFailed: "Bot-Prüfung fehlgeschlagen. Bitte aktualisieren und erneut versuchen.",
       verificationRequired: "Die Sicherheitsprüfung ist vor dem Absenden erforderlich.",
@@ -69,7 +73,7 @@ export function ContactForm({ locale = "en" }: { locale?: string }) {
       newMessage: "Nouveau message",
       response: "Réponse habituelle sous 1 à 2 jours ouvrables.",
       aria: "Formulaire de contact",
-      name: "Nom du contact",
+      name: "Personne de contact",
       email: "E-mail professionnel",
       company: "Nom de l'entreprise",
       phone: "Numéro de téléphone",
@@ -80,8 +84,10 @@ export function ContactForm({ locale = "en" }: { locale?: string }) {
       placeholderEmail: "ex. vance@company.fr",
       placeholderCompany: "ex. Vance Semi-conducteurs (optionnel)",
       placeholderPhone: "ex. +33 1 23 45 67 89 (optionnel)",
-      placeholderMessage: "Décrivez vos besoins de conception, le volume cible et les spécifications techniques...",
-      privacyPrefix: "En envoyant cette demande, vous reconnaissez que vos données personnelles seront traitées conformément à notre",
+      placeholderMessage:
+        "Décrivez vos besoins de conception, le volume cible et les spécifications techniques...",
+      privacyPrefix:
+        "En envoyant cette demande, vous reconnaissez que vos données personnelles seront traitées conformément à notre",
       privacyLink: "Politique de confidentialité.",
       verificationFailed: "La vérification anti-bot a échoué. Veuillez actualiser et réessayer.",
       verificationRequired: "La vérification de sécurité est requise avant l'envoi.",
@@ -196,7 +202,7 @@ export function ContactForm({ locale = "en" }: { locale?: string }) {
             placeholder={placeholder}
             value={form[id] || ""}
             onChange={(e) => update(id, e.target.value)}
-            className="w-full border border-outline-variant hover:border-outline focus:border-warning-red bg-surface-container-low/60 px-4 py-3 font-mono text-technical-md text-on-surface placeholder:text-outline/40 focus:ring-1 focus:ring-warning-red/20 focus:outline-none transition-colors duration-200"
+            className="w-full border border-outline-variant bg-surface-container-low/60 px-4 py-3 font-mono text-technical-md text-on-surface transition-colors duration-200 placeholder:text-outline/40 hover:border-outline focus:border-warning-red focus:outline-none focus:ring-1 focus:ring-warning-red/20"
           />
         </div>
       ))}
@@ -215,7 +221,7 @@ export function ContactForm({ locale = "en" }: { locale?: string }) {
           placeholder={copy.placeholderMessage}
           value={form.message}
           onChange={(e) => update("message", e.target.value)}
-          className="w-full border border-outline-variant hover:border-outline focus:border-warning-red bg-surface-container-low/60 p-4 font-mono text-technical-md text-on-surface placeholder:text-outline/40 focus:ring-1 focus:ring-warning-red/20 focus:outline-none transition-colors duration-200"
+          className="w-full border border-outline-variant bg-surface-container-low/60 p-4 font-mono text-technical-md text-on-surface transition-colors duration-200 placeholder:text-outline/40 hover:border-outline focus:border-warning-red focus:outline-none focus:ring-1 focus:ring-warning-red/20"
         />
       </div>
       <div className="sr-only" aria-hidden="true">
@@ -244,10 +250,7 @@ export function ContactForm({ locale = "en" }: { locale?: string }) {
           setErrorMsg(copy.verificationFailed);
         }}
       />
-      <TechnicalButton
-        type="submit"
-        disabled={!complete || status === "loading"}
-      >
+      <TechnicalButton type="submit" disabled={!complete || status === "loading"}>
         {status === "loading" ? copy.submitting : copy.submit}
       </TechnicalButton>
       {turnstileRequired && !turnstileToken && (

@@ -69,7 +69,7 @@ const translations = {
     timestamp: "HORODATAGE",
     inquirySource: "SOURCE DE LA DEMANDE",
     submitterProfile: "1. PROFIL DU DEMANDEUR",
-    contactName: "NOM DU CONTACT",
+    contactName: "PERSONNE DE CONTACT",
     emailAddress: "ADRESSE E-MAIL",
     companyName: "NOM DE L'ENTREPRISE",
     technicalSpecs: "2. SPÉCIFICATIONS TECHNIQUES",

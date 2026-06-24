@@ -4,7 +4,12 @@ import { useMemo, useState } from "react";
 import { TechnicalButton } from "@/components/layout/TechnicalButton";
 import { TurnstileWidget } from "@/components/forms/TurnstileWidget";
 import { applications } from "@/data/applications";
-import { getApplicationCopy, getProductGroupCopy, normalizeLocale } from "@/data/localizedContent";
+import {
+  getApplicationCopy,
+  getLocalizedProduct,
+  getProductGroupCopy,
+  normalizeLocale,
+} from "@/data/localizedContent";
 import { productTaxonomy, type ProductGroup } from "@/data/productTaxonomy";
 import { products } from "@/data/products";
 import type { RfqRequest } from "@/app/api/rfq/route";
@@ -87,9 +92,11 @@ export function RfqFlow({
       },
       submitting: "Submitting...",
       submit: "Submit RFQ",
-      privacyPrefix: "By submitting this RFQ, you acknowledge that your personal data will be processed in accordance with our",
+      privacyPrefix:
+        "By submitting this RFQ, you acknowledge that your personal data will be processed in accordance with our",
       privacyLink: "Privacy Policy",
-      confidential: "Please do not submit confidential or export-controlled information unless covered by an appropriate agreement.",
+      confidential:
+        "Please do not submit confidential or export-controlled information unless covered by an appropriate agreement.",
       response: "Typical response within 1-2 business days.",
       verificationFailed: "Bot verification failed. Please refresh and try again.",
       verificationRequired: "Security verification is required before submission.",
@@ -124,9 +131,11 @@ export function RfqFlow({
       },
       submitting: "Wird gesendet...",
       submit: "RFQ absenden",
-      privacyPrefix: "Mit dem Absenden dieser RFQ bestätigen Sie, dass Ihre personenbezogenen Daten gemäß unserer",
+      privacyPrefix:
+        "Mit dem Absenden dieser RFQ bestätigen Sie, dass Ihre personenbezogenen Daten gemäß unserer",
       privacyLink: "Datenschutzerklärung verarbeitet werden.",
-      confidential: "Bitte übermitteln Sie keine vertraulichen oder exportkontrollierten Informationen, sofern keine geeignete Vereinbarung besteht.",
+      confidential:
+        "Bitte übermitteln Sie keine vertraulichen oder exportkontrollierten Informationen, sofern keine geeignete Vereinbarung besteht.",
       response: "Typische Antwort innerhalb von 1-2 Werktagen.",
       verificationFailed: "Bot-Prüfung fehlgeschlagen. Bitte aktualisieren und erneut versuchen.",
       verificationRequired: "Die Sicherheitsprüfung ist vor dem Absenden erforderlich.",
@@ -147,7 +156,7 @@ export function RfqFlow({
       applicationSector: "Secteur d'application",
       monthlyVolume: "Volume mensuel (unités/mois)",
       leadTime: "Délai souhaité (jours/semaines)",
-      contactName: "Nom du contact",
+      contactName: "Personne de contact",
       email: "E-mail",
       company: "Entreprise",
       notes: "Notes RFQ",
@@ -161,9 +170,11 @@ export function RfqFlow({
       },
       submitting: "Envoi...",
       submit: "Soumettre RFQ",
-      privacyPrefix: "En envoyant cette RFQ, vous reconnaissez que vos données personnelles seront traitées conformément à notre",
+      privacyPrefix:
+        "En envoyant cette RFQ, vous reconnaissez que vos données personnelles seront traitées conformément à notre",
       privacyLink: "Politique de confidentialité.",
-      confidential: "Ne transmettez pas d'informations confidentielles ou soumises au contrôle des exportations sans accord approprié.",
+      confidential:
+        "Ne transmettez pas d'informations confidentielles ou soumises au contrôle des exportations sans accord approprié.",
       response: "Réponse habituelle sous 1 à 2 jours ouvrables.",
       verificationFailed: "La vérification anti-bot a échoué. Veuillez actualiser et réessayer.",
       verificationRequired: "La vérification de sécurité est requise avant l'envoi.",
@@ -185,12 +196,17 @@ export function RfqFlow({
     () => products.filter((product) => product.group === state.productGroup),
     [state.productGroup]
   );
+  const localizedFamilyOptions = useMemo(
+    () => familyOptions.map((product) => getLocalizedProduct(product, normalizedLocale)),
+    [familyOptions, normalizedLocale]
+  );
   const selectedFamily = useMemo(
     () =>
+      products.find((product) => product.slug === state.familySlug) ??
       products.find((product) => product.slug === state.productSlug) ??
       familyOptions.find((product) => product.name === state.productFamily) ??
       familyOptions[0],
-    [familyOptions, state.productFamily, state.productSlug]
+    [familyOptions, state.familySlug, state.productFamily, state.productSlug]
   );
   const applicationOptions = useMemo(() => {
     const names: string[] = selectedFamily?.applications.length
@@ -274,9 +290,20 @@ export function RfqFlow({
 
   if (status === "success") {
     const keyLabels: Record<string, string> = {
-      source: normalizedLocale === "de" ? "Quelle" : normalizedLocale === "fr" ? "Source" : "Source",
-      productSlug: normalizedLocale === "de" ? "Produkt-Slug" : normalizedLocale === "fr" ? "Slug du produit" : "Product Slug",
-      familySlug: normalizedLocale === "de" ? "Familien-Slug" : normalizedLocale === "fr" ? "Slug de la famille" : "Family Slug",
+      source:
+        normalizedLocale === "de" ? "Quelle" : normalizedLocale === "fr" ? "Source" : "Source",
+      productSlug:
+        normalizedLocale === "de"
+          ? "Produkt-Slug"
+          : normalizedLocale === "fr"
+            ? "Slug du produit"
+            : "Product Slug",
+      familySlug:
+        normalizedLocale === "de"
+          ? "Familien-Slug"
+          : normalizedLocale === "fr"
+            ? "Slug de la famille"
+            : "Family Slug",
       productGroup: copy.productGroup,
       productFamily: copy.productFamily,
       applicationSector: copy.applicationSector,
@@ -321,6 +348,13 @@ export function RfqFlow({
           return val;
         }
       }
+      if (key === "productFamily") {
+        const productObj =
+          products.find(
+            (item) => item.slug === state.familySlug || item.slug === state.productSlug
+          ) ?? products.find((item) => item.name === val);
+        return productObj ? getLocalizedProduct(productObj, normalizedLocale).name : val;
+      }
       if (key === "applicationSector") {
         const appObj = applications.find((item) => item.name === val);
         return appObj ? getApplicationCopy(normalizedLocale, appObj).name : val;
@@ -328,11 +362,13 @@ export function RfqFlow({
       if (key === "leadTime") {
         const lowerVal = val.toLowerCase();
         if (lowerVal.includes("days")) {
-          const suffix = normalizedLocale === "de" ? " Tage" : normalizedLocale === "fr" ? " jours" : " days";
+          const suffix =
+            normalizedLocale === "de" ? " Tage" : normalizedLocale === "fr" ? " jours" : " days";
           return val.replace(/\s*days/i, suffix);
         }
         if (lowerVal.includes("day")) {
-          const suffix = normalizedLocale === "de" ? " Tag" : normalizedLocale === "fr" ? " jour" : " day";
+          const suffix =
+            normalizedLocale === "de" ? " Tag" : normalizedLocale === "fr" ? " jour" : " day";
           return val.replace(/\s*day/i, suffix);
         }
       }
@@ -370,15 +406,17 @@ export function RfqFlow({
           </TechnicalButton>
         </div>
         <dl className="border border-graphite-muted bg-surface-container-low/50 p-8 font-mono text-data-sm uppercase">
-          {Object.entries(state).filter(([key]) => key !== "website").map(([key, value]) => (
-            <div
-              key={key}
-              className="grid grid-cols-[0.45fr_1fr] gap-4 border-b border-graphite-muted py-4 last:border-b-0"
-            >
-              <dt className="text-outline">{keyLabels[key] || key.replace(/([A-Z])/g, " $1")}</dt>
-              <dd className="text-industrial-silver">{getLocalizedValue(key, value)}</dd>
-            </div>
-          ))}
+          {Object.entries(state)
+            .filter(([key]) => key !== "website")
+            .map(([key, value]) => (
+              <div
+                key={key}
+                className="grid grid-cols-[0.45fr_1fr] gap-4 border-b border-graphite-muted py-4 last:border-b-0"
+              >
+                <dt className="text-outline">{keyLabels[key] || key.replace(/([A-Z])/g, " $1")}</dt>
+                <dd className="text-industrial-silver">{getLocalizedValue(key, value)}</dd>
+              </div>
+            ))}
         </dl>
       </section>
     );
@@ -423,7 +461,7 @@ export function RfqFlow({
               onChange={(event) => updateProductFamily(event.target.value)}
               className={fieldClass}
             >
-              {familyOptions.map((product) => (
+              {localizedFamilyOptions.map((product) => (
                 <option key={product.slug} value={product.slug}>
                   {product.name}
                 </option>
@@ -535,10 +573,7 @@ export function RfqFlow({
             setErrorMsg(copy.verificationFailed);
           }}
         />
-        <TechnicalButton
-          type="submit"
-          disabled={!complete || status === "loading"}
-        >
+        <TechnicalButton type="submit" disabled={!complete || status === "loading"}>
           {status === "loading" ? copy.submitting : copy.submit}
         </TechnicalButton>
         {turnstileRequired && !turnstileToken && (

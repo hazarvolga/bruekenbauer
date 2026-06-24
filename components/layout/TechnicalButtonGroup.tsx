@@ -8,9 +8,5 @@ export function TechnicalButtonGroup({
   children: ReactNode;
   className?: string;
 }) {
-  return (
-    <div className={cn("grid w-full gap-3 [&>*]:w-full", className)}>
-      {children}
-    </div>
-  );
+  return <div className={cn("grid w-full min-w-0 gap-3 [&>*]:w-full", className)}>{children}</div>;
 }

@@ -138,9 +138,7 @@ export function IndustrySystemsPanel({
                       : "border-graphite-muted hover:border-industrial-silver hover:text-on-surface"
                   )}
                 >
-                  <span className="min-w-0 break-words [overflow-wrap:anywhere]">
-                    {product.name}
-                  </span>
+                  <span className="min-w-0 break-words">{product.name}</span>
                   <span className="shrink-0 text-warning-red">-&gt;</span>
                 </button>
               </li>
@@ -190,24 +188,19 @@ export function IndustrySystemsPanel({
                   <div className="font-mono text-label-xs uppercase tracking-[0.18em] text-warning-red">
                     {product.partNumber}
                   </div>
-                  <h2 className="mt-3 break-words font-mono text-[26px] uppercase leading-tight text-on-surface [overflow-wrap:anywhere] sm:text-headline-lg-mobile">
+                  <h2 className="mt-3 break-words font-mono text-[26px] uppercase leading-tight text-on-surface sm:text-headline-lg-mobile">
                     {product.name}
                   </h2>
-                  <p className="mt-4 max-w-2xl break-words font-mono text-data-sm uppercase text-on-surface-variant [overflow-wrap:anywhere]">
+                  <p className="mt-4 max-w-2xl break-words font-mono text-data-sm uppercase text-on-surface-variant">
                     {product.summary}
                   </p>
                   <dl className="mt-5 grid grid-cols-1 gap-3 font-mono text-data-sm uppercase sm:grid-cols-2">
                     {Object.entries(product.specs)
                       .slice(0, 4)
                       .map(([key, value]) => (
-                        <div
-                          key={key}
-                          className="min-w-0 border-t border-graphite-muted pt-3"
-                        >
+                        <div key={key} className="min-w-0 border-t border-graphite-muted pt-3">
                           <dt className="text-outline">{key}</dt>
-                          <dd className="mt-1 break-words text-industrial-silver [overflow-wrap:anywhere]">
-                            {value}
-                          </dd>
+                          <dd className="mt-1 break-words text-industrial-silver">{value}</dd>
                         </div>
                       ))}
                   </dl>

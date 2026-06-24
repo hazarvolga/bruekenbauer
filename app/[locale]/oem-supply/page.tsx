@@ -13,8 +13,16 @@ const copy = {
       "Engineered logistics. Bulk procurement architecture optimized for continuous manufacturing operations.",
     cta: "Start RFQ",
     metrics: [
-      ["JIT Delivery Metric", "99.8%", "Global supply continuity maintained across tier-1 assembly nodes."],
-      ["Volume Capacity", "Scale Elasticity", "Minimum order quantities, priority allocation, and rolling forecast alignment."],
+      [
+        "JIT Delivery Metric",
+        "99.8%",
+        "Global supply continuity maintained across tier-1 assembly nodes.",
+      ],
+      [
+        "Volume Capacity",
+        "Scale Elasticity",
+        "Minimum order quantities, priority allocation, and rolling forecast alignment.",
+      ],
       ["ERP Interface", "REST / EDI", "Procurement API access for synchronized inventory states."],
     ],
     standards: "Global Continuity Standards",
@@ -28,8 +36,16 @@ const copy = {
     cta: "Anfrage starten",
     metrics: [
       ["JIT-Lieferkennzahl", "99.8%", "Versorgungskontinuität über Tier-1-Montagepunkte hinweg."],
-      ["Volumenkapazität", "Skalierbarkeit", "Mindestmengen, Prioritätsallokation und rollierende Forecast-Abstimmung."],
-      ["ERP-Schnittstelle", "REST / EDI", "Beschaffungs-API-Zugriff für synchronisierte Bestandsdaten."],
+      [
+        "Volumenkapazität",
+        "Skalierbarkeit",
+        "Mindestmengen, Prioritätsallokation und rollierende Forecast-Abstimmung.",
+      ],
+      [
+        "ERP-Schnittstelle",
+        "REST / EDI",
+        "Beschaffungs-API-Zugriff für synchronisierte Bestandsdaten.",
+      ],
     ],
     standards: "Globale Kontinuitätsstandards",
     node: "Schweizer Knoten aktiv // Region Bern",
@@ -41,9 +57,21 @@ const copy = {
       "Logistique structurée et architecture d'approvisionnement pour des opérations de fabrication continues.",
     cta: "Demander un devis",
     metrics: [
-      ["Indicateur JIT", "99.8%", "Continuité d'approvisionnement maintenue sur les points d'assemblage tier-1."],
-      ["Capacité volume", "Élasticité d'échelle", "Quantités minimales, allocation prioritaire et alignement des prévisions."],
-      ["Interface ERP", "REST / EDI", "Accès API d'approvisionnement pour états d'inventaire synchronisés."],
+      [
+        "Indicateur JIT",
+        "99.8%",
+        "Continuité d'approvisionnement maintenue sur les points d'assemblage tier-1.",
+      ],
+      [
+        "Capacité volume",
+        "Élasticité d'échelle",
+        "Quantités minimales, allocation prioritaire et alignement des prévisions.",
+      ],
+      [
+        "Interface ERP",
+        "REST / EDI",
+        "Accès API d'approvisionnement pour états d'inventaire synchronisés.",
+      ],
     ],
     standards: "Standards de continuité globale",
     node: "Noeud suisse actif // Région de Berne",
@@ -67,13 +95,13 @@ export default async function OemSupplyPage({ params }: { params: Promise<{ loca
           className="object-cover opacity-60 mix-blend-normal grayscale dark:mix-blend-luminosity"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-surface-container-lowest/40 to-background/20" />
-        <div className="relative z-10 flex w-full flex-col justify-between gap-10 md:flex-row md:items-start">
+        <div className="relative z-10 flex w-full flex-col justify-between gap-10 xl:flex-row xl:items-start">
           <div>
             <div className="mb-8 flex items-center gap-3 font-mono text-label-xs uppercase tracking-[0.18em] text-warning-red">
               <span className="h-px w-12 bg-warning-red" />
               {localized.label}
             </div>
-            <h1 className="max-w-5xl break-words font-mono text-[46px] uppercase leading-[1.12] text-on-surface sm:text-headline-lg md:text-[72px] lg:text-display-xl">
+            <h1 className="max-w-6xl break-words font-mono text-[clamp(28px,7.6vw,46px)] uppercase leading-[1.12] text-on-surface [overflow-wrap:break-word] [text-wrap:balance] sm:text-headline-lg md:text-[64px] lg:text-[clamp(64px,5.25vw,80px)] lg:leading-[0.98]">
               {localized.title.map((line) => (
                 <span key={line} className="block">
                   {line}
@@ -81,10 +109,8 @@ export default async function OemSupplyPage({ params }: { params: Promise<{ loca
               ))}
             </h1>
           </div>
-          <div className="max-w-sm pt-2 text-left md:pt-28 md:text-right">
-            <p className="font-mono text-technical-md text-industrial-silver">
-              {localized.intro}
-            </p>
+          <div className="max-w-sm pt-2 text-left xl:pt-28 xl:text-right">
+            <p className="font-mono text-technical-md text-industrial-silver">{localized.intro}</p>
             <TechnicalButton href={localizePath(locale, "/rfq")} className="mt-8">
               {localized.cta}
             </TechnicalButton>
@@ -102,7 +128,9 @@ export default async function OemSupplyPage({ params }: { params: Promise<{ loca
               <div className="mt-12 font-mono text-headline-lg uppercase text-on-surface">
                 {value}
               </div>
-              <p className="mt-4 font-mono text-technical-md text-industrial-silver">{metricCopy}</p>
+              <p className="mt-4 font-mono text-technical-md text-industrial-silver">
+                {metricCopy}
+              </p>
               <div className="absolute bottom-0 left-0 h-1 w-4/5 bg-warning-red" />
             </article>
           ))}
