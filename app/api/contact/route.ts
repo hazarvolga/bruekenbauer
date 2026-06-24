@@ -12,6 +12,7 @@ import {
   readJsonBodyWithLimit,
   verifyTurnstileToken,
 } from "@/lib/formSecurity";
+import { getServiceAccessStatus, isServiceInMaintenance } from "@/lib/serviceControl";
 
 export interface ContactRequest {
   name: string;
@@ -48,6 +49,15 @@ function validate(body: unknown): body is ContactRequest {
 export async function POST(request: Request) {
   if (!hasValidJsonContentType(request)) {
     return NextResponse.json({ error: "Content-Type must be application/json." }, { status: 415 });
+  }
+
+  const serviceStatus = getServiceAccessStatus();
+  if (isServiceInMaintenance(serviceStatus)) {
+    console.error("Contact delivery paused by service control", serviceStatus);
+    return NextResponse.json(
+      { error: "This service is temporarily in maintenance mode." },
+      { status: 503 }
+    );
   }
 
   const rateLimit = checkFormRateLimit(`contact:${getClientIp(request)}`);
@@ -131,7 +141,12 @@ export async function POST(request: Request) {
       from: resendConfig.fromEmail,
       to: resendConfig.toEmail,
       subject: `[brückenbauer ${subjectPrefix}] ${body.name} (${body.company || "N/A"}) — ${referenceId}`,
-      react: React.createElement(ContactEmailTemplate, { request: body, referenceId, timestamp, locale }),
+      react: React.createElement(ContactEmailTemplate, {
+        request: body,
+        referenceId,
+        timestamp,
+        locale,
+      }),
     });
 
     if (result && typeof result === "object" && "error" in result && result.error) {
@@ -139,10 +154,7 @@ export async function POST(request: Request) {
     }
   } catch (err) {
     console.error("Failed to send Contact email via Resend:", { referenceId, err });
-    return NextResponse.json(
-      { error: "Unable to deliver form at this time." },
-      { status: 502 }
-    );
+    return NextResponse.json({ error: "Unable to deliver form at this time." }, { status: 502 });
   }
 
   return NextResponse.json({ referenceId, timestamp }, { status: 201 });

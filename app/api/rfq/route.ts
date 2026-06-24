@@ -12,6 +12,7 @@ import {
   readJsonBodyWithLimit,
   verifyTurnstileToken,
 } from "@/lib/formSecurity";
+import { getServiceAccessStatus, isServiceInMaintenance } from "@/lib/serviceControl";
 
 export interface RfqRequest {
   source: "general" | "product" | "power-family" | "application-sector";
@@ -62,6 +63,15 @@ function validate(body: unknown): body is RfqRequest {
 export async function POST(request: Request) {
   if (!hasValidJsonContentType(request)) {
     return NextResponse.json({ error: "Content-Type must be application/json." }, { status: 415 });
+  }
+
+  const serviceStatus = getServiceAccessStatus();
+  if (isServiceInMaintenance(serviceStatus)) {
+    console.error("RFQ delivery paused by service control", serviceStatus);
+    return NextResponse.json(
+      { error: "This service is temporarily in maintenance mode." },
+      { status: 503 }
+    );
   }
 
   const rateLimit = checkFormRateLimit(`rfq:${getClientIp(request)}`);
@@ -158,7 +168,12 @@ export async function POST(request: Request) {
       from: resendConfig.fromEmail,
       to: resendConfig.toEmail,
       subject,
-      react: React.createElement(RfqEmailTemplate, { request: body, referenceId, timestamp, locale }),
+      react: React.createElement(RfqEmailTemplate, {
+        request: body,
+        referenceId,
+        timestamp,
+        locale,
+      }),
     });
 
     if (result && typeof result === "object" && "error" in result && result.error) {
@@ -166,10 +181,7 @@ export async function POST(request: Request) {
     }
   } catch (err) {
     console.error("Failed to send RFQ email via Resend:", { referenceId, err });
-    return NextResponse.json(
-      { error: "Unable to deliver form at this time." },
-      { status: 502 }
-    );
+    return NextResponse.json({ error: "Unable to deliver form at this time." }, { status: 502 });
   }
 
   return NextResponse.json({ referenceId, timestamp }, { status: 201 });

@@ -74,6 +74,7 @@ Format: `## YYYY-MM-DD — <title>`
 **Context:** The application requires multilingual capabilities targeting English, German, and French.
 **Decision:** Integrated `next-intl` to handle locale prefixing (`/app/[locale]/`).
 **Consequences:**
+
 - Relocated all App Router routes under `app/[locale]/`.
 - Established `middleware.ts` for automated locale detection and URL-rewriting.
 - Custom `LanguageSwitcher` (`EN | DE | FR`) integrated seamlessly into the Brutalist mono-styled top navigation.
@@ -87,4 +88,10 @@ Format: `## YYYY-MM-DD — <title>`
 **Decision:** Reverted the hero component `MaskedImageFrame` to a pure CSS `background-image` layout (`bg-cover bg-center`) as originally designed in v1.
 **Consequences:** Complete removal of Next.js image optimization bottlenecks for main landing hero assets. Browser naturally renders the full high-resolution asset without pixelation or compression artifacts, restoring the pristine cinematic premium quality.
 
+---
 
+## 2026-06-24 — Timed Service Access Control
+
+**Context:** The site needs environment-managed service control without an admin panel. If payment is not received within one week from 2026-06-24, the public site should enter maintenance mode.
+**Decision:** Added a centralized `serviceControl` helper with `SERVICE_ACCESS_MODE=timed | perpetual | maintenance`. The default timed fallback expires at `2026-07-01T23:59:59+03:00`. `SERVICE_NOTICE_DAYS` controls the pre-deadline notice window, and `SERVICE_GRACE_DAYS=0` makes maintenance start immediately after the deadline unless env is changed.
+**Consequences:** If no env action is taken, the public site routes to `/maintenance` after the deadline and Contact/RFQ APIs return `503`. After payment, setting `SERVICE_ACCESS_MODE=perpetual` and restarting/redeploying keeps the system active indefinitely.
