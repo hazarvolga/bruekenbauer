@@ -53,6 +53,15 @@ type RfqInitialContext = Partial<
   >
 >;
 
+function localizeLeadTime(value: string, locale: string) {
+  const normalizedLocale = normalizeLocale(locale);
+  if (normalizedLocale === "en") return value;
+
+  return value
+    .replace(/\b(\d+)\s*days\b/gi, normalizedLocale === "de" ? "$1 Tage" : "$1 jours")
+    .replace(/\b(\d+)\s*day\b/gi, normalizedLocale === "de" ? "$1 Tag" : "$1 jour");
+}
+
 export function RfqFlow({
   initialContext,
   locale = "en",
@@ -100,6 +109,8 @@ export function RfqFlow({
       response: "Typical response within 1-2 business days.",
       verificationFailed: "Bot verification failed. Please refresh and try again.",
       verificationRequired: "Security verification is required before submission.",
+      validationMissing: "Please complete all required fields before submitting.",
+      submitFailed: "The RFQ could not be delivered at this time. Please try again later.",
     },
     de: {
       confirmed: "RFQ bestätigt",
@@ -139,6 +150,9 @@ export function RfqFlow({
       response: "Typische Antwort innerhalb von 1-2 Werktagen.",
       verificationFailed: "Bot-Prüfung fehlgeschlagen. Bitte aktualisieren und erneut versuchen.",
       verificationRequired: "Die Sicherheitsprüfung ist vor dem Absenden erforderlich.",
+      validationMissing: "Bitte füllen Sie alle Pflichtfelder vor dem Absenden aus.",
+      submitFailed:
+        "Die Angebotsanfrage konnte derzeit nicht zugestellt werden. Bitte versuchen Sie es später erneut.",
     },
     fr: {
       confirmed: "RFQ confirmé",
@@ -178,20 +192,26 @@ export function RfqFlow({
       response: "Réponse habituelle sous 1 à 2 jours ouvrables.",
       verificationFailed: "La vérification anti-bot a échoué. Veuillez actualiser et réessayer.",
       verificationRequired: "La vérification de sécurité est requise avant l'envoi.",
+      validationMissing: "Veuillez compléter tous les champs obligatoires avant l'envoi.",
+      submitFailed:
+        "La demande de devis n'a pas pu être transmise pour le moment. Veuillez réessayer plus tard.",
     },
   }[normalizedLocale];
   const turnstileRequired = Boolean(process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY);
-  const resolvedInitialState = useMemo(
-    () => ({ ...initialState, ...initialContext }),
-    [initialContext]
-  );
+  const resolvedInitialState = useMemo(() => {
+    const resolved = { ...initialState, ...initialContext };
+    return {
+      ...resolved,
+      leadTime: localizeLeadTime(resolved.leadTime, normalizedLocale),
+    };
+  }, [initialContext, normalizedLocale]);
   const [state, setState] = useState<RfqState>(resolvedInitialState);
   const [status, setStatus] = useState<SubmitStatus>("idle");
   const [referenceId, setReferenceId] = useState<string | null>(null);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
   const [turnstileToken, setTurnstileToken] = useState("");
   const fieldClass =
-    "mt-2 w-full border border-outline/70 bg-surface-container-low/60 px-4 py-3 font-mono text-technical-md text-on-surface outline-none transition-colors duration-200 placeholder:text-outline/45 hover:border-industrial-silver focus:border-warning-red focus:ring-1 focus:ring-warning-red/20";
+    "mt-2 w-full border border-outline/70 bg-surface-container-low/60 px-4 py-3 font-mono text-[13px] leading-snug text-on-surface outline-none transition-colors duration-200 placeholder:text-outline/45 hover:border-industrial-silver focus:border-warning-red focus:ring-1 focus:ring-warning-red/20 md:text-[14px]";
   const familyOptions = useMemo(
     () => products.filter((product) => product.group === state.productGroup),
     [state.productGroup]
@@ -239,7 +259,7 @@ export function RfqFlow({
       familySlug: "",
       productFamily: nextProduct?.name ?? "",
       applicationSector: nextProduct?.applications[0] ?? applications[0].name,
-      leadTime: nextProduct?.leadTime ?? current.leadTime,
+      leadTime: localizeLeadTime(nextProduct?.leadTime ?? current.leadTime, normalizedLocale),
     }));
   }
 
@@ -254,13 +274,17 @@ export function RfqFlow({
       productGroup: nextProduct.group,
       productFamily: nextProduct.name,
       applicationSector: nextProduct.applications[0] ?? current.applicationSector,
-      leadTime: nextProduct.leadTime,
+      leadTime: localizeLeadTime(nextProduct.leadTime, normalizedLocale),
     }));
   }
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    if (!complete) return;
+    if (!complete) {
+      setErrorMsg(copy.validationMissing);
+      setStatus("error");
+      return;
+    }
     setStatus("loading");
     setErrorMsg(null);
     try {
@@ -282,8 +306,8 @@ export function RfqFlow({
         product_group: state.productGroup,
         source: state.source,
       });
-    } catch (err) {
-      setErrorMsg(err instanceof Error ? err.message : "Submission failed.");
+    } catch {
+      setErrorMsg(copy.submitFailed);
       setStatus("error");
     }
   }
@@ -425,6 +449,7 @@ export function RfqFlow({
   return (
     <form
       className="grid gap-gutter lg:grid-cols-[0.8fr_1.2fr]"
+      noValidate
       onSubmit={(event) => void handleSubmit(event)}
     >
       <div>
@@ -439,7 +464,7 @@ export function RfqFlow({
         </p>
       </div>
       <div className="space-y-8 border border-graphite-muted bg-surface-container-low/45 p-6 backdrop-blur-xl md:p-8">
-        <div className="grid gap-6 md:grid-cols-2">
+        <div className="grid gap-6 xl:grid-cols-2">
           <label className="font-mono text-label-xs uppercase tracking-[0.18em] text-outline">
             {copy.productGroup}
             <select

@@ -39,6 +39,8 @@ export function ContactForm({ locale = "en" }: { locale?: string }) {
       privacyLink: "Privacy Policy",
       verificationFailed: "Bot verification failed. Please refresh and try again.",
       verificationRequired: "Security verification is required before submission.",
+      validationMissing: "Please complete the required fields before submitting.",
+      submitFailed: "The message could not be delivered at this time. Please try again later.",
     },
     de: {
       confirmed: "Übermittlung bestätigt",
@@ -65,6 +67,9 @@ export function ContactForm({ locale = "en" }: { locale?: string }) {
       privacyLink: "Datenschutzerklärung verarbeitet werden.",
       verificationFailed: "Bot-Prüfung fehlgeschlagen. Bitte aktualisieren und erneut versuchen.",
       verificationRequired: "Die Sicherheitsprüfung ist vor dem Absenden erforderlich.",
+      validationMissing: "Bitte füllen Sie die Pflichtfelder vor dem Absenden aus.",
+      submitFailed:
+        "Die Nachricht konnte derzeit nicht zugestellt werden. Bitte versuchen Sie es später erneut.",
     },
     fr: {
       confirmed: "Transmission confirmée",
@@ -91,6 +96,9 @@ export function ContactForm({ locale = "en" }: { locale?: string }) {
       privacyLink: "Politique de confidentialité.",
       verificationFailed: "La vérification anti-bot a échoué. Veuillez actualiser et réessayer.",
       verificationRequired: "La vérification de sécurité est requise avant l'envoi.",
+      validationMissing: "Veuillez compléter les champs obligatoires avant l'envoi.",
+      submitFailed:
+        "Le message n'a pas pu être transmis pour le moment. Veuillez réessayer plus tard.",
     },
   }[normalizedLocale];
   const turnstileRequired = Boolean(process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY);
@@ -119,7 +127,11 @@ export function ContactForm({ locale = "en" }: { locale?: string }) {
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    if (!complete) return;
+    if (!complete) {
+      setErrorMsg(copy.validationMissing);
+      setStatus("error");
+      return;
+    }
     setStatus("loading");
     setErrorMsg(null);
     try {
@@ -139,8 +151,8 @@ export function ContactForm({ locale = "en" }: { locale?: string }) {
         form_name: "contact",
         locale: normalizedLocale,
       });
-    } catch (err) {
-      setErrorMsg(err instanceof Error ? err.message : "Submission failed.");
+    } catch {
+      setErrorMsg(copy.submitFailed);
       setStatus("error");
     }
   }
@@ -177,6 +189,7 @@ export function ContactForm({ locale = "en" }: { locale?: string }) {
     <form
       className="mt-12 grid max-w-4xl gap-8"
       aria-label={copy.aria}
+      noValidate
       onSubmit={(e) => void handleSubmit(e)}
     >
       {(

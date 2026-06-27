@@ -18,7 +18,6 @@ const footerCopy = {
     terms: "Terms & Conditions",
     cookies: "Cookie Policy",
     cookieSettings: "Cookie Settings",
-    credit: "Designed & Developed by",
     country: "Switzerland",
   },
   de: {
@@ -35,7 +34,6 @@ const footerCopy = {
     terms: "Allgemeine Geschäftsbedingungen",
     cookies: "Cookie-Richtlinie",
     cookieSettings: "Cookie-Einstellungen",
-    credit: "Designed & Developed by",
     country: "Schweiz",
   },
   fr: {
@@ -52,7 +50,6 @@ const footerCopy = {
     terms: "Conditions générales",
     cookies: "Politique de cookies",
     cookieSettings: "Paramètres des cookies",
-    credit: "Designed & Developed by",
     country: "Suisse",
   },
 };
@@ -69,8 +66,10 @@ export function Footer({ locale }: { locale: string }) {
             {copy.headquarters}
           </span>
           <p className="leading-relaxed text-on-surface-variant">
-            brückenbauer GmbH<br />
-            Dachsweg 12, 3075 Rüfenacht BE<br />
+            brückenbauer GmbH
+            <br />
+            Dachsweg 12, 3075 Rüfenacht BE
+            <br />
             {copy.country}
           </p>
         </div>
@@ -79,8 +78,10 @@ export function Footer({ locale }: { locale: string }) {
             {copy.registry}
           </span>
           <p className="leading-relaxed text-on-surface-variant">
-            UID: CHE-191.442.645<br />
-            {copy.commercialRegister}<br />
+            UID: CHE-191.442.645
+            <br />
+            {copy.commercialRegister}
+            <br />
             {copy.managingDirector}: Dr. Andreas Werthmüller
           </p>
         </div>
@@ -89,7 +90,8 @@ export function Footer({ locale }: { locale: string }) {
             {copy.contact}
           </span>
           <p className="leading-relaxed text-on-surface-variant">
-            Tel: +41 (0)76 222 45 54<br />
+            Tel: +41 (0)76 222 45 54
+            <br />
             {copy.email}:{" "}
             <a
               href="mailto:bus.dev@brueckenbauer-gmbh.ch"
@@ -102,7 +104,7 @@ export function Footer({ locale }: { locale: string }) {
           </p>
         </div>
       </div>
-      
+
       <div className="flex flex-col gap-4 border-t border-graphite-muted/50 pt-4 text-outline md:flex-row md:items-center md:justify-between">
         <div className="flex flex-wrap gap-5 text-[10px] uppercase tracking-[0.12em]">
           <Link
@@ -149,17 +151,6 @@ export function Footer({ locale }: { locale: string }) {
             {copy.contactLink}
           </TechnicalButton>
         </div>
-      </div>
-      <div className="mt-4 border-t border-graphite-muted pt-4 text-[10px] uppercase tracking-[0.08em] text-outline/70">
-        {copy.credit}{" "}
-        <a
-          href="https://hazarvolga.com.tr"
-          target="_blank"
-          rel="noreferrer"
-          className="text-on-surface-variant transition-colors hover:text-warning-red"
-        >
-          Hazar Volga Ekiz
-        </a>
       </div>
     </footer>
   );

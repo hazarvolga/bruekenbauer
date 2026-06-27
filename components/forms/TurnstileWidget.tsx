@@ -29,8 +29,19 @@ declare global {
   }
 }
 
-export function TurnstileWidget({ locale = "en", onError, onExpire, onVerify }: TurnstileWidgetProps) {
+export function TurnstileWidget({
+  locale = "en",
+  onError,
+  onExpire,
+  onVerify,
+}: TurnstileWidgetProps) {
   const siteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
+  const label =
+    locale === "de"
+      ? "Bot-Prüfung"
+      : locale === "fr"
+        ? "Vérification anti-bot"
+        : "Bot verification";
   const containerRef = useRef<HTMLDivElement | null>(null);
   const widgetIdRef = useRef<string | null>(null);
   const [loaded, setLoaded] = useState(false);
@@ -67,7 +78,7 @@ export function TurnstileWidget({ locale = "en", onError, onExpire, onVerify }: 
         id={`turnstile-${elementId}`}
         ref={containerRef}
         className="min-h-[65px]"
-        aria-label="Bot verification"
+        aria-label={label}
       />
     </div>
   );

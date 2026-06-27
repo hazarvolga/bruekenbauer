@@ -60,7 +60,7 @@ export default async function IndustriesPage({ params }: { params: Promise<{ loc
       <span className="font-mono text-label-xs uppercase tracking-[0.18em] text-warning-red">
         {t("label")}
       </span>
-      <h1 className="mt-5 max-w-5xl break-words font-mono text-headline-lg-mobile uppercase text-on-surface md:text-[54px] md:leading-[0.92] lg:text-[72px] xl:text-display-xl">
+      <h1 className="mt-5 max-w-5xl break-words font-mono text-[clamp(2rem,8vw,4.5rem)] uppercase leading-[0.98] text-on-surface md:text-[54px] md:leading-[0.92] lg:text-[72px]">
         {t("title")}
       </h1>
       <section className="mt-10 grid gap-gutter border-y border-graphite-muted py-6 lg:grid-cols-12">
@@ -68,7 +68,7 @@ export default async function IndustriesPage({ params }: { params: Promise<{ loc
           <div className="font-mono text-label-xs uppercase tracking-[0.18em] text-warning-red">
             {t("section_label")}
           </div>
-          <h2 className="mt-4 max-w-md break-words font-mono text-[clamp(1.25rem,8vw,2.125rem)] uppercase leading-[1.02] text-industrial-silver md:text-[44px] md:leading-[0.98] lg:text-[52px]">
+          <h2 className="mt-4 max-w-2xl break-words font-mono text-[clamp(1.15rem,6vw,2.125rem)] uppercase leading-[1.02] text-industrial-silver md:text-[44px] md:leading-[0.98] lg:text-[52px]">
             {locale === "de" ? (
               <>
                 <span className="block whitespace-nowrap">Massgeschneiderte</span>

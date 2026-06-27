@@ -125,7 +125,7 @@ export default async function PartnersPage({ params }: { params: Promise<{ local
   ];
 
   return (
-    <PageShell className="min-h-screen px-margin-mobile pb-24 pt-32 md:ml-20 md:px-margin-desktop">
+    <PageShell className="min-h-screen px-margin-mobile pb-14 pt-32 md:ml-20 md:px-margin-desktop">
       <div className="mx-auto w-full max-w-[1600px]">
         <span className="font-mono text-label-xs uppercase tracking-[0.18em] text-warning-red">
           {t("label")}

@@ -3,6 +3,7 @@
 import { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
 import { getProductGroupCopy, localizePath, normalizeLocale } from "@/data/localizedContent";
+import type { SupportedLocale } from "@/data/localizedContent";
 import type { Product } from "@/data/products";
 
 interface SearchClientProps {
@@ -46,6 +47,9 @@ export function SearchClient({ products, locale = "en" }: SearchClientProps) {
       submit: "submit an RFQ",
       partNo: "Part no.",
       partNoAndName: "Part no. / Name",
+      group: "Group",
+      status: "Status",
+      supply: "Supply",
       initial: "Enter part no., product name, group, or application sector",
     },
     de: {
@@ -59,6 +63,9 @@ export function SearchClient({ products, locale = "en" }: SearchClientProps) {
       submit: "RFQ absenden",
       partNo: "Teilenr.",
       partNoAndName: "Teilenr. / Name",
+      group: "Gruppe",
+      status: "Status",
+      supply: "Versorgung",
       initial: "Teilenr., Produktname, Gruppe oder Anwendungsbereich eingeben",
     },
     fr: {
@@ -72,9 +79,53 @@ export function SearchClient({ products, locale = "en" }: SearchClientProps) {
       submit: "soumettre une RFQ",
       partNo: "Réf.",
       partNoAndName: "Réf. / Nom",
+      group: "Groupe",
+      status: "Statut",
+      supply: "Approvisionnement",
       initial: "Saisir une réf., un nom de produit, un groupe ou un secteur d'application",
     },
   }[normalizedLocale];
+  const statusCopy = {
+    en: {
+      Optimal: "Optimal",
+      "Critical Low": "Critical low",
+      Allocation: "Allocation",
+      Prototype: "Prototype",
+    },
+    de: {
+      Optimal: "Optimal",
+      "Critical Low": "Kritisch niedrig",
+      Allocation: "Allokation",
+      Prototype: "Prototyp",
+    },
+    fr: {
+      Optimal: "Optimal",
+      "Critical Low": "Critique bas",
+      Allocation: "Allocation",
+      Prototype: "Prototype",
+    },
+  }[normalizedLocale];
+  const stockCopyByLocale: Record<SupportedLocale, Record<string, string>> = {
+    en: {
+      "Series supply": "Series supply",
+      "Qualified stock": "Qualified stock",
+      "Project build": "Project build",
+      "Engineered order": "Engineered order",
+    },
+    de: {
+      "Series supply": "Serienversorgung",
+      "Qualified stock": "Qualifizierter Bestand",
+      "Project build": "Projektaufbau",
+      "Engineered order": "Technische Bestellung",
+    },
+    fr: {
+      "Series supply": "Approvisionnement série",
+      "Qualified stock": "Stock qualifié",
+      "Project build": "Projet assemblé",
+      "Engineered order": "Commande technique",
+    },
+  };
+  const stockCopy = stockCopyByLocale[normalizedLocale];
   const [query, setQuery] = useState("");
   const debouncedQuery = useDebounce(query, 150);
 
@@ -167,13 +218,26 @@ export function SearchClient({ products, locale = "en" }: SearchClientProps) {
             </div>
             <div className="mt-6 grid gap-4 font-mono text-data-sm uppercase md:mt-0 md:grid-cols-3">
               <span>
+                <span className="mb-1 block text-[9px] tracking-[0.14em] text-outline">
+                  {copy.group}
+                </span>
                 {highlight(
                   getProductGroupCopy(normalizedLocale, product.group).title,
                   debouncedQuery
                 )}
               </span>
-              <span className="text-data-orange">{product.status}</span>
-              <span>{product.stock}</span>
+              <span className="text-data-orange">
+                <span className="mb-1 block text-[9px] tracking-[0.14em] text-outline">
+                  {copy.status}
+                </span>
+                {statusCopy[product.status] ?? product.status}
+              </span>
+              <span>
+                <span className="mb-1 block text-[9px] tracking-[0.14em] text-outline">
+                  {copy.supply}
+                </span>
+                {stockCopy[product.stock] ?? product.stock}
+              </span>
             </div>
             <span className="mt-4 font-mono text-warning-red md:mt-0">-&gt;</span>
           </Link>

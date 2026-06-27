@@ -59,7 +59,7 @@ export default async function SearchPage({ params }: { params: Promise<{ locale:
         style={{ backgroundImage: `url(${images.finder})` }}
       />
       <div className="absolute inset-0 bg-surface/85 backdrop-blur-[12px]" />
-      <section className="relative z-10 flex min-h-[calc(100vh-80px)] flex-col justify-center px-margin-mobile py-16 md:px-margin-desktop">
+      <section className="relative z-10 flex min-h-[calc(100vh-260px)] flex-col justify-start px-margin-mobile py-14 md:px-margin-desktop md:py-16">
         <div className="mb-12 flex justify-between font-mono text-label-xs uppercase tracking-[0.18em] text-outline">
           <span>{copy.queryMode}</span>
           <span>{copy.latency}: 12ms</span>

@@ -10,6 +10,7 @@ const copy = {
     revision: "Revision",
     fileSize: "File Size",
     publicationDate: "Publication Date",
+    status: "Status",
     download: "Download PDF",
     docs: {
       "BR-PORT-2026": {
@@ -41,6 +42,7 @@ const copy = {
     revision: "Revision",
     fileSize: "Dateigröße",
     publicationDate: "Veröffentlichungsdatum",
+    status: "Status",
     download: "PDF herunterladen",
     docs: {
       "BR-PORT-2026": {
@@ -72,6 +74,7 @@ const copy = {
     revision: "Révision",
     fileSize: "Taille du fichier",
     publicationDate: "Date de publication",
+    status: "Statut",
     download: "Télécharger PDF",
     docs: {
       "BR-PORT-2026": {
@@ -120,7 +123,7 @@ export default async function DocumentsPage({ params }: { params: Promise<{ loca
             return (
               <article
                 key={doc.id}
-                className="reticle-corners relative flex min-h-[380px] flex-col border border-graphite-muted bg-surface-container-low/50 p-7 transition-colors hover:border-warning-red"
+                className="reticle-corners relative flex min-h-[430px] flex-col border border-graphite-muted bg-surface-container-low/50 p-7 transition-colors hover:border-warning-red"
               >
                 <div className="font-mono text-label-xs uppercase tracking-[0.18em] text-warning-red">
                   {docCopy.type}
@@ -132,24 +135,30 @@ export default async function DocumentsPage({ params }: { params: Promise<{ loca
                   {docCopy.description}
                 </p>
 
-                <div className="mt-6 grid grid-cols-2 gap-y-3 border-t border-graphite-muted/40 pt-4 font-mono text-[10px] uppercase text-outline">
-                  <div>
-                    <span className="block text-[8px] tracking-wider text-outline/60">
+                <div className="mt-6 grid grid-cols-2 gap-3 border-t border-graphite-muted/40 pt-4 font-mono text-[10px] uppercase text-outline">
+                  <div className="min-h-11">
+                    <span className="block text-[8px] leading-snug tracking-wider text-outline/60">
                       {localized.revision}
                     </span>
                     <span className="font-semibold text-industrial-silver">{doc.revision}</span>
                   </div>
-                  <div>
-                    <span className="block text-[8px] tracking-wider text-outline/60">
+                  <div className="min-h-11">
+                    <span className="block text-[8px] leading-snug tracking-wider text-outline/60">
                       {localized.fileSize}
                     </span>
                     <span className="font-semibold text-industrial-silver">{doc.fileSize}</span>
                   </div>
-                  <div className="col-span-2">
-                    <span className="block text-[8px] tracking-wider text-outline/60">
+                  <div className="min-h-11">
+                    <span className="block text-[8px] leading-snug tracking-wider text-outline/60">
                       {localized.publicationDate}
                     </span>
                     <span className="font-semibold text-industrial-silver">{doc.issueDate}</span>
+                  </div>
+                  <div className="min-h-11">
+                    <span className="block text-[8px] leading-snug tracking-wider text-outline/60">
+                      {localized.status}
+                    </span>
+                    <span className="font-semibold text-warning-red">{docCopy.status}</span>
                   </div>
                 </div>
 
@@ -157,14 +166,13 @@ export default async function DocumentsPage({ params }: { params: Promise<{ loca
                   <a
                     href={doc.downloadHref}
                     download
-                    className="mt-auto inline-flex w-fit border border-warning-red bg-warning-red px-5 py-3 font-mono text-label-xs uppercase tracking-[0.14em] text-primary-container transition-colors hover:bg-transparent hover:text-warning-red"
+                    className="mt-auto inline-flex w-full justify-center border border-warning-red bg-warning-red px-5 py-3 text-center font-mono text-label-xs uppercase tracking-[0.14em] text-primary-container transition-colors hover:bg-transparent hover:text-warning-red"
                   >
                     {localized.download}
                   </a>
                 ) : null}
-                <div className="mt-8 flex justify-between border-t border-graphite-muted pt-4 font-mono text-data-sm uppercase text-outline">
+                <div className="mt-4 border-t border-graphite-muted pt-4 font-mono text-data-sm uppercase text-outline">
                   <span>{doc.id}</span>
-                  <span className="font-semibold text-warning-red">{docCopy.status}</span>
                 </div>
               </article>
             );
