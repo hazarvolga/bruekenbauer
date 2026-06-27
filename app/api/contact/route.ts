@@ -12,7 +12,6 @@ import {
   readJsonBodyWithLimit,
   verifyTurnstileToken,
 } from "@/lib/formSecurity";
-import { getServiceAccessStatus, isServiceInMaintenance } from "@/lib/serviceControl";
 
 export interface ContactRequest {
   name: string;
@@ -49,15 +48,6 @@ function validate(body: unknown): body is ContactRequest {
 export async function POST(request: Request) {
   if (!hasValidJsonContentType(request)) {
     return NextResponse.json({ error: "Content-Type must be application/json." }, { status: 415 });
-  }
-
-  const serviceStatus = getServiceAccessStatus();
-  if (isServiceInMaintenance(serviceStatus)) {
-    console.error("Contact delivery paused by service control", serviceStatus);
-    return NextResponse.json(
-      { error: "This service is temporarily in maintenance mode." },
-      { status: 503 }
-    );
   }
 
   const rateLimit = checkFormRateLimit(`contact:${getClientIp(request)}`);

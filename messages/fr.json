@@ -161,12 +161,12 @@
   "ProductShortDescriptions": {
     "temperature-sensors": "Assemblages NTC, thermistances, thermocouples et capteurs haute température sur mesure.",
     "electromagnetic-compatibility-emc": "Selfs, filtres, inductances et transformateurs pour un comportement électromagnétique contrôlé.",
-    "power-management": "Composants IGBT, SiC, MOSFET, converters et power supplies pour systèmes techniques.",
-    "passives": "Résistances, condensateurs, packages MLCC et composants quartz de timing.",
-    "electromechanics": "Connecteurs, câbles, ventilation, lecteurs de cartes, sockets et interfaces wireless.",
-    "acoustics": "Buzzers, microphones, receivers, haut-parleurs, piezos et transducteurs acoustiques magnétiques.",
+    "power-management": "Modules IGBT, SiC et MOSFET, convertisseurs et alimentations pour systèmes techniques.",
+    "passives": "Résistances, condensateurs, boîtiers MLCC et composants de synchronisation à quartz.",
+    "electromechanics": "Connecteurs, câbles, ventilation, lecteurs de cartes, supports de test et interfaces sans fil.",
+    "acoustics": "Avertisseurs, microphones, récepteurs, haut-parleurs, piézos et transducteurs acoustiques magnétiques.",
     "pressure-and-flow-sensors": "Transmetteurs de pression, débitmètres à ultrasons, capteurs de gaz, jauges et télémétrie de niveau.",
-    "current-and-position-sensors": "Capteurs de courant clamp-on et plateformes de position rotatives, encoder et potentiomètre."
+    "current-and-position-sensors": "Capteurs de courant à pince et plateformes de position rotative, codeurs et potentiomètres."
   },
   "CategoryTitles": {
     "temperature-sensors": "Capteurs de Température",

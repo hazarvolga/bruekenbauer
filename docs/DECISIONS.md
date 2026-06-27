@@ -95,3 +95,11 @@ Format: `## YYYY-MM-DD — <title>`
 **Context:** The site needs environment-managed service control without an admin panel. If payment is not received within one week from 2026-06-24, the public site should enter maintenance mode.
 **Decision:** Added a centralized `serviceControl` helper with `SERVICE_ACCESS_MODE=timed | perpetual | maintenance`. The default timed fallback expires at `2026-07-01T23:59:59+03:00`. `SERVICE_NOTICE_DAYS` controls the pre-deadline notice window, and `SERVICE_GRACE_DAYS=0` makes maintenance start immediately after the deadline unless env is changed.
 **Consequences:** If no env action is taken, the public site routes to `/maintenance` after the deadline and Contact/RFQ APIs return `503`. After payment, setting `SERVICE_ACCESS_MODE=perpetual` and restarting/redeploying keeps the system active indefinitely.
+
+---
+
+## 2026-06-27 — Timed Service Access Control Removed
+
+**Context:** Payment was received and the temporary service-access safeguard is no longer required.
+**Decision:** Removed the date/ENV-based service control, maintenance redirect, notice bar, and Contact/RFQ maintenance blocks.
+**Consequences:** The website and form APIs remain available without `SERVICE_ACCESS_*` variables. Future maintenance should use the hosting provider's normal deployment or maintenance workflow.

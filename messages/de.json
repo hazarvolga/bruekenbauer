@@ -152,7 +152,7 @@
     "temperature-sensors": "Unsere Temperaturfühler-Baugruppen sind für extreme Präzision und raue Umgebungen konzipiert und garantieren ein zuverlässiges Wärmemanagement. Das Portfolio umfasst leistungsstarke NTCs, Thermistoren und Thermoelemente, die für die Industrieautomation und Automobilanwendungen entwickelt wurden.",
     "electromagnetic-compatibility-emc": "Schützen Sie Ihre elektronische Infrastruktur mit unseren erstklassigen EMV-Lösungen vor Störungen. Unser umfassendes Sortiment an Drosseln, Filtern und Induktivitäten sorgt für ein stabiles elektromagnetisches Verhalten und die strikte Einhaltung globaler Standards.",
     "power-management": "Maximieren Sie Effizienz und Betriebssicherheit mit unseren fortschrittlichen Leistungsmanagement-Komponenten. Von robusten IGBT- und SiC-Modulen bis hin zu zuverlässigen MOSFETs und Netzteilen stärken wir hochbelastete Industriesysteme und Anwendungen für erneuerbare Energien.",
-    "passives": "Unsere passiven Bauelemente sind das Fundament stabiler Schaltkreise und bieten unübertroffene Zuverlässigkeit unter ständiger Belastung. Entdecken Sie unsere umfangreiche Auswahl an Widerständen, MLCC-Kondensatoren und Präzisions-Quarz-Timing-Komponenten für High-End-Elektronik.",
+    "passives": "Unsere passiven Bauelemente sind das Fundament stabiler Schaltkreise und bieten unübertroffene Zuverlässigkeit unter ständiger Belastung. Entdecken Sie unsere umfangreiche Auswahl an Widerständen, MLCC-Kondensatoren und Präzisions-Quarzkomponenten für hochwertige Elektronik.",
     "electromechanics": "Unsere elektromechanischen Komponenten verbinden elektrische Steuerung mit robuster mechanischer Ausführung und sind auf Langlebigkeit ausgelegt. Wir liefern langlebige Steckverbinder, Lüftungstechnik und maßgeschneiderte Schnittstellenlösungen, die komplexe Systeme reibungslos am Laufen halten.",
     "acoustics": "Sorgen Sie mit unseren High-Fidelity-Akustikkomponenten für klare akustische Signale und Rückmeldungen. Unsere speziellen Summer, Mikrofone und magnetischen Wandler liefern eine überragende Klangleistung für Medizin-, Industrie- und Verbraucheranwendungen.",
     "pressure-and-flow-sensors": "Unsere Druck- und Durchflusssensoren bieten kompromisslose Genauigkeit bei der Messung von Flüssigkeiten und Gasen und gewährleisten eine optimale Systemsteuerung. Ausgestattet mit fortschrittlichen Drucktransmittern, Ultraschall-Durchflussmessern und robusten Telemetrielösungen für kritische Infrastrukturen.",
@@ -162,11 +162,11 @@
     "temperature-sensors": "NTC, Thermistoren, Thermoelemente und kundenspezifische Hochtemperatur-Sensorbaugruppen.",
     "electromagnetic-compatibility-emc": "Drosseln, Filter, Induktivitäten und Transformatoren für kontrolliertes EMV-Verhalten.",
     "power-management": "IGBT, SiC, MOSFET, Wandler und Netzteilkomponenten für technische Systeme.",
-    "passives": "Widerstände, Kondensatoren, MLCC-Pakete und Quarz-Timing-Komponenten.",
+    "passives": "Widerstände, Kondensatoren, MLCC-Pakete und Quarz-Taktkomponenten.",
     "electromechanics": "Steckverbinder, Kabel, Lüftung, Kartenleser, Sockets und drahtlose Schnittstellenhardware.",
-    "acoustics": "Buzzer, Mikrofone, Receiver, Lautsprecher, Piezos und magnetische Akustikwandler.",
+    "acoustics": "Summer, Mikrofone, Empfänger, Lautsprecher, Piezos und magnetische Akustikwandler.",
     "pressure-and-flow-sensors": "Drucktransmitter, Ultraschall-Durchflussmesser, Gassensoren, Messaufnehmer und Füllstands-Telemetrie.",
-    "current-and-position-sensors": "Clamp-on-Stromsensorik sowie rotative, Encoder- und Potentiometer-Positionsplattformen."
+    "current-and-position-sensors": "Aufsteck-Stromsensorik sowie Drehgeber- und Potentiometer-Positionsplattformen."
   },
   "CategoryTitles": {
     "temperature-sensors": "Temperatursensoren",

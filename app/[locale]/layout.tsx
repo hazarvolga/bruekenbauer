@@ -5,7 +5,6 @@ import { Providers } from "./providers";
 import { SiteChrome } from "@/components/layout/SiteChrome";
 import { GoogleAnalyticsConsent } from "@/components/analytics/GoogleAnalyticsConsent";
 import { routing } from "@/i18n/routing";
-import { getServiceAccessStatus } from "@/lib/serviceControl";
 
 const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
@@ -106,16 +105,13 @@ export default async function RootLayout({
   }
 
   const messages = await getMessages();
-  const serviceStatus = getServiceAccessStatus();
 
   return (
     <html lang={locale} className={jetbrainsMono.variable} suppressHydrationWarning>
       <body className="font-mono antialiased">
         <NextIntlClientProvider messages={messages}>
           <Providers>
-            <SiteChrome locale={locale} serviceStatus={serviceStatus}>
-              {children}
-            </SiteChrome>
+            <SiteChrome locale={locale}>{children}</SiteChrome>
             <GoogleAnalyticsConsent locale={locale} />
           </Providers>
         </NextIntlClientProvider>

@@ -86,7 +86,7 @@ export const uiCopy = {
       activeSystems: "Aktive Systeme",
       supportedPortfolio: "Unterstütztes Portfolio",
       supportNote:
-        "Dieser Sektor wird über verwandte Sensorik-, Umwandlungs- und Power-Management-Portfolios abgedeckt.",
+        "Dieser Sektor wird über verwandte Sensorik-, Umwandlungs- und Leistungsmanagement-Portfolios abgedeckt.",
       openDetail: "Produktdetails öffnen",
     },
     product: {
@@ -102,9 +102,9 @@ export const uiCopy = {
     },
     power: {
       moduleVariants: "Modulvarianten",
-      powerManagement: "Power Management",
+      powerManagement: "Leistungsmanagement",
       requestQuote: "Anfrage senden",
-      back: "Zur Power-Übersicht",
+      back: "Zur Leistungsübersicht",
       keyParameters: "Leistungsparameter",
       operatingWindow: "Verifiziertes Betriebsfenster",
       parameter: "Parameter",
@@ -215,7 +215,7 @@ export const productGroupCopies: Record<SupportedLocale, Record<ProductGroup, Pr
       shortDescription:
         "NTC, Thermistoren, Thermoelemente und kundenspezifische Hochtemperatur-Sensorbaugruppen.",
       description:
-        "Unsere Temperatur-Sensorbaugruppen sind auf extreme Präzision und anspruchsvolle Umgebungen ausgelegt. Das Portfolio umfasst leistungsfähige NTCs, Thermistoren und Thermoelemente für Industrieautomation, Automotive und robuste Elektroniksysteme.",
+        "Unsere Temperatur-Sensorbaugruppen sind auf extreme Präzision und anspruchsvolle Umgebungen ausgelegt. Das Portfolio umfasst leistungsfähige NTCs, Thermistoren und Thermoelemente für Industrieautomation, Fahrzeugtechnik und robuste Elektroniksysteme.",
     },
     "Pressure & Flow Sensors": {
       title: "Druck- & Durchflusssensoren",
@@ -227,9 +227,9 @@ export const productGroupCopies: Record<SupportedLocale, Record<ProductGroup, Pr
     "Current & Position Sensors": {
       title: "Strom- & Positionssensoren",
       shortDescription:
-        "Clamp-on-Stromsensorik sowie rotative, Encoder- und Potentiometer-Positionsplattformen.",
+        "Aufsteck-Stromsensorik sowie Drehgeber- und Potentiometer-Positionsplattformen.",
       description:
-        "Für präzise Bewegungssteuerung und Energiemonitoring liefern wir industrietaugliche Sensorplattformen, darunter Clamp-on-Stromsensoren, Rotary Encoder und Potentiometer für anspruchsvolle mechanische Systeme.",
+        "Für präzise Bewegungssteuerung und Energiemonitoring liefern wir industrietaugliche Sensorplattformen, darunter Aufsteck-Stromsensoren, Drehgeber und Potentiometer für anspruchsvolle mechanische Systeme.",
     },
     "Electromagnetic Compatibility (EMC)": {
       title: "Elektromagnetische Verträglichkeit (EMV)",
@@ -239,17 +239,17 @@ export const productGroupCopies: Record<SupportedLocale, Record<ProductGroup, Pr
         "Unsere EMV-Komponenten schützen elektronische Infrastruktur vor Störungen. Drosseln, Filter und Induktivitäten sorgen für stabiles elektromagnetisches Verhalten und unterstützen die Einhaltung relevanter Normen.",
     },
     "Power Management": {
-      title: "Power Management",
+      title: "Leistungsmanagement",
       shortDescription:
-        "IGBT, SiC, MOSFET, Converter und Power-Supply-Komponenten für technische Systeme.",
+        "IGBT-, SiC- und MOSFET-Module sowie Wandler und Netzteile für technische Systeme.",
       description:
-        "Unsere Power-Management-Komponenten unterstützen effiziente und sichere Energieumwandlung. Von IGBT- und SiC-Modulen bis zu MOSFETs, Convertern und Power Supplies stärken sie industrielle Hochlastsysteme.",
+        "Unsere Komponenten für das Leistungsmanagement unterstützen eine effiziente und sichere Energieumwandlung. Von IGBT- und SiC-Modulen bis zu MOSFETs, Wandlern und Netzteilen stärken sie industrielle Hochlastsysteme.",
     },
     Passives: {
       title: "Passive Bauelemente",
-      shortDescription: "Widerstände, Kondensatoren, MLCC-Pakete und Quarz-Timing-Komponenten.",
+      shortDescription: "Widerstände, Kondensatoren, MLCC-Pakete und Quarz-Taktkomponenten.",
       description:
-        "Wir beschaffen und vertreiben passive Bauelemente qualifizierter Lieferanten für industrielle und elektronische Anwendungen. Das Portfolio umfasst Widerstände, Film- und MLCC-Kondensatoren sowie Quarz-Timing-Komponenten. In Verbindung mit Applikationssupport, Lieferkontinuität und Lebenszyklusmanagement helfen diese Lösungen Kunden dabei, Anforderungen an Leistung, Verfügbarkeit und langfristige Produktplanung zu erfüllen.",
+        "Wir beschaffen und vertreiben passive Bauelemente qualifizierter Lieferanten für industrielle und elektronische Anwendungen. Das Portfolio umfasst Widerstände, Film- und MLCC-Kondensatoren sowie Quarz-Taktkomponenten. In Verbindung mit Applikationssupport, Lieferkontinuität und Lebenszyklusmanagement helfen diese Lösungen Kunden dabei, Anforderungen an Leistung, Verfügbarkeit und langfristige Produktplanung zu erfüllen.",
     },
     Electromechanics: {
       title: "Elektromechanik",
@@ -261,9 +261,9 @@ export const productGroupCopies: Record<SupportedLocale, Record<ProductGroup, Pr
     Acoustics: {
       title: "Akustik",
       shortDescription:
-        "Buzzer, Mikrofone, Receiver, Lautsprecher, Piezos und magnetische Akustikwandler.",
+        "Summer, Mikrofone, Empfänger, Lautsprecher, Piezos und magnetische Akustikwandler.",
       description:
-        "Unsere Akustikkomponenten liefern klare Signale und zuverlässiges Feedback für industrielle, medizinische und Consumer-Anwendungen, von Buzzern und Mikrofonen bis zu magnetischen Transducern.",
+        "Unsere Akustikkomponenten liefern klare Signale und zuverlässige Rückmeldungen für industrielle, medizinische und Verbraucheranwendungen, von Summern und Mikrofonen bis zu magnetischen Wandlern.",
     },
   },
   fr: {
@@ -296,11 +296,11 @@ export const productGroupCopies: Record<SupportedLocale, Record<ProductGroup, Pr
         "Nos composants CEM protègent l'infrastructure électronique contre les interférences. Les selfs, filtres et inductances assurent un comportement électromagnétique stable et soutiennent la conformité normative.",
     },
     "Power Management": {
-      title: "Gestion de l'énergie",
+      title: "Gestion de puissance",
       shortDescription:
-        "Composants IGBT, SiC, MOSFET, converters et power supplies pour systèmes techniques.",
+        "Modules IGBT, SiC et MOSFET, convertisseurs et alimentations pour systèmes techniques.",
       description:
-        "Nos composants de gestion de l'énergie soutiennent une conversion efficace et sûre. Des modules IGBT et SiC aux MOSFETs, converters et power supplies, ils renforcent les systèmes industriels à forte charge.",
+        "Nos composants de gestion de puissance assurent une conversion énergétique efficace et sûre. Des modules IGBT et SiC aux MOSFET, convertisseurs et alimentations, ils renforcent les systèmes industriels à forte charge.",
     },
     Passives: {
       title: "Composants passifs",
@@ -348,9 +348,9 @@ export const applicationCopies: Record<
         strengths: [
           "Komponenten mit luftfahrtspezifischen Zulassungen, einschließlich MIL-STD und AS9100",
           "Rückverfolgbare, chargenspezifische Lieferung mit CoC, CoO und Testprotokollen auf Anfrage",
-          "Qualifizierte Hersteller und High-Reliability-Komponenten",
+          "Qualifizierte Hersteller und hochzuverlässige Komponenten",
           "Langzeitverfügbarkeit und Obsoleszenzmanagement",
-          "Verlässliche Supply Chain für Serienfertigung und Sonderbeschaffung",
+          "Verlässliche Lieferkette für Serienfertigung und Sonderbeschaffung",
         ],
       },
     },
@@ -360,14 +360,14 @@ export const applicationCopies: Record<
         "Qualifizierte Komponentenversorgung für Fahrzeugplattformen, Ladesysteme, Mobilitätselektronik und Verkehrsinfrastruktur.",
       detail: {
         intro:
-          "Die Automobilindustrie wird durch Elektrifizierung, autonomes Fahren, Konnektivität und Effizienz geprägt. Wir liefern geprüfte, AEC-Q-zertifizierte Komponenten für OEMs, Tier-1-Zulieferer und Automotive-Systementwickler.",
+          "Die Automobilindustrie wird durch Elektrifizierung, autonomes Fahren, Konnektivität und Effizienz geprägt. Wir liefern geprüfte, AEC-Q-zertifizierte Komponenten für OEMs, Tier-1-Zulieferer und Fahrzeugsystementwickler.",
         applications: [
           "Karosserieelektronik und Komfortsysteme",
           "Sicherheits- und Fahrerassistenzsysteme (ADAS)",
           "Batteriemanagement und Ladeelektronik",
           "Infotainment und Connectivity",
         ],
-        strengthsTitle: "Ihre Vorteile mit uns als Automotive-Partner",
+        strengthsTitle: "Ihre Vorteile mit uns als Fahrzeugtechnik-Partner",
         strengths: [
           "AEC-Q100- und AEC-Q200-zertifizierte Komponenten führender Hersteller",
           "Technische Beratung",
@@ -428,7 +428,7 @@ export const applicationCopies: Record<
     "Home Appliances": {
       name: "Haushaltsgeräte",
       summary:
-        "Dauerhafte Komponentenversorgung für Appliance-Elektronik, Motorsteuerung, Sensorik und effiziente Stromversorgung.",
+        "Dauerhafte Komponentenversorgung für Gerätelektronik, Motorsteuerung, Sensorik und effiziente Stromversorgung.",
       detail: {
         intro:
           "Für die Haushaltsgeräteindustrie liefern wir geprüfte Elektronikkomponenten, die langlebig, kompakt, energieeffizient und normgerecht ausgelegt sind.",
@@ -502,7 +502,7 @@ export const applicationCopies: Record<
         "Hocheffiziente Stromversorgungen, Netzschnittstellen und robuste Verteilerbaugruppen für den unterbrechungsfreien Industriebetrieb.",
       detail: {
         intro:
-          "Kontinuierliche Stromversorgung, saubere Energieumwandlung und stabile Netzschnittstellen bilden das Rückgrat moderner Infrastruktur. Wir unterstützen schlüsselfertige Power-Conversion-, USV-, Backup-Power- und Verteilprogramme mit Systemintegration, Zuverlässigkeitsplanung und langfristiger Lebenszykluskontrolle.",
+          "Kontinuierliche Stromversorgung, saubere Energieumwandlung und stabile Netzschnittstellen bilden das Rückgrat moderner Infrastruktur. Wir unterstützen schlüsselfertige Energieumwandlungs-, USV-, Notstrom- und Verteilprogramme mit Systemintegration, Zuverlässigkeitsplanung und langfristiger Lebenszykluskontrolle.",
         applications: [
           "Unterbrechungsfreie Stromversorgungen (USV)",
           "Netzgekoppelte Wechselrichter & Verteiler",
@@ -538,14 +538,14 @@ export const applicationCopies: Record<
         strengths: [
           "Composants homologués pour l'aéronautique et le spatial, notamment MIL-STD et AS9100",
           "Livraison traçable et spécifique au lot avec CoC, CoO et rapports de test sur demande",
-          "Fabricants qualifiés et composants high-reliability",
+          "Fabricants qualifiés et composants à haute fiabilité",
           "Disponibilité long terme et gestion de l'obsolescence",
-          "Supply chain fiable pour production série et approvisionnement spécial",
+          "Chaîne d'approvisionnement fiable pour la production en série et les besoins spéciaux",
         ],
       },
     },
     "Automotive & Transportation": {
-      name: "Automotive & Transport",
+      name: "Automobile et transport",
       summary:
         "Approvisionnement qualifié pour plateformes véhicule, systèmes de charge, électronique de mobilité et infrastructures de transport.",
       detail: {
@@ -657,7 +657,7 @@ export const applicationCopies: Record<
         strengths: [
           "Composants issus de fournisseurs appliquant des systèmes qualité pertinents tels que l'ISO 13485",
           "Solutions de détection de température compatibles YSI400 pour les applications médicales appropriées",
-          "Supply chains fiables et traçabilité avec CoC et CoO",
+          "Chaînes d'approvisionnement fiables et traçabilité avec CoC et CoO",
           "Disponibilité long terme pour dispositifs avec cycles d'homologation",
           "Support individuel pour sélection et design-in",
         ],
@@ -718,14 +718,14 @@ export const productSummaries: Record<SupportedLocale, Partial<Record<string, st
     "chip-ntc-thermistors":
       "Kompakte Chip-NTC- und Thermistor-Plattformen für Temperaturmessung bis +250C.",
     "waterproof-temperature-sensors":
-      "Wasserdichte Temperaturfühler für geschützte Messung in Industrie- und Appliance-Umgebungen.",
+      "Wasserdichte Temperaturfühler für geschützte Messung in Industrie- und Haushaltsgeräteumgebungen.",
     thermistors: "Thermistoren mit enger Widerstandstoleranz für hochgenaue Temperaturregelung.",
     "custom-temperature-sensors":
       "Kundenspezifische Temperatur-Sensorbaugruppen für Hochtemperatur-Betriebsbereiche.",
     "microchip-thermistors":
       "YSI400-kompatible Microchip-Thermistoren für kompakte Elektronikbaugruppen.",
     "custom-thermocouples":
-      "Kundenspezifische Thermoelement-Konfigurationen für High-Reliability-Thermal-Instrumentation.",
+      "Kundenspezifische Thermoelement-Konfigurationen für hochzuverlässige thermische Messtechnik.",
     "pressure-sensors-transmitters":
       "Drucksensor- und Transmitter-Familien für Prozess-, Maschinen- und Fluidsysteme.",
     "ultrasonic-flow-meters":
@@ -736,55 +736,58 @@ export const productSummaries: Record<SupportedLocale, Partial<Record<string, st
       "Durchflussmesser- und Schalterlösungen für überwachte Flüssigkeits- und Gassysteme.",
     "strain-gauges":
       "Statische und dynamische Dehnungsmess-Elemente für präzise mechanische Sensorik.",
-    "current-sensors": "Clamp-on-, Busbar- und PCB-Mount-Stromsensorik für Leistungselektronik.",
+    "current-sensors":
+      "Aufsteck-, Sammelschienen- und Leiterplatten-Stromsensorik für Leistungselektronik.",
     "position-sensors":
-      "Rotary Position-, Encoder- und Potentiometer-Plattformen für kontrollierte Bewegungssysteme.",
+      "Drehpositions-, Drehgeber- und Potentiometer-Plattformen für kontrollierte Bewegungssysteme.",
     chokes: "Lineare, gesättigte und Speicher-Drosseln zur EMV-Kontrolle in kompakten Baugruppen.",
     filters:
       "Ein- bis dreiphasige und kombinierte Filter für Print-, Inlet- und industrielle EMV-Schnittstellen.",
     inductors:
-      "Magnetische, sekundäre und unipolare Induktivitäten für Power- und Signalkonditionierung.",
-    transformers: "Flyback-, EE/ETD-, Hochfrequenz-, SMD- und THT-Transformer-Familien.",
-    igbt: "Half-Bridge-, Three-Phase-Bridge- und SiC-Moduloptionen für Power-Management-Stacks.",
-    sic: "SiC-Half-Bridge-, Power-Diode- und Three-Phase-Optionen für effiziente Power Conversion.",
-    mosfet: "MOSFET-Module, Rectifier und Power-Diode-Optionen für Switching-Architekturen.",
+      "Magnetische, sekundäre und unipolare Induktivitäten für Leistungs- und Signalkonditionierung.",
+    transformers: "Sperrwandler-, EE/ETD-, Hochfrequenz-, SMD- und THT-Transformatorfamilien.",
+    igbt: "Halbbrücken-, Dreiphasenbrücken- und SiC-Moduloptionen für Leistungsmanagement-Systeme.",
+    sic: "SiC-Halbbrücken-, Leistungsdioden- und Dreiphasenoptionen für eine effiziente Leistungsumwandlung.",
+    mosfet: "MOSFET-Module, Gleichrichter und Leistungsdioden für Schaltarchitekturen.",
     converters:
-      "AC/DC-, DC/DC-, Power-Supply- und Plug-Converter-Optionen für geregelte Power Interfaces.",
+      "AC/DC-, DC/DC-, Netzteil- und Steckerwandler-Optionen für geregelte Leistungsschnittstellen.",
     resistors: "Thin-Film-, Thick-Film- und Präzisionswiderstände für elektronische Baugruppen.",
     "film-capacitors":
       "X-Film-, Y-Film-Poly- und RC-Kondensatoren für passive Filterung und Suppression.",
     "mlcc-capacitors": "MLCC-, Aluminium- und Entstörkondensator-Optionen.",
     "quartz-crystals":
-      "SMD-, THT- und Oszillator-Quarz-Timing-Komponenten für stabile elektronische Systeme.",
-    connectors: "Push-pull-, Y-Circ-P-, High-Speed-SPE- und RJ45-Industriesteckverbinder.",
+      "SMD-, THT- und Oszillator-Quarzkomponenten für stabile elektronische Taktung.",
+    connectors:
+      "Push-Pull-, Y-Circ-P-, Hochgeschwindigkeits-SPE- und RJ45-Industriesteckverbinder.",
     cables: "Ribbon-, Y-Cable-, IP55- und kundenspezifische Kabellösungen für Industriebaugruppen.",
-    ventilators: "Radial-, Axial-, Array- und MagLev-Lüftungsoptionen für Thermal Management.",
+    ventilators: "Radial-, Axial-, Array- und MagLev-Lüftungsoptionen für das Wärmemanagement.",
     "card-readers":
-      "Memory-Card-, SIM-Card- und Compact-Flash-Reader-Interfaces für Embedded Systems.",
-    "test-sockets": "Custom Y-ETI-, Open-Module-, BLT- und COM-Test-Socket-Plattformen.",
-    wireless: "RF-, Outdoor-, GNSS-, Adapter- und Connector-Wireless-Interface-Hardware.",
+      "Speicherkarten-, SIM-Karten- und CompactFlash-Leserschnittstellen für eingebettete Systeme.",
+    "test-sockets": "Kundenspezifische Y-ETI-, offene Modul-, BLT- und COM-Prüfsockel-Plattformen.",
+    wireless:
+      "HF-, Außenbereichs-, GNSS-, Adapter- und Steckverbinder-Hardware für drahtlose Schnittstellen.",
     buzzers: "Piezo-, Self-Drive- und Transducer-Buzzer-Plattformen für akustische Signalisierung.",
     "magnetic-types": "Magnetische Transducer-, Buzzer- und SMD-Akustikkomponenten.",
-    microphones: "Omni-direktionale, uni-direktionale und Noise-Canceling-Mikrofonoptionen.",
-    piezos: "Piezo-Akustikelemente mit Feedback- und Non-Feedback-Konfigurationen.",
-    receivers: "Dynamische und Piezo-Receiver für kompakte akustische Ausgangsbaugruppen.",
-    speakers: "Mylar-, Loud- und SMD-Speaker-Optionen für kompakte Elektronikprodukte.",
+    microphones: "Kugel-, Richt- und geräuschunterdrückende Mikrofonoptionen.",
+    piezos: "Piezo-Akustikelemente mit und ohne Rückkopplung.",
+    receivers: "Dynamische und Piezo-Empfänger für kompakte akustische Ausgangsbaugruppen.",
+    speakers: "Mylar-, Hochleistungs- und SMD-Lautsprecher für kompakte Elektronikprodukte.",
   },
   fr: {
     "chip-ntc-thermistors":
-      "Plateformes compactes Chip NTC et thermistances pour mesure de température jusqu'à +250C.",
+      "Plateformes compactes à puce NTC et thermistances pour la mesure de température jusqu'à +250 °C.",
     "waterproof-temperature-sensors":
-      "Sondes de température étanches pour mesure protégée en environnements industriels et appliance.",
+      "Sondes de température étanches pour une mesure protégée dans les environnements industriels et électroménagers.",
     thermistors:
       "Thermistances à tolérance de résistance serrée pour contrôle thermique haute précision.",
     "custom-temperature-sensors":
       "Assemblages de capteurs de température sur mesure pour enveloppes de fonctionnement haute température.",
     "microchip-thermistors":
-      "Thermistances microchip compatibles YSI400 pour assemblages électroniques compacts.",
+      "Thermistances miniatures compatibles YSI400 pour assemblages électroniques compacts.",
     "custom-thermocouples":
-      "Configurations de thermocouples sur mesure pour instrumentation thermique high-reliability.",
+      "Configurations de thermocouples sur mesure pour une instrumentation thermique à haute fiabilité.",
     "pressure-sensors-transmitters":
-      "Familles de capteurs et transmetteurs de pression pour process, machines et systèmes fluides.",
+      "Familles de capteurs et transmetteurs de pression pour procédés, machines et systèmes fluidiques.",
     "ultrasonic-flow-meters":
       "Modules de mesure de débit ultrasonique sans contact pour chemins de médias contrôlés.",
     "level-transmitters":
@@ -792,24 +795,24 @@ export const productSummaries: Record<SupportedLocale, Partial<Record<string, st
     "gas-sensors":
       "Options de détection de gaz pour oxygène, CO2, méthane, propane, ammoniac et autres gaz.",
     "flow-meters-switches":
-      "Solutions de débitmètres et switches pour systèmes liquides et gazeux surveillés.",
+      "Solutions de débitmètres et commutateurs pour systèmes liquides et gazeux surveillés.",
     "strain-gauges":
       "Éléments de jauge de contrainte statique et dynamique pour détection mécanique précise.",
     "current-sensors":
-      "Capteurs de courant clamp-on, busbar mount et PCB mount pour électronique de puissance.",
+      "Capteurs de courant à pince, sur jeu de barres et sur circuit imprimé pour l'électronique de puissance.",
     "position-sensors":
-      "Plateformes rotary position, encoder et potentiomètre pour systèmes de mouvement contrôlé.",
+      "Plateformes de position rotative, codeurs et potentiomètres pour systèmes de mouvement contrôlé.",
     chokes: "Selfs linéaires, saturées et de stockage pour contrôle CEM dans assemblages compacts.",
     filters:
-      "Filtres une à trois phases et composés pour interfaces print, inlet et CEM industrielles.",
+      "Filtres monophasés à triphasés et filtres combinés pour circuits imprimés, entrées et interfaces CEM industrielles.",
     inductors:
-      "Options d'inductances magnétiques, secondaires et unipolaires pour conditionnement power et signal.",
+      "Options d'inductances magnétiques, secondaires et unipolaires pour le conditionnement de puissance et du signal.",
     transformers: "Familles de transformateurs flyback, EE/ETD, haute fréquence, SMD et THT.",
-    igbt: "Options half bridge, three-phase bridge et module SiC pour stacks de power management.",
-    sic: "Options SiC half-bridge, power diode et three-phase pour conversion de puissance efficace.",
-    mosfet: "Modules MOSFET, rectifiers et options power diode pour architectures switching.",
+    igbt: "Options de demi-pont, pont triphasé et module SiC pour systèmes de gestion de puissance.",
+    sic: "Options SiC en demi-pont, diodes de puissance et triphasées pour une conversion efficace.",
+    mosfet: "Modules MOSFET, redresseurs et diodes de puissance pour architectures de commutation.",
     converters:
-      "Options AC/DC, DC/DC, power supply et plug converter pour interfaces de puissance régulées.",
+      "Options AC/DC, DC/DC, alimentations et convertisseurs enfichables pour interfaces de puissance régulées.",
     resistors:
       "Options de résistances thin film, thick film et précision pour assemblages électroniques.",
     "film-capacitors":
@@ -824,7 +827,7 @@ export const productSummaries: Record<SupportedLocale, Partial<Record<string, st
     "card-readers":
       "Interfaces lecteurs memory card, SIM card et Compact Flash pour systèmes embedded.",
     "test-sockets": "Plateformes custom Y-ETI, open module, BLT et COM test socket.",
-    wireless: "Hardware d'interface wireless RF, outdoor, GNSS, adaptateur et connecteurs.",
+    wireless: "Matériel d'interface sans fil RF, extérieur, GNSS, adaptateurs et connecteurs.",
     buzzers: "Plateformes buzzers piezo, self-drive et transducer pour signalisation acoustique.",
     "magnetic-types": "Composants acoustiques magnetic transducer, buzzer et SMD.",
     microphones: "Options de microphones omni-directionnels, uni-directionnels et noise-canceling.",
@@ -859,7 +862,7 @@ const productNameCopies: Record<SupportedLocale, Partial<Record<string, string>>
     igbt: "IGBT",
     sic: "SiC MOSFET",
     mosfet: "MOSFET",
-    converters: "Converter",
+    converters: "Wandler",
     resistors: "Widerstände",
     "film-capacitors": "Kondensatoren - X-Film",
     "mlcc-capacitors": "Kondensatoren - MLCC",
@@ -869,12 +872,12 @@ const productNameCopies: Record<SupportedLocale, Partial<Record<string, string>>
     ventilators: "Lüfter",
     "card-readers": "Kartenleser",
     "test-sockets": "Test-Sockets",
-    wireless: "Wireless-Schnittstellen",
+    wireless: "Drahtlose Schnittstellen",
     buzzers: "Buzzer",
     "magnetic-types": "Magnetische Typen",
     microphones: "Mikrofone",
     piezos: "Piezos",
-    receivers: "Receiver",
+    receivers: "Empfänger",
     speakers: "Lautsprecher",
   },
   fr: {
@@ -998,10 +1001,10 @@ export const powerFamilyCopies: Record<
   en: {},
   de: {
     igbt: {
-      label: "Insulated Gate Bipolar Transistor",
+      label: "Bipolartransistor mit isolierter Gate-Elektrode",
       summary:
-        "Hochdichte Switching-Module für Industrieantriebe, Automotive-Systeme, erneuerbare Energien und Appliance-Plattformen.",
-      variants: ["Half Bridge", "3 Phase Bridge", "SiC Module"],
+        "Hochdichte Schaltmodule für Industrieantriebe, Fahrzeugsysteme, erneuerbare Energien und Haushaltsgeräte.",
+      variants: ["Halbbrücke", "Dreiphasenbrücke", "SiC-Modul"],
       performance: [
         undefined,
         undefined,
@@ -1016,13 +1019,18 @@ export const powerFamilyCopies: Record<
         "Geringe Verluste",
         "Einfache Integration",
       ],
-      targetApplications: ["Industrial Drives", "Automotive", "Solar PV & BESS", "Haushaltsgeräte"],
+      targetApplications: [
+        "Industrieantriebe",
+        "Fahrzeugtechnik",
+        "Solar-PV & BESS",
+        "Haushaltsgeräte",
+      ],
     },
     sic: {
       label: "Siliziumkarbid-Schaltarchitektur",
       summary:
-        "Thermisch belastbare Silicon-Carbide-Devices für kompakte, effiziente und hochfrequente Power Conversion.",
-      variants: ["Half Bridge", "Power Diodes", "3 Phase"],
+        "Thermisch belastbare Siliziumkarbid-Bauelemente für kompakte, effiziente und hochfrequente Leistungsumwandlung.",
+      variants: ["Halbbrücke", "Leistungsdioden", "Dreiphasig"],
       sellingPoints: [
         "Höhere Effizienz",
         "Verbesserte thermische Performance",
@@ -1037,17 +1045,17 @@ export const powerFamilyCopies: Record<
       ],
     },
     mosfet: {
-      label: "Metal-oxide-semiconductor field-effect transistor",
+      label: "Metall-Oxid-Halbleiter-Feldeffekttransistor",
       summary:
-        "Diskrete und Bare-Die-MOSFET-Optionen für skalierbare Low- und Medium-Power-Switching-Designs.",
-      variants: ["Rectifiers", "MOSFET Modules", "Power Diodes"],
+        "Diskrete MOSFET- und Halbleiterchip-Optionen für skalierbare Schaltkonzepte im niedrigen und mittleren Leistungsbereich.",
+      variants: ["Gleichrichter", "MOSFET-Module", "Leistungsdioden"],
       sellingPoints: [
         "Hohe Schaltgeschwindigkeit",
         "Hohe Effizienz",
         "Skalierbarkeit",
         "Geringe Ansteuerleistung",
         "Gute thermische Stabilität",
-        "Effizient bei Low/Medium Power und hoher Frequenz",
+        "Effizient bei niedriger und mittlerer Leistung sowie hoher Frequenz",
       ],
       targetApplications: [
         "Antriebstechnik",
@@ -1058,10 +1066,10 @@ export const powerFamilyCopies: Record<
       ],
     },
     converters: {
-      label: "Geregelte Power Interfaces",
+      label: "Geregelte Leistungsschnittstellen",
       summary:
-        "AC/DC-, DC/DC-, Power-Supply- und Plug-Converter-Optionen für geschützte Stromversorgung.",
-      variants: ["AC/DC", "DC/DC", "Power Supply", "Plug Converters"],
+        "AC/DC-, DC/DC-, Netzteil- und Steckerwandler-Optionen für eine geschützte Stromversorgung.",
+      variants: ["AC/DC", "DC/DC", "Netzteil", "Steckerwandler"],
       sellingPoints: [
         "Breite Branchenabdeckung",
         "Flexibles Produktspektrum",
@@ -1080,10 +1088,10 @@ export const powerFamilyCopies: Record<
   },
   fr: {
     igbt: {
-      label: "Insulated Gate Bipolar Transistor",
+      label: "Transistor bipolaire à grille isolée",
       summary:
-        "Modules de commutation haute densité pour entraînements industriels, systèmes automotive, énergies renouvelables et plateformes appliance.",
-      variants: ["Half Bridge", "3 Phase Bridge", "SiC Module"],
+        "Modules de commutation haute densité pour entraînements industriels, systèmes automobiles, énergies renouvelables et appareils électroménagers.",
+      variants: ["Demi-pont", "Pont triphasé", "Module SiC"],
       performance: [
         {},
         {},
@@ -1099,17 +1107,17 @@ export const powerFamilyCopies: Record<
         "Intégration facilitée",
       ],
       targetApplications: [
-        "Industrial Drives",
-        "Automotive",
+        "Entraînements industriels",
+        "Automobile",
         "Solaire PV & BESS",
         "Électroménager",
       ],
     },
     sic: {
-      label: "Architecture de commutation silicon-carbide",
+      label: "Architecture de commutation en carbure de silicium",
       summary:
-        "Dispositifs silicon-carbide thermiquement robustes pour conversion de puissance compacte, efficace et haute fréquence.",
-      variants: ["Half Bridge", "Power Diodes", "3 Phase"],
+        "Composants en carbure de silicium thermiquement robustes pour une conversion de puissance compacte, efficace et haute fréquence.",
+      variants: ["Demi-pont", "Diodes de puissance", "Triphasé"],
       sellingPoints: [
         "Efficacité supérieure",
         "Performance thermique améliorée",
@@ -1124,17 +1132,17 @@ export const powerFamilyCopies: Record<
       ],
     },
     mosfet: {
-      label: "Metal-oxide-semiconductor field-effect transistor",
+      label: "Transistor à effet de champ métal-oxyde-semiconducteur",
       summary:
-        "Options MOSFET discrètes et bare-die pour designs de commutation low et medium power évolutifs.",
-      variants: ["Rectifiers", "MOSFET Modules", "Power Diodes"],
+        "Options MOSFET discrètes et puces nues pour des architectures de commutation évolutives à faible et moyenne puissance.",
+      variants: ["Redresseurs", "Modules MOSFET", "Diodes de puissance"],
       sellingPoints: [
         "Vitesse de commutation élevée",
         "Haute efficacité",
-        "Scalabilité",
+        "Évolutivité",
         "Faible puissance de commande",
         "Bonne stabilité thermique",
-        "Efficace en low/medium power et haute fréquence",
+        "Efficace à faible et moyenne puissance ainsi qu'à haute fréquence",
       ],
       targetApplications: [
         "Technologie d'entraînement",
@@ -1146,8 +1154,9 @@ export const powerFamilyCopies: Record<
     },
     converters: {
       label: "Interfaces de puissance régulées",
-      summary: "Options AC/DC, DC/DC, power supply et plug converter pour alimentation protégée.",
-      variants: ["AC/DC", "DC/DC", "Power Supply", "Plug Converters"],
+      summary:
+        "Options AC/DC, DC/DC, alimentations et convertisseurs enfichables pour une alimentation protégée.",
+      variants: ["AC/DC", "DC/DC", "Alimentation", "Convertisseurs enfichables"],
       sellingPoints: [
         "Couverture sectorielle étendue",
         "Gamme produit flexible",
