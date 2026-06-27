@@ -114,6 +114,14 @@ export default async function PartnersPage({ params }: { params: Promise<{ local
       description: t("pml_desc"),
       logoClassName: "p-4",
     },
+    {
+      id: "SHEIER",
+      name: "Sheier",
+      logo: "/images/partners/sheier.jpeg",
+      type: t("sourcing_partner"),
+      description: t("sheier_desc"),
+      logoClassName: "p-5",
+    },
   ];
 
   return (

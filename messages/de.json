@@ -123,7 +123,7 @@
     "label": "Anwendungsbereiche",
     "title": "Anwendungsbereiche",
     "section_label": "Unsere Anwendungsbereiche",
-    "section_title": "Maßgeschneiderte Anwendungen",
+    "section_title": "Massgeschneiderte Anwendungen",
     "description": "Elektronische Komponenten für jede Anwendung - zuverlässig, vielseitig und individuell entwickelt. Von der Idee bis zur Serienproduktion liefern wir die passenden Komponenten für jede Anwendung. Als zuverlässiger Distributor für hochwertige elektronische Bauteile bieten wir mehr als nur ein umfangreiches Portfolio. Wir verstehen die Anforderungen unterschiedlichster Branchen und unterstützen unsere Kunden mit passenden Lösungen – schnell, kompetent und mit maximaler Versorgungssicherheit.",
     "description_points": [
       "Elektronische Komponenten für jede Anwendung - zuverlässig, vielseitig und individuell entwickelt.",
@@ -195,7 +195,8 @@
     "thales_desc": "Raumsysteme, Satelliteninfrastruktur und missionskritische Technologie-Ökosysteme für anspruchsvolle Luft- und Raumfahrtprogramme.",
     "swisscom_desc": "Schweizer Kommunikationsinfrastruktur, Enterprise-Konnektivität und digitale Service-Ökosysteme für sichere industrielle Abläufe.",
     "stadler_desc": "Bahntechnologie, Mobilitätssysteme und Verkehrsinfrastrukturprogramme mit hohen Anforderungen an Zuverlässigkeit.",
-    "pml_desc": "Spezialisierte Partnerkompetenzen für Komponentenbeschaffung, Fertigungskoordination und Unterstützung industrieller Elektronikprojekte."
+    "pml_desc": "Spezialisierte Partnerkompetenzen für Komponentenbeschaffung, Fertigungskoordination und Unterstützung industrieller Elektronikprojekte.",
+    "sheier_desc": "Beschaffungspartner mit Spezialisierung auf Entwicklung, Fertigung und Lieferung von Leistungshalbleiterbauelementen, darunter IGBTs, schnelle Recovery-Dioden, Brückengleichrichter und industrielle Leistungselektroniklösungen."
   },
   "MetaData": {
     "title": "brückenbauer GmbH: Wir beraten nicht nur",

@@ -69,7 +69,14 @@ export default async function IndustriesPage({ params }: { params: Promise<{ loc
             {t("section_label")}
           </div>
           <h2 className="mt-4 max-w-md break-words font-mono text-[clamp(1.25rem,8vw,2.125rem)] uppercase leading-[1.02] text-industrial-silver md:text-[44px] md:leading-[0.98] lg:text-[52px]">
-            {t("section_title")}
+            {locale === "de" ? (
+              <>
+                <span className="block whitespace-nowrap">Massgeschneiderte</span>
+                <span className="block whitespace-nowrap">Anwendungen</span>
+              </>
+            ) : (
+              t("section_title")
+            )}
           </h2>
         </div>
         <div className="min-w-0 lg:col-span-7 lg:col-start-6">
