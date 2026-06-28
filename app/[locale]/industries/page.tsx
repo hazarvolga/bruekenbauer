@@ -63,12 +63,12 @@ export default async function IndustriesPage({ params }: { params: Promise<{ loc
       <h1 className="mt-5 max-w-5xl break-words font-mono text-[clamp(2rem,8vw,4.5rem)] uppercase leading-[0.98] text-on-surface md:text-[54px] md:leading-[0.92] lg:text-[72px]">
         {t("title")}
       </h1>
-      <section className="mt-10 grid gap-gutter border-y border-graphite-muted py-6 lg:grid-cols-12">
-        <div className="min-w-0 lg:col-span-5">
+      <section className="mt-10 grid gap-gutter border-y border-graphite-muted py-6 xl:grid-cols-12">
+        <div className="min-w-0 xl:col-span-5">
           <div className="font-mono text-label-xs uppercase tracking-[0.18em] text-warning-red">
             {t("section_label")}
           </div>
-          <h2 className="mt-4 max-w-2xl break-words font-mono text-[clamp(1.15rem,6vw,2.125rem)] uppercase leading-[1.02] text-industrial-silver md:text-[44px] md:leading-[0.98] lg:text-[52px]">
+          <h2 className="mt-4 max-w-2xl break-words font-mono text-[clamp(1.15rem,6vw,2.125rem)] uppercase leading-[1.02] text-industrial-silver md:text-[44px] md:leading-[0.98] xl:text-[44px] 2xl:text-[52px]">
             {locale === "de" ? (
               <>
                 <span className="block whitespace-nowrap">Massgeschneiderte</span>
@@ -79,7 +79,7 @@ export default async function IndustriesPage({ params }: { params: Promise<{ loc
             )}
           </h2>
         </div>
-        <div className="min-w-0 lg:col-span-7 lg:col-start-6">
+        <div className="min-w-0 xl:col-span-7 xl:col-start-6">
           <div className="grid gap-3">
             {descriptionPoints.map((point) => (
               <p
