@@ -121,7 +121,11 @@ export const products: Product[] = [
     image: "/images/products/custom-thermocouples-ai.png",
     imageDark: "/images/products-premium/dark/custom-thermocouples.webp",
     summary: "Custom thermocouple configurations for high-reliability thermal instrumentation.",
-    specs: { types: "K / T / J / E / N", format: "Custom probe", validation: "Project documentation" },
+    specs: {
+      types: "K / T / J / E / N",
+      format: "Custom probe",
+      validation: "Project documentation",
+    },
   },
   {
     slug: "pressure-sensors-transmitters",
@@ -697,8 +701,9 @@ export const documents = [
     status: "Active",
     issueDate: "2026-11-08",
     documentType: "Product portfolio",
-    fileSize: "5.8 MB",
-    description: "Comprehensive catalog of active component groups, temperature sensors, electromechanical adapters, and acoustics.",
+    fileSize: "2.3 MB",
+    description:
+      "Comprehensive catalog of active component groups, temperature sensors, electromechanical adapters, and acoustics.",
     downloadHref: "/documents/component-portfolio-2026.pdf",
   },
   {
@@ -710,8 +715,9 @@ export const documents = [
     status: "Active",
     issueDate: "2026-11-08",
     documentType: "Technical portfolio",
-    fileSize: "3.2 MB",
-    description: "Detailed technical documentation for advanced IGBT, SiC MOSFET, power rectifiers, and high-frequency power supplies.",
+    fileSize: "2.5 MB",
+    description:
+      "Detailed technical documentation for advanced IGBT, SiC MOSFET, power rectifiers, and high-frequency power supplies.",
     downloadHref: "/documents/power-management-portfolio.pdf",
   },
   {
@@ -723,8 +729,9 @@ export const documents = [
     status: "Active",
     issueDate: "2026-11-08",
     documentType: "Company profile",
-    fileSize: "1.7 MB",
-    description: "Overview of corporate engineering philosophy, Swiss distribution precision, and strategic partnership models.",
+    fileSize: "2.4 MB",
+    description:
+      "Overview of corporate engineering philosophy, Swiss distribution precision, and strategic partnership models.",
     downloadHref: "/documents/brueckenbauer-company-profile.pdf",
   },
 ];
