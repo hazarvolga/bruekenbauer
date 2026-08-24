@@ -122,6 +122,14 @@ export default async function PartnersPage({ params }: { params: Promise<{ local
       description: t("sheier_desc"),
       logoClassName: "p-5",
     },
+    {
+      id: "GREEGOO",
+      name: "Greegoo",
+      logo: "/images/partners/greegoo.jpeg",
+      type: t("sourcing_partner"),
+      description: t("greegoo_desc"),
+      logoClassName: "p-2",
+    },
   ];
 
   return (
