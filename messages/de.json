@@ -43,6 +43,17 @@
       "compliance_desc": "Rückverfolgbarkeit, Qualifizierung und Protokollprüfung.",
       "oem_title": "OEM-Versorgung",
       "oem_desc": "Massenbeschaffung und Logistikarchitektur."
+    },
+    "brandFilm": {
+      "region": "Markenfilm",
+      "eyebrow": "Markensignal / Film 01",
+      "title": "Globale Technologie mit der europäischen Industrie verbinden",
+      "video_label": "brückenbauer Markenfilm in englischer Sprache",
+      "play": "Markenfilm abspielen",
+      "loading": "Markenfilm wird geladen",
+      "error": "Der Markenfilm konnte nicht geladen werden.",
+      "retry": "Film erneut laden",
+      "unavailable": "Markenfilm nicht verfügbar"
     }
   },
   "AboutPage": {

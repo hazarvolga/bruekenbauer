@@ -3,6 +3,7 @@ import { useTranslations } from "next-intl";
 import { HudMetric } from "@/components/layout/HudMetric";
 import { TechnicalButton } from "@/components/layout/TechnicalButton";
 import { TechnicalButtonGroup } from "@/components/layout/TechnicalButtonGroup";
+import { BrandFilmPlayer } from "@/components/media/BrandFilmPlayer";
 import { PageShell } from "@/components/motion/MotionProvider";
 import { MaskedImageFrame, StaggerText } from "@/components/motion/Reveals";
 import { images } from "@/lib/assets";
@@ -62,6 +63,38 @@ export default function HomePage() {
               <HudMetric label={t("metrics.compliance")} value="REACH / RoHS" tone="orange" />
             </div>
           </div>
+        </div>
+      </section>
+
+      <section
+        className="technical-grid grid border-y border-graphite-muted bg-surface-container-lowest/70 lg:grid-cols-12"
+        aria-label={t("brandFilm.region")}
+      >
+        <div className="p-margin-mobile md:p-8 lg:col-span-4 xl:p-margin-desktop">
+          <div>
+            <div className="mb-8 flex items-center gap-3 font-mono text-label-xs uppercase tracking-widest text-warning-red">
+              <span className="h-1 w-1 bg-warning-red" />
+              {t("brandFilm.eyebrow")}
+            </div>
+            <h2 className="hyphens-none break-normal font-mono text-headline-sm uppercase text-industrial-silver md:text-headline-md-mobile">
+              {t("brandFilm.title")}
+            </h2>
+          </div>
+        </div>
+
+        <div className="border-t border-graphite-muted p-margin-mobile md:p-8 lg:col-span-8 lg:border-l lg:border-t-0">
+          <BrandFilmPlayer
+            src="/videos/brueckenbauer-brand-film.mp4"
+            poster="/images/video/brueckenbauer-brand-film-poster.jpg"
+            labels={{
+              video: t("brandFilm.video_label"),
+              play: t("brandFilm.play"),
+              loading: t("brandFilm.loading"),
+              error: t("brandFilm.error"),
+              retry: t("brandFilm.retry"),
+              unavailable: t("brandFilm.unavailable"),
+            }}
+          />
         </div>
       </section>
     </PageShell>

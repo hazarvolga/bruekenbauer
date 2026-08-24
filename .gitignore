@@ -57,3 +57,6 @@ gorsel-arsivi/
 
 # Local generated image originals archive
 generated-image-originals/
+
+# Local high-resolution video masters (web derivatives live in public/videos)
+/asset-sources/videos/*.mp4

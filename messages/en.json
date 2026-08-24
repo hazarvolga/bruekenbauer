@@ -43,6 +43,17 @@
       "compliance_desc": "Traceability, qualification, and protocol review.",
       "oem_title": "OEM Supply",
       "oem_desc": "Bulk procurement and logistics architecture."
+    },
+    "brandFilm": {
+      "region": "Brand film",
+      "eyebrow": "Brand signal / film 01",
+      "title": "Connecting global technology with European industry",
+      "video_label": "brückenbauer brand film in English",
+      "play": "Play brand film",
+      "loading": "Loading brand film",
+      "error": "The brand film could not be loaded.",
+      "retry": "Retry film",
+      "unavailable": "Brand film unavailable"
     }
   },
   "AboutPage": {

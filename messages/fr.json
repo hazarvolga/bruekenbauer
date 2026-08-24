@@ -43,6 +43,17 @@
       "compliance_desc": "Traçabilité, qualification et revue de protocole.",
       "oem_title": "Approvisionnement OEM",
       "oem_desc": "Achats en gros et architecture logistique."
+    },
+    "brandFilm": {
+      "region": "Film de marque",
+      "eyebrow": "Signal de marque / film 01",
+      "title": "Relier la technologie mondiale à l’industrie européenne",
+      "video_label": "Film de marque brückenbauer en anglais",
+      "play": "Lire le film de marque",
+      "loading": "Chargement du film de marque",
+      "error": "Le film de marque n’a pas pu être chargé.",
+      "retry": "Réessayer le film",
+      "unavailable": "Film de marque indisponible"
     }
   },
   "AboutPage": {

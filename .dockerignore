@@ -33,6 +33,7 @@ brueckenbauer_*_motion_ready/
 cinematic_macro/
 tmp/
 urunler/
+asset-sources/videos/
 
 # Docs (not needed in container)
 docs/

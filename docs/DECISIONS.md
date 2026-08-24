@@ -103,3 +103,11 @@ Format: `## YYYY-MM-DD — <title>`
 **Context:** Payment was received and the temporary service-access safeguard is no longer required.
 **Decision:** Removed the date/ENV-based service control, maintenance redirect, notice bar, and Contact/RFQ maintenance blocks.
 **Consequences:** The website and form APIs remain available without `SERVICE_ACCESS_*` variables. Future maintenance should use the hosting provider's normal deployment or maintenance workflow.
+
+---
+
+## 2026-08-24 — Poster-first homepage brand film
+
+**Context:** A 45-second cinematic company film should be visible on the homepage without turning a large audiovisual asset into the route's LCP candidate or forcing audio and bandwidth usage.
+**Decision:** Place the film in a dedicated full-width section immediately after the homepage hero. Serve a 720p H.264/AAC web derivative with a lightweight poster, `preload="none"`, no autoplay, and explicit user-controlled playback. Keep the ignored source master in `asset-sources/videos/`, outside the public and deployment paths.
+**Consequences:** The hero and primary CTAs remain immediate, the film keeps its native 16:9 composition, and initial page load transfers only the poster. The optimized derivative and poster must be regenerated from the preserved master when the film changes.
