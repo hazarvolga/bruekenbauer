@@ -67,6 +67,7 @@ export default function HomePage() {
       </section>
 
       <section
+        id="featured-videos"
         className="technical-grid grid border-y border-graphite-muted bg-surface-container-lowest/70 lg:grid-cols-12"
         aria-label={t("brandFilm.region")}
       >
@@ -83,18 +84,59 @@ export default function HomePage() {
         </div>
 
         <div className="border-t border-graphite-muted p-margin-mobile md:p-8 lg:col-span-8 lg:border-l lg:border-t-0">
-          <BrandFilmPlayer
-            src="/videos/brueckenbauer-brand-film.mp4"
-            poster="/images/video/brueckenbauer-brand-film-poster.jpg"
-            labels={{
-              video: t("brandFilm.video_label"),
-              play: t("brandFilm.play"),
-              loading: t("brandFilm.loading"),
-              error: t("brandFilm.error"),
-              retry: t("brandFilm.retry"),
-              unavailable: t("brandFilm.unavailable"),
-            }}
-          />
+          <div className="grid gap-8 md:grid-cols-2">
+            <article aria-labelledby="brand-film-one-title">
+              <div className="mb-4 border-b border-graphite-muted pb-3">
+                <p className="font-mono text-label-xs uppercase tracking-widest text-warning-red">
+                  01 / {t("brandFilm.film_one_type")}
+                </p>
+                <h3
+                  id="brand-film-one-title"
+                  className="mt-2 font-mono text-data-sm uppercase leading-relaxed text-industrial-silver"
+                >
+                  {t("brandFilm.film_one_title")}
+                </h3>
+              </div>
+              <BrandFilmPlayer
+                src="/videos/brueckenbauer-brand-film.mp4"
+                poster="/images/video/brueckenbauer-brand-film-poster.jpg"
+                labels={{
+                  video: t("brandFilm.video_label"),
+                  play: t("brandFilm.play"),
+                  loading: t("brandFilm.loading"),
+                  error: t("brandFilm.error"),
+                  retry: t("brandFilm.retry"),
+                  unavailable: t("brandFilm.unavailable"),
+                }}
+              />
+            </article>
+
+            <article aria-labelledby="brand-film-two-title">
+              <div className="mb-4 border-b border-graphite-muted pb-3">
+                <p className="font-mono text-label-xs uppercase tracking-widest text-data-orange">
+                  02 / {t("brandFilm.film_two_type")}
+                </p>
+                <h3
+                  id="brand-film-two-title"
+                  className="mt-2 font-mono text-data-sm uppercase leading-relaxed text-industrial-silver"
+                >
+                  {t("brandFilm.film_two_title")}
+                </h3>
+              </div>
+              <BrandFilmPlayer
+                src="/videos/pml-current-sensor-application-note.mp4"
+                poster="/images/video/pml-current-sensor-application-note-poster.jpg"
+                labels={{
+                  video: t("brandFilm.film_two_video_label"),
+                  play: t("brandFilm.film_two_play"),
+                  loading: t("brandFilm.film_two_loading"),
+                  error: t("brandFilm.film_two_error"),
+                  retry: t("brandFilm.film_two_retry"),
+                  unavailable: t("brandFilm.film_two_unavailable"),
+                }}
+              />
+            </article>
+          </div>
         </div>
       </section>
     </PageShell>

@@ -17,11 +17,23 @@ test.describe("Homepage — brand film", () => {
     await page.goto("/");
     await page.waitForLoadState("networkidle");
 
-    const film = page.getByRole("region", { name: "Brand film" });
+    const film = page.getByRole("region", { name: "Featured videos" });
     await expect(film).toBeVisible();
 
-    const player = film.locator("[data-film-state]");
-    const video = film.locator("video");
+    const cards = film.locator("article");
+    await expect(cards).toHaveCount(2);
+
+    const player = cards.first().locator("[data-film-state]");
+    const video = cards.first().locator("video");
+    const applicationVideo = cards.nth(1).locator("video");
+    await expect(applicationVideo).toHaveAttribute(
+      "poster",
+      "/images/video/pml-current-sensor-application-note-poster.jpg"
+    );
+    await expect(applicationVideo.locator('source[type="video/mp4"]')).toHaveAttribute(
+      "src",
+      "/videos/pml-current-sensor-application-note.mp4"
+    );
     await expect(video).toBeVisible();
     await expect(video).toHaveAttribute("preload", "none");
     await expect(video).toHaveAttribute("playsinline", "");
