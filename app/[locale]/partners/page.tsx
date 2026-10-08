@@ -130,6 +130,14 @@ export default async function PartnersPage({ params }: { params: Promise<{ local
       description: t("greegoo_desc"),
       logoClassName: "p-2",
     },
+    {
+      id: "CLAF_POWER",
+      name: "CLAF Power",
+      logo: "/images/partners/claf-power.jpeg",
+      type: t("strategic_partner"),
+      description: t("claf_power_desc"),
+      logoClassName: "p-2",
+    },
   ];
 
   return (
