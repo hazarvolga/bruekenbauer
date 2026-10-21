@@ -20,6 +20,7 @@ test("shows CLAF Power with its optimized logo and approved partner description"
 
   const logo = card.getByRole("img", { name: "CLAF Power logo" });
   await expect(logo).toBeVisible();
+  await logo.scrollIntoViewIfNeeded();
   await expect
     .poll(() =>
       logo.evaluate((image: HTMLImageElement) => image.complete && image.naturalWidth > 0)

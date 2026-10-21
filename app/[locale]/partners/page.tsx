@@ -138,6 +138,14 @@ export default async function PartnersPage({ params }: { params: Promise<{ local
       description: t("claf_power_desc"),
       logoClassName: "p-2",
     },
+    {
+      id: "OPHIR",
+      name: "OPHIR",
+      logo: "/images/partners/ophir.jpeg",
+      type: t("technology_partner"),
+      description: t("ophir_desc"),
+      logoClassName: "p-4",
+    },
   ];
 
   return (

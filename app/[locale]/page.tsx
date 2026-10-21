@@ -1,5 +1,5 @@
 import { Link } from "@/i18n/routing";
-import { useTranslations } from "next-intl";
+import { getLocale, getTranslations } from "next-intl/server";
 import { HudMetric } from "@/components/layout/HudMetric";
 import { TechnicalButton } from "@/components/layout/TechnicalButton";
 import { TechnicalButtonGroup } from "@/components/layout/TechnicalButtonGroup";
@@ -8,8 +8,15 @@ import { PageShell } from "@/components/motion/MotionProvider";
 import { MaskedImageFrame, StaggerText } from "@/components/motion/Reveals";
 import { images } from "@/lib/assets";
 
-export default function HomePage() {
-  const t = useTranslations("HomePage");
+export default async function HomePage() {
+  const locale = await getLocale();
+  const t = await getTranslations("HomePage");
+  const technologyFilmSrc =
+    locale === "fr"
+      ? "/videos/technology-film-fr.mp4"
+      : locale === "de"
+        ? "/videos/technology-film-de.mp4"
+        : "/videos/pml-current-sensor-application-note.mp4";
   return (
     <PageShell className="min-h-screen pt-20 md:pl-20">
       <section className="flex min-h-[calc(100vh-80px)] flex-col md:flex-row">
@@ -124,7 +131,7 @@ export default function HomePage() {
                 </h3>
               </div>
               <BrandFilmPlayer
-                src="/videos/pml-current-sensor-application-note.mp4"
+                src={technologyFilmSrc}
                 poster="/images/video/pml-current-sensor-application-note-poster.jpg"
                 labels={{
                   video: t("brandFilm.film_two_video_label"),

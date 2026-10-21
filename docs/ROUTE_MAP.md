@@ -1,6 +1,6 @@
 # Route Map
 
-All App Router routes as of 2026-05-27.
+All App Router routes as of 2026-10-21.
 
 ## Locale Strategy
 
@@ -23,7 +23,6 @@ correct locale segment.
 | `/intro`, `/de/intro`, `/fr/intro`                | `app/[locale]/intro/page.tsx`      | Power Management portfolio entry sequence            | Public |
 | `/about`, `/de/about`, `/fr/about`                | `app/[locale]/about/page.tsx`      | Company overview and services                        | Public |
 | `/contact`, `/de/contact`, `/fr/contact`          | `app/[locale]/contact/page.tsx`    | Engineering contact form                             | Public |
-| `/compliance`, `/de/compliance`, `/fr/compliance` | `app/[locale]/compliance/page.tsx` | Compliance archive                                   | Public |
 | `/documents`, `/de/documents`, `/fr/documents`    | `app/[locale]/documents/page.tsx`  | Document library and downloadable PDFs               | Public |
 | `/logistics`, `/de/logistics`, `/fr/logistics`    | `app/[locale]/logistics/page.tsx`  | Supply chain and logistics overview                  | Public |
 | `/oem-supply`, `/de/oem-supply`, `/fr/oem-supply` | `app/[locale]/oem-supply/page.tsx` | OEM supply and procurement architecture              | Public |

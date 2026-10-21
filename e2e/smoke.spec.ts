@@ -1,6 +1,11 @@
 import { expect, test } from "@playwright/test";
 
-const titlePattern = /brüeckenbauer/i;
+const chromeExecutablePath = process.env.PLAYWRIGHT_CHROME_EXECUTABLE;
+if (chromeExecutablePath) {
+  test.use({ launchOptions: { executablePath: chromeExecutablePath } });
+}
+
+const titlePattern = /brückenbauer/i;
 
 const routes = [
   "/",
@@ -24,9 +29,9 @@ const routes = [
   "/industries",
   "/de/industries",
   "/fr/industries",
-  "/industries/aerospace-and-defense",
-  "/de/industries/aerospace-and-defense",
-  "/fr/industries/aerospace-and-defense",
+  "/industries/aerospace-and-aviation",
+  "/de/industries/aerospace-and-aviation",
+  "/fr/industries/aerospace-and-aviation",
   "/search",
   "/de/search",
   "/fr/search",
@@ -35,7 +40,6 @@ const routes = [
   "/fr/rfq",
   "/oem-supply",
   "/logistics",
-  "/compliance",
   "/documents",
   "/contact",
   "/about",

@@ -6,6 +6,27 @@ if (chromeExecutablePath) {
 }
 
 test.describe("Homepage — brand film", () => {
+  for (const locale of ["en", "de", "fr"] as const) {
+    test(`uses the ${locale.toUpperCase()} technology film`, async ({ page }) => {
+      const route = locale === "en" ? "/" : `/${locale}`;
+      const expectedSource =
+        locale === "de"
+          ? "/videos/technology-film-de.mp4"
+          : locale === "fr"
+            ? "/videos/technology-film-fr.mp4"
+            : "/videos/pml-current-sensor-application-note.mp4";
+
+      await page.goto(route);
+
+      const film = page.locator("#featured-videos");
+      const technologyVideo = film.locator("article").nth(1).locator("video");
+      await expect(technologyVideo.locator('source[type="video/mp4"]')).toHaveAttribute(
+        "src",
+        expectedSource
+      );
+    });
+  }
+
   test("shows a poster-first film and starts playback on user request", async ({ page }) => {
     const mediaRequests: string[] = [];
     page.on("request", (request) => {
