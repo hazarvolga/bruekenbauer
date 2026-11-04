@@ -30,3 +30,31 @@ test("shows OPHIR as a technology partner with the supplied description", async 
   expect(logoSource.pathname).toBe("/_next/image");
   expect(logoSource.searchParams.get("url")).toBe("/images/partners/ophir.jpeg");
 });
+
+test("shows the OPHIR description in the selected partner-page language", async ({ page }) => {
+  const localizedDescriptions = [
+    {
+      route: "/de/partners",
+      description:
+        "OPHIR ist ein 3D- und CGI-Studio, das technische visuelle Inhalte für Technologieunternehmen produziert, darunter 3D-Erkläranimationen, Renderings, Motion Graphics sowie interaktive oder immersive Erlebnisse. Ein besonderer Schwerpunkt liegt auf Technologiebereichen wie Halbleitern, Photonik, Quantentechnologien, Weltraum, Luft- und Raumfahrt sowie Energie.",
+    },
+    {
+      route: "/fr/partners",
+      description:
+        "OPHIR est un studio 3D et CGI qui produit des contenus visuels techniques pour les entreprises technologiques, notamment des animations explicatives en 3D, des rendus, du motion design ainsi que des expériences interactives ou immersives. Le studio se concentre particulièrement sur les technologies de pointe, comme les semi-conducteurs, la photonique, les technologies quantiques, le spatial, l’aérospatiale et l’énergie.",
+    },
+  ];
+
+  for (const { route, description } of localizedDescriptions) {
+    await page.goto(route);
+
+    const heading = page.getByRole("heading", { level: 2, name: "OPHIR", exact: true });
+    const card = heading.locator("xpath=ancestor::div[contains(@class, 'reticle-corners')][1]");
+
+    await expect(card).toBeVisible();
+    await expect(card).toContainText(description);
+    await expect(card).not.toContainText(
+      "OPHIR is a 3D and CGI studio that produces technical visual content"
+    );
+  }
+});
